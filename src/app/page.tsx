@@ -209,27 +209,70 @@ export default function LandingPage() {
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">개인과 팀의 생산성을 혁신적으로 향상시켜보세요.</span>
             </p>
             
-            {/* CLI Installation - 더 크고 임팩트 있게 */}
-            <div className="flex justify-center mb-16">
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse" />
-                <div className="relative flex items-center justify-between bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 w-full max-w-lg">
-                  <code className="text-gray-800 font-mono text-xl bg-gradient-to-r from-gray-100 to-blue-50 px-4 py-3 rounded-xl border border-gray-200">
-                    brew install pawcus
-                  </code>
+            {/* Download Options - 간단하고 깔끔한 디자인 */}
+            <div className="flex flex-col items-center mb-16 space-y-12">
+              <div className="text-center">
+                <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent mb-4">
+                  Pawcus 다운로드
+                </h3>
+                <p className="text-lg text-gray-600">
+                  선호하는 방법으로 Pawcus를 설치하세요
+                </p>
+              </div>
+              
+              {/* Download Buttons */}
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+                {/* Homebrew Option */}
+                <div className="group relative w-full md:w-auto">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse" />
                   <Button
-                    variant="ghost"
-                    size="lg"
-                    onClick={() => copyToClipboard('brew install pawcus')}
-                    className="text-gray-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 ml-6 transition-all duration-300 hover:scale-110"
+                    onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+                    className="relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 border-purple-500 hover:border-purple-600 backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-500/20 min-w-[280px] h-20"
                   >
-                    <Copy className="h-6 w-6" />
+                    <div className="flex items-center justify-center space-x-4">
+                      <Copy className="w-7 h-7 text-purple-600" />
+                      <div className="text-center">
+                        <div className="font-bold text-gray-800">brew 명령어 복사</div>
+                        <div className="text-gray-600 text-sm font-normal">터미널에서 간편 설치</div>
+                      </div>
+                    </div>
+                  </Button>
+                </div>
+                
+                {/* DMG Download Option */}
+                <div className="group relative w-full md:w-auto">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse" />
+                  <Button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = 'https://github.com/swmaeStrong/Pawcus/releases/latest/download/Pawcus.dmg';
+                      link.download = 'Pawcus.dmg';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    className="relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 border-emerald-500 hover:border-emerald-600 backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-emerald-500/20 min-w-[280px] h-20"
+                  >
+                    <div className="flex items-center justify-center space-x-4">
+                      <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <div className="text-center">
+                        <div className="font-bold text-gray-800">DMG 다운로드</div>
+                        <div className="text-gray-600 text-sm font-normal">직접 설치 파일</div>
+                      </div>
+                    </div>
                   </Button>
                 </div>
               </div>
+              
+              {/* Additional Info */}
+              <div className="text-center max-w-2xl">
+                <p className="text-gray-500">
+                  Homebrew로 자동 업데이트 또는 DMG로 직접 설치
+                </p>
+              </div>
             </div>
-
-
           </div>
         </section>
 
@@ -605,45 +648,91 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* CTA Section - 채도 낮춤 */}
+        {/* CTA Section - 부드럽고 조화로운 디자인 */}
         <section className="py-24 text-center relative">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-slate-400 via-gray-500 to-slate-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition duration-1000 animate-pulse" />
-            <div className="relative bg-gradient-to-r from-slate-600 via-gray-700 to-slate-800 rounded-3xl p-16 text-white overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-600/90 via-gray-700/90 to-slate-800/90 backdrop-blur-sm" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-200/30 via-gray-100/30 to-emerald-200/30 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-1000 animate-pulse" />
+            <div className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-3xl p-16 border border-gray-200 shadow-2xl overflow-hidden">
               <div className="absolute top-8 left-8">
-                <Rocket className="h-12 w-12 text-white/20 animate-bounce" />
+                <Rocket className="h-12 w-12 text-purple-400/40 animate-bounce" />
               </div>
               <div className="absolute bottom-8 right-8">
-                <Bolt className="h-10 w-10 text-gray-300 animate-pulse" />
+                <Bolt className="h-10 w-10 text-emerald-400/40 animate-pulse" />
               </div>
               
               <div className="relative z-10">
                 {/* Pawcus Small Icon */}
                 <div className="mb-6 flex justify-center">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-emerald-500/20 rounded-full blur-lg animate-pulse" />
+                    <Image
+                      src="/icons/final_icon_128x128.png"
+                      alt="Pawcus Logo"
+                      width={60}
+                      height={60}
+                      className="relative z-10 hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
                 
-                <h2 className="text-4xl font-bold mb-6">
+                <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-emerald-700 bg-clip-text text-transparent">
                   지금 바로 시작해보세요
                 </h2>
-                <p className="text-xl mb-10 text-gray-200 max-w-2xl mx-auto">
+                <p className="text-xl mb-10 text-gray-600 max-w-2xl mx-auto">
                   간단한 설치로 생산성 게임화의 새로운 경험을 시작할 수 있습니다
                 </p>
-                <div className="flex items-center justify-center gap-6">
-                  <div className="flex items-center bg-white/15 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/25 transition-all duration-300 group">
-                    <code className="text-white font-mono text-lg group-hover:scale-105 transition-transform duration-300">
-                      brew install pawcus
-                    </code>
+                
+                {/* Two Download Options */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+                  {/* Homebrew Option */}
+                  <div className="group relative w-full md:w-auto">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-indigo-400/30 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse" />
                     <Button
                       variant="ghost"
-                      size="sm"
-                      onClick={() => copyToClipboard('brew install pawcus')}
-                      className="text-white hover:bg-white/15 ml-4 hover:scale-110 transition-all duration-300"
+                      size="lg"
+                      onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+                      className="relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 border-purple-400 hover:border-purple-500 backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-400/20 min-w-[280px] h-20"
                     >
-                      <Copy className="h-5 w-5" />
+                      <div className="flex items-center justify-center space-x-4">
+                        <Copy className="w-7 h-7 text-purple-600" />
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">brew 명령어 복사</div>
+                          <div className="text-gray-600 text-sm font-normal">터미널에서 간편 설치</div>
+                        </div>
+                      </div>
+                    </Button>
+                  </div>
+                  
+                  {/* DMG Download Option */}
+                  <div className="group relative w-full md:w-auto">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 via-teal-400/30 to-cyan-400/30 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse" />
+                    <Button
+                      onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = 'https://github.com/swmaeStrong/Pawcus/releases/latest/download/Pawcus.dmg';
+                        link.download = 'Pawcus.dmg';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }}
+                      className="relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 border-emerald-400 hover:border-emerald-500 backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-emerald-400/20 min-w-[280px] h-20"
+                    >
+                      <div className="flex items-center justify-center space-x-4">
+                        <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <div className="text-center">
+                          <div className="font-bold text-gray-800">DMG 다운로드</div>
+                          <div className="text-gray-600 text-sm font-normal">직접 설치 파일</div>
+                        </div>
+                      </div>
                     </Button>
                   </div>
                 </div>
+                
+                <p className="text-sm text-gray-500 mt-6">
+                  Homebrew로 자동 업데이트 또는 DMG로 직접 설치
+                </p>
               </div>
             </div>
           </div>

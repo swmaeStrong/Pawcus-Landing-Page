@@ -49,34 +49,16 @@ export default async function Image() {
             padding: '40px',
           }}
         >
-          {/* Logo/Icon */}
-          <div
-            style={{
-              width: '120px',
-              height: '120px',
-              borderRadius: '30px',
-              background: 'rgba(255,255,255,0.95)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '60px',
-              marginBottom: '30px',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-            }}
-          >
-            ⚡
-          </div>
-          
           {/* Title */}
           <h1
             style={{
-              fontSize: '64px',
+              fontSize: '80px',
               fontWeight: '900',
               margin: '0 0 20px 0',
               background: 'linear-gradient(45deg, #ffffff, #f0f9ff)',
               backgroundClip: 'text',
               color: 'transparent',
-              letterSpacing: '-2px',
+              letterSpacing: '-3px',
             }}
           >
             Pawcus
@@ -85,7 +67,7 @@ export default async function Image() {
           {/* Subtitle */}
           <p
             style={{
-              fontSize: '32px',
+              fontSize: '36px',
               margin: '0 0 15px 0',
               opacity: 0.95,
               maxWidth: '800px',
@@ -98,7 +80,7 @@ export default async function Image() {
           {/* Description */}
           <p
             style={{
-              fontSize: '22px',
+              fontSize: '24px',
               margin: '0',
               opacity: 0.85,
               maxWidth: '900px',
@@ -119,9 +101,36 @@ export default async function Image() {
             fontSize: '20px',
             opacity: 0.7,
             fontWeight: '500',
+            color: 'white',
           }}
         >
           pawcus.dev
+        </div>
+        
+        {/* Simple geometric decoration instead of emoji */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '60px',
+            right: '60px',
+            width: '80px',
+            height: '80px',
+            borderRadius: '20px',
+            background: 'rgba(255,255,255,0.15)',
+            border: '3px solid rgba(255,255,255,0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <div
+            style={{
+              width: '40px',
+              height: '40px',
+              background: 'linear-gradient(45deg, #ffffff, #e0e7ff)',
+              borderRadius: '8px',
+            }}
+          />
         </div>
       </div>
     ),
