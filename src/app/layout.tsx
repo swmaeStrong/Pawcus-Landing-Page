@@ -49,10 +49,17 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     images: [
       {
+        url: "https://pawcus.dev/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Pawcus - 개발자를 위한 스마트 시간 추적",
+        type: "image/png",
+      },
+      {
         url: "https://pawcus.dev/icons/final_icon_512x512.png",
         width: 512,
         height: 512,
-        alt: "Pawcus - 개발자를 위한 스마트 시간 추적",
+        alt: "Pawcus Logo",
         type: "image/png",
       },
     ],
@@ -91,6 +98,14 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "apple-mobile-web-app-title": "Pawcus",
+    "al:web:url": "https://pawcus.dev",
+    "al:web:should_fallback": "true",
+    "og:image:secure_url": "https://pawcus.dev/opengraph-image",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "Pawcus - 개발자를 위한 스마트 시간 추적",
+    "og:locale": "ko_KR",
+    "og:locale:alternate": "en_US",
   },
 };
 
@@ -107,6 +122,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
+        <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 시간 추적 및 리더보드" />
+        <meta property="og:description" content="개발 시간을 추적하고 동료들과 경쟁하세요. 스마트한 시간 추적, 실시간 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요." />
+        <meta property="og:image" content="https://pawcus.dev/opengraph-image" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Pawcus - 개발자를 위한 스마트 시간 추적" />
+        <meta property="og:url" content="https://pawcus.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Pawcus" />
+        <meta property="og:locale" content="ko_KR" />
+        
+        {/* 트위터 카드 (추가 호환성) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pawcus - 개발자를 위한 스마트 시간 추적" />
+        <meta name="twitter:description" content="개발 시간을 추적하고 동료들과 경쟁하세요" />
+        <meta name="twitter:image" content="https://pawcus.dev/opengraph-image" />
+        
+        {/* 카카오톡 앱링크 */}
+        <meta property="al:web:url" content="https://pawcus.dev" />
+        <meta property="al:web:should_fallback" content="true" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
