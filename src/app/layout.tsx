@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     url: "https://pawcus.dev",
     siteName: "Pawcus",
     locale: "ko_KR",
-    images: [
-      {
-        url: "https://pawcus.dev/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Pawcus - 개발자를 위한 스마트 생산성 관리",
-        type: "image/png",
-      },
+          images: [
+        {
+          url: `https://pawcus.dev/opengraph-image?v=${Date.now()}`,
+          width: 1200,
+          height: 630,
+          alt: "Pawcus - 개발자를 위한 스마트 생산성 관리",
+          type: "image/png",
+        },
       {
         url: "https://pawcus.dev/icons/final_icon_512x512.png",
         width: 512,
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-title": "Pawcus",
     "al:web:url": "https://pawcus.dev",
     "al:web:should_fallback": "true",
-    "og:image:secure_url": "https://pawcus.dev/opengraph-image",
+    "og:image:secure_url": `https://pawcus.dev/opengraph-image?v=${Date.now()}`,
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:alt": "Pawcus - 개발자를 위한 스마트 생산성 관리",
@@ -126,7 +126,7 @@ export default function RootLayout({
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
         <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
         <meta property="og:description" content="개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요." />
-        <meta property="og:image" content="https://pawcus.dev/opengraph-image" />
+        <meta property="og:image" content={`https://pawcus.dev/opengraph-image?v=${Date.now()}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
@@ -139,7 +139,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
         <meta name="twitter:description" content="개발자를 위한 스마트 생산성 관리 도구" />
-        <meta name="twitter:image" content="https://pawcus.dev/opengraph-image" />
+        <meta name="twitter:image" content={`https://pawcus.dev/opengraph-image?v=${Date.now()}`} />
         
         {/* 카카오톡 앱링크 */}
         <meta property="al:web:url" content="https://pawcus.dev" />

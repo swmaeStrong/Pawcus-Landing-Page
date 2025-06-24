@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
+export const revalidate = 0 // 캐시 무효화
 
 export const alt = 'Pawcus - 개발자를 위한 스마트 생산성 관리'
 export const size = {
@@ -21,9 +22,13 @@ export default async function Image() {
       ? 'https://pawcus-landing-page.vercel.app'
       : 'http://localhost:3000'
     
-    const iconResponse = await fetch(`${baseUrl}/icons/final_icon_256x256.png`, {
+    // 캐시 버스팅을 위한 타임스탬프 추가
+    const cacheBuster = Date.now()
+    const iconResponse = await fetch(`${baseUrl}/icons/final_icon_256x256.png?v=${cacheBuster}`, {
       headers: {
-        'Cache-Control': 'no-cache',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
       },
     })
     
@@ -88,6 +93,20 @@ export default async function Image() {
             opacity: 0.1,
           }}
         />
+        
+        {/* Version indicator for cache busting */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '20px',
+            left: '20px',
+            fontSize: '12px',
+            color: '#e5e7eb',
+            opacity: 0.5,
+          }}
+        >
+          v2.0
+        </div>
         
         {/* Main Content */}
         <div
@@ -338,6 +357,11 @@ export default async function Image() {
     ),
     {
       ...size,
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      },
     }
   )
 } 
