@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pawcus - 개발자를 위한 스마트 시간 추적 및 리더보드",
+    default: "Pawcus - 개발자를 위한 스마트 생산성 관리",
     template: "%s | Pawcus"
   },
-  description: "개발 시간을 추적하고 동료들과 경쟁하세요. 스마트한 시간 추적, 실시간 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
+  description: "개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
   keywords: ["개발자", "시간 추적", "리더보드", "생산성", "코딩", "개발 도구"],
   authors: [{ name: "Pawcus Team" }],
   creator: "Pawcus Team",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Pawcus - 개발자를 위한 스마트 시간 추적 및 리더보드",
-    description: "개발 시간을 추적하고 동료들과 경쟁하세요. 스마트한 시간 추적, 실시간 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
+    title: "Pawcus - 개발자를 위한 스마트 생산성 관리",
+    description: "개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
     type: "website",
     url: "https://pawcus.dev",
     siteName: "Pawcus",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: "https://pawcus.dev/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Pawcus - 개발자를 위한 스마트 시간 추적",
+        alt: "Pawcus - 개발자를 위한 스마트 생산성 관리",
         type: "image/png",
       },
       {
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@pawcus",
     creator: "@pawcus",
-    title: "Pawcus - 개발자를 위한 스마트 시간 추적",
-    description: "개발 시간을 추적하고 동료들과 경쟁하세요",
+    title: "Pawcus - 개발자를 위한 스마트 생산성 관리",
+    description: "개발자를 위한 스마트 생산성 관리 도구",
     images: [
       {
         url: "https://pawcus.dev/icons/final_icon_512x512.png",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     "og:image:secure_url": "https://pawcus.dev/opengraph-image",
     "og:image:width": "1200",
     "og:image:height": "630",
-    "og:image:alt": "Pawcus - 개발자를 위한 스마트 시간 추적",
+    "og:image:alt": "Pawcus - 개발자를 위한 스마트 생산성 관리",
     "og:locale": "ko_KR",
     "og:locale:alternate": "en_US",
   },
@@ -124,12 +124,12 @@ export default function RootLayout({
     <html lang="ko">
       <head>
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
-        <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 시간 추적 및 리더보드" />
-        <meta property="og:description" content="개발 시간을 추적하고 동료들과 경쟁하세요. 스마트한 시간 추적, 실시간 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요." />
+        <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
+        <meta property="og:description" content="개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요." />
         <meta property="og:image" content="https://pawcus.dev/opengraph-image" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Pawcus - 개발자를 위한 스마트 시간 추적" />
+        <meta property="og:image:alt" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
         <meta property="og:url" content="https://pawcus.dev" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Pawcus" />
@@ -137,8 +137,8 @@ export default function RootLayout({
         
         {/* 트위터 카드 (추가 호환성) */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pawcus - 개발자를 위한 스마트 시간 추적" />
-        <meta name="twitter:description" content="개발 시간을 추적하고 동료들과 경쟁하세요" />
+        <meta name="twitter:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
+        <meta name="twitter:description" content="개발자를 위한 스마트 생산성 관리 도구" />
         <meta name="twitter:image" content="https://pawcus.dev/opengraph-image" />
         
         {/* 카카오톡 앱링크 */}

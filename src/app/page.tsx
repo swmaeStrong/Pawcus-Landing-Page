@@ -196,7 +196,7 @@ export default function LandingPage() {
             
             <div className="relative">
               <p className="text-5xl mb-8 text-gray-800 font-bold leading-tight bg-gradient-to-r from-gray-800 via-purple-800 to-blue-800 bg-clip-text text-transparent">
-                생산성을 게임처럼 즐겁게
+                개발자를 위한 스마트 생산성 관리
               </p>
               <div className="absolute -right-8 top-0">
                 <Bolt className="h-10 w-10 text-yellow-500 animate-pulse" />
