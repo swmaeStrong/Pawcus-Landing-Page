@@ -19,7 +19,7 @@ export default async function Image() {
     const baseUrl = process.env.VERCEL_URL 
       ? `https://${process.env.VERCEL_URL}` 
       : process.env.NODE_ENV === 'production'
-      ? 'https://pawcus-landing-page.vercel.app'
+      ? 'https://pawcus.dev'
       : 'http://localhost:3000'
     
     // 캐시 버스팅을 위한 타임스탬프 추가
