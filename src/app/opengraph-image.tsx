@@ -10,17 +10,30 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-  // Pawcus 아이콘 가져오기
-  const iconUrl = new URL('/icons/final_icon_256x256.png', import.meta.url.replace('/src/app/opengraph-image.tsx', ''))
+  // 배포 환경에서 안정적인 아이콘 로딩을 위한 설정
   let iconArrayBuffer: ArrayBuffer | null = null
   
   try {
-    const iconResponse = await fetch(`${process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 'http://localhost:3000'}/icons/final_icon_256x256.png`)
+    // 절대 URL 사용
+    const baseUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : process.env.NODE_ENV === 'production'
+      ? 'https://pawcus-landing-page.vercel.app'
+      : 'http://localhost:3000'
+    
+    const iconResponse = await fetch(`${baseUrl}/icons/final_icon_256x256.png`, {
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    })
+    
     if (iconResponse.ok) {
       iconArrayBuffer = await iconResponse.arrayBuffer()
     }
   } catch (error) {
     console.log('Failed to fetch icon:', error)
+    // 아이콘 로드 실패 시 null로 설정하여 fallback 사용
+    iconArrayBuffer = null
   }
 
   return new ImageResponse(
@@ -110,29 +123,57 @@ export default async function Image() {
                 }}
               />
             ) : (
+              // Fallback: 더 정교한 아이콘 디자인
               <div
                 style={{
                   width: '120px',
                   height: '120px',
-                  background: 'linear-gradient(135deg, #a855f7, #7c3aed, #10b981)',
+                  background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 25%, #7c3aed 50%, #10b981 75%, #059669 100%)',
                   borderRadius: '24px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 20px 40px rgba(139,92,246,0.3)',
+                  boxShadow: '0 20px 40px rgba(139,92,246,0.4)',
                   border: '4px solid white',
+                  position: 'relative',
                 }}
               >
+                {/* 내부 아이콘 디자인 */}
                 <div
                   style={{
-                    color: 'white',
-                    fontSize: '64px',
-                    fontWeight: '900',
-                    fontFamily: 'system-ui, -apple-system, sans-serif',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    width: '80px',
+                    height: '80px',
+                    background: 'rgba(255,255,255,0.95)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative',
                   }}
                 >
-                  P
+                  <div
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      background: 'linear-gradient(45deg, #8b5cf6, #10b981)',
+                      borderRadius: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <div
+                      style={{
+                        color: 'white',
+                        fontSize: '24px',
+                        fontWeight: '900',
+                        fontFamily: 'system-ui, -apple-system, sans-serif',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+                      }}
+                    >
+                      P
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -240,7 +281,7 @@ export default async function Image() {
           </div>
         </div>
         
-        {/* Enhanced brand mark with real icon */}
+        {/* Enhanced brand mark with fallback */}
         <div
           style={{
             position: 'absolute',
@@ -270,13 +311,13 @@ export default async function Image() {
               style={{
                 width: '32px',
                 height: '32px',
-                background: 'linear-gradient(135deg, #a855f7, #10b981)',
+                background: 'linear-gradient(135deg, #8b5cf6, #10b981)',
                 borderRadius: '8px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '2px solid white',
                 boxShadow: '0 4px 8px rgba(139,92,246,0.2)',
+                border: '2px solid white',
               }}
             >
               <div
