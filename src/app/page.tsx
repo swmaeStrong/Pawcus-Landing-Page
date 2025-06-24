@@ -162,6 +162,21 @@ export default function LandingPage() {
           <div className="scroll-animate">
             <div className="mb-12 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl" />
+              
+              {/* Pawcus Icon */}
+              <div className="mb-8 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-full blur-xl animate-pulse" />
+                  <Image
+                    src="/icons/final_icon_256x256.png"
+                    alt="Pawcus Logo"
+                    width={120}
+                    height={120}
+                    className="relative z-10 hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              
               <h1 className="text-9xl font-black mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent relative z-10 animate-pulse">
                 <span className="inline-block hover:scale-110 transition-transform duration-300">P</span>
                 <span className="inline-block hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.1s' }}>a</span>
@@ -536,6 +551,20 @@ export default function LandingPage() {
         <section ref={featuresRef} className="py-24 relative">
           <div className="text-center mb-20 scroll-animate">
             <div className="relative inline-block">
+              {/* Pawcus Mini Icon */}
+              <div className="mb-6 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-lg animate-pulse" />
+                  <Image
+                    src="/icons/final_icon_128x128.png"
+                    alt="Pawcus Logo"
+                    width={60}
+                    height={60}
+                    className="relative z-10 hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              
               <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent">
                 핵심 기능
               </h2>
@@ -590,6 +619,10 @@ export default function LandingPage() {
               </div>
               
               <div className="relative z-10">
+                {/* Pawcus Small Icon */}
+                <div className="mb-6 flex justify-center">
+                </div>
+                
                 <h2 className="text-4xl font-bold mb-6">
                   지금 바로 시작해보세요
                 </h2>
