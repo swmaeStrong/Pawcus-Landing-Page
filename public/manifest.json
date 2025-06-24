@@ -1,0 +1,37 @@
+{
+  "name": "Pawcus - 개발자를 위한 스마트 시간 추적",
+  "short_name": "Pawcus",
+  "description": "개발 시간을 추적하고 동료들과 경쟁하세요. 스마트한 시간 추적, 실시간 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ECECEC",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/final_icon_16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/final_icon_32x32@2x.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/final_icon_128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/final_icon_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/final_icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
