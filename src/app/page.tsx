@@ -7,7 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Area, AreaChart, Tooltip, Legend } from 'recharts';
 import { Copy, CheckCircle, TrendingUp, Trophy, BarChart3, Clock, Target, Users, Star, Medal, Award, Zap, Shield, Rocket, Sparkles, Crown, Flame, Bolt } from 'lucide-react';
+import Link from 'next/link';
 import Image from 'next/image';
+import Navigation from '@/components/Navigation';
 
 // 카테고리별 이용 시간 데이터 (영어로 변경)
 const timeData = [
@@ -96,8 +98,8 @@ const FloatingParticles = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default function LandingPage() {
   const [showToast, setShowToast] = useState(false)
@@ -137,6 +139,9 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#ECECEC] relative overflow-hidden">
+      {/* Navigation */}
+      <Navigation />
+      
       {/* Animated Background */}
       <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-50" />
       <div className="fixed inset-0">
@@ -149,16 +154,16 @@ export default function LandingPage() {
 
       {/* Toast Notification */}
       {showToast && (
-        <div className="fixed top-4 right-4 z-50 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-right duration-500 border border-emerald-400/50">
-          <CheckCircle className="h-5 w-5 animate-bounce" />
+        <aside className="fixed top-20 right-4 z-50 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-right duration-500 border border-emerald-400/50" role="alert" aria-live="polite">
+          <CheckCircle className="h-5 w-5 animate-bounce" aria-hidden="true" />
           <span className="font-medium">명령어가 클립보드에 복사되었습니다!</span>
-          <Sparkles className="h-4 w-4 animate-spin" />
-        </div>
+          <Sparkles className="h-4 w-4 animate-spin" aria-hidden="true" />
+        </aside>
       )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
         {/* Hero Section - 확대 및 강화 */}
-        <section className="py-32 text-center relative">
+        <section className="py-32 text-center relative" aria-labelledby="hero-heading">
           <div className="scroll-animate">
             <div className="mb-12 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl" />
@@ -177,7 +182,7 @@ export default function LandingPage() {
                 </div>
               </div>
               
-              <h1 className="text-9xl font-black mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent relative z-10 animate-pulse">
+              <h1 id="hero-heading" className="text-9xl font-black mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent relative z-10 animate-pulse">
                 <span className="inline-block hover:scale-110 transition-transform duration-300">P</span>
                 <span className="inline-block hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.1s' }}>a</span>
                 <span className="inline-block hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.2s' }}>w</span>
@@ -195,11 +200,11 @@ export default function LandingPage() {
             </div>
             
             <div className="relative">
-              <p className="text-5xl mb-8 text-gray-800 font-bold leading-tight bg-gradient-to-r from-gray-800 via-purple-800 to-blue-800 bg-clip-text text-transparent">
+              <h2 className="text-5xl mb-8 text-gray-800 font-bold leading-tight bg-gradient-to-r from-gray-800 via-purple-800 to-blue-800 bg-clip-text text-transparent">
                 개발자를 위한 스마트 생산성 관리
-              </p>
+              </h2>
               <div className="absolute -right-8 top-0">
-                <Bolt className="h-10 w-10 text-yellow-500 animate-pulse" />
+                <Bolt className="h-10 w-10 text-yellow-500 animate-pulse" aria-hidden="true" />
               </div>
             </div>
             
@@ -210,15 +215,15 @@ export default function LandingPage() {
             </p>
             
             {/* Download Options - 간단하고 깔끔한 디자인 */}
-            <div className="flex flex-col items-center mb-16 space-y-12">
-              <div className="text-center">
-                <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent mb-4">
+            <section className="flex flex-col items-center mb-16 space-y-12" aria-labelledby="download-heading">
+              <header className="text-center">
+                <h3 id="download-heading" className="text-4xl font-bold bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent mb-4">
                   Pawcus 다운로드
                 </h3>
                 <p className="text-lg text-gray-600">
                   선호하는 방법으로 Pawcus를 설치하세요
                 </p>
-              </div>
+              </header>
               
               {/* Download Buttons */}
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
@@ -226,7 +231,7 @@ export default function LandingPage() {
                 <div className="group relative w-full md:w-auto">
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse" />
                   <Button
-                    onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+                    onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install —cask pawcus')}
                     className="relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 border-purple-500 hover:border-purple-600 backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-500/20 min-w-[280px] h-20"
                   >
                     <div className="flex items-center justify-center space-x-4">
@@ -245,7 +250,7 @@ export default function LandingPage() {
                   <Button
                     onClick={() => {
                       const link = document.createElement('a');
-                      link.href = 'https://github.com/swmaeStrong/Pawcus/releases/latest/download/Pawcus.dmg';
+                      link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/download/v0.8.0/Pawcus.dmg';
                       link.download = 'Pawcus.dmg';
                       document.body.appendChild(link);
                       link.click();
@@ -272,28 +277,28 @@ export default function LandingPage() {
                   Homebrew로 자동 업데이트 또는 DMG로 직접 설치
                 </p>
               </div>
-            </div>
+            </section>
           </div>
         </section>
 
         {/* Analytics Section - 각각을 큰 컴포넌트로 변경 */}
-        <section ref={dashboardRef} className="py-24 relative">
-          <div className="text-center mb-16 scroll-animate">
+        <section ref={dashboardRef} className="py-24 relative" aria-labelledby="analytics-heading">
+          <header className="text-center mb-16 scroll-animate">
             <div className="relative inline-block">
-              <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent">
+              <h2 id="analytics-heading" className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent">
                 Analytics & Competitions
               </h2>
               <div className="absolute -top-2 -right-8">
-                <Flame className="h-8 w-8 text-orange-500 animate-bounce" />
+                <Flame className="h-8 w-8 text-orange-500 animate-bounce" aria-hidden="true" />
               </div>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               데이터 기반 인사이트로 생산성 패턴을 발견하고 최적화하세요
             </p>
-          </div>
+          </header>
 
           {/* Category Analysis */}
-          <div className="mb-24 scroll-animate">
+          <article className="mb-24 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -365,13 +370,14 @@ export default function LandingPage() {
                 </Card>
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Usage vs Development */}
-          <div className="mb-24 scroll-animate">
+          <article className="mb-24 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-1">
-                <Card className="bg-white/80 backdrop-blur-sm shadow-2xl border-0 hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
+                <figure>
+                  <Card className="bg-white/80 backdrop-blur-sm shadow-2xl border-0 hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <CardContent className="p-8 relative z-10">
                     <ResponsiveContainer width="100%" height={400}>
@@ -441,7 +447,8 @@ export default function LandingPage() {
                       </AreaChart>
                     </ResponsiveContainer>
                   </CardContent>
-                </Card>
+                  </Card>
+                </figure>
               </div>
               <div className="order-2">
                 <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
@@ -466,10 +473,10 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Leaderboard */}
-          <div className="mb-12 scroll-animate">
+          <article className="mb-12 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
@@ -494,7 +501,8 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <Card className="bg-white/80 backdrop-blur-sm shadow-2xl border-0 hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
+                <figure>
+                  <Card className="bg-white/80 backdrop-blur-sm shadow-2xl border-0 hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <CardContent className="p-8 relative z-10">
                     <div className="space-y-4">
@@ -584,15 +592,16 @@ export default function LandingPage() {
                       })}
                     </div>
                   </CardContent>
-                </Card>
+                  </Card>
+                </figure>
               </div>
             </div>
-          </div>
+          </article>
         </section>
 
         {/* Features Section - 더 임팩트 있게 */}
-        <section ref={featuresRef} className="py-24 relative">
-          <div className="text-center mb-20 scroll-animate">
+        <section ref={featuresRef} className="py-24 relative" aria-labelledby="features-heading">
+          <header className="text-center mb-20 scroll-animate">
             <div className="relative inline-block">
               {/* Pawcus Mini Icon */}
               <div className="mb-6 flex justify-center">
@@ -608,21 +617,21 @@ export default function LandingPage() {
                 </div>
               </div>
               
-              <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent">
+              <h2 id="features-heading" className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-blue-700 bg-clip-text text-transparent">
                 핵심 기능
               </h2>
               <div className="absolute -top-4 -right-12">
-                <Star className="h-8 w-8 text-yellow-500 animate-spin" />
+                <Star className="h-8 w-8 text-yellow-500 animate-spin" aria-hidden="true" />
               </div>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               생산성 혁신을 위한 스마트한 도구들
             </p>
-          </div>
+          </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <div
+              <article
                 key={index}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-0 hover:shadow-2xl transition-all duration-500 scroll-animate group hover:scale-[1.03] relative overflow-hidden"
                 style={{ animationDelay: `${index * 200}ms` }}
@@ -641,23 +650,23 @@ export default function LandingPage() {
                 </div>
                 
                 <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Sparkles className="h-4 w-4 text-purple-500 animate-pulse" />
+                  <Sparkles className="h-4 w-4 text-purple-500 animate-pulse" aria-hidden="true" />
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
         {/* CTA Section - 부드럽고 조화로운 디자인 */}
-        <section className="py-24 text-center relative">
+        <section className="py-24 text-center relative" aria-labelledby="cta-heading">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-200/30 via-gray-100/30 to-emerald-200/30 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-1000 animate-pulse" />
             <div className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-3xl p-16 border border-gray-200 shadow-2xl overflow-hidden">
               <div className="absolute top-8 left-8">
-                <Rocket className="h-12 w-12 text-purple-400/40 animate-bounce" />
+                <Rocket className="h-12 w-12 text-purple-400/40 animate-bounce" aria-hidden="true" />
               </div>
               <div className="absolute bottom-8 right-8">
-                <Bolt className="h-10 w-10 text-emerald-400/40 animate-pulse" />
+                <Bolt className="h-10 w-10 text-emerald-400/40 animate-pulse" aria-hidden="true" />
               </div>
               
               <div className="relative z-10">
@@ -675,14 +684,14 @@ export default function LandingPage() {
                   </div>
                 </div>
                 
-                <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-emerald-700 bg-clip-text text-transparent">
+                <h2 id="cta-heading" className="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-purple-700 to-emerald-700 bg-clip-text text-transparent">
                   지금 바로 시작해보세요
                 </h2>
                 <p className="text-xl mb-10 text-gray-600 max-w-2xl mx-auto">
                   간단한 설치로 생산성 게임화의 새로운 경험을 시작할 수 있습니다
                 </p>
                 
-                {/* Two Download Options */}
+                {/* Download Options */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
                   {/* Homebrew Option */}
                   <div className="group relative w-full md:w-auto">
@@ -690,7 +699,7 @@ export default function LandingPage() {
                     <Button
                       variant="ghost"
                       size="lg"
-                      onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+                      onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install —cask pawcus')}
                       className="relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 border-purple-400 hover:border-purple-500 backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-400/20 min-w-[280px] h-20"
                     >
                       <div className="flex items-center justify-center space-x-4">
@@ -709,7 +718,7 @@ export default function LandingPage() {
                     <Button
                       onClick={() => {
                         const link = document.createElement('a');
-                        link.href = 'https://github.com/swmaeStrong/Pawcus/releases/latest/download/Pawcus.dmg';
+                        link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/download/v0.8.0/Pawcus.dmg';
                         link.download = 'Pawcus.dmg';
                         document.body.appendChild(link);
                         link.click();
@@ -737,7 +746,64 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
+
+      {/* Footer - Business Information */}
+      <footer className="py-12 border-t border-gray-200/50 bg-gray-50/80 backdrop-blur-sm relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 via-white/30 to-gray-100/50" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center space-y-4">
+            {/* Company Logo */}
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-gray-500/20 rounded-full blur-lg" />
+                <Image
+                  src="/icons/final_icon_128x128.png"
+                  alt="Pawcus Logo"
+                  width={40}
+                  height={40}
+                  className="relative z-10"
+                />
+              </div>
+            </div>
+            
+            {/* Business Information */}
+            <div className="text-sm text-gray-600 space-y-2">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
+                <span className="font-medium">상호명: 집중</span>
+                <span className="hidden md:inline text-gray-400">|</span>
+                <span>사업자등록번호: 255-18-02409</span>
+              </div>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
+                <span>대표자: 김영현</span>
+                <span className="hidden md:inline text-gray-400">|</span>
+                <span>전화번호: 010-5172-5645</span>
+              </div>
+              <div className="text-center">
+                <span>사업장주소: 전라남도 나주시 우정로 77</span>
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <nav className="pt-4 border-t border-gray-200/50" aria-label="Footer Navigation">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-2 md:space-y-0 mb-4">
+                <Link href="/terms" className="text-sm text-gray-600 hover:text-purple-600 transition-colors">
+                  이용약관
+                </Link>
+                <span className="hidden md:inline text-gray-400" aria-hidden="true">|</span>
+                <Link href="/privacy" className="text-sm text-gray-600 hover:text-purple-600 transition-colors">
+                  개인정보처리방침
+                </Link>
+              </div>
+              
+              <p className="text-xs text-gray-500">
+                © 2025 Pawcus. All rights reserved.
+              </p>
+            </nav>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
