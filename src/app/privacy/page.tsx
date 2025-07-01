@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-[#ECECEC] relative overflow-hidden">
       {/* Navigation */}
       <Navigation />
-      
+
       {/* Background */}
       <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-50" />
       <div className="fixed inset-0">
