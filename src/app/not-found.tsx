@@ -1,7 +1,11 @@
+"use client";
+
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Home, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
+
+export const dynamic = 'force-dynamic';
 
 export default function NotFound() {
   return (
@@ -41,20 +45,17 @@ export default function NotFound() {
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/">
-            <Button className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700">
-              <Home className="w-4 h-4 mr-2" />
-              홈으로 돌아가기
-            </Button>
+          <Link href="/" className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-medium px-4 py-2 rounded-lg inline-flex items-center justify-center transition-colors">
+            <Home className="w-4 h-4 mr-2" />
+            홈으로 돌아가기
           </Link>
-          <Button 
-            variant="outline" 
+          <button 
             onClick={() => window.history.back()}
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-lg inline-flex items-center justify-center transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             이전 페이지로
-          </Button>
+          </button>
         </div>
       </div>
     </div>

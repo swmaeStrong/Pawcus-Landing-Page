@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  // Skip problematic pages during build
+  experimental: {
+    workerThreads: false,
+    cpus: 1
   }
 };
 

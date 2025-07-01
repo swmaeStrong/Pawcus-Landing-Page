@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic';
+
 import { useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { RefreshCw, Home, AlertTriangle } from 'lucide-react'
@@ -56,21 +58,16 @@ export default function Error({
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
+          <button 
             onClick={reset}
-            className="w-full sm:w-auto bg-red-600 hover:bg-red-700"
+            className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-lg inline-flex items-center justify-center transition-colors"
           >
             <RefreshCw className="w-4 h-4 mr-2" />
             다시 시도
-          </Button>
-          <Link href="/">
-            <Button 
-              variant="outline"
-              className="w-full sm:w-auto"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              홈으로 돌아가기
-            </Button>
+          </button>
+          <Link href="/" className="w-full sm:w-auto border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-lg inline-flex items-center justify-center transition-colors">
+            <Home className="w-4 h-4 mr-2" />
+            홈으로 돌아가기
           </Link>
         </div>
 

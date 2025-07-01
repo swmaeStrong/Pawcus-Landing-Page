@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
@@ -336,11 +338,9 @@ export default function PrivacyPage() {
 
           {/* Back to Home */}
           <div className="text-center pt-8">
-            <Link href="/">
-              <button className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                메인으로 돌아가기
-              </button>
+            <Link href="/" className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              메인으로 돌아가기
             </Link>
           </div>
         </div>
