@@ -121,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <head>
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
         <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />

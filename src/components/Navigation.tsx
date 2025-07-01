@@ -4,16 +4,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
-    { href: '/', label: 'Home', icon: Home },
-  ];
+  const navItems: any[] = [];
 
   const isActive = (href: string) => {
     if (href === '/') {
@@ -23,7 +21,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm" role="navigation" aria-label="Main Navigation">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#1C1C1C]/80 backdrop-blur-md border-b border-gray-200/50 dark:border-[rgb(80,80,80)]/50 shadow-sm" role="navigation" aria-label="Main Navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -38,7 +36,7 @@ export default function Navigation() {
                 className="relative z-10"
               />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 dark:from-[rgb(168,85,247)] dark:to-[rgb(220,220,220)] bg-clip-text text-transparent">
               Pawcus
             </span>
           </Link>
@@ -52,10 +50,10 @@ export default function Navigation() {
                   <Link
                     href={item.href}
                     role="menuitem"
-                    className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-100 ${
+                    className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-100 dark:hover:bg-[#2D2D2D] ${
                       isActive(item.href)
-                        ? 'text-purple-600 bg-purple-50'
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'text-purple-600 dark:text-[rgb(168,85,247)] bg-purple-50 dark:bg-[#2D2D2D]'
+                        : 'text-gray-600 dark:text-[rgb(153,153,153)] hover:text-gray-900 dark:hover:text-[rgb(220,220,220)]'
                     }`}
                     aria-current={isActive(item.href) ? 'page' : undefined}
                   >
@@ -85,7 +83,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div id="mobile-menu" className="md:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-md">
+          <div id="mobile-menu" className="md:hidden border-t border-gray-200/50 dark:border-[rgb(80,80,80)]/50 bg-white/95 dark:bg-[#1C1C1C]/95 backdrop-blur-md">
             <ul className="px-2 pt-2 pb-3 space-y-1" role="menu">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -97,8 +95,8 @@ export default function Navigation() {
                       onClick={() => setIsOpen(false)}
                       className={`flex items-center px-3 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
                         isActive(item.href)
-                          ? 'text-purple-600 bg-purple-50'
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                          ? 'text-purple-600 dark:text-[rgb(168,85,247)] bg-purple-50 dark:bg-[#2D2D2D]'
+                          : 'text-gray-600 dark:text-[rgb(153,153,153)] hover:text-gray-900 dark:hover:text-[rgb(220,220,220)] hover:bg-gray-100 dark:hover:bg-[#2D2D2D]'
                       }`}
                       aria-current={isActive(item.href) ? 'page' : undefined}
                     >
