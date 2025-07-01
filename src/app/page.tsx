@@ -212,7 +212,7 @@ export default function LandingPage() {
                   <Button
                     onClick={() => {
                       const link = document.createElement('a');
-                      link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/download/v0.8.0/Pawcus.dmg';
+                      link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pawcus.dmg';
                       link.download = 'Pawcus.dmg';
                       document.body.appendChild(link);
                       link.click();
