@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <p className="text-gray-600 leading-relaxed">
-                집중(이하 '회사')은 이용자의 개인정보를 중요시하며, 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령을 준수하고 있습니다. 
+                집중(이하 &apos;회사&apos;)은 이용자의 개인정보를 중요시하며, 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령을 준수하고 있습니다. 
                 회사는 개인정보 처리방침을 통하여 이용자가 제공하는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
               </p>
             </CardContent>
@@ -246,8 +246,8 @@ export default function PrivacyPage() {
               </div>
               
               <p className="text-sm text-gray-600">
-                개인정보 조회, 수정을 위해서는 '개인정보변경'(또는 '회원정보수정' 등)을, 
-                가입해지(동의철회)를 위해서는 "회원탈퇴"를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다.
+                개인정보 조회, 수정을 위해서는 &apos;개인정보변경&apos;(또는 &apos;회원정보수정&apos; 등)을, 
+                가입해지(동의철회)를 위해서는 &quot;회원탈퇴&quot;를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다.
               </p>
             </CardContent>
           </Card>

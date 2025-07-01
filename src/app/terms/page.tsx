@@ -57,7 +57,7 @@ export default function TermsPage() {
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <p className="text-gray-600 leading-relaxed">
-                이 약관은 집중(이하 "회사"라 합니다)이 제공하는 Pawcus 서비스(이하 "서비스"라 합니다)의 이용과 관련하여 
+                이 약관은 집중(이하 &quot;회사&quot;라 합니다)이 제공하는 Pawcus 서비스(이하 &quot;서비스&quot;라 합니다)의 이용과 관련하여 
                 회사와 이용자 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
               </p>
             </CardContent>
@@ -75,35 +75,35 @@ export default function TermsPage() {
               
               <div className="space-y-3 ml-4">
                 <div>
-                  <span className="font-medium text-gray-700">1. "서비스"</span>
+                  <span className="font-medium text-gray-700">1. &quot;서비스&quot;</span>
                   <p className="text-sm text-gray-600 ml-4">
                     회사가 제공하는 모든 생산성 관리 및 시간 추적 관련 서비스를 의미합니다.
                   </p>
                 </div>
                 
                 <div>
-                  <span className="font-medium text-gray-700">2. "이용자"</span>
+                  <span className="font-medium text-gray-700">2. &quot;이용자&quot;</span>
                   <p className="text-sm text-gray-600 ml-4">
                     본 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.
                   </p>
                 </div>
                 
                 <div>
-                  <span className="font-medium text-gray-700">3. "회원"</span>
+                  <span className="font-medium text-gray-700">3. &quot;회원&quot;</span>
                   <p className="text-sm text-gray-600 ml-4">
                     회사와 서비스 이용계약을 체결하고 이용자 아이디를 부여받은 이용자를 말합니다.
                   </p>
                 </div>
                 
                 <div>
-                  <span className="font-medium text-gray-700">4. "아이디(ID)"</span>
+                  <span className="font-medium text-gray-700">4. &quot;아이디(ID)&quot;</span>
                   <p className="text-sm text-gray-600 ml-4">
                     회원의 식별과 서비스 이용을 위하여 회원이 정하고 회사가 승인하는 문자와 숫자의 조합을 의미합니다.
                   </p>
                 </div>
                 
                 <div>
-                  <span className="font-medium text-gray-700">5. "비밀번호"</span>
+                  <span className="font-medium text-gray-700">5. &quot;비밀번호&quot;</span>
                   <p className="text-sm text-gray-600 ml-4">
                     회원이 부여받은 아이디와 일치되는 회원임을 확인하기 위해 회원 자신이 정한 문자 또는 숫자의 조합을 의미합니다.
                   </p>
@@ -149,7 +149,7 @@ export default function TermsPage() {
               <div>
                 <h4 className="font-semibold text-gray-800 mb-2">① 이용계약의 성립</h4>
                 <p className="text-gray-600 ml-4">
-                  이용계약은 회원이 되고자 하는 자(이하 "가입신청자")가 약관의 내용에 대하여 동의를 한 다음 
+                  이용계약은 회원이 되고자 하는 자(이하 &quot;가입신청자&quot;)가 약관의 내용에 대하여 동의를 한 다음 
                   회원가입신청을 하고 회사가 이러한 신청에 대하여 승낙함으로써 체결됩니다.
                 </p>
               </div>
