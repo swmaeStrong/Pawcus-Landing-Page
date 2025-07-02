@@ -206,36 +206,74 @@ export default function LandingPage() {
                 사용 로그를 실시간으로 분석하여 카테고라이징을 해주고, 가장 많이 사용하는 카테고리의 통계를 내줍니다
               </p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Top 6 Category Analysis - Square aspect ratio with padding */}
-              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                <div className="aspect-square bg-[#1C1C1C] dark:bg-[#1C1C1C] flex items-center justify-center p-4">
-                  <img 
-                    src="/screenshots/categoryAnalysis.png" 
-                    alt="Top 6 Category Analysis"
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-                  <h4 className="font-semibold text-lg mb-2 text-white">카테고리별 시간 분석</h4>
-                  <p className="text-sm text-gray-200 mb-2">Development, Design, Browser 등 6개 영역별 시간 사용 패턴을 레이더 차트로 시각화합니다.</p>
-                  <p className="text-xs text-gray-300">개발자의 주요 활동 영역을 한눈에 파악하고 어느 분야에 더 집중해야 하는지 인사이트를 얻을 수 있습니다.</p>
+            {/* Category Analysis Section */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+              <div className="order-2 lg:order-1">
+                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">카테고리별 시간 분석</h3>
+                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+                  Development, Design, Browser 등 6개 영역별 시간 사용 패턴을 레이더 차트로 시각화합니다.
+                </p>
+                <div className="space-y-6">
+                  <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">주요 활동 영역 파악</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">개발자의 주요 활동 영역을 한눈에 파악할 수 있습니다.</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">집중 분야 인사이트</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">어느 분야에 더 집중해야 하는지 데이터 기반 인사이트를 제공합니다.</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">시각적 데이터 표현</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">레이더 차트로 복합적인 데이터를 직관적으로 표현합니다.</p>
+                  </div>
                 </div>
               </div>
-              
-              {/* Recent Activity - Portrait aspect ratio */}
-              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                <img 
-                  src="/screenshots/recentActivity.png" 
-                  alt="Recent Activity Log"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-                  <h4 className="font-semibold text-lg mb-2 text-white">실시간 활동 추적</h4>
-                  <p className="text-sm text-gray-200 mb-2">VS Code, Chrome, Figma 등 앱별 활동을 실시간으로 기록하고 자동으로 카테고리를 분류합니다.</p>
-                  <p className="text-xs text-gray-300">어떤 앱에서 얼마나 오랫동안 작업했는지 정확하게 추적하여 시간 관리를 돕습니다.</p>
+              <div className="order-1 lg:order-2">
+                <figure>
+                  <div className="aspect-square bg-[#1C1C1C] dark:bg-[#1C1C1C] flex items-center justify-center p-4 rounded-xl shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <img 
+                      src="/screenshots/categoryAnalysis.png" 
+                      alt="Top 6 Category Analysis"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 relative z-10"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+
+            {/* Recent Activity Section */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+              <div className="order-1">
+                <figure>
+                  <div className="rounded-xl shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-emerald-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <img 
+                      src="/screenshots/recentActivity.png" 
+                      alt="Recent Activity Log"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 relative z-10"
+                    />
+                  </div>
+                </figure>
+              </div>
+              <div className="order-2">
+                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 활동 추적</h3>
+                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+                  VS Code, Chrome, Figma 등 앱별 활동을 실시간으로 기록하고 자동으로 카테고리를 분류합니다.
+                </p>
+                <div className="space-y-6">
+                  <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">정확한 시간 추적</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">어떤 앱에서 얼마나 오랫동안 작업했는지 정확하게 추적합니다.</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">자동 카테고리 분류</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">AI가 활동을 자동으로 분석하여 적절한 카테고리로 분류합니다.</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">시간 관리 최적화</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">상세한 활동 로그를 통해 시간 관리를 최적화할 수 있습니다.</p>
+                  </div>
                 </div>
               </div>
             </div>
