@@ -43,37 +43,6 @@ const leaderboardData = [
   { rank: 47, name: 'You', time: '1시간 23분', points: 850, avatar: 'Y', trend: '+2%', rankImage: null, streak: 1 },
 ]
 
-// 핵심 기능들
-const features = [
-  {
-    icon: Trophy,
-    title: '리더보드를 통한 경쟁',
-    description: '동료들과 건전한 경쟁을 통해 생산성을 높이고 서로 동기부여를 받으세요',
-    gradient: 'from-amber-400 via-yellow-500 to-orange-600',
-    glowColor: 'shadow-amber-500/30'
-  },
-  {
-    icon: Zap,
-    title: '스마트 시간 추적',
-    description: 'AI가 자동으로 활동을 분석하고 정확한 시간 추적으로 업무 패턴을 파악합니다',
-    gradient: 'from-blue-400 via-cyan-500 to-indigo-600',
-    glowColor: 'shadow-blue-500/30'
-  },
-  {
-    icon: BarChart3,
-    title: '개인 차트를 통한 분석',
-    description: '상세한 차트와 그래프로 생산성 패턴을 시각화하고 개선점을 찾아보세요',
-    gradient: 'from-emerald-400 via-green-500 to-teal-600',
-    glowColor: 'shadow-emerald-500/30'
-  },
-  {
-    icon: Target,
-    title: '자주 이용하는 카테고리 분석',
-    description: '가장 많이 사용하는 앱과 카테고리를 분석하여 업무 효율성을 최적화합니다',
-    gradient: 'from-purple-400 via-violet-500 to-indigo-600',
-    glowColor: 'shadow-purple-500/30'
-  }
-]
 
 // 주요 통계 데이터 제거
 
@@ -228,213 +197,118 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Analytics Section - 각각을 큰 컴포넌트로 변경 */}
-        <section ref={dashboardRef} className="py-24 relative" aria-labelledby="analytics-heading">
-          <header className="text-center mb-16 scroll-animate">
-            <div className="relative inline-block">
-              <h2 id="analytics-heading" className="text-5xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
-                <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">Analytics</span> & <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">Competitions</span>
-              </h2>
-            </div>
-            <p className="text-xl text-gray-600 dark:text-[rgb(153,153,153)] max-w-3xl mx-auto">
-              데이터 기반 인사이트로 생산성 패턴을 발견하고 최적화하세요
-            </p>
-          </header>
-
-          {/* Category Analysis */}
+        {/* Screenshots Gallery */}
+        <section ref={dashboardRef} className="py-24 relative" aria-labelledby="features-heading">
           <article className="mb-24 scroll-animate">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold mb-6 dark:text-[rgb(220,220,220)]"> Category Analysis</h3>
-                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
-                  카테고리별 시간 사용 패턴을 한눈에 파악하고 어떤 영역에 더 집중해야 하는지 알아보세요.
-                </p>
-                <div className="space-y-6">
-                  <div className="bg-gray-50 dark:bg-[#2D2D2D] p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">개발 작업</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">하루 평균 7.5시간으로 가장 많은 시간을 투자하는 영역입니다.</p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-[#2D2D2D] p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">커뮤니케이션</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">팀 협업과 회의에 3.1시간을 할애하며 적정 수준을 유지하고 있습니다.</p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-[#2D2D2D] p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">학습 활동</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">지속적인 성장을 위해 2.7시간의 학습 시간을 확보하고 있습니다.</p>
-                  </div>
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold mb-6 dark:text-[rgb(220,220,220)]">Pawcus Features</h3>
+              <p className="text-2xl dark:text-[rgb(153,153,153)] leading-relaxed">
+                사용 로그를 실시간으로 분석하여 카테고라이징을 해주고, 가장 많이 사용하는 카테고리의 통계를 내줍니다
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Top 6 Category Analysis - Square aspect ratio with padding */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                <div className="aspect-square bg-[#1C1C1C] dark:bg-[#1C1C1C] flex items-center justify-center p-4">
+                  <img 
+                    src="/screenshots/categoryAnalysis.png" 
+                    alt="Top 6 Category Analysis"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <h4 className="font-semibold text-lg mb-2 text-white">카테고리별 시간 분석</h4>
+                  <p className="text-sm text-gray-200 mb-2">Development, Design, Browser 등 6개 영역별 시간 사용 패턴을 레이더 차트로 시각화합니다.</p>
+                  <p className="text-xs text-gray-300">개발자의 주요 활동 영역을 한눈에 파악하고 어느 분야에 더 집중해야 하는지 인사이트를 얻을 수 있습니다.</p>
                 </div>
               </div>
-              <div className="order-1 lg:order-2">
-                <Card className="bg-white/80 dark:bg-[#1C1C1C]/90 backdrop-blur-sm shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <CardContent className="p-8 relative z-10">
-                    <ResponsiveContainer width="100%" height={400}>
-                      <RadarChart data={timeData}>
-                        <PolarGrid gridType="polygon" stroke="rgb(80,80,80)" strokeWidth={1.5} />
-                        <PolarAngleAxis 
-                          dataKey="skill" 
-                          tick={{ fill: 'rgb(220,220,220)', fontSize: 14, fontWeight: 'bold' }}
-                        />
-                        <PolarRadiusAxis 
-                          angle={90} 
-                          domain={[0, 10]} 
-                          tick={{ fill: 'rgb(153,153,153)', fontSize: 12 }}
-                          tickFormatter={(value) => `${value}h`}
-                        />
-                        <Tooltip 
-                          content={({ payload, label }) => {
-                            if (payload && payload.length > 0) {
-                              const data = payload[0].payload;
-                              const percentage = Math.round((data.value / data.fullMark) * 100);
-                              return (
-                                <div className="bg-[#1C1C1C] p-4 rounded-lg shadow-xl border border-[rgb(80,80,80)] backdrop-blur-sm">
-                                  <p className="font-semibold text-[rgb(220,220,220)] text-lg">{data.skill}</p>
-                                  <p className="text-[rgb(168,85,247)] font-bold text-lg">{data.value}h ({percentage}%)</p>
-                                  <p className="text-[rgb(153,153,153)]">목표: {data.fullMark}h</p>
-                                </div>
-                              );
-                            }
-                            return null;
-                          }}
-                        />
-                        <Radar
-                          name="Usage Time"
-                          dataKey="value"
-                          stroke="rgb(168,85,247)"
-                          fill="rgb(168,85,247)"
-                          fillOpacity={0.3}
-                          strokeWidth={4}
-                          dot={{ fill: 'rgb(168,85,247)', strokeWidth: 3, r: 8, stroke: '#1C1C1C' }}
-                        />
-                      </RadarChart>
-                    </ResponsiveContainer>
-                  </CardContent>
-                </Card>
+              
+              {/* Recent Activity - Portrait aspect ratio */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                <img 
+                  src="/screenshots/recentActivity.png" 
+                  alt="Recent Activity Log"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <h4 className="font-semibold text-lg mb-2 text-white">실시간 활동 추적</h4>
+                  <p className="text-sm text-gray-200 mb-2">VS Code, Chrome, Figma 등 앱별 활동을 실시간으로 기록하고 자동으로 카테고리를 분류합니다.</p>
+                  <p className="text-xs text-gray-300">어떤 앱에서 얼마나 오랫동안 작업했는지 정확하게 추적하여 시간 관리를 돕습니다.</p>
+                </div>
               </div>
             </div>
-          </article>
-
-          {/* Usage vs Development */}
-          <article className="mb-24 scroll-animate">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-1">
-                <figure>
-                  <Card className="bg-white/80 dark:bg-[#1C1C1C]/90 backdrop-blur-sm shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <CardContent className="p-8 relative z-10">
-                    <ResponsiveContainer width="100%" height={400}>
-                      <AreaChart data={timeUsageData}>
-                        <defs>
-                          <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
-                            <stop offset="95%" stopColor="#3b82f6" stopOpacity={0.1}/>
-                          </linearGradient>
-                          <linearGradient id="colorDevelopment" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#10b981" stopOpacity={0.8}/>
-                            <stop offset="95%" stopColor="#10b981" stopOpacity={0.1}/>
-                          </linearGradient>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="rgb(80,80,80)" strokeWidth={1} />
-                        <XAxis 
-                          dataKey="time" 
-                          stroke="rgb(153,153,153)"
-                          fontSize={12}
-                          tick={{ fill: 'rgb(220,220,220)' }}
-                        />
-                        <YAxis 
-                          stroke="rgb(153,153,153)"
-                          fontSize={12}
-                          tick={{ fill: 'rgb(220,220,220)' }}
-                        />
-                        <Tooltip 
-                          content={({ payload, label }) => {
-                            if (payload && payload.length > 0) {
-                              const total = payload[0]?.value || 0;
-                              const development = payload[1]?.value || 0;
-                              const efficiency = total > 0 ? Math.round((development / total) * 100) : 0;
-                              return (
-                                <div className="bg-[#1C1C1C] p-4 rounded-lg shadow-xl border border-[rgb(80,80,80)] backdrop-blur-sm">
-                                  <p className="font-semibold text-[rgb(220,220,220)] mb-3 text-lg">{label}</p>
-                                  <div className="space-y-2">
-                                    <p className="flex items-center gap-3 text-[rgb(220,220,220)]">
-                                      <span className="w-4 h-4 bg-blue-500 rounded-full"></span>
-                                      <span>Total: {total}분</span>
-                                    </p>
-                                    <p className="flex items-center gap-3 text-[rgb(220,220,220)]">
-                                      <span className="w-4 h-4 bg-emerald-500 rounded-full"></span>
-                                      <span>Development: {development}분</span>
-                                    </p>
-                                    <p className="text-[rgb(153,153,153)] pt-2 font-semibold">효율성: {efficiency}%</p>
-                                  </div>
-                                </div>
-                              );
-                            }
-                            return null;
-                          }}
-                        />
-                        <Area
-                          type="monotone"
-                          dataKey="total"
-                          stroke="#3b82f6"
-                          strokeWidth={3}
-                          fill="url(#colorTotal)"
-                        />
-                        <Area
-                          type="monotone"
-                          dataKey="development"
-                          stroke="#10b981"
-                          strokeWidth={3}
-                          fill="url(#colorDevelopment)"
-                        />
-                      </AreaChart>
-                    </ResponsiveContainer>
-                  </CardContent>
-                  </Card>
-                </figure>
+            
+            {/* Wide screenshots in separate row */}
+            <div className="text-center mb-12 mt-16">
+              <h4 className="text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)]">시간대별로 나의 집중도를 분석해보세요!</h4>
+              <p className="text-lg dark:text-[rgb(153,153,153)]">언제 가장 집중력이 높은지 파악하여 중요한 작업을 적절한 시간에 배치하세요</p>
+            </div>
+            <div className="grid grid-cols-1 gap-8">
+              {/* Hourly Usage Log - Wide landscape */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                <img 
+                  src="/screenshots/hourlyUsageLog.png" 
+                  alt="Hourly Usage Analytics"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <h4 className="font-semibold text-lg mb-2 text-white">시간대별 사용량 분석</h4>
+                  <p className="text-sm text-gray-200 mb-2">하루 종일 사용량과 개발시간을 비교하여 생산성이 가장 높은 시간대를 찾아줍니다.</p>
+                  <p className="text-xs text-gray-300">언제 가장 집중력이 높은지 알아내어 중요한 작업을 적절한 시간에 배치할 수 있습니다.</p>
+                </div>
               </div>
-              <div className="order-2">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]"> Efficiency Analysis</h3>
-                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
-                  시간대별 총 사용시간과 개발시간을 비교하여 생산성이 가장 높은 시간대를 파악하세요.
-                </p>
-                <div className="space-y-6">
-                  <div className="bg-gray-50 dark:bg-[#2D2D2D] p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">하루 평균 사용 시간</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">총 8.5시간 중 개발에 6.8시간을 할애하여 높은 집중도를 보입니다.</p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-[#2D2D2D] p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">생산성 효율</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">전체 사용시간 대비 80%의 개발 효율성을 달성하고 있습니다.</p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-[#2D2D2D] p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">최적 시간대</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">오후 3시부터 5시까지가 가장 집중력이 높은 시간대입니다.</p>
-                  </div>
+            </div>
+            
+            {/* Timeline in full width */}
+            <div className="text-center mb-12 mt-16">
+              <h4 className="text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)]">이제 나의 업무시간, 휴식 습관을 체크해보세요!</h4>
+              <p className="text-lg dark:text-[rgb(153,153,153)]">하루 전체의 업무 패턴을 직관적으로 파악하여 시간 관리를 개선하세요</p>
+            </div>
+            <div className="grid grid-cols-1 gap-8">
+              {/* Timeline - Ultra wide landscape */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                <img 
+                  src="/screenshots/timeline.png" 
+                  alt="Daily Timeline View"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                  <h4 className="font-semibold text-lg mb-2 text-white">일일 업무 타임라인</h4>
+                  <p className="text-sm text-gray-200 mb-2">24시간 동안의 모든 활동을 meetings, work, breaks 등으로 분류하여 시간 블록으로 표시합니다.</p>
+                  <p className="text-xs text-gray-300">하루 전체의 업무 패턴을 직관적으로 파악할 수 있어 시간 또는 생산성 개선에 도움이 됩니다.</p>
                 </div>
               </div>
             </div>
           </article>
 
           {/* Leaderboard */}
+          <div className="text-center mb-12 mt-16">
+            <h4 className="text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)]">동료들과 함께 경쟁하며 성장하세요!</h4>
+            <p className="text-lg dark:text-[rgb(153,153,153)]">건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요</p>
+          </div>
           <article className="mb-12 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]"> Leaderboard</h3>
+                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 리더보드</h3>
                 <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
-                  동료들과 건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요.
+                  Daily, Weekly, Monthly 기간별로 동료들과 개발 시간을 비교하고 순위를 확인하세요.
                 </p>
                 <div className="space-y-6">
                   <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">현재 순위</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">전체 참가자 중 47위로 상위 15%에 위치하고 있습니다.</p>
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">카테고리별 경쟁</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">Development, Design, LLM 등 다양한 영역에서 동료들과 경쟁할 수 있습니다.</p>
                   </div>
                   <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">이번 주 성과</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">지난주 대비 3랭크 상승하며 꾸준한 발전을 보이고 있습니다.</p>
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">실시간 업데이트</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">활동 시간이 실시간으로 집계되어 순위가 즉시 반영됩니다.</p>
                   </div>
                   <div className="bg-gray-50 dark:bg-[#1C1C1C] p-4 rounded-lg border border-gray-200 dark:border-[rgb(80,80,80)]">
-                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">다음 목표</h4>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">상위 10% 진입을 목표로 지속적인 생산성 향상에 집중합니다.</p>
+                    <h4 className="font-semibold text-gray-800 dark:text-[rgb(220,220,220)] mb-2">건전한 동기부여</h4>
+                    <p className="text-gray-600 dark:text-[rgb(153,153,153)]">팀원들과 함께 성장하며 생산성 향상을 위한 동기를 얻을 수 있습니다.</p>
                   </div>
                 </div>
               </div>
@@ -537,57 +411,6 @@ export default function LandingPage() {
           </article>
         </section>
 
-        {/* Features Section - 더 임팩트 있게 */}
-        <section ref={featuresRef} className="py-24 relative" aria-labelledby="features-heading">
-          <header className="text-center mb-20 scroll-animate">
-            <div className="relative inline-block">
-              {/* Pawcus Mini Icon */}
-              <div className="mb-6 flex justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-lg" />
-                  <Image
-                    src="/icons/final_icon_128x128.png"
-                    alt="Pawcus Logo"
-                    width={60}
-                    height={60}
-                    className="relative z-10 "
-                  />
-                </div>
-              </div>
-              
-              <h2 id="features-heading" className="text-5xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
-                <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">핵심 기능</span>
-              </h2>
-            </div>
-            <p className="text-xl text-gray-600 dark:text-[rgb(153,153,153)] max-w-3xl mx-auto">
-              생산성 혁신을 위한 스마트한 도구들
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <article
-                key={index}
-                className="bg-white/80 dark:bg-[#1C1C1C]/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-0 dark:border-[rgb(80,80,80)] hover:shadow-2xl transition-all duration-500 scroll-animate group hover:scale-[1.03] relative overflow-hidden"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="flex items-start space-x-6 relative z-10">
-                  <div className={`flex-shrink-0 inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-xl shadow-xl ${feature.glowColor} group-hover:scale-110 transition-all duration-500 group-hover:shadow-2xl`}>
-                    <feature.icon className="h-7 w-7 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-[rgb(220,220,220)] group-hover:text-purple-700 dark:group-hover:text-[rgb(168,85,247)] transition-colors duration-300">{feature.title}</h3>
-                    <p className="text-gray-600 dark:text-[rgb(153,153,153)] text-base leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-                
-              </article>
-            ))}
-          </div>
-        </section>
 
         {/* CTA Section - 부드럽고 조화로운 디자인 */}
         <section className="py-24 text-center relative" aria-labelledby="cta-heading">
