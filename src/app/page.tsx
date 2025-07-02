@@ -143,21 +143,6 @@ export default function LandingPage() {
           <div className="scroll-animate">
             <div className="mb-12 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl" />
-              
-              {/* Pawcus Icon */}
-              <div className="mb-8 flex justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-full blur-xl " />
-                  <Image
-                    src="/icons/final_icon_256x256.png"
-                    alt="Pawcus Logo"
-                    width={120}
-                    height={120}
-                    className="relative z-10 "
-                  />
-                </div>
-              </div>
-              
               <h1 id="hero-heading" className="text-9xl font-black mb-6 text-gray-800 dark:text-[rgb(220,220,220)] relative z-10">
                 Pawcus
               </h1>
@@ -260,10 +245,8 @@ export default function LandingPage() {
           <article className="mb-24 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
-                  <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">Category</span> Analysis
-                </h3>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                <h3 className="text-4xl font-bold mb-6 dark:text-[rgb(220,220,220)]"> Category Analysis</h3>
+                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
                   카테고리별 시간 사용 패턴을 한눈에 파악하고 어떤 영역에 더 집중해야 하는지 알아보세요.
                 </p>
                 <div className="space-y-6">
@@ -410,10 +393,8 @@ export default function LandingPage() {
                 </figure>
               </div>
               <div className="order-2">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
-                  <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">Efficiency</span> Analysis
-                </h3>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]"> Efficiency Analysis</h3>
+                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
                   시간대별 총 사용시간과 개발시간을 비교하여 생산성이 가장 높은 시간대를 파악하세요.
                 </p>
                 <div className="space-y-6">
@@ -438,10 +419,8 @@ export default function LandingPage() {
           <article className="mb-12 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
-                  <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">Leaderboard</span>
-                </h3>
-                <p className="text-xl text-gray-600 dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]"> Leaderboard</h3>
+                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
                   동료들과 건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요.
                 </p>
                 <div className="space-y-6">
