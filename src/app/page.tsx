@@ -49,16 +49,24 @@ const leaderboardData = [
 
 export default function LandingPage() {
   const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!')
+  const [toastType, setToastType] = useState<'success' | 'error'>('success')
   const dashboardRef = useRef<HTMLElement>(null)
   const featuresRef = useRef<HTMLElement>(null)
 
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
+      setToastMessage('명령어가 클립보드에 복사되었습니다!')
+      setToastType('success')
       setShowToast(true)
       setTimeout(() => setShowToast(false), 3000)
     } catch (err) {
       console.error('Failed to copy: ', err)
+      setToastMessage('복사에 실패했습니다. 수동으로 복사해주세요.')
+      setToastType('error')
+      setShowToast(true)
+      setTimeout(() => setShowToast(false), 3000)
     }
   }
 
@@ -99,10 +107,18 @@ export default function LandingPage() {
 
       {/* Toast Notification */}
       {showToast && (
-        <aside className="fixed top-20 right-4 z-50 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-right duration-500 border border-emerald-400/50" role="alert" aria-live="polite">
-          <CheckCircle className="h-5 w-5 " aria-hidden="true" />
-          <span className="font-medium">명령어가 클립보드에 복사되었습니다!</span>
-          <Sparkles className="h-4 w-4 " aria-hidden="true" />
+        <aside 
+          className={`fixed top-20 right-4 z-50 px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-right duration-500 border ${
+            toastType === 'success' 
+              ? 'bg-gradient-to-r from-emerald-500 to-green-600 border-emerald-400/50' 
+              : 'bg-gradient-to-r from-red-500 to-red-600 border-red-400/50'
+          } text-white`} 
+          role="alert" 
+          aria-live="polite"
+        >
+          <CheckCircle className="h-5 w-5" aria-hidden="true" />
+          <span className="font-medium">{toastMessage}</span>
+          {toastType === 'success' && <Sparkles className="h-4 w-4" aria-hidden="true" />}
         </aside>
       )}
 
@@ -130,6 +146,23 @@ export default function LandingPage() {
               <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">개인과 팀의 생산성을 혁신적으로 향상시켜보세요.</span>
             </p>
             
+            {/* Demo Video */}
+            <div className="flex justify-center mb-16">
+              <video 
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls 
+                className="rounded-2xl shadow-2xl w-full max-w-4xl"
+                style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}
+              >
+                <source src="/screenshots/demo.mov" type="video/quicktime" />
+                <source src="/screenshots/demo.mov" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            
             {/* Download Options - 간단하고 깔끔한 디자인 */}
             <section className="flex flex-col items-center mb-16 space-y-12" aria-labelledby="download-heading">
               <header className="text-center">
@@ -147,7 +180,7 @@ export default function LandingPage() {
                 <div className="group relative w-full md:w-auto">
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 " />
                   <Button
-                    onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install —cask pawcus')}
+                    onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
                     className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-500 dark:border-[rgb(80,80,80)] hover:border-purple-600 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-500/20 min-w-[280px] h-20"
                   >
                     <div className="flex items-center justify-center space-x-4">
@@ -486,7 +519,7 @@ export default function LandingPage() {
                     <Button
                       variant="ghost"
                       size="lg"
-                      onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install —cask pawcus')}
+                      onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
                       className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-400 dark:border-[rgb(80,80,80)] hover:border-purple-500 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-400/20 min-w-[280px] h-20"
                     >
                       <div className="flex items-center justify-center space-x-4">
