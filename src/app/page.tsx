@@ -167,8 +167,8 @@ export default function LandingPage() {
                 className="rounded-2xl shadow-2xl w-full max-w-4xl"
                 style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}
               >
-                <source src="/screenshots/demo.mov" type="video/quicktime" />
-                <source src="/screenshots/demo.mov" type="video/mp4" />
+                <source src="/screenshots/statistics-adv.mov" type="video/quicktime" />
+                <source src="/screenshots/statistics-adv.mov" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
