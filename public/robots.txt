@@ -1,0 +1,18 @@
+# Robots.txt for Pawcus Landing Page
+# This file controls web crawler behavior
+
+# Allow all crawlers but with restrictions
+User-agent: *
+
+# Crawl delay to prevent excessive requests (in seconds)
+Crawl-delay: 1
+
+# Allow access to all paths
+Allow: /
+
+# Disallow specific paths if needed in the future
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.pawcus.dev/sitemap.xml
