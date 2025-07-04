@@ -144,6 +144,22 @@ export default function RootLayout({
         {/* 카카오톡 앱링크 */}
         <meta property="al:web:url" content="https://pawcus.dev" />
         <meta property="al:web:should_fallback" content="true" />
+        
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-H02Z2DTRG4"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-H02Z2DTRG4');
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
