@@ -18,15 +18,21 @@ export const metadata: Metadata = {
     template: "%s | Pawcus"
   },
   description: "개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
-  keywords: ["개발자", "시간 추적", "리더보드", "생산성", "코딩", "개발 도구"],
+  keywords: ["개발자", "시간 추적", "리더보드", "생산성", "코딩", "개발 도구", "productivity", "time tracking", "developer tools"],
   authors: [{ name: "Pawcus Team" }],
   creator: "Pawcus Team",
   publisher: "Pawcus",
   applicationName: "Pawcus",
-  metadataBase: new URL('https://pawcus.dev'),
+  metadataBase: new URL('https://www.pawcus.dev'),
   alternates: {
-    canonical: 'https://pawcus.dev',
+    canonical: 'https://www.pawcus.dev',
+    languages: {
+      'ko': 'https://www.pawcus.dev',
+      'en': 'https://www.pawcus.dev/en',
+    },
   },
+  category: 'productivity',
+  classification: 'Software Application',
   robots: {
     index: true,
     follow: true,
@@ -44,19 +50,19 @@ export const metadata: Metadata = {
     title: "Pawcus - 개발자를 위한 스마트 생산성 관리",
     description: "개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
     type: "website",
-    url: "https://pawcus.dev",
+    url: "https://www.pawcus.dev",
     siteName: "Pawcus",
     locale: "ko_KR",
           images: [
         {
-          url: `https://pawcus.dev/opengraph-image?v=${Date.now()}`,
+          url: `https://www.pawcus.dev/opengraph-image?v=${Date.now()}`,
           width: 1200,
           height: 630,
           alt: "Pawcus - 개발자를 위한 스마트 생산성 관리",
           type: "image/png",
         },
       {
-        url: "https://pawcus.dev/icons/final_icon_512x512.png",
+        url: "https://www.pawcus.dev/icons/final_icon_512x512.png",
         width: 512,
         height: 512,
         alt: "Pawcus Logo",
@@ -72,7 +78,7 @@ export const metadata: Metadata = {
     description: "개발자를 위한 스마트 생산성 관리 도구",
     images: [
       {
-        url: "https://pawcus.dev/icons/final_icon_512x512.png",
+        url: "https://www.pawcus.dev/icons/final_icon_512x512.png",
         alt: "Pawcus Logo"
       }
     ],
@@ -98,9 +104,9 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "apple-mobile-web-app-title": "Pawcus",
-    "al:web:url": "https://pawcus.dev",
+    "al:web:url": "https://www.pawcus.dev",
     "al:web:should_fallback": "true",
-    "og:image:secure_url": `https://pawcus.dev/opengraph-image?v=${Date.now()}`,
+    "og:image:secure_url": `https://www.pawcus.dev/opengraph-image?v=${Date.now()}`,
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:alt": "Pawcus - 개발자를 위한 스마트 생산성 관리",
@@ -126,11 +132,11 @@ export default function RootLayout({
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
         <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
         <meta property="og:description" content="개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요." />
-        <meta property="og:image" content={`https://pawcus.dev/opengraph-image?v=${Date.now()}`} />
+        <meta property="og:image" content={`https://www.pawcus.dev/opengraph-image?v=${Date.now()}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
-        <meta property="og:url" content="https://pawcus.dev" />
+        <meta property="og:url" content="https://www.pawcus.dev" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Pawcus" />
         <meta property="og:locale" content="ko_KR" />
@@ -139,10 +145,10 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
         <meta name="twitter:description" content="개발자를 위한 스마트 생산성 관리 도구" />
-        <meta name="twitter:image" content={`https://pawcus.dev/opengraph-image?v=${Date.now()}`} />
+        <meta name="twitter:image" content={`https://www.pawcus.dev/opengraph-image?v=${Date.now()}`} />
         
         {/* 카카오톡 앱링크 */}
-        <meta property="al:web:url" content="https://pawcus.dev" />
+        <meta property="al:web:url" content="https://www.pawcus.dev" />
         <meta property="al:web:should_fallback" content="true" />
         
         {/* Hotjar Tracking */}
