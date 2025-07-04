@@ -166,50 +166,46 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile Download Buttons */}
+          <div className="flex md:hidden items-center space-x-2">
+            {/* Mobile Homebrew Button */}
             <Button
-              variant="ghost"
+              onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+              className="relative bg-white dark:bg-[#1C1C1C] text-gray-800 dark:text-[rgb(220,220,220)] border border-purple-500 dark:border-[rgb(80,80,80)] px-2 py-1 rounded-lg text-xs font-medium"
               size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2"
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-              aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+              <Copy className="w-3 h-3" />
+            </Button>
+            
+            {/* Mobile DMG Button */}
+            <Button
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'download_attempt', {
+                    event_category: 'engagement',
+                    event_label: 'dmg_download_navbar_mobile',
+                    method: 'dmg',
+                    content_type: 'direct_download'
+                  });
+                }
+                
+                const link = document.createElement('a');
+                link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pawcus.dmg';
+                link.download = 'Pawcus.dmg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="relative bg-white dark:bg-[#1C1C1C] text-gray-800 dark:text-[rgb(220,220,220)] border border-emerald-500 dark:border-[rgb(80,80,80)] px-2 py-1 rounded-lg text-xs font-medium"
+              size="sm"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div id="mobile-menu" className="md:hidden border-t border-gray-200/50 dark:border-[rgb(80,80,80)]/50 bg-white/95 dark:bg-[#1C1C1C]/95 backdrop-blur-md">
-            <ul className="px-2 pt-2 pb-3 space-y-1" role="menu">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <li key={item.href} role="none">
-                    <Link
-                      href={item.href}
-                      role="menuitem"
-                      onClick={() => setIsOpen(false)}
-                      className={`flex items-center px-3 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
-                        isActive(item.href)
-                          ? 'text-purple-600 dark:text-[rgb(168,85,247)] bg-purple-50 dark:bg-[#2D2D2D]'
-                          : 'text-gray-600 dark:text-[rgb(153,153,153)] hover:text-gray-900 dark:hover:text-[rgb(220,220,220)] hover:bg-gray-100 dark:hover:bg-[#2D2D2D]'
-                      }`}
-                      aria-current={isActive(item.href) ? 'page' : undefined}
-                    >
-                      <Icon className="w-5 h-5 mr-3" aria-hidden="true" />
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        )}
       </div>
     </nav>
     </>

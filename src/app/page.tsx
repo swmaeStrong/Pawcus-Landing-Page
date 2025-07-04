@@ -107,11 +107,11 @@ export default function LandingPage() {
       <Navigation />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-[#1C1C1C] dark:via-[#2D2D2D] dark:to-[#383838] opacity-50" />
-      <div className="fixed inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl " />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl " style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-green-400/15 to-blue-600/15 rounded-full blur-3xl " style={{ animationDelay: '2s' }} />
+      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-[#1C1C1C] dark:via-[#2D2D2D] dark:to-[#383838] opacity-50 -z-20" />
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl " />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl " style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-green-400/15 to-blue-600/15 rounded-full blur-3xl " style={{ animationDelay: '2s' }} />
       </div>
       
 
@@ -137,27 +137,27 @@ export default function LandingPage() {
         <section className="py-32 text-center relative" aria-labelledby="hero-heading">
           <div className="scroll-animate">
             <div className="mb-12 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl" />
-              <h1 id="hero-heading" className="text-9xl font-black mb-6 text-gray-800 dark:text-[rgb(220,220,220)] relative z-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
+              <h1 id="hero-heading" className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-6 text-gray-800 dark:text-[rgb(220,220,220)] relative z-10 break-words">
                 Pawcus
               </h1>
               <div className="w-40 h-1.5 bg-purple-600 dark:bg-[rgb(168,85,247)] mx-auto rounded-full mb-8" />
             </div>
             
             <div className="relative">
-              <h2 className="text-5xl mb-8 text-gray-800 dark:text-[rgb(220,220,220)] font-bold leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 text-gray-800 dark:text-[rgb(220,220,220)] font-bold leading-tight">
                 개발자를 위한 <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">스마트 생산성 관리</span>
               </h2>
             </div>
             
-            <p className="text-2xl text-gray-600 dark:text-[rgb(153,153,153)] mb-16 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-[rgb(153,153,153)] mb-16 max-w-4xl mx-auto leading-relaxed px-4">
               AI 기반 스마트 시간 추적과 게임화된 경쟁 시스템으로
-              <br />
+              <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">개인과 팀의 생산성을 혁신적으로 향상시켜보세요.</span>
             </p>
             
             {/* Demo Video */}
-            <div className="flex justify-center mb-16">
+            <div className="flex justify-center mb-16 px-4">
               <video 
                 autoPlay
                 muted
@@ -191,7 +191,7 @@ export default function LandingPage() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 " />
                   <Button
                     onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
-                    className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-500 dark:border-[rgb(80,80,80)] hover:border-purple-600 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-500/20 min-w-[280px] h-20"
+                    className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-500 dark:border-[rgb(80,80,80)] hover:border-purple-600 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-purple-500/20 min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20"
                   >
                     <div className="flex items-center justify-center space-x-4">
                       <Copy className="w-7 h-7 text-purple-600 dark:text-[rgb(168,85,247)]" />
@@ -225,7 +225,7 @@ export default function LandingPage() {
                       link.click();
                       document.body.removeChild(link);
                     }}
-                    className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-emerald-500 dark:border-[rgb(80,80,80)] hover:border-emerald-600 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-emerald-500/20 min-w-[280px] h-20"
+                    className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-emerald-500 dark:border-[rgb(80,80,80)] hover:border-emerald-600 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-emerald-500/20 min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20"
                   >
                     <div className="flex items-center justify-center space-x-4">
                       <svg className="w-7 h-7 text-emerald-600 dark:text-[rgb(168,85,247)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,16 +254,16 @@ export default function LandingPage() {
         <section ref={dashboardRef} className="py-24 relative" aria-labelledby="features-heading">
           <article className="mb-24 scroll-animate">
             <div className="text-center mb-16">
-              <h3 className="text-4xl font-bold mb-6 dark:text-[rgb(220,220,220)]">Pawcus Features</h3>
-              <p className="text-2xl dark:text-[rgb(153,153,153)] leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 dark:text-[rgb(220,220,220)]">Pawcus Features</h3>
+              <p className="text-lg sm:text-xl md:text-2xl dark:text-[rgb(153,153,153)] leading-relaxed px-4">
                 사용 로그를 실시간으로 분석하여 카테고라이징을 해주고, 가장 많이 사용하는 카테고리의 통계를 내줍니다
               </p>
             </div>
             {/* Category Analysis Section */}
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">카테고리별 시간 분석</h3>
-                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">카테고리별 시간 분석</h3>
+                <p className="text-lg sm:text-xl md:text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
                   Development, Design, Browser 등 6개 영역별 시간 사용 패턴을 레이더 차트로 시각화합니다.
                 </p>
                 <div className="space-y-6">
@@ -283,7 +283,7 @@ export default function LandingPage() {
               </div>
               <div className="order-1 lg:order-2">
                 <figure>
-                  <div className="aspect-square bg-[#1C1C1C] dark:bg-[#1C1C1C] flex items-center justify-center p-4 rounded-xl shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
+                  <div className="aspect-square bg-[#1C1C1C] dark:bg-[#1C1C1C] flex items-center justify-center p-2 sm:p-3 md:p-4 rounded-xl shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <img 
                       src="/screenshots/categoryAnalysis.png" 
@@ -310,8 +310,8 @@ export default function LandingPage() {
                 </figure>
               </div>
               <div className="order-2">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 활동 추적</h3>
-                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 활동 추적</h3>
+                <p className="text-lg sm:text-xl md:text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
                   VS Code, Chrome, Figma 등 앱별 활동을 실시간으로 기록하고 자동으로 카테고리를 분류합니다.
                 </p>
                 <div className="space-y-6">
@@ -333,8 +333,8 @@ export default function LandingPage() {
             
             {/* Wide screenshots in separate row */}
             <div className="text-center mb-12 mt-16">
-              <h4 className="text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)]">시간대별로 나의 집중도를 분석해보세요!</h4>
-              <p className="text-lg dark:text-[rgb(153,153,153)]">언제 가장 집중력이 높은지 파악하여 중요한 작업을 적절한 시간에 배치하세요</p>
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)] px-4 sm:block">시간대별로 나의 집중도를 분석해보세요!</h4>
+              <p className="text-base sm:text-lg dark:text-[rgb(153,153,153)] px-4 sm:block">언제 가장 집중력이 높은지 파악하여 중요한 작업을 적절한 시간에 배치하세요</p>
             </div>
             <div className="grid grid-cols-1 gap-8">
               {/* Hourly Usage Log - Wide landscape */}
@@ -344,8 +344,8 @@ export default function LandingPage() {
                   alt="Hourly Usage Analytics"
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent hidden sm:block">
                   <h4 className="font-semibold text-lg mb-2 text-white">시간대별 사용량 분석</h4>
                   <p className="text-sm text-gray-200 mb-2">하루 종일 사용량과 개발시간을 비교하여 생산성이 가장 높은 시간대를 찾아줍니다.</p>
                   <p className="text-xs text-gray-300">언제 가장 집중력이 높은지 알아내어 중요한 작업을 적절한 시간에 배치할 수 있습니다.</p>
@@ -355,8 +355,8 @@ export default function LandingPage() {
             
             {/* Timeline in full width */}
             <div className="text-center mb-12 mt-16">
-              <h4 className="text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)]">이제 나의 업무시간, 휴식 습관을 체크해보세요!</h4>
-              <p className="text-lg dark:text-[rgb(153,153,153)]">하루 전체의 업무 패턴을 직관적으로 파악하여 시간 관리를 개선하세요</p>
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)] px-4 sm:block">이제 나의 업무시간, 휴식 습관을 체크해보세요!</h4>
+              <p className="text-base sm:text-lg dark:text-[rgb(153,153,153)] px-4 sm:block">하루 전체의 업무 패턴을 직관적으로 파악하여 시간 관리를 개선하세요</p>
             </div>
             <div className="grid grid-cols-1 gap-8">
               {/* Timeline - Ultra wide landscape */}
@@ -366,8 +366,8 @@ export default function LandingPage() {
                   alt="Daily Timeline View"
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent hidden sm:block">
                   <h4 className="font-semibold text-lg mb-2 text-white">일일 업무 타임라인</h4>
                   <p className="text-sm text-gray-200 mb-2">24시간 동안의 모든 활동을 meetings, work, breaks 등으로 분류하여 시간 블록으로 표시합니다.</p>
                   <p className="text-xs text-gray-300">하루 전체의 업무 패턴을 직관적으로 파악할 수 있어 시간 또는 생산성 개선에 도움이 됩니다.</p>
@@ -378,14 +378,14 @@ export default function LandingPage() {
 
           {/* Leaderboard */}
           <div className="text-center mb-12 mt-16">
-            <h4 className="text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)]">동료들과 함께 경쟁하며 성장하세요!</h4>
-            <p className="text-lg dark:text-[rgb(153,153,153)]">건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요</p>
+            <h4 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)] px-4">동료들과 함께 경쟁하며 성장하세요!</h4>
+            <p className="text-base sm:text-lg dark:text-[rgb(153,153,153)] px-4">건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요</p>
           </div>
           <article className="mb-12 scroll-animate">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 리더보드</h3>
-                <p className="text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 리더보드</h3>
+                <p className="text-lg sm:text-xl md:text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
                   Daily, Weekly, Monthly 기간별로 동료들과 개발 시간을 비교하고 순위를 확인하세요.
                 </p>
                 <div className="space-y-6">
@@ -407,7 +407,7 @@ export default function LandingPage() {
                 <figure>
                   <Card className="bg-white/80 dark:bg-[#1C1C1C]/90 backdrop-blur-sm shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <CardContent className="p-8 relative z-10">
+                  <CardContent className="p-4 sm:p-6 md:p-8 relative z-10">
                     <div className="space-y-4">
                       {leaderboardData.map((user, index) => {
                         // "..." 구분선
@@ -425,7 +425,7 @@ export default function LandingPage() {
                         return (
                           <div
                             key={index}
-                            className={`flex items-center p-4 rounded-xl transition-all duration-500 hover:scale-[1.02] border relative overflow-hidden group ${
+                            className={`flex items-center p-2 sm:p-3 md:p-4 rounded-xl transition-all duration-500 hover:scale-[1.02] border relative overflow-hidden group ${
                               index === 0 
                                 ? 'bg-gradient-to-r from-yellow-400/30 via-purple-400/20 to-blue-500/30 hover:from-yellow-400/40 hover:via-purple-400/30 hover:to-blue-500/40 shadow-lg border-yellow-400/50' 
                                 : 'bg-[#2D2D2D] hover:bg-[#383838] border-[rgb(80,80,80)]'
@@ -437,7 +437,7 @@ export default function LandingPage() {
                             )}
                             
                             {/* 순위 번호 */}
-                            <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mr-4 border-2 relative z-10 ${
+                            <div className={`flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm sm:text-base md:text-lg mr-2 sm:mr-3 md:mr-4 border-2 relative z-10 ${
                               index === 0 
                                 ? 'bg-gradient-to-br from-yellow-400 via-cyan-400 to-blue-500 text-white border-yellow-400/50 shadow-lg' 
                                 : 'bg-white dark:bg-[#1C1C1C] text-gray-700 dark:text-[rgb(220,220,220)] border-gray-300 dark:border-[rgb(80,80,80)]'
@@ -447,18 +447,18 @@ export default function LandingPage() {
 
                             {/* 랭크 아이콘 (1등만 표시) */}
                             {user.rankImage && (
-                              <div className="flex-shrink-0 mr-4 relative z-10">
+                              <div className="flex-shrink-0 mr-2 sm:mr-3 md:mr-4 relative z-10">
                                 <div className="relative group-">
                                   <Image
                                     src={`/rank/${user.rankImage}`}
                                     alt={`rank-${user.rank}`}
-                                    width={32}
-                                    height={32}
-                                    className="drop-shadow-lg"
+                                    width={24}
+                                    height={24}
+                                    className="drop-shadow-lg w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                                   />
                                   {index === 0 && (
                                     <div className="absolute -top-1 -right-1">
-                                      <Crown className="h-4 w-4 text-yellow-500 " />
+                                      <Crown className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-500 " />
                                     </div>
                                   )}
                                 </div>
@@ -467,22 +467,22 @@ export default function LandingPage() {
 
                             {/* 사용자 정보 */}
                             <div className="flex-1 min-w-0 relative z-10">
-                              <h3 className={`font-bold text-lg truncate transition-colors duration-300 ${
+                              <h3 className={`font-bold text-sm sm:text-base md:text-lg truncate transition-colors duration-300 ${
                                 index === 0 ? 'text-gray-800 dark:text-[rgb(220,220,220)]' : 'text-gray-800 dark:text-[rgb(220,220,220)]'
                               }`}>
                                 {user.name}
                               </h3>
-                              <p className="text-gray-500 dark:text-[rgb(153,153,153)] text-sm">{user.points.toLocaleString()} 포인트</p>
+                              <p className="text-gray-500 dark:text-[rgb(153,153,153)] text-xs sm:text-sm">{user.points.toLocaleString()} 포인트</p>
                             </div>
 
                             {/* 시간 정보 */}
                             <div className="text-right relative z-10">
-                              <div className={`text-lg font-bold transition-colors duration-300 ${
+                              <div className={`text-sm sm:text-base md:text-lg font-bold transition-colors duration-300 ${
                                 index === 0 ? 'text-gray-800 dark:text-[rgb(220,220,220)]' : 'text-gray-800 dark:text-[rgb(220,220,220)]'
                               }`}>
                                 {user.time}
                               </div>
-                              <p className="text-green-600 dark:text-green-400 text-sm font-semibold">{user.trend}</p>
+                              <p className="text-green-600 dark:text-green-400 text-xs sm:text-sm font-semibold">{user.trend}</p>
                             </div>
 
                             {index === 0 && (
@@ -506,8 +506,8 @@ export default function LandingPage() {
         {/* CTA Section - 부드럽고 조화로운 디자인 */}
         <section className="py-24 text-center relative" aria-labelledby="cta-heading">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-200/30 via-gray-100/30 to-emerald-200/30 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-1000" />
-            <div className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-[#2D2D2D] dark:via-[#1C1C1C] dark:to-[#383838] rounded-3xl p-16 border border-gray-200 dark:border-[rgb(80,80,80)] shadow-2xl overflow-hidden">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-200/30 via-gray-100/30 to-emerald-200/30 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-1000 pointer-events-none" />
+            <div className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-[#2D2D2D] dark:via-[#1C1C1C] dark:to-[#383838] rounded-3xl p-8 sm:p-12 md:p-16 border border-gray-200 dark:border-[rgb(80,80,80)] shadow-2xl overflow-hidden">
               
               <div className="relative z-10">
                 {/* Pawcus Small Icon */}
@@ -524,10 +524,10 @@ export default function LandingPage() {
                   </div>
                 </div>
                 
-                <h2 id="cta-heading" className="text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
+                <h2 id="cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">
                   <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">지금 바로</span> 시작해보세요
                 </h2>
-                <p className="text-xl mb-10 text-gray-600 dark:text-[rgb(153,153,153)] max-w-2xl mx-auto">
+                <p className="text-lg sm:text-xl mb-10 text-gray-600 dark:text-[rgb(153,153,153)] max-w-2xl mx-auto px-4">
                   간단한 설치로 생산성 게임화의 새로운 경험을 시작할 수 있습니다
                 </p>
                 
@@ -552,7 +552,7 @@ export default function LandingPage() {
                         
                         copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')
                       }}
-                      className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-400 dark:border-[rgb(80,80,80)] hover:border-purple-500 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-400/20 min-w-[280px] h-20"
+                      className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-400 dark:border-[rgb(80,80,80)] hover:border-purple-500 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-purple-400/20 min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20"
                     >
                       <div className="flex items-center justify-center space-x-4">
                         <Copy className="w-7 h-7 text-purple-600" />
@@ -586,7 +586,7 @@ export default function LandingPage() {
                         link.click();
                         document.body.removeChild(link);
                       }}
-                      className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-emerald-400 dark:border-[rgb(80,80,80)] hover:border-emerald-500 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-emerald-400/20 min-w-[280px] h-20"
+                      className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-emerald-400 dark:border-[rgb(80,80,80)] hover:border-emerald-500 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-emerald-400/20 min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20"
                     >
                       <div className="flex items-center justify-center space-x-4">
                         <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
