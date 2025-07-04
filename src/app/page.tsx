@@ -61,6 +61,16 @@ export default function LandingPage() {
       setToastType('success')
       setShowToast(true)
       setTimeout(() => setShowToast(false), 3000)
+      
+      // GA4 Event Tracking
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'download_attempt', {
+          event_category: 'engagement',
+          event_label: 'homebrew_copy',
+          method: 'homebrew',
+          content_type: 'command_copy'
+        })
+      }
     } catch (err) {
       console.error('Failed to copy: ', err)
       setToastMessage('복사에 실패했습니다. 수동으로 복사해주세요.')
@@ -198,6 +208,16 @@ export default function LandingPage() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 " />
                   <Button
                     onClick={() => {
+                      // GA4 Event Tracking
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'download_attempt', {
+                          event_category: 'engagement',
+                          event_label: 'dmg_download_hero',
+                          method: 'dmg',
+                          content_type: 'direct_download'
+                        })
+                      }
+                      
                       const link = document.createElement('a');
                       link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pawcus.dmg';
                       link.download = 'Pawcus.dmg';
@@ -519,7 +539,19 @@ export default function LandingPage() {
                     <Button
                       variant="ghost"
                       size="lg"
-                      onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+                      onClick={() => {
+                        // GA4 Event Tracking for CTA section
+                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                          (window as any).gtag('event', 'download_attempt', {
+                            event_category: 'engagement',
+                            event_label: 'homebrew_copy_cta',
+                            method: 'homebrew',
+                            content_type: 'command_copy'
+                          })
+                        }
+                        
+                        copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')
+                      }}
                       className="relative w-full bg-white dark:bg-[#1C1C1C] hover:bg-gray-50 dark:hover:bg-[#2D2D2D] text-gray-800 dark:text-[rgb(220,220,220)] border-2 border-purple-400 dark:border-[rgb(80,80,80)] hover:border-purple-500 dark:hover:border-[rgb(120,120,120)] backdrop-blur-sm px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-xl shadow-lg hover:shadow-purple-400/20 min-w-[280px] h-20"
                     >
                       <div className="flex items-center justify-center space-x-4">
@@ -537,6 +569,16 @@ export default function LandingPage() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 via-teal-400/30 to-cyan-400/30 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 " />
                     <Button
                       onClick={() => {
+                        // GA4 Event Tracking for CTA section
+                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                          (window as any).gtag('event', 'download_attempt', {
+                            event_category: 'engagement',
+                            event_label: 'dmg_download_cta',
+                            method: 'dmg',
+                            content_type: 'direct_download'
+                          })
+                        }
+                        
                         const link = document.createElement('a');
                         link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/download/v0.8.0/Pawcus.dmg';
                         link.download = 'Pawcus.dmg';

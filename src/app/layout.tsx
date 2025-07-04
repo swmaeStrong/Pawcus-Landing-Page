@@ -156,7 +156,22 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-H02Z2DTRG4');
+              gtag('config', 'G-H02Z2DTRG4', {
+                page_title: document.title,
+                page_location: window.location.href,
+                custom_map: {
+                  custom_parameter_1: 'referrer_source'
+                }
+              });
+              
+              // Track page view with referrer information
+              gtag('event', 'page_view', {
+                page_title: document.title,
+                page_location: window.location.href,
+                referrer_source: document.referrer || 'direct',
+                user_agent: navigator.userAgent,
+                screen_resolution: screen.width + 'x' + screen.height
+              });
             `,
           }}
         />
