@@ -106,10 +106,19 @@ body {
   position: relative;
 }
 
-/* 전역 컨테이너 overflow 방지 */
-main, section, article, div {
+/* 전역 컨테이너 overflow 방지 - 메인 레이아웃 요소만 적용 */
+main {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* 개별 컴포넌트 overflow 처리 */
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 /* 스크롤 기반 애니메이션 */

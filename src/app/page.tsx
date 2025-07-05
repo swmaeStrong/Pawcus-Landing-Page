@@ -102,7 +102,7 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative overflow-hidden">
+    <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative">
       {/* Navigation */}
       <Navigation />
       
@@ -174,7 +174,7 @@ export default function LandingPage() {
             </div>
             
             {/* Download Options - 간단하고 깔끔한 디자인 */}
-            <section className="flex flex-col items-center mb-16 space-y-12" aria-labelledby="download-heading">
+            <section className="flex flex-col items-center mb-16 space-y-8 px-4 overflow-visible" aria-labelledby="download-heading">
               <header className="text-center">
                 <h3 id="download-heading" className="text-4xl font-bold text-gray-800 dark:text-[rgb(220,220,220)] mb-4">
                   <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent font-semibold">Pawcus</span> 다운로드
@@ -185,9 +185,9 @@ export default function LandingPage() {
               </header>
               
               {/* Download Buttons */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full">
                 {/* Homebrew Option */}
-                <div className="group relative w-full md:w-auto">
+                <div className="group relative w-full md:w-auto max-w-sm">
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 " />
                   <Button
                     onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
@@ -204,7 +204,7 @@ export default function LandingPage() {
                 </div>
                 
                 {/* DMG Download Option */}
-                <div className="group relative w-full md:w-auto">
+                <div className="group relative w-full md:w-auto max-w-sm">
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 " />
                   <Button
                     onClick={() => {
@@ -532,9 +532,9 @@ export default function LandingPage() {
                 </p>
                 
                 {/* Download Options */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full px-4">
                   {/* Homebrew Option */}
-                  <div className="group relative w-full md:w-auto">
+                  <div className="group relative w-full md:w-auto max-w-sm">
                     <div className="absolute -inset-1 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-indigo-400/30 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
                     <Button
                       variant="ghost"
@@ -565,7 +565,7 @@ export default function LandingPage() {
                   </div>
                   
                   {/* DMG Download Option */}
-                  <div className="group relative w-full md:w-auto">
+                  <div className="group relative w-full md:w-auto max-w-sm">
                     <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 via-teal-400/30 to-cyan-400/30 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 " />
                     <Button
                       onClick={() => {
