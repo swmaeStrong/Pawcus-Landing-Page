@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   applicationName: "Pawcus",
   metadataBase: new URL('https://www.pawcus.dev'),
   alternates: {
-    canonical: 'https://www.pawcus.dev',
+    canonical: new URL('https://www.pawcus.dev'),
     languages: {
       'ko': 'https://www.pawcus.dev',
       'en': 'https://www.pawcus.dev/en',

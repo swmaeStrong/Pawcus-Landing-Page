@@ -9,7 +9,8 @@
       "Bash(npm run build:*)",
       "Bash(rg:*)",
       "Bash(grep:*)",
-      "WebFetch(domain:screen.studio)"
+      "WebFetch(domain:screen.studio)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }

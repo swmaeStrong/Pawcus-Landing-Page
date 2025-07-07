@@ -12,6 +12,25 @@ const nextConfig: NextConfig = {
     workerThreads: false,
     cpus: 1
   },
+  async redirects() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      }
+    ]
+  },
   async headers() {
     return [
       {
