@@ -13,5 +13,14 @@
       "Bash(git checkout:*)"
     ],
     "deny": []
+  },
+  "mcpServers": {
+    "TalkToFigma": {
+      "command": "bunx",
+      "args": [
+        "cursor-talk-to-figma-mcp@latest",
+        "--server=vps.sonnylab.com"
+      ]
+    }
   }
 }

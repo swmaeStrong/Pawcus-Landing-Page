@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Copy, CheckCircle, Sparkles } from 'lucide-react';
+import { Menu, X, Copy, CheckCircle, Sparkles, Home, Info, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Navigation() {
@@ -14,7 +14,23 @@ export default function Navigation() {
   const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!');
   const [toastType, setToastType] = useState<'success' | 'error'>('success');
 
-  const navItems: any[] = [];
+  const navItems = [
+    {
+      href: '/',
+      label: '홈',
+      icon: Home
+    },
+    {
+      href: '/about',
+      label: '소개',
+      icon: Info
+    },
+    {
+      href: '/faq',
+      label: 'FAQ',
+      icon: HelpCircle
+    }
+  ];
 
   const isActive = (href: string) => {
     if (href === '/') {
