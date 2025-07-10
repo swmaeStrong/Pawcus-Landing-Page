@@ -1,4 +1,6 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,12 +20,6 @@ import {
   Brain,
   Activity
 } from 'lucide-react';
-
-export const metadata: Metadata = {
-  title: 'Pawcus 소개 - 개발자를 위한 스마트 생산성 관리',
-  description: 'Pawcus는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
-  keywords: ['Pawcus', '개발자', '생산성', '시간 추적', '리더보드', 'AI', '소개'],
-};
 
 const features = [
   {
@@ -121,6 +117,18 @@ const useCases = [
 const stats = [];
 
 export default function AboutPage() {
+  useEffect(() => {
+    // GA4 Page View Tracking
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
+        page_title: 'About - Pawcus 소개',
+        page_location: window.location.href,
+        content_group1: 'about_page',
+        custom_parameter_1: 'about_page_view'
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative">
       <Navigation />
