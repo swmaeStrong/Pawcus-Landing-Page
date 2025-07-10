@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   title: 'Pawcus 소개 - 개발자를 위한 스마트 생산성 관리',
   description: 'Pawcus는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
   keywords: ['Pawcus', '개발자', '생산성', '시간 추적', '리더보드', 'AI', '소개'],
+  alternates: {
+    canonical: 'https://www.pawcus.dev/about',
+  },
+  openGraph: {
+    title: 'Pawcus 소개 - 개발자를 위한 스마트 생산성 관리',
+    description: 'Pawcus는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
+    url: 'https://www.pawcus.dev/about',
+    type: 'website',
+  },
 };
 
 const features = [

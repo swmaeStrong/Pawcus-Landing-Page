@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   applicationName: "Pawcus",
   metadataBase: new URL('https://www.pawcus.dev'),
   alternates: {
-    canonical: new URL('https://www.pawcus.dev'),
+    canonical: 'https://www.pawcus.dev',
     languages: {
       'ko': 'https://www.pawcus.dev',
       'en': 'https://www.pawcus.dev/en',
@@ -129,6 +129,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className="dark">
       <head>
+        {/* Canonical URL 명시적 선언 */}
+        <link rel="canonical" href="https://www.pawcus.dev" />
+        
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
         <meta property="og:title" content="Pawcus - 개발자를 위한 스마트 생산성 관리" />
         <meta property="og:description" content="개발자를 위한 스마트 생산성 관리 도구. 시간 추적, 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요." />

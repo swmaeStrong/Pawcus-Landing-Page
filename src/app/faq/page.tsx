@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
+import Head from 'next/head';
 
 const faqData = [
   {
@@ -75,8 +76,16 @@ export default function FAQPage() {
     : faqData.filter(category => categoryMapping[category.category as keyof typeof categoryMapping] === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative">
-      <Navigation />
+    <>
+      <Head>
+        <link rel="canonical" href="https://www.pawcus.dev/faq" />
+        <meta property="og:url" content="https://www.pawcus.dev/faq" />
+        <meta property="og:title" content="FAQ - 자주 묻는 질문" />
+        <meta property="og:description" content="Pawcus에 대해 궁금한 점들을 모았습니다. 보안, 사용법, 문제 해결 등 자세한 답변을 확인해보세요." />
+        <meta property="og:type" content="website" />
+      </Head>
+      <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative">
+        <Navigation />
       
       {/* Animated Background */}
       <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-[#1C1C1C] dark:via-[#2D2D2D] dark:to-[#383838] opacity-50 -z-20" />
@@ -162,6 +171,7 @@ export default function FAQPage() {
           </div>
         </section>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
