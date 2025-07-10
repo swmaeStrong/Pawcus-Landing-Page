@@ -114,6 +114,17 @@ export default function Navigation() {
                     <Link
                       href={item.href}
                       role="menuitem"
+                      onClick={() => {
+                        // GA4 Navigation Click Tracking
+                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                          (window as any).gtag('event', 'click', {
+                            event_category: 'navigation',
+                            event_label: `nav_${item.label.toLowerCase()}`,
+                            content_group1: `${item.label.toLowerCase()}_page`,
+                            custom_parameter_1: `nav_${item.label.toLowerCase()}_click`
+                          });
+                        }
+                      }}
                       className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-100 dark:hover:bg-[#2D2D2D] ${
                         isActive(item.href)
                           ? 'text-purple-600 dark:text-[rgb(168,85,247)] bg-purple-50 dark:bg-[#2D2D2D]'

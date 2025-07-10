@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 
@@ -56,18 +56,6 @@ const faqData = [
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  
-  useEffect(() => {
-    // GA4 Page View Tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_view', {
-        page_title: 'FAQ - 자주 묻는 질문',
-        page_location: window.location.href,
-        content_group1: 'faq_page',
-        custom_parameter_1: 'faq_page_view'
-      });
-    }
-  }, []);
   
   const categories = [
     { id: 'all', name: '전체' },
