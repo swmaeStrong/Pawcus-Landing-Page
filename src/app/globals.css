@@ -53,41 +53,41 @@
   --color-light-text-accent: rgb(99, 102, 241);
 }
 
-/* 세련된 색상 변수들 */
+/* 새로운 컬러 팔레트 변수들 */
   :root {
   --radius: 0.75rem;
-  /* Modern light theme */
+  /* Custom color palette theme */
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #2d3748;
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #2d3748;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary: #6366f1;
+  --popover-foreground: #2d3748;
+  --primary: #3f72af;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #475569;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: #6366f1;
+  --secondary: #ececec;
+  --secondary-foreground: #4a5568;
+  --muted: #c6d4e8;
+  --muted-foreground: #718096;
+  --accent: #3f72af;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #6366f1;
-  --chart-1: #6366f1;
-  --chart-2: #22c55e;
-  --chart-3: #3b82f6;
-  --chart-4: #f59e0b;
-  --chart-5: #ef4444;
-  --sidebar: #f8fafc;
-  --sidebar-foreground: #0f172a;
-  --sidebar-primary: #6366f1;
+  --border: #c6d4e8;
+  --input: #c6d4e8;
+  --ring: #3f72af;
+  --chart-1: #3f72af;
+  --chart-2: #c6d4e8;
+  --chart-3: #ececec;
+  --chart-4: #4a5568;
+  --chart-5: #718096;
+  --sidebar: #ececec;
+  --sidebar-foreground: #2d3748;
+  --sidebar-primary: #3f72af;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f1f5f9;
-  --sidebar-accent-foreground: #475569;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: #6366f1;
+  --sidebar-accent: #c6d4e8;
+  --sidebar-accent-foreground: #4a5568;
+  --sidebar-border: #c6d4e8;
+  --sidebar-ring: #3f72af;
 }
 
 html {
@@ -97,7 +97,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f3f4f6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ececec 50%, #c6d4e8 100%);
   color: var(--foreground);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
@@ -201,7 +201,7 @@ main {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  background: linear-gradient(135deg, #3f72af, #3f72af, #c6d4e8);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -253,15 +253,31 @@ main {
 /* Tailwind 커스텀 유틸리티 클래스 */
 @layer utilities {
   .box-shadow-modern {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px rgba(63, 114, 175, 0.08);
   }
   
   .box-shadow-modern-hover {
-    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+    box-shadow: 0 8px 32px rgba(63, 114, 175, 0.12);
   }
   
   .backdrop-blur-20 {
     backdrop-filter: blur(20px);
+  }
+  
+  .bg-primary {
+    background-color: #3f72af;
+  }
+  
+  .bg-secondary {
+    background-color: #c6d4e8;
+  }
+  
+  .text-primary {
+    color: #3f72af;
+  }
+  
+  .border-primary {
+    border-color: #3f72af;
   }
 }
 
@@ -319,10 +335,10 @@ main {
 /* 히어로 배너 그라데이션 */
 .hero-gradient {
   background: linear-gradient(135deg, 
-    rgba(99, 102, 241, 0.05) 0%, 
-    rgba(139, 92, 246, 0.05) 25%,
-    rgba(168, 85, 247, 0.05) 50%,
-    rgba(99, 102, 241, 0.05) 100%
+    rgba(63, 114, 175, 0.05) 0%, 
+    rgba(198, 212, 232, 0.1) 25%,
+    rgba(236, 236, 236, 0.05) 50%,
+    rgba(63, 114, 175, 0.05) 100%
   );
 }
 
@@ -358,12 +374,12 @@ main {
 
 /* 버튼 글로우 효과 */
 .btn-glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 20px rgba(63, 114, 175, 0.3);
   transition: all 0.3s ease;
 }
 
 .btn-glow:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 30px rgba(63, 114, 175, 0.5);
   transform: translateY(-2px);
 }
 

@@ -38,7 +38,7 @@ export default function TermsPage() {
             </div>
           </div>
           
-          <h1 className={`${getHeadingStyle(3)} ${styles.gradientText} mb-4`}>
+          <h1 className={`${getHeadingStyle(3)} ${styles.gradientPrimary} mb-4`}>
             서비스 이용약관
           </h1>
           <p className={`text-xl ${getTextStyle('secondary')}`}>

@@ -13,14 +13,14 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
       <div className={styles.scrollAnimate}>
         <div className="mb-12 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
-          <h1 id="hero-heading" className={`${getHeadingStyle(1)} mb-6 relative z-10 break-words`}>
+          <h1 id="hero-heading" className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}>
             Pawcus
           </h1>
           <div className={`${styles.gradientDivider} mb-8`} />
         </div>
         
         <div className="relative">
-          <h2 className={`${getHeadingStyle(2)} mb-8 leading-tight`}>
+          <h2 className={`${getHeadingStyle(2)} ${styles.text.primary} mb-8 leading-tight`}>
             개발자를 위한 <span className={styles.gradientText}>스마트 생산성 관리</span>
           </h2>
         </div>
@@ -51,7 +51,7 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
         {/* Download Section */}
         <section className={styles.downloadSection} aria-labelledby="download-heading">
           <header className="text-center">
-            <h3 id="download-heading" className={`${getHeadingStyle(3)} mb-4`}>
+            <h3 id="download-heading" className={`${getHeadingStyle(3)} ${styles.text.primary} mb-4`}>
               <span className={styles.gradientText}>Pawcus</span> 다운로드
             </h3>
             <p className={getTextStyle('secondary')}>

@@ -132,14 +132,14 @@ const stats = [];
 
 export default function AboutPage() {
   return (
-    <div className={styles.pageBackground}>
+    <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
       <Navigation />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-white via-gray-100 to-gray-50 opacity-50 -z-20" />
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl" />
+      <div className={styles.gradientBackground} />
+      <div className={styles.animatedBackground}>
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#3f72af]/20 to-[#c6d4e8]/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#c6d4e8]/25 to-[#3f72af]/15 rounded-full blur-3xl" />
       </div>
       
       <main className={`${styles.container} relative z-10 pt-24 pb-16`}>
@@ -150,8 +150,8 @@ export default function AboutPage() {
               <span className="font-black">Pawcus</span>란?
             </h1>
             <p className={`text-base sm:text-xl md:text-2xl ${getTextStyle('secondary')} max-w-4xl mx-auto leading-relaxed px-4`}>
-              개발자의 작업 내역을 <span className="font-bold text-white">체계적으로 분석</span>하고{' '}
-              <span className="font-bold text-white">경쟁 시스템</span>을 통해{' '}
+              개발자의 작업 내역을 <span className={`font-bold ${styles.gradientText}`}>체계적으로 분석</span>하고{' '}
+              <span className={`font-bold ${styles.gradientText}`}>경쟁 시스템</span>을 통해{' '}
               성장을 돕는 생산성 관리 소프트웨어입니다.
             </p>
           </div>
@@ -160,14 +160,14 @@ export default function AboutPage() {
 
         {/* Core Features */}
         <section className="mb-20">
-          <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800`}>
+          <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${styles.text.primary}`}>
             핵심 기능
           </h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <Card key={index} className={`${createCardStyle('modern')} hover:shadow-lg transition-all duration-300`}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-800 mb-3">
+                  <CardTitle className={`text-xl ${styles.text.primary} mb-3`}>
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                   <ul className="space-y-2">
                     {feature.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="flex items-start space-x-2">
-                        <span className="text-gray-800 mt-0.5 flex-shrink-0">•</span>
+                        <span className={`${styles.text.primary} mt-0.5 flex-shrink-0`}>•</span>
                         <span className={getTextStyle('small')}>{detail}</span>
                       </li>
                     ))}
@@ -191,14 +191,14 @@ export default function AboutPage() {
 
         {/* Use Cases */}
         <section className="mb-20">
-          <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800`}>
+          <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${styles.text.primary}`}>
             이런 사람에게 적극 추천합니다!
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
               <Card key={index} className={`${createCardStyle('modern')} hover:shadow-lg transition-all duration-300`}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-800">
+                  <CardTitle className={`text-xl ${styles.text.primary}`}>
                     {useCase.title}
                   </CardTitle>
                   <p className={getTextStyle('secondary')}>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                   <ul className="space-y-2">
                     {useCase.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-center space-x-2">
-                        <span className="text-gray-800 flex-shrink-0">•</span>
+                        <span className={`${styles.text.primary} flex-shrink-0`}>•</span>
                         <span className={getTextStyle('small')}>{benefit}</span>
                       </li>
                     ))}

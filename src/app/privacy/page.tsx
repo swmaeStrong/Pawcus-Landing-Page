@@ -38,7 +38,7 @@ export default function PrivacyPage() {
             </div>
           </div>
           
-          <h1 className={`${getHeadingStyle(3)} ${styles.gradientText} mb-4`}>
+          <h1 className={`${getHeadingStyle(3)} ${styles.gradientPrimary} mb-4`}>
             개인정보 처리방침
           </h1>
           <p className={`text-xl ${getTextStyle('secondary')}`}>

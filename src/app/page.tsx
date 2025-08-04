@@ -89,16 +89,16 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div className={styles.pageBackground}>
+    <div className={`${styles.pageBackground} ${styles.pageBackgroundPrimary}`}>
       {/* Navigation */}
       <Navigation />
       
       {/* Animated Background */}
       <div className={styles.gradientBackground} />
       <div className={styles.animatedBackground}>
-        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl " />
-        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl " style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-green-400/15 to-blue-600/15 rounded-full blur-3xl " style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#3f72af]/15 to-[#c6d4e8]/25 rounded-full blur-3xl " />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#c6d4e8]/20 to-[#3f72af]/15 rounded-full blur-3xl " style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#ececec]/20 to-[#3f72af]/10 rounded-full blur-3xl " style={{ animationDelay: '2s' }} />
       </div>
       
       {/* Toast Notification */}
@@ -153,12 +153,12 @@ export default function LandingPage() {
             <div className={`${styles.text.small} space-y-2`}>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
                 <span className="font-medium">상호명: 집중</span>
-                <span className="hidden md:inline text-gray-400">|</span>
+                <span className="hidden md:inline text-[#718096]">|</span>
                 <span>사업자등록번호: 255-18-02409</span>
               </div>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
                 <span>대표자: 김영현</span>
-                <span className="hidden md:inline text-gray-400">|</span>
+                <span className="hidden md:inline text-[#718096]">|</span>
                 <span>전화번호: 010-5172-5645</span>
               </div>
               <div className="text-center">
@@ -169,11 +169,11 @@ export default function LandingPage() {
             {/* Quick Links */}
             <nav className="pt-4 border-t border-gray-200/50" aria-label="Footer Navigation">
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-2 md:space-y-0 mb-4">
-                <Link href="/terms" className={`${styles.text.small} hover:text-purple-600 transition-colors`}>
+                <Link href="/terms" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
                   이용약관
                 </Link>
                 <span className="hidden md:inline text-gray-400 dark:text-[rgb(153,153,153)]" aria-hidden="true">|</span>
-                <Link href="/privacy" className={`${styles.text.small} hover:text-purple-600 transition-colors`}>
+                <Link href="/privacy" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
                   개인정보처리방침
                 </Link>
               </div>

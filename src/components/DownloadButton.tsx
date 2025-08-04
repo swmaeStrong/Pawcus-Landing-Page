@@ -12,20 +12,20 @@ export default function DownloadButton({ type, onDownload, className = "" }: Dow
   const isHomebrew = type === 'homebrew';
   
   const gradientClass = isHomebrew 
-    ? "from-purple-600 via-pink-600 to-indigo-600" 
-    : "from-emerald-600 via-teal-600 to-cyan-600";
+    ? "from-[#3f72af] via-[#3f72af]/80 to-[#c6d4e8]" 
+    : "from-[#3f72af] via-[#c6d4e8] to-[#3f72af]/70";
   
   const borderClass = isHomebrew 
-    ? "border-purple-500 hover:border-purple-600" 
-    : "border-emerald-500 hover:border-emerald-600";
+    ? "border-[#3f72af] hover:border-[#3f72af]/80" 
+    : "border-[#3f72af] hover:border-[#3f72af]/80";
   
   const shadowClass = isHomebrew 
-    ? "hover:shadow-purple-500/20" 
-    : "hover:shadow-emerald-500/20";
+    ? "hover:shadow-[#3f72af]/20" 
+    : "hover:shadow-[#3f72af]/20";
   
   const iconColor = isHomebrew 
-    ? "text-purple-600" 
-    : "text-emerald-600";
+    ? "text-[#3f72af]" 
+    : "text-[#3f72af]";
 
   return (
     <div className={`group relative w-full md:w-auto max-w-sm ${className}`}>

@@ -85,14 +85,14 @@ export default function FAQPage() {
         <meta property="og:description" content="Pawcus에 대해 궁금한 점들을 모았습니다. 보안, 사용법, 문제 해결 등 자세한 답변을 확인해보세요." />
         <meta property="og:type" content="website" />
       </Head>
-      <div className={styles.pageBackground}>
+      <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
         <Navigation />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 from-white via-gray-50 to-gray-50 opacity-50 -z-20" />
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl" />
+      <div className={styles.gradientBackground} />
+      <div className={styles.animatedBackground}>
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#3f72af]/20 to-[#c6d4e8]/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#c6d4e8]/25 to-[#3f72af]/15 rounded-full blur-3xl" />
       </div>
       
       <main className={`${styles.cardContainer} relative z-10 pt-24 pb-16`}>
@@ -103,7 +103,7 @@ export default function FAQPage() {
           </h1>
           <p className={`text-xl ${getTextStyle('secondary')} max-w-3xl mx-auto leading-relaxed`}>
             Pawcus에 대해 궁금한 점들을 모았습니다. 
-            <span className="font-bold text-gray-800"> 보안, 사용법, 문제 해결</span> 등
+            <span className={`font-bold ${styles.gradientText}`}> 보안, 사용법, 문제 해결</span> 등
             자세한 답변을 확인해보세요.
           </p>
         </section>
@@ -117,8 +117,8 @@ export default function FAQPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-gray-800 text-white shadow-lg'
-                    : `${createCardStyle('modern')} ${getTextStyle('secondary')} hover:bg-gray-100`
+                    ? `${styles.button.primaryAction} text-white shadow-lg`
+                    : `${createCardStyle('modern')} ${getTextStyle('secondary')} hover:bg-[#ececec]/50`
                 }`}
               >
                 {category.name}
@@ -138,7 +138,7 @@ export default function FAQPage() {
                 {category.questions.map((faq, faqIndex) => (
                   <Card key={faqIndex} className={`${createCardStyle('modern')} hover:shadow-lg transition-all duration-300`}>
                     <CardHeader>
-                      <CardTitle className="text-lg text-gray-800">
+                      <CardTitle className={`text-lg ${styles.text.primary}`}>
                         {faq.question}
                       </CardTitle>
                     </CardHeader>
@@ -164,10 +164,10 @@ export default function FAQPage() {
           </p>
           <div className={getTextStyle('secondary')}>
             <p className="mb-2">
-              <span className="font-semibold text-gray-800">이메일:</span> support@pawcus.dev
+              <span className={`font-semibold ${styles.text.primary}`}>이메일:</span> support@pawcus.dev
             </p>
             <p>
-              <span className="font-semibold text-gray-800">전화:</span> 010-5172-5645
+              <span className={`font-semibold ${styles.text.primary}`}>전화:</span> 010-5172-5645
             </p>
           </div>
         </section>
