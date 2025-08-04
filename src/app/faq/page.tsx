@@ -84,11 +84,11 @@ export default function FAQPage() {
         <meta property="og:description" content="Pawcus에 대해 궁금한 점들을 모았습니다. 보안, 사용법, 문제 해결 등 자세한 답변을 확인해보세요." />
         <meta property="og:type" content="website" />
       </Head>
-      <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative">
+      <div className="min-h-screen bg-[#ECECEC] bg-white relative">
         <Navigation />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-[#1C1C1C] dark:via-[#2D2D2D] dark:to-[#383838] opacity-50 -z-20" />
+      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 from-white via-gray-50 to-gray-50 opacity-50 -z-20" />
       <div className="fixed inset-0 pointer-events-none -z-10">
         <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl" />
@@ -97,12 +97,12 @@ export default function FAQPage() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16">
         {/* Hero Section */}
         <section className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-gray-800 dark:text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-gray-800 text-gray-800">
             자주 묻는 질문
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-600 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Pawcus에 대해 궁금한 점들을 모았습니다. 
-            <span className="font-bold text-gray-800 dark:text-white"> 보안, 사용법, 문제 해결</span> 등
+            <span className="font-bold text-gray-800 text-gray-800"> 보안, 사용법, 문제 해결</span> 등
             자세한 답변을 확인해보세요.
           </p>
         </section>
@@ -116,8 +116,8 @@ export default function FAQPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-gray-800 dark:bg-white text-white dark:text-gray-800 shadow-lg'
-                    : 'bg-white/80 dark:bg-[#1C1C1C]/80 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2D2D2D] border border-gray-200 dark:border-[rgb(80,80,80)]'
+                    ? 'bg-gray-800 bg-white text-white text-gray-800 shadow-lg'
+                    : 'bg-white/80 bg-white/80 text-gray-600 text-gray-600 hover:bg-gray-100 hover:bg-gray-100 border border-gray-200 border-gray-200'
                 }`}
               >
                 {category.name}
@@ -130,19 +130,19 @@ export default function FAQPage() {
         <div className="transition-all duration-500 ease-in-out">
           {filteredData.map((category, categoryIndex) => (
             <section key={categoryIndex} className="mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-800 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-800 text-gray-800">
                 {category.category}
               </h2>
               <div className="space-y-6">
                 {category.questions.map((faq, faqIndex) => (
-                  <Card key={faqIndex} className="bg-white/80 dark:bg-[#1C1C1C]/80 backdrop-blur-sm border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-lg transition-all duration-300">
+                  <Card key={faqIndex} className="bg-white/80 bg-white/80 backdrop-blur-sm border border-gray-200 border-gray-200 hover:shadow-lg transition-all duration-300">
                     <CardHeader>
-                      <CardTitle className="text-lg text-gray-800 dark:text-white">
+                      <CardTitle className="text-lg text-gray-800 text-gray-800">
                         {faq.question}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-600 text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </CardContent>
@@ -154,19 +154,19 @@ export default function FAQPage() {
         </div>
 
         {/* Contact Section */}
-        <section className="text-center mt-16 p-8 bg-white/80 dark:bg-[#1C1C1C]/80 backdrop-blur-sm rounded-3xl border border-gray-200 dark:border-[rgb(80,80,80)]">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+        <section className="text-center mt-16 p-8 bg-white/80 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-200 border-gray-200">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 text-gray-800">
             다른 질문이 있으신가요?
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-gray-600 text-gray-600 mb-6">
             FAQ에서 원하는 답변을 찾지 못하셨다면, 언제든지 문의해주세요.
           </p>
-          <div className="text-gray-600 dark:text-gray-300">
+          <div className="text-gray-600 text-gray-600">
             <p className="mb-2">
-              <span className="font-semibold text-gray-800 dark:text-white">이메일:</span> support@pawcus.dev
+              <span className="font-semibold text-gray-800 text-gray-800">이메일:</span> support@pawcus.dev
             </p>
             <p>
-              <span className="font-semibold text-gray-800 dark:text-white">전화:</span> 010-5172-5645
+              <span className="font-semibold text-gray-800 text-gray-800">전화:</span> 010-5172-5645
             </p>
           </div>
         </section>
