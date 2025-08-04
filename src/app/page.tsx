@@ -9,6 +9,7 @@ import LeaderboardSection from '@/components/sections/LeaderboardSection';
 import CTASection from '@/components/sections/CTASection';
 import Link from 'next/link';
 import Image from 'next/image';
+import { styles } from '@/lib/styles';
 
 
 
@@ -88,13 +89,13 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className={styles.pageBackground}>
       {/* Navigation */}
       <Navigation />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-50 -z-20" />
-      <div className="fixed inset-0 pointer-events-none -z-10">
+      <div className={styles.gradientBackground} />
+      <div className={styles.animatedBackground}>
         <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl " />
         <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl " style={{ animationDelay: '1s' }} />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-green-400/15 to-blue-600/15 rounded-full blur-3xl " style={{ animationDelay: '2s' }} />
@@ -107,7 +108,7 @@ export default function LandingPage() {
         type={toastType} 
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
+      <main className={`${styles.container} relative z-10 pt-16`}>
         {/* Hero Section */}
         <HeroSection 
           onCopyHomebrew={handleHomebrewCopy} 
@@ -129,10 +130,10 @@ export default function LandingPage() {
       </main>
 
       {/* Footer - Business Information */}
-      <footer className="py-12 border-t border-gray-200/50 bg-gray-50/80 backdrop-blur-sm relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 via-white/30 to-gray-100/50" />
+      <footer className={styles.footer}>
+        <div className={styles.footerGradient} />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className={`${styles.container} relative z-10`}>
           <div className="text-center space-y-4">
             {/* Company Logo */}
             <div className="mb-6 flex justify-center">
@@ -149,7 +150,7 @@ export default function LandingPage() {
             </div>
             
             {/* Business Information */}
-            <div className="text-sm text-gray-600 space-y-2">
+            <div className={`${styles.text.small} space-y-2`}>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
                 <span className="font-medium">상호명: 집중</span>
                 <span className="hidden md:inline text-gray-400">|</span>
@@ -168,16 +169,16 @@ export default function LandingPage() {
             {/* Quick Links */}
             <nav className="pt-4 border-t border-gray-200/50" aria-label="Footer Navigation">
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-2 md:space-y-0 mb-4">
-                <Link href="/terms" className="text-sm text-gray-600 hover:text-purple-600 transition-colors">
+                <Link href="/terms" className={`${styles.text.small} hover:text-purple-600 transition-colors`}>
                   이용약관
                 </Link>
                 <span className="hidden md:inline text-gray-400 dark:text-[rgb(153,153,153)]" aria-hidden="true">|</span>
-                <Link href="/privacy" className="text-sm text-gray-600 hover:text-purple-600 transition-colors">
+                <Link href="/privacy" className={`${styles.text.small} hover:text-purple-600 transition-colors`}>
                   개인정보처리방침
                 </Link>
               </div>
               
-              <p className="text-xs text-gray-500">
+              <p className={styles.text.muted}>
                 © 2025 Pawcus. All rights reserved.
               </p>
             </nav>

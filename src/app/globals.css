@@ -250,26 +250,22 @@ main {
   transition: all 0.3s ease;
 }
 
-/* 현대적 카드 디자인 */
-.card-modern {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(99, 102, 241, 0.15);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+/* Tailwind 커스텀 유틸리티 클래스 */
+@layer utilities {
+  .box-shadow-modern {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+  
+  .box-shadow-modern-hover {
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+  }
+  
+  .backdrop-blur-20 {
+    backdrop-filter: blur(20px);
+  }
 }
 
-.card-modern:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
-}
-
-/* 글래스 효과 */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(229, 231, 235, 0.5);
-}
+/* 글래스 효과는 스타일 상수로 대체 */
 
 /* 리더보드 색상 (라이트 테마에 맞게 조정) */
 .leaderboard-1st {

@@ -7,21 +7,22 @@ import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import { styles, createCardStyle, getHeadingStyle, getTextStyle } from '@/lib/styles';
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className={styles.pageBackground}>
       {/* Navigation */}
       <Navigation />
 
       {/* Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-gray-50 via-purple-50/20 to-blue-50/20 opacity-50" />
+      <div className={styles.gradientBackground} />
       <div className="fixed inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-32 relative z-10">
+      <main className={`${styles.cardContainer} py-16 pt-32 relative z-10`}>
         {/* Header */}
         <header className="text-center mb-12">
           <div className="mb-6 flex justify-center">
@@ -37,13 +38,13 @@ export default function PrivacyPage() {
             </div>
           </div>
           
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+          <h1 className={`${getHeadingStyle(3)} ${styles.gradientText} mb-4`}>
             개인정보 처리방침
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className={`text-xl ${getTextStyle('secondary')}`}>
             귀하의 개인정보를 소중하게 보호합니다
           </p>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className={`${getTextStyle('small')} ${getTextStyle('muted')} mt-2`}>
             시행일: 2025년 7월 4일
           </p>
         </header>

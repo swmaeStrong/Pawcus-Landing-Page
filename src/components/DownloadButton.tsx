@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Copy } from 'lucide-react';
+import { createButtonStyle, getTextStyle } from '@/lib/styles';
 
 interface DownloadButtonProps {
   type: 'homebrew' | 'dmg';
@@ -31,7 +32,7 @@ export default function DownloadButton({ type, onDownload, className = "" }: Dow
       <div className={`absolute -inset-1 bg-gradient-to-r ${gradientClass} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200`} />
       <Button
         onClick={onDownload}
-        className={`relative w-full bg-white hover:bg-gray-50 text-gray-800 border-2 ${borderClass} backdrop-blur-sm px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl transition-all duration-300 hover:scale-105 font-semibold text-base sm:text-lg md:text-xl shadow-lg ${shadowClass} min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20`}
+        className={`relative w-full ${createButtonStyle(type)} border-2 ${borderClass} px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-semibold text-base sm:text-lg md:text-xl ${shadowClass} min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20`}
       >
         <div className="flex items-center justify-center space-x-4">
           {isHomebrew ? (
@@ -42,10 +43,10 @@ export default function DownloadButton({ type, onDownload, className = "" }: Dow
             </svg>
           )}
           <div className="text-center">
-            <div className="font-bold text-gray-800">
+            <div className={`font-bold ${getTextStyle('secondary')}`}>
               {isHomebrew ? 'brew 명령어 복사' : 'DMG 다운로드'}
             </div>
-            <div className="text-gray-600 text-sm font-normal">
+            <div className={`${getTextStyle('secondary')} text-sm font-normal`}>
               {isHomebrew ? '터미널에서 간편 설치' : '직접 설치 파일'}
             </div>
           </div>
