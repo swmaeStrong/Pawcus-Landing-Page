@@ -45,7 +45,7 @@ export default function LandingPage() {
   }
 
   const handleHomebrewCopy = () => {
-    copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')
+    copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')
   }
 
   const handleDMGDownload = () => {
@@ -58,10 +58,9 @@ export default function LandingPage() {
         content_type: 'direct_download'
       })
     }
-    
     const link = document.createElement('a');
-    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pawcus.dmg';
-    link.download = 'Pawcus.dmg';
+    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
+    link.download = 'pomocore.dmg';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -118,8 +117,6 @@ export default function LandingPage() {
         {/* Features Section */}
         <FeaturesSection />
         
-        {/* Leaderboard Section */}
-        <LeaderboardSection />
 
 
         {/* CTA Section */}
