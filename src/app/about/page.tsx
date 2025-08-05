@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
+import { styles, createCardStyle, getHeadingStyle, getTextStyle } from '@/lib/styles';
 import { 
   Clock, 
   TrendingUp, 
@@ -131,26 +132,26 @@ const stats = [];
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#ECECEC] dark:bg-[#383838] relative">
+    <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
       <Navigation />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-[#1C1C1C] dark:via-[#2D2D2D] dark:to-[#383838] opacity-50 -z-20" />
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-pink-400/20 to-yellow-600/20 rounded-full blur-3xl" />
+      <div className={styles.gradientBackground} />
+      <div className={styles.animatedBackground}>
+        <div className="absolute top-1/4 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#3f72af]/20 to-[#c6d4e8]/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-r from-[#c6d4e8]/25 to-[#3f72af]/15 rounded-full blur-3xl" />
       </div>
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16">
+      <main className={`${styles.container} relative z-10 pt-24 pb-16`}>
         {/* Hero Section */}
         <section className="text-center mb-20">
           <div className="mb-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-gray-800 dark:text-white">
+            <h1 className={`${getHeadingStyle(3)} mb-6`}>
               <span className="font-black">Pawcus</span>란?
             </h1>
-            <p className="text-base sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
-              개발자의 작업 내역을 <span className="font-bold text-white">체계적으로 분석</span>하고{' '}
-              <span className="font-bold text-white">경쟁 시스템</span>을 통해{' '}
+            <p className={`text-base sm:text-xl md:text-2xl ${getTextStyle('secondary')} max-w-4xl mx-auto leading-relaxed px-4`}>
+              개발자의 작업 내역을 <span className={`font-bold ${styles.gradientText}`}>체계적으로 분석</span>하고{' '}
+              <span className={`font-bold ${styles.gradientText}`}>경쟁 시스템</span>을 통해{' '}
               성장을 돕는 생산성 관리 소프트웨어입니다.
             </p>
           </div>
@@ -159,26 +160,26 @@ export default function AboutPage() {
 
         {/* Core Features */}
         <section className="mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+          <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${styles.text.primary}`}>
             핵심 기능
           </h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-white/80 dark:bg-[#1C1C1C]/80 backdrop-blur-sm border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-lg transition-all duration-300">
+              <Card key={index} className={`${createCardStyle('modern')} hover:shadow-lg transition-all duration-300`}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-800 dark:text-white mb-3">
+                  <CardTitle className={`text-xl ${styles.text.primary} mb-3`}>
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className={`${getTextStyle('secondary')} mb-4`}>
                     {feature.description}
                   </p>
                   <ul className="space-y-2">
                     {feature.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="flex items-start space-x-2">
-                        <span className="text-gray-600 dark:text-white mt-0.5 flex-shrink-0">•</span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{detail}</span>
+                        <span className={`${styles.text.primary} mt-0.5 flex-shrink-0`}>•</span>
+                        <span className={getTextStyle('small')}>{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -190,17 +191,17 @@ export default function AboutPage() {
 
         {/* Use Cases */}
         <section className="mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+          <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${styles.text.primary}`}>
             이런 사람에게 적극 추천합니다!
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
-              <Card key={index} className="bg-white/80 dark:bg-[#1C1C1C]/80 backdrop-blur-sm border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-lg transition-all duration-300">
+              <Card key={index} className={`${createCardStyle('modern')} hover:shadow-lg transition-all duration-300`}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-800 dark:text-white">
+                  <CardTitle className={`text-xl ${styles.text.primary}`}>
                     {useCase.title}
                   </CardTitle>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className={getTextStyle('secondary')}>
                     {useCase.description}
                   </p>
                 </CardHeader>
@@ -208,8 +209,8 @@ export default function AboutPage() {
                   <ul className="space-y-2">
                     {useCase.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-center space-x-2">
-                        <span className="text-gray-600 dark:text-white flex-shrink-0">•</span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{benefit}</span>
+                        <span className={`${styles.text.primary} flex-shrink-0`}>•</span>
+                        <span className={getTextStyle('small')}>{benefit}</span>
                       </li>
                     ))}
                   </ul>

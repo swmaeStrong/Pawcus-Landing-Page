@@ -19,7 +19,7 @@ interface LeaderboardCardProps {
 
 export default function LeaderboardCard({ leaderboardData }: LeaderboardCardProps) {
   return (
-    <Card className="bg-white/80 dark:bg-[#1C1C1C]/90 backdrop-blur-sm shadow-2xl border border-gray-200 dark:border-[rgb(80,80,80)] hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
+    <Card className="bg-white/80 backdrop-blur-sm shadow-2xl border border-gray-200 hover:shadow-amber-500/20 transition-all duration-500 hover:scale-105 relative overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <CardContent className="p-4 sm:p-6 md:p-8 relative z-10">
         <div className="space-y-4">
@@ -49,7 +49,7 @@ export default function LeaderboardCard({ leaderboardData }: LeaderboardCardProp
                 <div className={`flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm sm:text-base md:text-lg mr-2 sm:mr-3 md:mr-4 border-2 relative z-10 ${
                   index === 0 
                     ? 'bg-gradient-to-br from-yellow-400 via-cyan-400 to-blue-500 text-white border-yellow-400/50 shadow-lg' 
-                    : 'bg-white dark:bg-[#1C1C1C] text-gray-700 dark:text-[rgb(220,220,220)] border-gray-300 dark:border-[rgb(80,80,80)]'
+                    : 'bg-white text-gray-700 border-gray-300'
                 }`}>
                   {user.rank}
                 </div>
@@ -74,17 +74,17 @@ export default function LeaderboardCard({ leaderboardData }: LeaderboardCardProp
                 )}
 
                 <div className="flex-1 min-w-0 relative z-10">
-                  <h3 className={`font-bold text-sm sm:text-base md:text-lg truncate transition-colors duration-300 text-gray-800 dark:text-[rgb(220,220,220)]`}>
+                  <h3 className={`font-bold text-sm sm:text-base md:text-lg truncate transition-colors duration-300 text-gray-800`}>
                     {user.name}
                   </h3>
-                  <p className="text-gray-500 dark:text-[rgb(153,153,153)] text-xs sm:text-sm">{user.points.toLocaleString()} 포인트</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">{user.points.toLocaleString()} 포인트</p>
                 </div>
 
                 <div className="text-right relative z-10">
-                  <div className="text-sm sm:text-base md:text-lg font-bold transition-colors duration-300 text-gray-800 dark:text-[rgb(220,220,220)]">
+                  <div className="text-sm sm:text-base md:text-lg font-bold transition-colors duration-300 text-gray-800">
                     {user.time}
                   </div>
-                  <p className="text-green-600 dark:text-green-400 text-xs sm:text-sm font-semibold">{user.trend}</p>
+                  <p className="text-green-600 text-xs sm:text-sm font-semibold">{user.trend}</p>
                 </div>
 
                 {index === 0 && (

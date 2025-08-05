@@ -27,14 +27,14 @@ export default function LeaderboardSection() {
   return (
     <>
       <div className="text-center mb-12 mt-16">
-        <h4 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 dark:text-[rgb(220,220,220)] px-4">동료들과 함께 경쟁하며 성장하세요!</h4>
-        <p className="text-base sm:text-lg dark:text-[rgb(153,153,153)] px-4">건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요</p>
+        <h4 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 px-4">동료들과 함께 경쟁하며 성장하세요!</h4>
+        <p className="text-base sm:text-lg text-gray-600 px-4">건전한 경쟁을 통해 서로 동기부여를 받고 더 높은 생산성을 달성하세요</p>
       </div>
       <article className="mb-12 scroll-animate">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-[rgb(220,220,220)]">실시간 리더보드</h3>
-            <p className="text-lg sm:text-xl md:text-2xl dark:text-[rgb(153,153,153)] mb-8 leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800">실시간 리더보드</h3>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
               Daily, Weekly, Monthly 기간별로 동료들과 개발 시간을 비교하고 순위를 확인하세요.
             </p>
             <div className="space-y-6">

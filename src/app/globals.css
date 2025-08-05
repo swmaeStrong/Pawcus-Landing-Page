@@ -42,52 +42,52 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Dark Color System */
-  --color-dark-background: #383838;
-  --color-dark-component: #1C1C1C;
-  --color-dark-component-secondary: #2D2D2D;
-  --color-dark-border: rgb(80, 80, 80);
-  --color-dark-border-light: rgb(120, 120, 120);
-  --color-dark-text-primary: rgb(220, 220, 220);
-  --color-dark-text-secondary: rgb(153, 153, 153);
-  --color-dark-text-accent: rgb(168, 85, 247);
+  /* Light Color System */
+  --color-light-background: #f8f9fa;
+  --color-light-component: #ffffff;
+  --color-light-component-secondary: #f3f4f6;
+  --color-light-border: rgb(229, 231, 235);
+  --color-light-border-light: rgb(243, 244, 246);
+  --color-light-text-primary: rgb(17, 24, 39);
+  --color-light-text-secondary: rgb(107, 114, 128);
+  --color-light-text-accent: rgb(99, 102, 241);
 }
 
-/* 세련된 색상 변수들 */
+/* 새로운 컬러 팔레트 변수들 */
   :root {
   --radius: 0.75rem;
-  /* Modern dark theme */
-  --background: #0a0a0f;
-  --foreground: #ffffff;
-  --card: #1a1a24;
-  --card-foreground: #ffffff;
-  --popover: #1a1a24;
-  --popover-foreground: #ffffff;
-  --primary: #6366f1;
+  /* Custom color palette theme */
+  --background: #ffffff;
+  --foreground: #2d3748;
+  --card: #ffffff;
+  --card-foreground: #2d3748;
+  --popover: #ffffff;
+  --popover-foreground: #2d3748;
+  --primary: #3f72af;
   --primary-foreground: #ffffff;
-  --secondary: #262633;
-  --secondary-foreground: #e4e4e7;
-  --muted: #262633;
-  --muted-foreground: #a1a1aa;
-  --accent: #6366f1;
+  --secondary: #ececec;
+  --secondary-foreground: #4a5568;
+  --muted: #c6d4e8;
+  --muted-foreground: #718096;
+  --accent: #3f72af;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #6366f1;
-  --chart-1: #6366f1;
-  --chart-2: #22c55e;
-  --chart-3: #3b82f6;
-  --chart-4: #f59e0b;
-  --chart-5: #ef4444;
-  --sidebar: #1a1a24;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #6366f1;
+  --border: #c6d4e8;
+  --input: #c6d4e8;
+  --ring: #3f72af;
+  --chart-1: #3f72af;
+  --chart-2: #c6d4e8;
+  --chart-3: #ececec;
+  --chart-4: #4a5568;
+  --chart-5: #718096;
+  --sidebar: #ececec;
+  --sidebar-foreground: #2d3748;
+  --sidebar-primary: #3f72af;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #262633;
-  --sidebar-accent-foreground: #e4e4e7;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #6366f1;
+  --sidebar-accent: #c6d4e8;
+  --sidebar-accent-foreground: #4a5568;
+  --sidebar-border: #c6d4e8;
+  --sidebar-ring: #3f72af;
 }
 
 html {
@@ -97,7 +97,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 50%, #262633 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ececec 50%, #c6d4e8 100%);
   color: var(--foreground);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
@@ -201,7 +201,7 @@ main {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  background: linear-gradient(135deg, #3f72af, #3f72af, #c6d4e8);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -250,56 +250,68 @@ main {
   transition: all 0.3s ease;
 }
 
-/* 현대적 카드 디자인 */
-.card-modern {
-  background: rgba(26, 26, 36, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+/* Tailwind 커스텀 유틸리티 클래스 */
+@layer utilities {
+  .box-shadow-modern {
+    box-shadow: 0 4px 24px rgba(63, 114, 175, 0.08);
+  }
+  
+  .box-shadow-modern-hover {
+    box-shadow: 0 8px 32px rgba(63, 114, 175, 0.12);
+  }
+  
+  .backdrop-blur-20 {
+    backdrop-filter: blur(20px);
+  }
+  
+  .bg-primary {
+    background-color: #3f72af;
+  }
+  
+  .bg-secondary {
+    background-color: #c6d4e8;
+  }
+  
+  .text-primary {
+    color: #3f72af;
+  }
+  
+  .border-primary {
+    border-color: #3f72af;
+  }
 }
 
-.card-modern:hover {
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-}
+/* 글래스 효과는 스타일 상수로 대체 */
 
-/* 글래스 효과 */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* 리더보드 색상 (다크 테마에 맞게 조정) */
+/* 리더보드 색상 (라이트 테마에 맞게 조정) */
 .leaderboard-1st {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.3) 100%);
-  border: 1px solid rgba(251, 191, 36, 0.4);
-  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.1);
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.15) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.08);
 }
 
 .leaderboard-2nd {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(220, 38, 38, 0.3) 100%);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.1);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.15) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.08);
 }
 
 .leaderboard-3rd {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.3) 100%);
-  border: 1px solid rgba(251, 191, 36, 0.4);
-  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.1);
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.15) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.08);
 }
 
 .leaderboard-4th {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.3) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.15) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
 }
 
 .leaderboard-default {
-  background: linear-gradient(135deg, rgba(156, 163, 175, 0.2) 0%, rgba(107, 114, 128, 0.3) 100%);
-  border: 1px solid rgba(156, 163, 175, 0.4);
-  box-shadow: 0 4px 20px rgba(156, 163, 175, 0.1);
+  background: linear-gradient(135deg, rgba(156, 163, 175, 0.1) 0%, rgba(107, 114, 128, 0.15) 100%);
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  box-shadow: 0 4px 20px rgba(156, 163, 175, 0.08);
 }
 
 /* 카테고리 색상 */
@@ -323,36 +335,36 @@ main {
 /* 히어로 배너 그라데이션 */
 .hero-gradient {
   background: linear-gradient(135deg, 
-    rgba(99, 102, 241, 0.1) 0%, 
-    rgba(139, 92, 246, 0.1) 25%,
-    rgba(168, 85, 247, 0.1) 50%,
-    rgba(99, 102, 241, 0.1) 100%
+    rgba(63, 114, 175, 0.05) 0%, 
+    rgba(198, 212, 232, 0.1) 25%,
+    rgba(236, 236, 236, 0.05) 50%,
+    rgba(63, 114, 175, 0.05) 100%
   );
 }
 
-/* 다크모드 스크롤바 */
+/* 라이트모드 스크롤바 */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #2d2d2d;
+  background: #f1f5f9;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a4a4a;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a5a5a;
+  background: #94a3b8;
 }
 
 /* Firefox 스크롤바 */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4a4a4a #2d2d2d;
+  scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
 /* 인터섹션 옵저버를 위한 헬퍼 클래스 */
@@ -362,12 +374,12 @@ main {
 
 /* 버튼 글로우 효과 */
 .btn-glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 20px rgba(63, 114, 175, 0.3);
   transition: all 0.3s ease;
 }
 
 .btn-glow:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 30px rgba(63, 114, 175, 0.5);
   transform: translateY(-2px);
 }
 
