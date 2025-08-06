@@ -60,7 +60,7 @@ export default function LandingPage() {
     }
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
-    link.download = 'pomocore.dmg';
+    link.download = 'Pomocore.dmg';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -147,7 +147,7 @@ export default function Navigation() {
               <div className="group relative">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
                 <Button
-                  onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+                  onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
                   className={createButtonStyle('homebrew')}
                   size="sm"
                 >
@@ -174,8 +174,8 @@ export default function Navigation() {
                     }
                     
                     const link = document.createElement('a');
-                    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pawcus.dmg';
-                    link.download = 'Pawcus.dmg';
+                    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
+                    link.download = 'Pomocore.dmg';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
@@ -198,7 +198,7 @@ export default function Navigation() {
           <div className="flex md:hidden items-center space-x-2">
             {/* Mobile Homebrew Button */}
             <Button
-              onClick={() => copyToClipboard('brew tap swmaeStrong/pawcus && brew install --cask pawcus')}
+              onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
               className={`${createButtonStyle('homebrew')} px-2 py-1 text-xs`}
               size="sm"
             >
@@ -218,8 +218,8 @@ export default function Navigation() {
                 }
                 
                 const link = document.createElement('a');
-                link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pawcus.dmg';
-                link.download = 'Pawcus.dmg';
+                link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
+                link.download = 'Pomocore.dmg';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
