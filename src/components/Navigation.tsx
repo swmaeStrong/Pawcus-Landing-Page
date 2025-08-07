@@ -93,7 +93,7 @@ export default function Navigation() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
-                src="/icons/final_icon_128x128.png"
+                src="/icons/128-mac.png"
                 alt="Pomocore Logo"
                 width={32}
                 height={32}

@@ -18,7 +18,7 @@ export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASection
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-emerald-500/20 rounded-full blur-lg" />
                 <Image
-                  src="/icons/final_icon_128x128.png"
+                  src="/icons/128-mac.png"
                   alt="Pomocore Logo"
                   width={60}
                   height={60}

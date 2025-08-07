@@ -62,7 +62,7 @@ export const metadata: Metadata = {
           type: "image/png",
         },
       {
-        url: "https://www.pomocore.com/icons/final_icon_512x512.png",
+        url: "https://www.pomocore.com/icons/512-mac.png",
         width: 512,
         height: 512,
         alt: "Pomocore Logo",
@@ -78,23 +78,23 @@ export const metadata: Metadata = {
     description: "개발자를 위한 스마트 생산성 관리 도구",
     images: [
       {
-        url: "https://www.pomocore.com/icons/final_icon_512x512.png",
+        url: "https://www.pomocore.com/icons/512-mac.png",
         alt: "Pomocore Logo"
       }
     ],
   },
   icons: {
     icon: [
-      { url: "/icons/final_icon_16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/final_icon_32x32@2x.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/final_icon_128x128.png", sizes: "128x128", type: "image/png" },
-      { url: "/icons/final_icon_256x256.png", sizes: "256x256", type: "image/png" },
+      { url: "/icons/16-mac.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/32-mac.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/128-mac.png", sizes: "128x128", type: "image/png" },
+      { url: "/icons/256-mac.png", sizes: "256x256", type: "image/png" },
     ],
     apple: [
-      { url: "/icons/final_icon_128x128.png", sizes: "128x128", type: "image/png" },
-      { url: "/icons/final_icon_256x256.png", sizes: "256x256", type: "image/png" },
+      { url: "/icons/128-mac.png", sizes: "128x128", type: "image/png" },
+      { url: "/icons/256-mac.png", sizes: "256x256", type: "image/png" },
     ],
-    shortcut: "/icons/final_icon_256x256.png",
+    shortcut: "/icons/256-mac.png",
   },
   manifest: "/manifest.json",
   other: {
