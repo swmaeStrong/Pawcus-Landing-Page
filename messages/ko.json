@@ -57,9 +57,29 @@
         "personalizedReport": "개인화된 분석 리포트"
       }
     },
+    "dailyGoal": {
+      "title": "팀 목표 설정과 상호 비교",
+      "description": "팀원들과 함께 목표를 설정하고 서로의 달성도를 비교하고 확인하세요.",
+      "descriptionSub": "원형 진행바로 팀원들의 목표 달성률을 실시간 크로스체크할 수 있습니다.",
+      "features": {
+        "goalSetting": "팀 단위 목표 설정",
+        "realTimeProgress": "팀원 간 진행률 비교",
+        "visualFeedback": "상호 달성도 크로스체크"
+      }
+    },
     "dashboard": {
       "title": "통합 대시보드",
       "description": "모든 생산성 데이터를 하나의 화면에서 직관적으로 확인하세요"
+    },
+    "groupOverview": {
+      "title": "팀끼리 경쟁하며 동기부여하세요",
+      "description": "그룹 내 팀들이 서로 경쟁하면서 동기부여를 받을 수 있도록 실시간 랭킹과 성과를 비교해보세요.",
+      "descriptionSub": "팀별 순위와 달성률을 한눈에 보며 건전한 경쟁을 통해 전체 그룹의 성과를 높일 수 있습니다.",
+      "features": {
+        "teamCompetition": "팀 간 실시간 경쟁 시스템",
+        "motivationalRanking": "동기부여를 위한 팀 랭킹",
+        "groupPerformance": "그룹 전체 성과 향상"
+      }
     }
   },
   "download": {
@@ -562,8 +582,8 @@
   },
 
   "cta": {
-    "title": "시간 낭비를 막아보세요",
-    "description": "간단한 설치로 시간 절약과 효율적 작업의 새로운 경험을 시작하세요"
+    "title": "더 이상 시간을 낭비하지 마세요",
+    "description": "Pomocore를 통해 시간을 절약하고, 집중력을 극대화해보세요!"
   }
 
 }

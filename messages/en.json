@@ -56,9 +56,29 @@
         "personalizedReport": "Personalized analysis reports"
       }
     },
+    "dailyGoal": {
+      "title": "Team Goal Setting & Cross-Comparison",
+      "description": "Set goals together with your team members and compare each other's achievement rates.",
+      "descriptionSub": "Real-time cross-check your team members' goal completion rates with circular progress bars.",
+      "features": {
+        "goalSetting": "Team-based goal setting",
+        "realTimeProgress": "Inter-team progress comparison",
+        "visualFeedback": "Mutual achievement cross-check"
+      }
+    },
     "dashboard": {
       "title": "Unified Dashboard",
       "description": "View all your productivity data intuitively on a single screen"
+    },
+    "groupOverview": {
+      "title": "Compete Between Teams and Stay Motivated",
+      "description": "Enable teams within your group to compete with each other and stay motivated through real-time rankings and performance comparisons.",
+      "descriptionSub": "View team rankings and achievement rates at a glance, fostering healthy competition to boost overall group performance.",
+      "features": {
+        "teamCompetition": "Real-time inter-team competition system",
+        "motivationalRanking": "Motivational team rankings",
+        "groupPerformance": "Overall group performance improvement"
+      }
     }
   },
   "download": {
@@ -561,6 +581,6 @@
   },
   "cta": {
     "title": "Stop wasting time",
-    "description": "Start your new experience of time saving and efficient work with simple installation"
+    "description": "Maximize your focus and productivity with Pomocore!"
   }
 }
