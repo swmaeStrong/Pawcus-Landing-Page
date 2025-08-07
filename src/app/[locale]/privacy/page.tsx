@@ -433,16 +433,16 @@ export default function PrivacyPage() {
                   </h4>
                   <div className="space-y-2 text-sm">
                     <p className="text-gray-600">
-                      <span className="font-medium text-gray-700">성명:</span> {t('privacy.responsiblePerson.name')}
+                      {t('privacy.responsiblePerson.name')}
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-medium text-gray-700">직책:</span> {t('privacy.responsiblePerson.position')}
+                      {t('privacy.responsiblePerson.position')}
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-medium text-gray-700">연락처:</span> {t('privacy.responsiblePerson.phone')}
+                      {t('privacy.responsiblePerson.phone')}
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-medium text-gray-700">이메일:</span> {t('privacy.responsiblePerson.email')}
+                      {t('privacy.responsiblePerson.email')}
                     </p>
                   </div>
                 </div>

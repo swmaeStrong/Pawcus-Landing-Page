@@ -443,11 +443,11 @@ export default function TermsPage() {
                 {t('terms.contact.description')}
               </p>
               <div className="bg-gray-100/50 rounded-lg p-4 space-y-2 border border-gray-300/50">
-                <p className="text-sm text-gray-600">• 상호: {t('terms.contact.company')}</p>
-                <p className="text-sm text-gray-600">• 대표자: {t('terms.contact.representative')}</p>
-                <p className="text-sm text-gray-600">• 주소: {t('terms.contact.address')}</p>
-                <p className="text-sm text-gray-600">• 전화: {t('terms.contact.phone')}</p>
-                <p className="text-sm text-gray-600">• 이메일: {t('terms.contact.email')}</p>
+                <p className="text-sm text-gray-600">{t('common.business.name')}</p>
+                <p className="text-sm text-gray-600">• {t('common.business.representative')}</p>
+                <p className="text-sm text-gray-600">• {t('common.business.address')}</p>
+                <p className="text-sm text-gray-600">• {t('common.business.phoneNumber')}</p>
+                <p className="text-sm text-gray-600">• {t('common.business.email')}</p>
               </div>
             </CardContent>
           </Card>

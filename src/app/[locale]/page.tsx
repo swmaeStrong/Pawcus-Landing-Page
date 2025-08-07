@@ -150,17 +150,17 @@ export default function LandingPage() {
             {/* Business Information */}
             <div className={`${styles.text.small} space-y-2`}>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
-                <span className="font-medium">상호명: 집중</span>
+                <span className="font-medium">{t('business.name')}</span>
                 <span className="hidden md:inline text-[#718096]">|</span>
-                <span>사업자등록번호: 255-18-02409</span>
+                <span>{t('business.businessNumber')}</span>
               </div>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
-                <span>대표자: 김영현</span>
+                <span>{t('business.representative')}</span>
                 <span className="hidden md:inline text-[#718096]">|</span>
-                <span>전화번호: 010-5172-5645</span>
+                <span>{t('business.phoneNumber')}</span>
               </div>
               <div className="text-center">
-                <span>사업장주소: 전라남도 나주시 우정로 77</span>
+                <span>{t('business.address')}</span>
               </div>
             </div>
             
@@ -168,16 +168,16 @@ export default function LandingPage() {
             <nav className="pt-4 border-t border-gray-200/50" aria-label="Footer Navigation">
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-2 md:space-y-0 mb-4">
                 <IntlLink href="/terms" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
-                  이용약관
+                  {t('terms.title')}
                 </IntlLink>
                 <span className="hidden md:inline text-gray-400 dark:text-[rgb(153,153,153)]" aria-hidden="true">|</span>
                 <IntlLink href="/privacy" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
-                  개인정보처리방침
+                  {t('privacy.title')}
                 </IntlLink>
               </div>
               
               <p className={styles.text.muted}>
-                © 2025 Pomocore. All rights reserved.
+                {t('copyright')}
               </p>
             </nav>
           </div>

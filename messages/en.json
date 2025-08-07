@@ -4,7 +4,23 @@
     "downloadApp": "Download",
     "backToHome": "Back to Home",
     "copySuccess": "Command copied to clipboard!",
-    "copyError": "Failed to copy. Please copy manually."
+    "copyError": "Failed to copy. Please copy manually.",
+    "copyright": "© 2025 Pomocore. All rights reserved.",
+    "business": {
+      "name": "Company Name: Pomocore",
+      "representative": "Representative: Younghyun Kim",
+      "businessNumber": "Business Registration Number: 255-18-02409",
+      "address": "Business Address: Jeonnam, Naha, Ujeong-ro 77",
+      "phoneNumber": "Phone Number: 010-5172-5645",
+      "email": "swmaestrong@gmail.com"
+    },
+    "terms": {
+      "title": "Terms of Service"
+    },
+    "privacy": {
+      "title": "Privacy Policy"
+    }
+  
   },
   "navigation": {
     "home": "Home",
@@ -104,13 +120,11 @@
         "content2": "The applicant applies for membership by entering member information according to the membership form determined by the company and expressing intention to agree to these terms.",
         "subtitle3": "③ Approval of Membership Application",
         "content3": "The company approves membership applications unless they fall under any of the following cases.",
-        "exceptions": [
-          "When the applicant has previously lost membership qualifications under these terms",
-          "When not using real name or using another person's name",
-          "When false information is provided or required information is not provided",
-          "When a minor under 14 has not obtained consent from legal guardian",
-          "When registration as a member is deemed to cause significant technical difficulties for the company"
-        ]
+        "exception1": "When the applicant has previously lost membership qualifications under these terms",
+        "exception2": "When not using real name or using another person's name",
+        "exception3": "When false information is provided or required information is not provided",
+        "exception4": "When a minor under 14 has not obtained consent from legal guardian",
+        "exception5": "When registration as a member is deemed to cause significant technical difficulties for the company"
       },
       "section5": {
         "title": "Article 5 (Change of Member Information)",
@@ -194,15 +208,6 @@
         "title": "Article 14 (Jurisdiction and Governing Law)",
         "item1": "① Korean law applies to these terms and service use agreements between the company and users.",
         "item2": "② When lawsuits are filed regarding disputes arising from service use, they shall be filed with the competent court under the Civil Procedure Act."
-      },
-      "section12": {
-        "title": "Article 12 (Disclaimer)"
-      },
-      "section13": {
-        "title": "Article 13 (Dispute Resolution)"
-      },
-      "section14": {
-        "title": "Article 14 (Jurisdiction and Governing Law)"
       }
     },
     "addendum": "Addendum",
@@ -296,10 +301,10 @@
     },
     "responsiblePerson": {
       "title": "Privacy Protection Officer",
-      "name": "Younghyun Kim",
-      "position": "CEO",
-      "phone": "010-5172-5645",
-      "email": "swmaestrong@gmail.com"
+      "name": "Name: Younghyun Kim",
+      "position": "Position: CEO",
+      "phone": "Phone Number: 010-5172-5645",
+      "email": "Email: swmaestrong@gmail.com"
     },
     "additionalInquiries": {
       "title": "Other Personal Information Violation Report and Consultation Agencies",
