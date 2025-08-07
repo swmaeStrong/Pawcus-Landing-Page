@@ -22,15 +22,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pomocore 소개 - 개발자를 위한 스마트 생산성 관리',
-  description: 'Pomocore는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
-  keywords: ['Pomocore', '개발자', '생산성', '시간 추적', '리더보드', 'AI', '소개'],
+  title: 'Pomocore 소개 - 시간을 절약하는 스마트 시간 추적',
+  description: 'Pomocore로 시간 낭비를 막고 효율적으로 작업하세요. AI 기반 시간 추적과 게임화된 경쟁 시스템으로 더 나은 작업 습관을 만들어보세요.',
+  keywords: ['Pomocore', '시간 절약', '시간 추적', '시간 낭비 방지', '효율적 작업', 'AI', '소개'],
   alternates: {
     canonical: 'https://www.pomocore.com/about',
   },
   openGraph: {
-    title: 'Pomocore 소개 - 개발자를 위한 스마트 생산성 관리',
-    description: 'Pomocore는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
+    title: 'Pomocore 소개 - 시간을 절약하는 스마트 시간 추적',
+    description: 'Pomocore로 시간 낭비를 막고 효율적으로 작업하세요. AI 기반 시간 추적과 게임화된 경쟁 시스템으로 더 나은 작업 습관을 만들어보세요.',
     url: 'https://www.pomocore.com/about',
     type: 'website',
   },

@@ -1,7 +1,7 @@
 {
-  "name": "Pomocore - 개발자를 위한 스마트 시간 추적",
+  "name": "Pomocore - 시간을 절약하는 스마트 시간 추적",
   "short_name": "Pomocore",
-  "description": "개발 시간을 추적하고 동료들과 경쟁하세요. 스마트한 시간 추적, 실시간 리더보드, 상세한 분석 차트를 통해 더 효율적인 개발자가 되어보세요.",
+  "description": "시간 낭비를 막고 시간을 절약하세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ECECEC",

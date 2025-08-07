@@ -28,10 +28,12 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
           </h2>
         </div>
         
-        <p className={`${getTextStyle('body')} mb-16 max-w-4xl mx-auto leading-relaxed px-4`}>
+        <p className={`${getTextStyle('body')} mb-4 max-w-4xl mx-auto leading-relaxed px-4`}>
           {t('description')}
         </p>
-        
+        <p className={`${getTextStyle('body')} mb-16 max-w-4xl mx-auto leading-relaxed px-4`}>
+          {t('descriptionSub')}
+        </p>
         {/* Demo Video */}
         <div className="flex justify-center mb-16 px-4">
           <video 

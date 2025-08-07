@@ -34,8 +34,9 @@
   },
   "hero": {
     "title": "Pomocore",
-    "subtitle": "Smart Productivity Management for Developers",
-    "description": "Revolutionize your personal and team productivity with AI-powered smart time tracking and gamified competition system.",
+    "subtitle": "Service that maximizes your focus",
+    "description": "How much time do you think you waste during PC work?",
+    "descriptionSub": "Create a more efficient work environment with smart time tracking and analysis.",
     "downloadTitle": "Download Pomocore",
     "downloadDescription": "Install Pomocore using your preferred method",
     "downloadNote": "Auto-updates with Homebrew or direct install with DMG"
@@ -410,9 +411,9 @@
   },
   "about": {
     "title": "About Pomocore",
-    "subtitle": "A smart choice for better productivity",
+    "subtitle": "Save time and work more efficiently",
     "heroTitle": "What is Pomocore?",
-    "heroDescription": "A productivity management software that systematically analyzes developers' work history and helps growth through competition systems.",
+    "heroDescription": "Smart time tracking software that prevents time waste and creates an efficient work environment.",
     "coreFeatures": "Core Features",
     "useCasesTitle": "Highly recommended for these people!",
     "features": {
@@ -429,7 +430,7 @@
         "title": "Real-time Activity Monitoring",
         "description": "Tracks and analyzes usage time of all applications running on macOS in real-time.",
         "details": [
-          "Professional tracking of development tools like VS Code, Chrome, Figma",
+          "Professional tracking of various work tools like VS Code, Chrome, Figma",
           "Distinction between active window and inactive time",
           "Accurate focus time measurement"
         ]
@@ -473,8 +474,8 @@
     },
     "useCases": {
       "individualDeveloper": {
-        "title": "Individual Developers",
-        "description": "Freelancers or developers working on personal projects",
+        "title": "Individual Users",
+        "description": "Freelancers or professionals working on personal projects",
         "benefits": [
           "Time management optimization",
           "Understanding productivity patterns",
@@ -482,8 +483,8 @@
         ]
       },
       "developmentTeam": {
-        "title": "Development Teams",
-        "description": "Improving productivity of development teams working together",
+        "title": "Teams/Organizations",
+        "description": "Improving productivity of teams working together",
         "benefits": [
           "Healthy competition among team members",
           "Visualization of team-wide productivity",
@@ -529,7 +530,7 @@
       "features": [
         {
           "question": "Which applications can be tracked?",
-          "answer": "All applications running on macOS can be tracked. This includes tools frequently used by developers such as VS Code, Xcode, Chrome, Safari, Figma, Sketch, and AI automatically categorizes them."
+          "answer": "All applications running on macOS can be tracked. This includes various work tools such as VS Code, Xcode, Chrome, Safari, Figma, Sketch, and AI automatically categorizes them."
         },
         {
           "question": "How does tracking work when multiple tabs are open simultaneously?",
@@ -537,7 +538,7 @@
         },
         {
           "question": "How does the leaderboard work?",
-          "answer": "The leaderboard is a feature that allows comparing development time within the same team or group. You can check rankings on Daily, Weekly, and Monthly basis, and category-specific expertise can also be compared. The leaderboard reflects the latest data within 20-30 seconds, allowing real-time ranking changes. All data is processed anonymously."
+          "answer": "The leaderboard is a feature that allows comparing work time within the same team or group. You can check rankings on Daily, Weekly, and Monthly basis, and category-specific expertise can also be compared. The leaderboard reflects the latest data within 20-30 seconds, allowing real-time ranking changes. All data is processed anonymously."
         },
         {
           "question": "Am I tracked even when I'm not doing any activity?",
@@ -559,7 +560,7 @@
     }
   },
   "cta": {
-    "title": "Start right now",
-    "description": "Experience the new world of productivity gamification with simple installation"
+    "title": "Stop wasting time",
+    "description": "Start your new experience of time saving and efficient work with simple installation"
   }
 }

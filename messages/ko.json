@@ -35,8 +35,9 @@
   },
   "hero": {
     "title": "Pomocore",
-    "subtitle": "개발자를 위한 스마트 생산성 관리",
-    "description": "AI 기반 스마트 시간 추적과 게임화된 경쟁 시스템으로 개인과 팀의 생산성을 혁신적으로 향상시켜보세요.",
+    "subtitle": "당신의 집중력을 극대화시켜줄 서비스",
+    "description": "PC 작업 도중 집중하지 못하고 낭비되는 시간은 얼마나 될까요?",
+    "descriptionSub": "작업 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
     "downloadTitle": "Pomocore 다운로드",
     "downloadDescription": "선호하는 방법으로 Pomocore를 설치하세요",
     "downloadNote": "Homebrew로 자동 업데이트 또는 DMG로 직접 설치"
@@ -259,9 +260,9 @@
   },
   "about": {
     "title": "Pomocore 소개",
-    "subtitle": "더 나은 생산성을 위한 스마트한 선택",
+    "subtitle": "시간을 절약하고 효율적으로 작업하세요",
     "heroTitle": "Pomocore란?",
-    "heroDescription": "개발자의 작업 내역을 체계적으로 분석하고 경쟁 시스템을 통해 성장을 돕는 생산성 관리 소프트웨어입니다.",
+    "heroDescription": "시간 낭비를 막고 효율적인 작업 환경을 만드는 스마트 시간 추적 소프트웨어입니다.",
     "coreFeatures": "핵심 기능",
     "useCasesTitle": "이런 사람에게 적극 추천합니다!",
     "features": {
@@ -278,7 +279,7 @@
         "title": "실시간 활동 모니터링",
         "description": "macOS에서 실행되는 모든 애플리케이션의 사용 시간을 실시간으로 추적하고 분석합니다.",
         "details": [
-          "VS Code, Chrome, Figma 등 개발 도구 전문 추적",
+          "VS Code, Chrome, Figma 등 다양한 작업 도구 전문 추적",
           "활성 창과 비활성 시간 구분",
           "정확한 포커스 시간 측정"
         ]
@@ -322,8 +323,8 @@
     },
     "useCases": {
       "individualDeveloper": {
-        "title": "개인 개발자",
-        "description": "프리랜서나 개인 프로젝트를 진행하는 개발자",
+        "title": "개인 사용자",
+        "description": "프리랜서나 개인 프로젝트를 진행하는 모든 작업자",
         "benefits": [
           "시간 관리 최적화",
           "생산성 패턴 파악",
@@ -331,8 +332,8 @@
         ]
       },
       "developmentTeam": {
-        "title": "개발팀",
-        "description": "함께 일하는 개발팀의 생산성 향상",
+        "title": "팀/조직",
+        "description": "함께 일하는 팀의 생산성 향상",
         "benefits": [
           "팀원 간 건전한 경쟁",
           "팀 전체 생산성 가시화",
@@ -378,7 +379,7 @@
       "features": [
         {
           "question": "어떤 애플리케이션을 추적할 수 있나요?",
-          "answer": "macOS에서 실행되는 모든 애플리케이션을 추적할 수 있습니다. VS Code, Xcode, Chrome, Safari, Figma, Sketch 등 개발자들이 자주 사용하는 도구들이 모두 포함되며, AI가 자동으로 카테고리를 분류합니다."
+          "answer": "macOS에서 실행되는 모든 애플리케이션을 추적할 수 있습니다. VS Code, Xcode, Chrome, Safari, Figma, Sketch 등 다양한 작업 도구들이 모두 포함되며, AI가 자동으로 카테고리를 분류합니다."
         },
         {
           "question": "동시에 여러 탭을 띄웠을 경우에는 추적이 어떻게 되나요?",
@@ -386,7 +387,7 @@
         },
         {
           "question": "리더보드는 어떻게 작동하나요?",
-          "answer": "리더보드는 같은 팀이나 그룹 내에서 개발 시간을 비교할 수 있는 기능입니다. Daily, Weekly, Monthly 단위로 순위를 확인할 수 있으며, 카테고리별 전문성도 비교 가능합니다. 리더보드는 20-30초 이내에 최신 데이터가 반영되어 실시간으로 순위 변동을 확인할 수 있습니다. 모든 데이터는 익명화되어 처리됩니다."
+          "answer": "리더보드는 같은 팀이나 그룹 내에서 작업 시간을 비교할 수 있는 기능입니다. Daily, Weekly, Monthly 단위로 순위를 확인할 수 있으며, 카테고리별 전문성도 비교 가능합니다. 리더보드는 20-30초 이내에 최신 데이터가 반영되어 실시간으로 순위 변동을 확인할 수 있습니다. 모든 데이터는 익명화되어 처리됩니다."
         },
         {
           "question": "아무 활동을 하고 있지 않아도 추적되나요?",
@@ -561,8 +562,8 @@
   },
 
   "cta": {
-    "title": "지금 바로시작해보세요",
-    "description": "간단한 설치로 생산성 게임화의 새로운 경험을 시작할 수 있습니다"
+    "title": "시간 낭비를 막아보세요",
+    "description": "간단한 설치로 시간 절약과 효율적 작업의 새로운 경험을 시작하세요"
   }
 
 }
