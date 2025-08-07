@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 export const revalidate = 0 // 캐시 무효화
 
-export const alt = 'Pawcus - 개발자를 위한 스마트 생산성 관리'
+export const alt = 'Pomocore - 개발자를 위한 스마트 생산성 관리'
 export const size = {
   width: 1200,
   height: 630,
@@ -104,7 +104,7 @@ export default async function Image() {
               letterSpacing: '-4px',
             }}
           >
-            Pawcus
+            Pomocore
           </h1>
           
           {/* Subtitle */}

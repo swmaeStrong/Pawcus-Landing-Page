@@ -14,7 +14,7 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
         <div className="mb-12 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
           <h1 id="hero-heading" className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}>
-            Pawcus
+            Pomocore
           </h1>
           <div className={`${styles.gradientDivider} mb-8`} />
         </div>
@@ -52,10 +52,10 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
         <section className={styles.downloadSection} aria-labelledby="download-heading">
           <header className="text-center">
             <h3 id="download-heading" className={`${getHeadingStyle(3)} ${styles.text.primary} mb-4`}>
-              <span className={styles.gradientText}>Pawcus</span> 다운로드
+              <span className={styles.gradientText}>Pomocore</span> 다운로드
             </h3>
             <p className={getTextStyle('secondary')}>
-              선호하는 방법으로 Pawcus를 설치하세요
+              선호하는 방법으로 Pomocore를 설치하세요
             </p>
           </header>
           

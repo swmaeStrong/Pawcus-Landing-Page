@@ -35,7 +35,7 @@ export default function FeaturesSection() {
     <section className="py-24 relative" aria-labelledby="features-heading">
       <article className="mb-24 scroll-animate">
         <div className="text-center mb-16">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Pawcus Features</h3>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Pomocore Features</h3>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed px-4">
             사용 로그를 실시간으로 분석하여 카테고라이징을 해주고, 가장 많이 사용하는 카테고리의 통계를 내줍니다
           </p>

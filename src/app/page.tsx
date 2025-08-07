@@ -138,7 +138,7 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-gray-500/20 rounded-full blur-lg" />
                 <Image
                   src="/icons/final_icon_128x128.png"
-                  alt="Pawcus Logo"
+                  alt="Pomocore Logo"
                   width={40}
                   height={40}
                   className="relative z-10"
@@ -176,7 +176,7 @@ export default function LandingPage() {
               </div>
               
               <p className={styles.text.muted}>
-                © 2025 Pawcus. All rights reserved.
+                © 2025 Pomocore. All rights reserved.
               </p>
             </nav>
           </div>

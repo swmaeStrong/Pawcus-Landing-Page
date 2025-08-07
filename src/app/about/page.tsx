@@ -21,16 +21,16 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pawcus 소개 - 개발자를 위한 스마트 생산성 관리',
-  description: 'Pawcus는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
-  keywords: ['Pawcus', '개발자', '생산성', '시간 추적', '리더보드', 'AI', '소개'],
+  title: 'Pomocore 소개 - 개발자를 위한 스마트 생산성 관리',
+  description: 'Pomocore는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
+  keywords: ['Pomocore', '개발자', '생산성', '시간 추적', '리더보드', 'AI', '소개'],
   alternates: {
-    canonical: 'https://www.pawcus.dev/about',
+    canonical: 'https://www.pomocore.com/about',
   },
   openGraph: {
-    title: 'Pawcus 소개 - 개발자를 위한 스마트 생산성 관리',
-    description: 'Pawcus는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
-    url: 'https://www.pawcus.dev/about',
+    title: 'Pomocore 소개 - 개발자를 위한 스마트 생산성 관리',
+    description: 'Pomocore는 AI 기반 시간 추적과 게임화된 경쟁 시스템으로 개발자의 생산성을 혁신적으로 향상시키는 도구입니다.',
+    url: 'https://www.pomocore.com/about',
     type: 'website',
   },
 };
@@ -147,7 +147,7 @@ export default function AboutPage() {
         <section className="text-center mb-20">
           <div className="mb-8">
             <h1 className={`${getHeadingStyle(3)} mb-6`}>
-              <span className="font-black">Pawcus</span>란?
+              <span className="font-black">Pomocore</span>란?
             </h1>
             <p className={`text-base sm:text-xl md:text-2xl ${getTextStyle('secondary')} max-w-4xl mx-auto leading-relaxed px-4`}>
               개발자의 작업 내역을 <span className={`font-bold ${styles.gradientText}`}>체계적으로 분석</span>하고{' '}

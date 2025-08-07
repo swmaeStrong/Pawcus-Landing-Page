@@ -94,14 +94,14 @@ export default function Navigation() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
                 src="/icons/final_icon_128x128.png"
-                alt="Pawcus Logo"
+                alt="Pomocore Logo"
                 width={32}
                 height={32}
                 className="relative z-10"
               />
             </div>
             <span className={`text-xl font-bold ${styles.gradientPrimary}`}>
-              Pawcus
+              Pomocore
             </span>
           </Link>
 

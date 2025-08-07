@@ -24,7 +24,7 @@ export default function NotFound() {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-full blur-xl animate-pulse" />
             <Image
               src="/icons/final_icon_128x128.png"
-              alt="Pawcus Logo"
+              alt="Pomocore Logo"
               width={80}
               height={80}
               className="relative z-10"

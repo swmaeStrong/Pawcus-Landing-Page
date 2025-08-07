@@ -12,15 +12,15 @@ const faqData = [
     questions: [
       {
         question: "앱에서 기록 측정을 실행할 경우 어떤 데이터들이 추적되나요?",
-        answer: "Pawcus는 앱 정보, 앱의 제목, 그리고 브라우저의 경우 URL도 함께 수집합니다. 수집된 데이터들은 카테고리 분류 및 데이터 시각화 이외의 다른 목적으로는 사용되지 않습니다."
+        answer: "Pomocore는 앱 정보, 앱의 제목, 그리고 브라우저의 경우 URL도 함께 수집합니다. 수집된 데이터들은 카테고리 분류 및 데이터 시각화 이외의 다른 목적으로는 사용되지 않습니다."
       },
       {
-        question: "Pawcus는 어떤 방식으로 데이터를 보호하나요?",
-        answer: "Pawcus는 AES-256 암호화를 사용하여 모든 활동 로그를 보호합니다. 이는 현재 가장 강력한 암호화 표준 중 하나입니다. 데이터는 서버에 저장되지만 오직 사용자에게 서비스를 제공하기 위한 목적으로만 사용되며, 다른 목적으로는 절대 사용되지 않습니다."
+        question: "Pomocore는 어떤 방식으로 데이터를 보호하나요?",
+        answer: "Pomocore는 AES-256 암호화를 사용하여 모든 활동 로그를 보호합니다. 이는 현재 가장 강력한 암호화 표준 중 하나입니다. 데이터는 서버에 저장되지만 오직 사용자에게 서비스를 제공하기 위한 목적으로만 사용되며, 다른 목적으로는 절대 사용되지 않습니다."
       },
       {
         question: "내 개인정보가 외부로 유출될 가능성이 있나요?",
-        answer: "전혀 없습니다. Pawcus는 사용자의 데이터를 오직 서비스 제공을 위한 목적으로만 사용하며, 다른 목적으로는 절대 사용하지 않습니다. 제3자에게 제공하거나 판매하지 않으며, 사용자의 동의 없이 어떤 방식으로도 사용되지 않습니다."
+        answer: "전혀 없습니다. Pomocore는 사용자의 데이터를 오직 서비스 제공을 위한 목적으로만 사용하며, 다른 목적으로는 절대 사용하지 않습니다. 제3자에게 제공하거나 판매하지 않으며, 사용자의 동의 없이 어떤 방식으로도 사용되지 않습니다."
       },
     ]
   },
@@ -41,7 +41,7 @@ const faqData = [
       },
       {
         question: "아무 활동을 하고 있지 않아도 추적되나요?",
-        answer: "아니요. Pawcus는 15분을 기준으로 AFK(Away From Keyboard) 상태를 감지합니다. 15분 동안 아무런 활동이 없으면 사용자가 자리를 비운 것으로 판단하여 로그 추적을 중단합니다. 다시 활동을 시작하면 자동으로 추적이 재개됩니다."
+        answer: "아니요. Pomocore는 15분을 기준으로 AFK(Away From Keyboard) 상태를 감지합니다. 15분 동안 아무런 활동이 없으면 사용자가 자리를 비운 것으로 판단하여 로그 추적을 중단합니다. 다시 활동을 시작하면 자동으로 추적이 재개됩니다."
       }
     ]
   },
@@ -79,10 +79,10 @@ export default function FAQPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://www.pawcus.dev/faq" />
-        <meta property="og:url" content="https://www.pawcus.dev/faq" />
+        <link rel="canonical" href="https://www.pomocore.dev/faq" />
+        <meta property="og:url" content="https://www.pomocore.dev/faq" />
         <meta property="og:title" content="FAQ - 자주 묻는 질문" />
-        <meta property="og:description" content="Pawcus에 대해 궁금한 점들을 모았습니다. 보안, 사용법, 문제 해결 등 자세한 답변을 확인해보세요." />
+        <meta property="og:description" content="Pomocore에 대해 궁금한 점들을 모았습니다. 보안, 사용법, 문제 해결 등 자세한 답변을 확인해보세요." />
         <meta property="og:type" content="website" />
       </Head>
       <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
@@ -102,7 +102,7 @@ export default function FAQPage() {
             자주 묻는 질문
           </h1>
           <p className={`text-xl ${getTextStyle('secondary')} max-w-3xl mx-auto leading-relaxed`}>
-            Pawcus에 대해 궁금한 점들을 모았습니다. 
+            Pomocore에 대해 궁금한 점들을 모았습니다. 
             <span className={`font-bold ${styles.gradientText}`}> 보안, 사용법, 문제 해결</span> 등
             자세한 답변을 확인해보세요.
           </p>
