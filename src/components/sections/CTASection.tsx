@@ -28,7 +28,7 @@ export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASection
             </div>
             
             <h2 id="cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-              <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent font-semibold">지금 바로</span> 시작해보세요
+              <span className="bg-[#3f72af] bg-clip-text text-transparent font-semibold">지금 바로</span> 시작해보세요
             </h2>
             <p className="text-lg sm:text-xl mb-10 text-gray-600 max-w-2xl mx-auto px-4">
               간단한 설치로 생산성 게임화의 새로운 경험을 시작할 수 있습니다

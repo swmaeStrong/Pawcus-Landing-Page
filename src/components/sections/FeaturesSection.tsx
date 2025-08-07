@@ -5,40 +5,11 @@ export default function FeaturesSection() {
   return (
     <section className="py-24 relative" aria-labelledby="features-heading">
       
-      {/* Hero Section */}
-      <div className="text-center mb-20">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-gray-800">
-          모든 것을 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">한눈에</span>
-        </h2>
-        <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          복잡한 설정 없이, 설치하는 순간부터 모든 작업이 자동으로 추적됩니다.
-        </p>
-      </div>
-
-      {/* Overview Dashboard */}
-      <div className="mb-32">
-        <div className="text-center mb-12">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">통합 대시보드</h3>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            모든 생산성 데이터를 하나의 화면에서 직관적으로 확인하세요
-          </p>
-        </div>
-        <div className="max-w-6xl mx-auto">
-          <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02]">
-            <img 
-              src="/screenshots/Overview.png" 
-              alt="통합 대시보드"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </div>
-
       {/* Focus Score System */}
       <div className="mb-32">
         <div className="text-center mb-12">
           <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">
-            이제 시간이 아닌 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">집중도</span>를 측정하세요
+            이제 시간이 아닌 <span className={styles.gradientPrimary}>집중도</span>를 측정하세요
           </h3>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
             단순히 앉아있던 시간이 아닌, <strong>실제로 얼마나 집중했는지</strong>를 정확하게 점수화합니다.
@@ -57,13 +28,13 @@ export default function FeaturesSection() {
 
       {/* Category Analysis */}
       <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
-        <div>
+        <div className="lg:pl-8">
           <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">
-            6가지 핵심 영역 분석
+            카테고리 분석
           </h3>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            Development, Design, Research, Communication, Learning, Break 
-            <br />각 영역별 시간 분배를 레이더 차트로 한눈에 파악하세요.
+            유저가 작업한 내용을 카테고리별 시간으로 분류해줍니다.
+            <br />각 영역별 시간 분배를 파이 차트로 한눈에 파악하세요.
           </p>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -85,6 +56,25 @@ export default function FeaturesSection() {
             <img 
               src="/screenshots/CategoryAnalysis.png" 
               alt="카테고리 분석"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Overview Dashboard */}
+      <div className="mb-32">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">통합 대시보드</h3>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            모든 생산성 데이터를 하나의 화면에서 직관적으로 확인하세요
+          </p>
+        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02]">
+            <img 
+              src="/screenshots/Overview.png" 
+              alt="통합 대시보드"
               className="w-full h-auto"
             />
           </div>
