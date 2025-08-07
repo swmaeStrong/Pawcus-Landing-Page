@@ -145,22 +145,19 @@ export default function Navigation() {
             <div className="flex items-center space-x-2 ml-4 pl-4 border-l border-gray-200">
               {/* Homebrew Button */}
               <div className="group relative">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-                <Button
+                <div className="absolute -inset-1 from-[#3f72af] via-[#3f72af]/80 to-[#c6d4e8] rounded-lg group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
+                <button
                   onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
-                  className={createButtonStyle('homebrew')}
-                  size="sm"
+                  className="relative bg-white hover:bg-[#ececec]/50 text-[#2d3748] border backdrop-blur-sm px-3 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 font-medium text-sm shadow-lg border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-[#3f72af]/20"
                 >
                   <div className="flex items-center space-x-2">
                     <Copy className="w-4 h-4 text-[#3f72af]" />
                     <span>brew 복사</span>
                   </div>
-                </Button>
+                </button>
               </div>
               
               {/* DMG Download Button */}
-              <div className="group relative">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
                 <Button
                   onClick={() => {
                     // GA4 Event Tracking
@@ -190,20 +187,21 @@ export default function Navigation() {
                     <span>DMG 다운로드</span>
                   </div>
                 </Button>
-              </div>
             </div>
           </div>
 
           {/* Mobile Download Buttons */}
           <div className="flex md:hidden items-center space-x-2">
             {/* Mobile Homebrew Button */}
-            <Button
-              onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
-              className={`${createButtonStyle('homebrew')} px-2 py-1 text-xs`}
-              size="sm"
-            >
-              <Copy className="w-3 h-3" />
-            </Button>
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#3f72af] via-[#3f72af]/80 to-[#c6d4e8] rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
+              <button
+                onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
+                className="relative bg-white hover:bg-[#ececec]/50 text-[#2d3748] border backdrop-blur-sm px-2 py-1 rounded-lg transition-all duration-300 hover:scale-105 font-medium text-xs shadow-lg border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-[#3f72af]/20"
+              >
+                <Copy className="w-3 h-3 text-[#3f72af]" />
+              </button>
+            </div>
             
             {/* Mobile DMG Button */}
             <Button
