@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import { styles, createCardStyle, getHeadingStyle, getTextStyle } from '@/lib/styles';
+import { getTranslations } from 'next-intl/server';
 import { 
   Clock, 
   TrendingUp, 
@@ -35,102 +36,83 @@ export const metadata: Metadata = {
   },
 };
 
-const features = [
-  {
-    icon: Brain,
-    title: "AI 기반 자동 카테고리 분류",
-    description: "자체적인 알고리즘과 LLM을 결합하여 사용자의 작업 내역을 세밀하게 분류합니다.",
-    details: [
-      "실시간 애플리케이션 사용 패턴 분석",
-      "코딩, 디자인, 브라우징 등 작업 유형 자동 인식",
-      "학습을 통한 분류 정확도 지속 개선"
-    ]
-  },
-  {
-    icon: Activity,
-    title: "실시간 활동 모니터링",
-    description: "macOS에서 실행되는 모든 애플리케이션의 사용 시간을 실시간으로 추적하고 분석합니다.",
-    details: [
-      "VS Code, Chrome, Figma 등 개발 도구 전문 추적",
-      "활성 창과 비활성 시간 구분",
-      "정확한 포커스 시간 측정"
-    ]
-  },
-  {
-    icon: BarChart3,
-    title: "고급 데이터 시각화",
-    description: "시간대별, 카테고리별, 일별 데이터를 직관적인 차트와 그래프로 제공합니다.",
-    details: [
-      "레이더 차트로 스킬별 시간 분배 표시",
-      "타임라인으로 하루 업무 패턴 시각화",
-      "트렌드 분석으로 생산성 변화 추적"
-    ]
-  },
-  {
-    icon: Trophy,
-    title: "게임화된 경쟁 시스템",
-    description: "동료들과 건전한 경쟁을 통해 생산성 향상 동기를 부여하는 리더보드 시스템입니다.",
-    details: [
-      "Daily, Weekly, Monthly 기간별 순위",
-      "카테고리별 전문성 랭킹",
-      "포인트 시스템과 성취 뱃지"
-    ]
-  },
-  {
-    icon: Target,
-    title: "개인 맞춤 인사이트",
-    description: "개인의 작업 패턴을 분석하여 생산성 향상을 위한 맞춤형 제안을 제공합니다.",
-    details: [
-      "최적의 집중 시간대 식별",
-      "휴식 패턴 분석 및 제안",
-      "목표 설정 및 달성률 추적"
-    ]
-  },
-  {
-    icon: Shield,
-    title: "강력한 보안 시스템",
-    description: "AES-256 암호화를 통해 사용자의 데이터를 안전하게 보호합니다.",
-    details: [
-      "업계 표준 AES-256 암호화 적용",
-      "최소한의 권한만 요청",
-      "투명한 데이터 처리 방식"
-    ]
-  }
-];
+export default async function AboutPage() {
+  const t = await getTranslations('about');
+  
+  const features = [
+    {
+      icon: Brain,
+      title: t('features.aiCategorization.title'),
+      description: t('features.aiCategorization.description'),
+      details: Array.isArray(t.raw('features.aiCategorization.details')) 
+        ? t.raw('features.aiCategorization.details') 
+        : []
+    },
+    {
+      icon: Activity,
+      title: t('features.realTimeMonitoring.title'),
+      description: t('features.realTimeMonitoring.description'),
+      details: Array.isArray(t.raw('features.realTimeMonitoring.details')) 
+        ? t.raw('features.realTimeMonitoring.details') 
+        : []
+    },
+    {
+      icon: BarChart3,
+      title: t('features.dataVisualization.title'),
+      description: t('features.dataVisualization.description'),
+      details: Array.isArray(t.raw('features.dataVisualization.details')) 
+        ? t.raw('features.dataVisualization.details') 
+        : []
+    },
+    {
+      icon: Trophy,
+      title: t('features.gamification.title'),
+      description: t('features.gamification.description'),
+      details: Array.isArray(t.raw('features.gamification.details')) 
+        ? t.raw('features.gamification.details') 
+        : []
+    },
+    {
+      icon: Target,
+      title: t('features.personalInsights.title'),
+      description: t('features.personalInsights.description'),
+      details: Array.isArray(t.raw('features.personalInsights.details')) 
+        ? t.raw('features.personalInsights.details') 
+        : []
+    },
+    {
+      icon: Shield,
+      title: t('features.security.title'),
+      description: t('features.security.description'),
+      details: Array.isArray(t.raw('features.security.details')) 
+        ? t.raw('features.security.details') 
+        : []
+    }
+  ];
 
-const useCases = [
-  {
-    title: "개인 개발자",
-    description: "프리랜서나 개인 프로젝트를 진행하는 개발자",
-    benefits: [
-      "시간 관리 최적화",
-      "생산성 패턴 파악",
-      "목표 달성률 향상"
-    ]
-  },
-  {
-    title: "개발팀",
-    description: "함께 일하는 개발팀의 생산성 향상",
-    benefits: [
-      "팀원 간 건전한 경쟁",
-      "팀 전체 생산성 가시화",
-      "협업 효율성 개선"
-    ]
-  },
-  {
-    title: "스타트업",
-    description: "빠른 성장이 필요한 스타트업 환경",
-    benefits: [
-      "리소스 효율적 활용",
-      "개발 속도 향상",
-      "데이터 기반 의사결정"
-    ]
-  }
-];
-
-const stats = [];
-
-export default function AboutPage() {
+  const useCases = [
+    {
+      title: t('useCases.individualDeveloper.title'),
+      description: t('useCases.individualDeveloper.description'),
+      benefits: Array.isArray(t.raw('useCases.individualDeveloper.benefits')) 
+        ? t.raw('useCases.individualDeveloper.benefits') 
+        : []
+    },
+    {
+      title: t('useCases.developmentTeam.title'),
+      description: t('useCases.developmentTeam.description'),
+      benefits: Array.isArray(t.raw('useCases.developmentTeam.benefits')) 
+        ? t.raw('useCases.developmentTeam.benefits') 
+        : []
+    },
+    {
+      title: t('useCases.startup.title'),
+      description: t('useCases.startup.description'),
+      benefits: Array.isArray(t.raw('useCases.startup.benefits')) 
+        ? t.raw('useCases.startup.benefits') 
+        : []
+    }
+  ];
   return (
     <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
       <Navigation />
@@ -147,12 +129,10 @@ export default function AboutPage() {
         <section className="text-center mb-20">
           <div className="mb-8">
             <h1 className={`${getHeadingStyle(3)} mb-6`}>
-              <span className="font-black">Pomocore</span>란?
+              {t('heroTitle')}
             </h1>
             <p className={`text-base sm:text-xl md:text-2xl ${getTextStyle('secondary')} max-w-4xl mx-auto leading-relaxed px-4`}>
-              개발자의 작업 내역을 <span className={`font-bold ${styles.gradientText}`}>체계적으로 분석</span>하고{' '}
-              <span className={`font-bold ${styles.gradientText}`}>경쟁 시스템</span>을 통해{' '}
-              성장을 돕는 생산성 관리 소프트웨어입니다.
+              {t('heroDescription')}
             </p>
           </div>
           
@@ -161,7 +141,7 @@ export default function AboutPage() {
         {/* Core Features */}
         <section className="mb-20">
           <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${styles.text.primary}`}>
-            핵심 기능
+            {t('coreFeatures')}
           </h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
@@ -176,7 +156,7 @@ export default function AboutPage() {
                     {feature.description}
                   </p>
                   <ul className="space-y-2">
-                    {feature.details.map((detail, detailIndex) => (
+                    {feature.details.map((detail: string, detailIndex: number) => (
                       <li key={detailIndex} className="flex items-start space-x-2">
                         <span className={`${styles.text.primary} mt-0.5 flex-shrink-0`}>•</span>
                         <span className={getTextStyle('small')}>{detail}</span>
@@ -192,7 +172,7 @@ export default function AboutPage() {
         {/* Use Cases */}
         <section className="mb-20">
           <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${styles.text.primary}`}>
-            이런 사람에게 적극 추천합니다!
+            {t('useCasesTitle')}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
@@ -207,7 +187,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {useCase.benefits.map((benefit, benefitIndex) => (
+                    {useCase.benefits.map((benefit: string, benefitIndex: number) => (
                       <li key={benefitIndex} className="flex items-center space-x-2">
                         <span className={`${styles.text.primary} flex-shrink-0`}>•</span>
                         <span className={getTextStyle('small')}>{benefit}</span>

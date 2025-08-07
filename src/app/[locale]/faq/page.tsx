@@ -5,76 +5,40 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Head from 'next/head';
 import { styles, createCardStyle, getHeadingStyle, getTextStyle } from '@/lib/styles';
-
-const faqData = [
-  {
-    category: "보안 및 프라이버시",
-    questions: [
-      {
-        question: "앱에서 기록 측정을 실행할 경우 어떤 데이터들이 추적되나요?",
-        answer: "Pomocore는 앱 정보, 앱의 제목, 그리고 브라우저의 경우 URL도 함께 수집합니다. 수집된 데이터들은 카테고리 분류 및 데이터 시각화 이외의 다른 목적으로는 사용되지 않습니다."
-      },
-      {
-        question: "Pomocore는 어떤 방식으로 데이터를 보호하나요?",
-        answer: "Pomocore는 AES-256 암호화를 사용하여 모든 활동 로그를 보호합니다. 이는 현재 가장 강력한 암호화 표준 중 하나입니다. 데이터는 서버에 저장되지만 오직 사용자에게 서비스를 제공하기 위한 목적으로만 사용되며, 다른 목적으로는 절대 사용되지 않습니다."
-      },
-      {
-        question: "내 개인정보가 외부로 유출될 가능성이 있나요?",
-        answer: "전혀 없습니다. Pomocore는 사용자의 데이터를 오직 서비스 제공을 위한 목적으로만 사용하며, 다른 목적으로는 절대 사용하지 않습니다. 제3자에게 제공하거나 판매하지 않으며, 사용자의 동의 없이 어떤 방식으로도 사용되지 않습니다."
-      },
-    ]
-  },
-  {
-    category: "기능 및 사용법",
-    questions: [
-      {
-        question: "어떤 애플리케이션을 추적할 수 있나요?",
-        answer: "macOS에서 실행되는 모든 애플리케이션을 추적할 수 있습니다. VS Code, Xcode, Chrome, Safari, Figma, Sketch 등 개발자들이 자주 사용하는 도구들이 모두 포함되며, AI가 자동으로 카테고리를 분류합니다."
-      },
-      {
-        question: "동시에 여러 탭을 띄웠을 경우에는 추적이 어떻게 되나요?",
-        answer: "사용자가 가장 최근에 활성화한 탭을 기준으로 시간 기록이 진행됩니다."
-      },
-      {
-        question: "리더보드는 어떻게 작동하나요?",
-        answer: "리더보드는 같은 팀이나 그룹 내에서 개발 시간을 비교할 수 있는 기능입니다. Daily, Weekly, Monthly 단위로 순위를 확인할 수 있으며, 카테고리별 전문성도 비교 가능합니다. 리더보드는 20-30초 이내에 최신 데이터가 반영되어 실시간으로 순위 변동을 확인할 수 있습니다. 모든 데이터는 익명화되어 처리됩니다."
-      },
-      {
-        question: "아무 활동을 하고 있지 않아도 추적되나요?",
-        answer: "아니요. Pomocore는 15분을 기준으로 AFK(Away From Keyboard) 상태를 감지합니다. 15분 동안 아무런 활동이 없으면 사용자가 자리를 비운 것으로 판단하여 로그 추적을 중단합니다. 다시 활동을 시작하면 자동으로 추적이 재개됩니다."
-      }
-    ]
-  },
-  {
-    category: "설치 및 환경 설정",
-    questions: [
-      {
-        question: "어떤 macOS 버전을 지원하나요?",
-        answer: "macOS 14.0 (Sonoma) 이상을 지원합니다. 최신 macOS Sequoia와 Sonoma에서 최적화되어 있으며, Intel Mac과 Apple Silicon Mac 모두에서 원활하게 동작합니다."
-      },
-    ]
-  }
-];
+import { useTranslations } from 'next-intl';
 
 export default function FAQPage() {
+  const t = useTranslations('faq');
   const [selectedCategory, setSelectedCategory] = useState('all');
   
   const categories = [
-    { id: 'all', name: '전체' },
-    { id: 'security', name: '보안 및 프라이버시' },
-    { id: 'features', name: '기능 및 사용법' },
-    { id: 'installation', name: '설치 및 환경 설정' }
+    { id: 'all', name: t('categories.all') },
+    { id: 'security', name: t('categories.security') },
+    { id: 'features', name: t('categories.features') },
+    { id: 'installation', name: t('categories.installation') }
   ];
   
-  const categoryMapping = {
-    '보안 및 프라이버시': 'security',
-    '기능 및 사용법': 'features',
-    '설치 및 환경 설정': 'installation'
-  };
+  const faqData = [
+    {
+      category: t('categories.security'),
+      categoryId: 'security',
+      questions: Array.isArray(t.raw('questions.security')) ? t.raw('questions.security') : []
+    },
+    {
+      category: t('categories.features'), 
+      categoryId: 'features',
+      questions: Array.isArray(t.raw('questions.features')) ? t.raw('questions.features') : []
+    },
+    {
+      category: t('categories.installation'),
+      categoryId: 'installation', 
+      questions: Array.isArray(t.raw('questions.installation')) ? t.raw('questions.installation') : []
+    }
+  ];
   
   const filteredData = selectedCategory === 'all' 
     ? faqData 
-    : faqData.filter(category => categoryMapping[category.category as keyof typeof categoryMapping] === selectedCategory);
+    : faqData.filter(category => category.categoryId === selectedCategory);
 
   return (
     <>
@@ -99,12 +63,10 @@ export default function FAQPage() {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <h1 className={`${getHeadingStyle(3)} mb-6`}>
-            자주 묻는 질문
+            {t('title')}
           </h1>
           <p className={`text-xl ${getTextStyle('secondary')} max-w-3xl mx-auto leading-relaxed`}>
-            Pomocore에 대해 궁금한 점들을 모았습니다. 
-            <span className={`font-bold ${styles.gradientText}`}> 보안, 사용법, 문제 해결</span> 등
-            자세한 답변을 확인해보세요.
+            {t('description')}
           </p>
         </section>
         
@@ -135,7 +97,7 @@ export default function FAQPage() {
                 {category.category}
               </h2>
               <div className="space-y-6">
-                {category.questions.map((faq, faqIndex) => (
+                {category.questions.map((faq: { question: string; answer: string }, faqIndex: number) => (
                   <Card key={faqIndex} className={`${createCardStyle('modern')} hover:shadow-lg transition-all duration-300`}>
                     <CardHeader>
                       <CardTitle className={`text-lg ${styles.text.primary}`}>
@@ -157,17 +119,17 @@ export default function FAQPage() {
         {/* Contact Section */}
         <section className={`text-center mt-16 p-8 ${createCardStyle('modern')} rounded-3xl`}>
           <h2 className={`${getHeadingStyle(4)} mb-4`}>
-            다른 질문이 있으신가요?
+            {t('contact.title')}
           </h2>
           <p className={`${getTextStyle('secondary')} mb-6`}>
-            FAQ에서 원하는 답변을 찾지 못하셨다면, 언제든지 문의해주세요.
+            {t('contact.description')}
           </p>
           <div className={getTextStyle('secondary')}>
             <p className="mb-2">
-              <span className={`font-semibold ${styles.text.primary}`}>이메일:</span> support@pawcus.dev
+              <span className={`font-semibold ${styles.text.primary}`}>{t('contact.email')}:</span> support@pawcus.dev
             </p>
             <p>
-              <span className={`font-semibold ${styles.text.primary}`}>전화:</span> 010-5172-5645
+              <span className={`font-semibold ${styles.text.primary}`}>{t('contact.phone')}:</span> 010-5172-5645
             </p>
           </div>
         </section>

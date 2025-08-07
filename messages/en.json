@@ -61,11 +61,153 @@
   },
   "about": {
     "title": "About Pomocore",
-    "subtitle": "The smart choice for better productivity"
+    "subtitle": "The smart choice for better productivity",
+    "heroTitle": "What is Pomocore?",
+    "heroDescription": "A productivity management software that systematically analyzes developers' work activities and helps them grow through competitive systems.",
+    "coreFeatures": "Core Features",
+    "useCasesTitle": "Highly Recommended For",
+    "features": {
+      "aiCategorization": {
+        "title": "AI-Powered Automatic Categorization",
+        "description": "Combines proprietary algorithms with LLM to meticulously categorize user work activities.",
+        "details": [
+          "Real-time application usage pattern analysis",
+          "Automatic recognition of work types: coding, design, browsing, etc.",
+          "Continuous improvement of classification accuracy through learning"
+        ]
+      },
+      "realTimeMonitoring": {
+        "title": "Real-Time Activity Monitoring",
+        "description": "Tracks and analyzes the usage time of all applications running on macOS in real-time.",
+        "details": [
+          "Specialized tracking for development tools like VS Code, Chrome, Figma",
+          "Distinguishes between active windows and idle time",
+          "Accurate focus time measurement"
+        ]
+      },
+      "dataVisualization": {
+        "title": "Advanced Data Visualization",
+        "description": "Provides intuitive charts and graphs for hourly, category-wise, and daily data.",
+        "details": [
+          "Radar charts showing skill-based time distribution",
+          "Timeline visualization of daily work patterns",
+          "Trend analysis for productivity change tracking"
+        ]
+      },
+      "gamification": {
+        "title": "Gamified Competition System",
+        "description": "A leaderboard system that motivates productivity improvement through healthy competition with colleagues.",
+        "details": [
+          "Daily, Weekly, Monthly period rankings",
+          "Category-specific expertise rankings",
+          "Point system and achievement badges"
+        ]
+      },
+      "personalInsights": {
+        "title": "Personalized Insights",
+        "description": "Analyzes individual work patterns to provide customized suggestions for productivity improvement.",
+        "details": [
+          "Identification of optimal focus hours",
+          "Rest pattern analysis and suggestions",
+          "Goal setting and achievement rate tracking"
+        ]
+      },
+      "security": {
+        "title": "Robust Security System",
+        "description": "Securely protects user data through AES-256 encryption.",
+        "details": [
+          "Industry-standard AES-256 encryption applied",
+          "Requests only minimal necessary permissions",
+          "Transparent data processing methods"
+        ]
+      }
+    },
+    "useCases": {
+      "individualDeveloper": {
+        "title": "Individual Developers",
+        "description": "Freelancers or developers working on personal projects",
+        "benefits": [
+          "Time management optimization",
+          "Productivity pattern identification",
+          "Goal achievement rate improvement"
+        ]
+      },
+      "developmentTeam": {
+        "title": "Development Teams",
+        "description": "Improving productivity of collaborative development teams",
+        "benefits": [
+          "Healthy competition among team members",
+          "Team-wide productivity visualization",
+          "Improved collaboration efficiency"
+        ]
+      },
+      "startup": {
+        "title": "Startups",
+        "description": "Startup environments requiring rapid growth",
+        "benefits": [
+          "Efficient resource utilization",
+          "Improved development speed",
+          "Data-driven decision making"
+        ]
+      }
+    }
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Get answers to common questions about Pomocore"
+    "subtitle": "Get answers to common questions about Pomocore",
+    "description": "We've compiled common questions about Pomocore. Check detailed answers about security, usage, troubleshooting, and more.",
+    "categories": {
+      "all": "All",
+      "security": "Security & Privacy",
+      "features": "Features & Usage",
+      "installation": "Installation & Setup"
+    },
+    "questions": {
+      "security": [
+        {
+          "question": "What data is tracked when the app runs activity recording?",
+          "answer": "Pomocore collects app information, app titles, and in the case of browsers, URLs as well. The collected data is used only for category classification and data visualization purposes, not for any other purposes."
+        },
+        {
+          "question": "How does Pomocore protect data?",
+          "answer": "Pomocore uses AES-256 encryption to protect all activity logs. This is one of the strongest encryption standards currently available. Data is stored on servers but is used solely for providing services to users and is never used for any other purposes."
+        },
+        {
+          "question": "Is there any possibility of my personal information being leaked externally?",
+          "answer": "Absolutely not. Pomocore uses user data solely for service provision purposes and never for any other purposes. We do not provide or sell data to third parties, nor is it used in any way without user consent."
+        }
+      ],
+      "features": [
+        {
+          "question": "Which applications can be tracked?",
+          "answer": "All applications running on macOS can be tracked. This includes development tools frequently used by developers such as VS Code, Xcode, Chrome, Safari, Figma, Sketch, and AI automatically categorizes them."
+        },
+        {
+          "question": "How does tracking work when multiple tabs are open simultaneously?",
+          "answer": "Time recording is based on the tab that the user most recently activated."
+        },
+        {
+          "question": "How does the leaderboard work?",
+          "answer": "The leaderboard is a feature that allows comparison of development time within the same team or group. You can check rankings on Daily, Weekly, and Monthly basis, and category-specific expertise can also be compared. The leaderboard reflects the latest data within 20-30 seconds, allowing real-time rank changes to be viewed. All data is processed anonymously."
+        },
+        {
+          "question": "Is tracking active even when I'm not doing anything?",
+          "answer": "No. Pomocore detects AFK (Away From Keyboard) status based on 15 minutes. If there's no activity for 15 minutes, it determines the user has stepped away and stops log tracking. Tracking automatically resumes when activity starts again."
+        }
+      ],
+      "installation": [
+        {
+          "question": "Which macOS versions are supported?",
+          "answer": "macOS 14.0 (Sonoma) and above are supported. It's optimized for the latest macOS Sequoia and Sonoma, and works smoothly on both Intel Mac and Apple Silicon Mac."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Have other questions?",
+      "description": "If you couldn't find the answer you're looking for in the FAQ, feel free to contact us anytime.",
+      "email": "Email",
+      "phone": "Phone"
+    }
   },
   "terms": {
     "title": "Terms of Service",
