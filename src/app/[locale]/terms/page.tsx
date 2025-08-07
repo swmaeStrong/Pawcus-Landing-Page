@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {Link as IntlLink} from '@/routing';
 import Navigation from '@/components/Navigation';
 import { styles, createCardStyle, getHeadingStyle, getTextStyle } from '@/lib/styles';
 
@@ -457,10 +458,10 @@ export default function TermsPage() {
 
           {/* Back to Home */}
           <div className="text-center pt-8">
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-colors shadow-lg border border-gray-200">
+            <IntlLink href="/" className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-colors shadow-lg border border-gray-200">
               <ArrowLeft className="w-4 h-4 mr-2" />
               메인으로 돌아가기
-            </Link>
+            </IntlLink>
           </div>
         </div>
       </main>

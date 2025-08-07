@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {Link as IntlLink} from '@/routing';
 import Navigation from '@/components/Navigation';
 import { styles, createCardStyle, getHeadingStyle, getTextStyle } from '@/lib/styles';
 
@@ -137,7 +138,7 @@ export default function PrivacyPage() {
                 <div className="bg-gray-100/50 rounded-lg p-4 border border-gray-300/50">
                   <h4 className="font-semibold text-gray-700 mb-2">나. 구독 서비스 제공</h4>
                   <p className="text-sm text-gray-600 ml-4">
-                    <span className="font-medium text-gray-200">필수항목:</span> 구독 플랜 정보, 결제 주기, 서비스 이용 내역, 구독 시작일 및 종료일
+                    <span className="font-medium text-gray-700">필수항목:</span> 구독 플랜 정보, 결제 주기, 서비스 이용 내역, 구독 시작일 및 종료일
                   </p>
                 </div>
                 
@@ -166,7 +167,7 @@ export default function PrivacyPage() {
               <div className="space-y-3">
                 <div className="bg-gray-100/50 rounded-lg p-4 border border-gray-300/50">
                   <h4 className="font-semibold text-gray-700 mb-2">가. 홈페이지 회원가입 및 관리</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-600">
                     회원 탈퇴 시까지. 다만, 다음의 사유에 해당하는 경우에는 해당 사유 종료 시까지
                   </p>
                   <ul className="list-disc list-inside text-sm text-gray-600 ml-4 mt-2 space-y-1">
@@ -177,7 +178,7 @@ export default function PrivacyPage() {
                 
                 <div className="bg-gray-100/50 rounded-lg p-4 border border-gray-300/50">
                   <h4 className="font-semibold text-gray-700 mb-2">나. 구독 서비스 제공</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-600">
                     구독 서비스 이용 종료 및 요금결제·정산 완료 시까지. 다만, 다음의 사유에 해당하는 경우에는 해당 기간 종료 시까지
                   </p>
                   <div className="mt-3 space-y-2">
@@ -217,14 +218,14 @@ export default function PrivacyPage() {
               <div className="space-y-3">
                 <div className="bg-gray-100/50 rounded-lg p-4 border border-gray-300/50">
                   <h4 className="font-semibold text-gray-700 mb-2">가. 파기절차</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-600">
                     이용자가 입력한 정보는 목적 달성 후 별도의 DB에 옮겨져(종이의 경우 별도의 서류) 내부 방침 및 기타 관련 법령에 따라 일정기간 저장된 후 혹은 즉시 파기됩니다. 이 때, DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다.
                   </p>
                 </div>
                 
                 <div className="bg-gray-100/50 rounded-lg p-4 border border-gray-300/50">
                   <h4 className="font-semibold text-gray-700 mb-2">나. 파기기한</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-600">
                     이용자의 개인정보는 개인정보의 보유기간이 경과된 경우에는 보유기간의 종료일로부터 5일 이내에, 개인정보의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그 개인정보가 불필요하게 되었을 때에는 개인정보의 처리가 불필요한 것으로 인정되는 날로부터 5일 이내에 그 개인정보를 파기합니다.
                   </p>
                 </div>
@@ -468,10 +469,10 @@ export default function PrivacyPage() {
 
           {/* Back to Home */}
           <div className="text-center pt-8">
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors shadow-lg">
+            <IntlLink href="/" className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-colors shadow-lg border border-gray-200">
               <ArrowLeft className="w-4 h-4 mr-2" />
               메인으로 돌아가기
-            </Link>
+            </IntlLink>
           </div>
         </div>
       </main>

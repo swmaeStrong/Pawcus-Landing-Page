@@ -8,6 +8,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import LeaderboardSection from '@/components/sections/LeaderboardSection';
 import CTASection from '@/components/sections/CTASection';
 import Link from 'next/link';
+import {Link as IntlLink} from '@/routing';
 import Image from 'next/image';
 import { styles } from '@/lib/styles';
 
@@ -166,13 +167,13 @@ export default function LandingPage() {
             {/* Quick Links */}
             <nav className="pt-4 border-t border-gray-200/50" aria-label="Footer Navigation">
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-2 md:space-y-0 mb-4">
-                <Link href="/terms" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
+                <IntlLink href="/terms" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
                   이용약관
-                </Link>
+                </IntlLink>
                 <span className="hidden md:inline text-gray-400 dark:text-[rgb(153,153,153)]" aria-hidden="true">|</span>
-                <Link href="/privacy" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
+                <IntlLink href="/privacy" className={`${styles.text.small} hover:text-[#3f72af] transition-colors`}>
                   개인정보처리방침
-                </Link>
+                </IntlLink>
               </div>
               
               <p className={styles.text.muted}>
