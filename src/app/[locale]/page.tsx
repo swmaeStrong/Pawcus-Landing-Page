@@ -11,18 +11,18 @@ import Link from 'next/link';
 import {Link as IntlLink} from '@/routing';
 import Image from 'next/image';
 import { styles } from '@/lib/styles';
-
+import { useTranslations } from 'next-intl';
 
 
 export default function LandingPage() {
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!')
   const [toastType, setToastType] = useState<'success' | 'error'>('success')
-
+  const t = useTranslations('common');
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
-      setToastMessage('명령어가 클립보드에 복사되었습니다!')
+      setToastMessage(t('common.copySuccess'))
       setToastType('success')
       setShowToast(true)
       setTimeout(() => setShowToast(false), 3000)
@@ -38,7 +38,7 @@ export default function LandingPage() {
       }
     } catch (err) {
       console.error('Failed to copy: ', err)
-      setToastMessage('복사에 실패했습니다. 수동으로 복사해주세요.')
+      setToastMessage(t('common.copyError'))
       setToastType('error')
       setShowToast(true)
       setTimeout(() => setShowToast(false), 3000)

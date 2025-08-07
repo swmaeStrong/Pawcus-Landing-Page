@@ -54,44 +54,388 @@
       "description": "Download DMG file"
     }
   },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Terms and conditions for using Pomocore services",
+    "effectiveDate": "Effective Date: July 4, 2025",
+    "sections": {
+      "section1": {
+        "title": "Article 1 (Purpose)",
+        "content": "These terms and conditions aim to define the rights, obligations, responsibilities, and other necessary matters between the company and users regarding the use of the Focus service (hereinafter referred to as 'Service') provided by Focus (hereinafter referred to as 'Company')."
+      },
+      "section2": {
+        "title": "Article 2 (Definition of Terms)",
+        "content": "The definitions of terms used in these terms and conditions are as follows.",
+        "definitions": {
+          "service": {
+            "term": "\"Service\"",
+            "definition": "Refers to all productivity management and time tracking related services provided by the company."
+          },
+          "user": {
+            "term": "\"User\"",
+            "definition": "Refers to members and non-members who receive services provided by the company under these terms."
+          },
+          "member": {
+            "term": "\"Member\"",
+            "definition": "Refers to a user who has entered into a service use agreement with the company and has been assigned a user ID."
+          },
+          "id": {
+            "term": "\"ID\"",
+            "definition": "Refers to a combination of letters and numbers determined by the member and approved by the company for member identification and service use."
+          },
+          "password": {
+            "term": "\"Password\"",
+            "definition": "Refers to a combination of letters or numbers set by the member to verify that they are the member who matches the assigned ID."
+          }
+        }
+      },
+      "section3": {
+        "title": "Article 3 (Publication and Amendment of Terms)",
+        "item1": "① The company shall post the contents of these terms on the initial screen of the service so that members can easily know them.",
+        "item2": "② The company may amend these terms within the scope that does not violate related laws such as the Consumer Protection Act in Electronic Commerce, the Act on the Regulation of Terms and Conditions, and the Act on Promotion of Information and Communications Network Utilization and Information Protection.",
+        "item3": "③ When the company amends the terms, it shall notify the application date and reasons for amendment along with the current terms on the service initial screen from 7 days before the application date to the day before the application date.",
+        "item4": "④ Members have the right to refuse amended terms. Members may express their refusal within 15 days after the amended terms are announced. If a member refuses, the company may terminate the contract with that member."
+      },
+      "section4": {
+        "title": "Article 4 (Conclusion of Service Use Agreement)",
+        "subtitle1": "① Establishment of Use Agreement",
+        "content1": "The use agreement is concluded when a person who wants to become a member (hereinafter 'applicant') agrees to the terms and applies for membership, and the company approves such application.",
+        "subtitle2": "② Membership Application",
+        "content2": "The applicant applies for membership by entering member information according to the membership form determined by the company and expressing intention to agree to these terms.",
+        "subtitle3": "③ Approval of Membership Application",
+        "content3": "The company approves membership applications unless they fall under any of the following cases.",
+        "exceptions": [
+          "When the applicant has previously lost membership qualifications under these terms",
+          "When not using real name or using another person's name",
+          "When false information is provided or required information is not provided",
+          "When a minor under 14 has not obtained consent from legal guardian",
+          "When registration as a member is deemed to cause significant technical difficulties for the company"
+        ]
+      },
+      "section5": {
+        "title": "Article 5 (Change of Member Information)",
+        "item1": "① Members can view and modify their personal information at any time through the personal information management screen.",
+        "item2": "② When information provided during membership application changes, members must modify it online or notify the company of such changes via email or other methods.",
+        "item3": "③ The company is not responsible for any disadvantages arising from failure to notify the company of changes mentioned in paragraph 2."
+      },
+      "section6": {
+        "title": "Article 6 (Provision and Change of Services)",
+        "subtitle1": "① Provision of Services",
+        "content1": "The company provides the following services:",
+        "service1": "Time tracking and productivity analysis services",
+        "service2": "Focus measurement and analysis services",
+        "service3": "Personal productivity reports",
+        "service4": "Other services that the company additionally develops or provides to members through partnership agreements with other companies",
+        "subtitle2": "② Change of Services",
+        "content2": "The company may change all or part of the services provided according to operational and technical needs when there are substantial reasons.",
+        "subtitle3": "③ Service Usage Hours",
+        "content3": "Services are provided 24 hours a day, 365 days a year in principle. However, the company may divide services into certain ranges and separately designate available hours for each range."
+      },
+      "section7": {
+        "title": "Article 7 (Service Use Restrictions)",
+        "content": "The company may restrict service use in stages through warnings, temporary suspension, permanent suspension, etc. when members violate obligations under these terms or interfere with normal service operation.",
+        "subtitle": "Usage may be restricted in the following cases:",
+        "restriction1": "Misappropriation of others' information",
+        "restriction2": "Impersonating company executives, employees, or related personnel",
+        "restriction3": "Infringement of intellectual property rights of the company, other members, or third parties",
+        "restriction4": "Distribution of obscene or violent content",
+        "restriction5": "Transmission of large amounts of information for the purpose of disrupting stable service operation",
+        "restriction6": "Other illegal or improper acts"
+      },
+      "section8": {
+        "title": "Article 8 (User Obligations)",
+        "content": "Users must not engage in the following acts:",
+        "prohibition1": "Registration of false information when applying or making changes",
+        "prohibition2": "Misappropriation of others' information",
+        "prohibition3": "Modification of information posted by the company",
+        "prohibition4": "Transmission or posting of information other than that designated by the company (such as computer programs)",
+        "prohibition5": "Infringement of copyrights and other intellectual property rights of the company and other third parties",
+        "prohibition6": "Acts that damage the reputation of the company and other third parties or interfere with their business",
+        "prohibition7": "Publication or posting of obscene or violent messages, images, sounds, or other information contrary to public order and morals",
+        "prohibition8": "Use of services for commercial purposes without company consent",
+        "prohibition9": "Other illegal or improper acts"
+      },
+      "section9": {
+        "title": "Article 9 (Attribution of Copyrights)",
+        "item1": "① Copyrights and other intellectual property rights for works created by the company belong to the company.",
+        "item2": "② Users must not use information with intellectual property rights belonging to the company obtained through service use for commercial purposes through reproduction, transmission, publication, distribution, broadcasting, or other methods without prior approval from the company, or allow third parties to use it.",
+        "item3": "③ When the company uses copyrights belonging to users according to agreements, it must notify the relevant users."
+      },
+      "section10": {
+        "title": "Article 10 (Contract Cancellation, Termination, etc.)",
+        "subtitle1": "① Member Termination",
+        "content1": "Members may terminate the use agreement through membership withdrawal whenever they do not wish to use the service.",
+        "subtitle2": "② Company Termination",
+        "content2": "The company may terminate the use agreement when members fall under any of the following reasons:",
+        "reason1": "Registration of false information when applying for membership",
+        "reason2": "Interfering with others' service use or misappropriating their information, threatening e-commerce order",
+        "reason3": "Using services to engage in acts prohibited by laws or these terms or contrary to public order and morals"
+      },
+      "section11": {
+        "title": "Article 11 (Compensation for Damages)",
+        "item1": "① The company is not liable for damages incurred by users in connection with the use of free services. However, cases due to the company's intent or gross negligence are excluded.",
+        "item2": "② The company is not liable for damages incurred by users in connection with service use due to users' intent or negligence.",
+        "item3": "③ When damages occur to the company due to users' violation of these terms, the violating user must compensate for all damages incurred by the company."
+      },
+      "section12": {
+        "title": "Article 12 (Disclaimer)",
+        "item1": "① The company is exempted from responsibility for service provision when services cannot be provided due to natural disasters or equivalent force majeure.",
+        "item2": "② The company is not responsible for service use disruptions due to users' attributable causes.",
+        "item3": "③ The company is not responsible for the reliability, accuracy, etc. of information, materials, and facts posted by users in relation to the service.",
+        "item4": "④ The company is exempted from responsibility when users engage in transactions through the service with each other or with third parties."
+      },
+      "section13": {
+        "title": "Article 13 (Dispute Resolution)",
+        "item1": "① The company establishes and operates a damage compensation processing organization to reflect legitimate opinions or complaints raised by users and to compensate for damages.",
+        "item2": "② The company prioritizes processing complaints and opinions submitted by users. However, when prompt processing is difficult, we immediately notify users of the reasons and processing schedule.",
+        "item3": "③ When users request damage relief in relation to e-commerce disputes between the company and users, we may follow mediation by dispute mediation organizations commissioned by the Fair Trade Commission or city/provincial governors."
+      },
+      "section14": {
+        "title": "Article 14 (Jurisdiction and Governing Law)",
+        "item1": "① Korean law applies to these terms and service use agreements between the company and users.",
+        "item2": "② When lawsuits are filed regarding disputes arising from service use, they shall be filed with the competent court under the Civil Procedure Act."
+      },
+      "section12": {
+        "title": "Article 12 (Disclaimer)"
+      },
+      "section13": {
+        "title": "Article 13 (Dispute Resolution)"
+      },
+      "section14": {
+        "title": "Article 14 (Jurisdiction and Governing Law)"
+      }
+    },
+    "addendum": "Addendum",
+    "addendumContent": "These terms shall take effect from July 4, 2025.",
+    "contact": {
+      "title": "Contact Information",
+      "description": "If you have any questions about these terms, please contact us at the following:",
+      "company": "Focus",
+      "representative": "Younghyun Kim",
+      "address": "77 Wujeong-ro, Naju-si, Jeollanam-do",
+      "phone": "010-5172-5645",
+      "email": "swmaestrong@gmail.com"
+    }
+  },
   "privacy": {
     "title": "Privacy Policy",
-    "subtitle": "We cherish and protect your personal information",
-    "effectiveDate": "Effective Date: July 4, 2025"
+    "subtitle": "We value and protect your personal information",
+    "effectiveDate": "Effective Date: July 4, 2025",
+    "overview": {
+      "title": "Privacy Policy Overview",
+      "content": "Focus (hereinafter 'Company') values users' personal information and complies with relevant laws including the Personal Information Protection Act and the Act on Promotion of Information and Communications Network Utilization and Information Protection. The company informs users about the purposes and methods for which personal information provided by users is being used, and what measures are being taken to protect personal information through this privacy policy."
+    },
+    "sections": {
+      "section1": {
+        "title": "1. Purpose of Personal Information Processing",
+        "content": "The company processes personal information for the following purposes. Personal information being processed will not be used for purposes other than the following, and if the purpose of use changes, necessary measures such as obtaining separate consent will be implemented in accordance with Article 18 of the Personal Information Protection Act.",
+        "purposes": {
+          "membership": {
+            "title": "a. Website membership registration and management",
+            "description": "Personal information is processed for the purposes of confirming membership registration intent, identity verification and authentication for membership services, maintaining and managing membership status, preventing unauthorized service use, confirming consent from legal guardians when processing personal information of children under 14, various notices and notifications, and complaint handling."
+          },
+          "service": {
+            "title": "b. Provision of goods or services",
+            "description": "Personal information is processed for the purposes of providing subscription services, content provision, customized service provision, identity verification, age verification, subscription fee payment and settlement, and service usage statistical analysis."
+          },
+          "marketing": {
+            "title": "c. Marketing and advertising utilization",
+            "description": "Personal information is processed for the purposes of developing new services (products) and providing customized services, providing events and advertising information and participation opportunities, providing services and advertising based on demographic characteristics, confirming service validity, identifying access frequency, or statistics on members' service usage."
+          }
+        }
+      },
+      "section2": {
+        "title": "2. Items of Personal Information Processed",
+        "content": "The company processes the following personal information items.",
+        "categories": {
+          "membership": {
+            "title": "a. Membership registration and management",
+            "required": "Required items:",
+            "requiredItems": "Email address, user's service usage records, access logs, access IP information, cookies, service usage time",
+            "optional": "Optional items:",
+            "optionalItems": "Payment information (card numbers, account information, etc. - managed with encryption), profile information"
+          },
+          "subscription": {
+            "title": "b. Subscription service provision",
+            "required": "Required items:",
+            "requiredItems": "Subscription plan information, payment cycle, service usage history, subscription start and end dates"
+          },
+          "automatic": {
+            "title": "c. Information automatically generated and collected during internet service use",
+            "items": "IP address, cookies, MAC address, service usage records, visit records, app usage patterns, focus measurement data, work performance time, etc."
+          }
+        }
+      },
+      "section3": {
+        "title": "3. Personal Information Processing and Retention Period",
+        "content": "The company processes and retains personal information within the personal information retention and use period according to law or the personal information retention and use period agreed upon when collecting personal information from data subjects.",
+        "periods": {
+          "membership": {
+            "title": "a. Website membership registration and management",
+            "period": "Until member withdrawal. However, in the following cases, until the corresponding reason ends",
+            "exception1": "When investigation or inquiry due to violation of related laws is in progress: until the corresponding investigation or inquiry ends",
+            "exception2": "When credit-debt relationship remains due to website usage: until the corresponding credit-debt relationship is settled"
+          },
+          "subscription": {
+            "title": "b. Subscription service provision",
+            "period": "Until subscription service usage ends and payment settlement is completed. However, in the following cases, until the corresponding period ends",
+            "ecommerce": {
+              "title": "Consumer Protection Act in Electronic Commerce",
+              "item1": "Records on advertising and display: 6 months",
+              "item2": "Records on contracts or subscription cancellation, subscription fee payment, service usage: 5 years",
+              "item3": "Records on consumer complaints or dispute resolution: 3 years"
+            },
+            "telecom": {
+              "title": "Telecommunications Privacy Protection Act",
+              "item1": "Subscriber telecommunications date and time, start/end time, counterpart subscriber number, etc.: 1 year",
+              "item2": "Computer communications, internet log record data, access location tracking data: 3 months"
+            }
+          }
+        }
+      }
+    },
+    "responsiblePerson": {
+      "title": "Privacy Protection Officer",
+      "name": "Younghyun Kim",
+      "position": "CEO",
+      "phone": "010-5172-5645",
+      "email": "swmaestrong@gmail.com"
+    },
+    "additionalInquiries": {
+      "title": "Other Personal Information Violation Report and Consultation Agencies",
+      "description": "If you need to report personal information violations or require consultation from agencies other than our company, please contact the following organizations.",
+      "agency1": "Privacy Protection Portal (privacy.kisa.or.kr / 118)",
+      "agency2": "Personal Information Violation Report Center (privacy.kisa.or.kr / 118)",
+      "agency3": "Supreme Prosecutors' Office Cyber Investigation Division (www.spo.go.kr / 1301)",
+      "agency4": "National Police Agency Cyber Bureau (ecrm.cyber.go.kr / 182)"
+    },
+    "dataDestruction": {
+      "title": "4. Personal Information Destruction Procedures and Methods",
+      "content": "The company destroys personal information without delay when personal information becomes unnecessary due to expiration of retention period, achievement of processing purposes, etc.",
+      "procedure": {
+        "title": "a. Destruction Procedures",
+        "description": "Information entered by users is transferred to a separate DB (separate documents in case of paper) after achieving the purpose and stored for a certain period according to internal policies and other related laws, then destroyed immediately. Personal information transferred to DB is not used for other purposes unless required by law."
+      },
+      "deadline": {
+        "title": "b. Destruction Deadline",
+        "description": "User's personal information is destroyed within 5 days from the end date of the retention period when the personal information retention period has expired, and within 5 days from the date when personal information processing is deemed unnecessary due to achievement of personal information processing purposes, service termination, business closure, etc."
+      },
+      "method": {
+        "title": "c. Destruction Methods",
+        "electronic": "• Electronic file format information: Complete deletion using technical methods that cannot reproduce records",
+        "paper": "• Personal information printed on paper: Destruction through shredding or incineration"
+      }
+    },
+    "userRights": {
+      "title": "5. Rights and Duties of Data Subjects and Exercise Methods",
+      "content": "Users may exercise the following rights as data subjects.",
+      "rights": {
+        "title": "a. Rights of Data Subjects",
+        "items": {
+          "access": "Request for access to personal information",
+          "correction": "Request for correction in case of errors",
+          "deletion": "Request for deletion",
+          "stopProcessing": "Request for processing suspension"
+        }
+      },
+      "exercise": {
+        "title": "b. Methods of Exercising Rights",
+        "method1": "• You may exercise rights against the company in writing, email, fax, etc. according to Article 41, Paragraph 1 of the Personal Information Protection Act Enforcement Decree, and the company will take action without delay.",
+        "method2": "• When data subjects request correction or deletion of errors in personal information, the company will not use or provide the relevant personal information until correction or deletion is completed.",
+        "method3": "• Rights may be exercised through legal representatives of data subjects or authorized agents.",
+        "method4": "• Requests for personal information access and processing suspension may be restricted according to Article 35, Paragraph 4 and Article 37, Paragraph 2 of the Personal Information Protection Act."
+      }
+    },
+    "thirdParty": {
+      "title": "6. Third-Party Provision of Personal Information",
+      "content": "The company does not provide users' personal information to external parties in principle. However, the following cases are exceptions.",
+      "exception1": "When users have given prior consent",
+      "exception2": "When required by law or when investigative agencies request according to procedures and methods defined by law for investigation purposes",
+      "current": {
+        "title": "Current Third-Party Personal Information Provision Status",
+        "description": "The company is currently not providing users' personal information to third parties."
+      }
+    },
+    "consignment": {
+      "title": "7. Personal Information Processing Consignment",
+      "content": "The company is currently not consigning personal information processing tasks to external parties. If personal information processing tasks are consigned in the future, we will notify the consignment facts in advance and obtain necessary consent according to relevant laws."
+    },
+    "internationalTransfer": {
+      "title": "8. International Transfer of Personal Information",
+      "content": "The company is currently not transferring users' personal information overseas. If international transfer becomes necessary for service provision in the future, we will notify the transfer facts in advance and obtain necessary consent according to relevant laws."
+    },
+    "securityMeasures": {
+      "title": "9. Personal Information Security Measures",
+      "content": "The company takes the following measures to ensure the security of personal information.",
+      "administrative": {
+        "title": "a. Administrative Measures",
+        "item1": "Establishment and implementation of internal management plans",
+        "item2": "Minimization and training of personal information handlers",
+        "item3": "Organization and operation of dedicated personal information protection teams",
+        "item4": "Regular internal audits"
+      },
+      "technical": {
+        "title": "b. Technical Measures",
+        "item1": "Access control management for personal information processing systems",
+        "item2": "Installation of access control systems",
+        "item3": "Encryption of unique identification information",
+        "item4": "Installation of security programs and regular inspection/updates",
+        "item5": "Storage and forgery prevention of access records",
+        "item6": "Use of security devices for document security"
+      },
+      "physical": {
+        "title": "c. Physical Measures",
+        "item1": "Access control of computer rooms, data storage rooms, etc.",
+        "item2": "Access control for unauthorized personnel",
+        "item3": "Locking devices for documents and auxiliary storage media containing personal information"
+      }
+    },
+    "policyChanges": {
+      "title": "10. Changes to Privacy Policy",
+      "content": "This privacy policy applies from July 4, 2025, and when there are additions, deletions, and corrections of changes according to laws and policies, we will notify through announcements 7 days before the implementation of changes.",
+      "notice": {
+        "title": "Notice Obligation Before Revision",
+        "description": "When the company revises the privacy policy, it will notify the revision reasons and changes without delay, and the revised content will be posted so that users can check it at any time. However, when there are important changes to users' rights or duties, we will notify at least 30 days in advance."
+      }
+    },
+    "responsiblePersonDetailed": {
+      "content": "The company designates a privacy protection officer as follows to take overall responsibility for personal information processing and handle data subjects' complaints and damage relief related to personal information processing.",
+      "notice": "Data subjects may contact the privacy protection officer and relevant departments regarding all personal information protection inquiries, complaint handling, damage relief, etc. that occur while using the company's services (or business). The company will respond and process data subjects' inquiries without delay."
+    }
   },
   "about": {
     "title": "About Pomocore",
-    "subtitle": "The smart choice for better productivity",
+    "subtitle": "A smart choice for better productivity",
     "heroTitle": "What is Pomocore?",
-    "heroDescription": "A productivity management software that systematically analyzes developers' work activities and helps them grow through competitive systems.",
+    "heroDescription": "A productivity management software that systematically analyzes developers' work history and helps growth through competition systems.",
     "coreFeatures": "Core Features",
-    "useCasesTitle": "Highly Recommended For",
+    "useCasesTitle": "Highly recommended for these people!",
     "features": {
       "aiCategorization": {
-        "title": "AI-Powered Automatic Categorization",
-        "description": "Combines proprietary algorithms with LLM to meticulously categorize user work activities.",
+        "title": "AI-based Automatic Categorization",
+        "description": "Combines proprietary algorithms with LLM to finely categorize user work activities.",
         "details": [
           "Real-time application usage pattern analysis",
-          "Automatic recognition of work types: coding, design, browsing, etc.",
-          "Continuous improvement of classification accuracy through learning"
+          "Automatic recognition of work types like coding, design, browsing",
+          "Continuous improvement of categorization accuracy through learning"
         ]
       },
       "realTimeMonitoring": {
-        "title": "Real-Time Activity Monitoring",
-        "description": "Tracks and analyzes the usage time of all applications running on macOS in real-time.",
+        "title": "Real-time Activity Monitoring",
+        "description": "Tracks and analyzes usage time of all applications running on macOS in real-time.",
         "details": [
-          "Specialized tracking for development tools like VS Code, Chrome, Figma",
-          "Distinguishes between active windows and idle time",
+          "Professional tracking of development tools like VS Code, Chrome, Figma",
+          "Distinction between active window and inactive time",
           "Accurate focus time measurement"
         ]
       },
       "dataVisualization": {
         "title": "Advanced Data Visualization",
-        "description": "Provides intuitive charts and graphs for hourly, category-wise, and daily data.",
+        "description": "Provides intuitive charts and graphs for data by time period, category, and day.",
         "details": [
-          "Radar charts showing skill-based time distribution",
-          "Timeline visualization of daily work patterns",
-          "Trend analysis for productivity change tracking"
+          "Display skill-based time distribution with radar charts",
+          "Visualize daily work patterns with timeline",
+          "Track productivity changes with trend analysis"
         ]
       },
       "gamification": {
@@ -107,17 +451,17 @@
         "title": "Personalized Insights",
         "description": "Analyzes individual work patterns to provide customized suggestions for productivity improvement.",
         "details": [
-          "Identification of optimal focus hours",
-          "Rest pattern analysis and suggestions",
-          "Goal setting and achievement rate tracking"
+          "Identify optimal focus time periods",
+          "Analyze and suggest rest patterns",
+          "Set goals and track achievement rates"
         ]
       },
       "security": {
-        "title": "Robust Security System",
-        "description": "Securely protects user data through AES-256 encryption.",
+        "title": "Strong Security System",
+        "description": "Safely protects user data through AES-256 encryption.",
         "details": [
           "Industry-standard AES-256 encryption applied",
-          "Requests only minimal necessary permissions",
+          "Requests only minimal permissions",
           "Transparent data processing methods"
         ]
       }
@@ -128,16 +472,16 @@
         "description": "Freelancers or developers working on personal projects",
         "benefits": [
           "Time management optimization",
-          "Productivity pattern identification",
-          "Goal achievement rate improvement"
+          "Understanding productivity patterns",
+          "Improved goal achievement rates"
         ]
       },
       "developmentTeam": {
         "title": "Development Teams",
-        "description": "Improving productivity of collaborative development teams",
+        "description": "Improving productivity of development teams working together",
         "benefits": [
           "Healthy competition among team members",
-          "Team-wide productivity visualization",
+          "Visualization of team-wide productivity",
           "Improved collaboration efficiency"
         ]
       },
@@ -154,8 +498,8 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Get answers to common questions about Pomocore",
-    "description": "We've compiled common questions about Pomocore. Check detailed answers about security, usage, troubleshooting, and more.",
+    "subtitle": "We'll help solve your questions about Pomocore",
+    "description": "We've collected common questions about Pomocore. Check detailed answers about security, usage, troubleshooting, and more.",
     "categories": {
       "all": "All",
       "security": "Security & Privacy",
@@ -165,56 +509,52 @@
     "questions": {
       "security": [
         {
-          "question": "What data is tracked when the app runs activity recording?",
-          "answer": "Pomocore collects app information, app titles, and in the case of browsers, URLs as well. The collected data is used only for category classification and data visualization purposes, not for any other purposes."
+          "question": "What data is tracked when the app executes record measurement?",
+          "answer": "Pomocore collects app information, app titles, and URLs for browsers. The collected data is used only for category classification and data visualization purposes, not for any other purposes."
         },
         {
           "question": "How does Pomocore protect data?",
-          "answer": "Pomocore uses AES-256 encryption to protect all activity logs. This is one of the strongest encryption standards currently available. Data is stored on servers but is used solely for providing services to users and is never used for any other purposes."
+          "answer": "Pomocore uses AES-256 encryption to protect all activity logs. This is one of the strongest encryption standards currently available. Data is stored on servers but is used only for providing services to users and is never used for any other purposes."
         },
         {
           "question": "Is there any possibility of my personal information being leaked externally?",
-          "answer": "Absolutely not. Pomocore uses user data solely for service provision purposes and never for any other purposes. We do not provide or sell data to third parties, nor is it used in any way without user consent."
+          "answer": "Absolutely not. Pomocore uses user data only for service provision purposes and never for any other purposes. We do not provide or sell to third parties, and it is not used in any way without user consent."
         }
       ],
       "features": [
         {
           "question": "Which applications can be tracked?",
-          "answer": "All applications running on macOS can be tracked. This includes development tools frequently used by developers such as VS Code, Xcode, Chrome, Safari, Figma, Sketch, and AI automatically categorizes them."
+          "answer": "All applications running on macOS can be tracked. This includes tools frequently used by developers such as VS Code, Xcode, Chrome, Safari, Figma, Sketch, and AI automatically categorizes them."
         },
         {
           "question": "How does tracking work when multiple tabs are open simultaneously?",
-          "answer": "Time recording is based on the tab that the user most recently activated."
+          "answer": "Time recording proceeds based on the tab that the user most recently activated."
         },
         {
           "question": "How does the leaderboard work?",
-          "answer": "The leaderboard is a feature that allows comparison of development time within the same team or group. You can check rankings on Daily, Weekly, and Monthly basis, and category-specific expertise can also be compared. The leaderboard reflects the latest data within 20-30 seconds, allowing real-time rank changes to be viewed. All data is processed anonymously."
+          "answer": "The leaderboard is a feature that allows comparing development time within the same team or group. You can check rankings on Daily, Weekly, and Monthly basis, and category-specific expertise can also be compared. The leaderboard reflects the latest data within 20-30 seconds, allowing real-time ranking changes. All data is processed anonymously."
         },
         {
-          "question": "Is tracking active even when I'm not doing anything?",
-          "answer": "No. Pomocore detects AFK (Away From Keyboard) status based on 15 minutes. If there's no activity for 15 minutes, it determines the user has stepped away and stops log tracking. Tracking automatically resumes when activity starts again."
+          "question": "Am I tracked even when I'm not doing any activity?",
+          "answer": "No. Pomocore detects AFK (Away From Keyboard) status based on 15 minutes. If there's no activity for 15 minutes, it determines that the user is away and stops log tracking. When activity resumes, tracking automatically restarts."
         }
       ],
       "installation": [
         {
           "question": "Which macOS versions are supported?",
-          "answer": "macOS 14.0 (Sonoma) and above are supported. It's optimized for the latest macOS Sequoia and Sonoma, and works smoothly on both Intel Mac and Apple Silicon Mac."
+          "answer": "Supports macOS 14.0 (Sonoma) and above. It's optimized for the latest macOS Sequoia and Sonoma, and works smoothly on both Intel Mac and Apple Silicon Mac."
         }
       ]
     },
     "contact": {
       "title": "Have other questions?",
-      "description": "If you couldn't find the answer you're looking for in the FAQ, feel free to contact us anytime.",
+      "description": "If you couldn't find the answer you're looking for in the FAQ, please feel free to contact us anytime.",
       "email": "Email",
       "phone": "Phone"
     }
   },
-  "terms": {
-    "title": "Terms of Service",
-    "subtitle": "Pomocore Terms of Service"
-  },
   "cta": {
-    "title": "Start Now",
-    "description": "Start your productivity journey with a simple installation"
+    "title": "Start right now",
+    "description": "Experience the new world of productivity gamification with simple installation"
   }
 }
