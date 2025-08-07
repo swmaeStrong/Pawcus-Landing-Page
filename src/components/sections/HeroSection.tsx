@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import DownloadButton from "@/components/DownloadButton";
 import { styles, getHeadingStyle, getTextStyle } from '@/lib/styles';
+import { useTranslations } from 'next-intl';
 
 interface HeroSectionProps {
   onCopyHomebrew: () => void;
@@ -8,27 +9,26 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSectionProps) {
+  const t = useTranslations('hero');
   return (
     <section className={styles.section} aria-labelledby="hero-heading">
       <div className={styles.scrollAnimate}>
         <div className="mb-12 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
           <h1 id="hero-heading" className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}>
-            Pomocore
+            {t('title')}
           </h1>
           <div className={`${styles.gradientDivider} mb-8`} />
         </div>
         
         <div className="relative">
           <h2 className={`${getHeadingStyle(2)} ${styles.text.primary} mb-8 leading-tight`}>
-            개발자를 위한 <span className={styles.gradientText}>스마트 생산성 관리</span>
+            {t('subtitle')}
           </h2>
         </div>
         
         <p className={`${getTextStyle('body')} mb-16 max-w-4xl mx-auto leading-relaxed px-4`}>
-          AI 기반 스마트 시간 추적과 게임화된 경쟁 시스템으로
-          <br className="hidden sm:block" />
-          <span className={styles.gradientText}>개인과 팀의 생산성을 혁신적으로 향상시켜보세요.</span>
+          {t('description')}
         </p>
         
         {/* Demo Video */}
@@ -52,10 +52,10 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
         <section className={styles.downloadSection} aria-labelledby="download-heading">
           <header className="text-center">
             <h3 id="download-heading" className={`${getHeadingStyle(3)} ${styles.text.primary} mb-4`}>
-              <span className={styles.gradientText}>Pomocore</span> 다운로드
+              {t('downloadTitle')}
             </h3>
             <p className={getTextStyle('secondary')}>
-              선호하는 방법으로 Pomocore를 설치하세요
+              {t('downloadDescription')}
             </p>
           </header>
           
@@ -66,7 +66,7 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
           
           <div className="text-center max-w-2xl">
             <p className={getTextStyle('muted')}>
-              Homebrew로 자동 업데이트 또는 DMG로 직접 설치
+              {t('downloadNote')}
             </p>
           </div>
         </section>

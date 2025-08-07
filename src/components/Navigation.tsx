@@ -7,35 +7,39 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Copy, CheckCircle, Sparkles, Home, Info, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { styles, createButtonStyle } from '@/lib/styles';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function Navigation() {
+  const locale = useLocale();
+  const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!');
+  const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState<'success' | 'error'>('success');
 
   const navItems = [
     {
-      href: '/',
-      label: '홈',
+      href: `/${locale}`,
+      label: t('navigation.home'),
       icon: Home
     },
     {
-      href: '/about',
-      label: '소개',
+      href: `/${locale}/about`,
+      label: t('navigation.about'),
       icon: Info
     },
     {
-      href: '/faq',
-      label: 'FAQ',
+      href: `/${locale}/faq`,
+      label: t('navigation.faq'),
       icon: HelpCircle
     }
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/';
+    if (href === `/${locale}`) {
+      return pathname === `/${locale}` || pathname === '/';
     }
     return pathname.startsWith(href);
   };
@@ -43,7 +47,7 @@ export default function Navigation() {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      setToastMessage('명령어가 클립보드에 복사되었습니다!');
+      setToastMessage(t('common.copySuccess'));
       setToastType('success');
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
@@ -59,7 +63,7 @@ export default function Navigation() {
       }
     } catch (err) {
       console.error('Failed to copy: ', err);
-      setToastMessage('복사에 실패했습니다. 수동으로 복사해주세요.');
+      setToastMessage(t('common.copyError'));
       setToastType('error');
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
@@ -89,7 +93,7 @@ export default function Navigation() {
         <div className={styles.container}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <Link href={`/${locale}`} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
@@ -141,18 +145,20 @@ export default function Navigation() {
               })}
             </ul>
             
-            {/* Download Buttons */}
-            <div className="flex items-center space-x-2 ml-4 pl-4 border-l border-gray-200">
+            {/* Language Switcher & Download Buttons */}
+            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-200">
+              <LanguageSwitcher />
+              
               {/* Homebrew Button */}
               <div className="group relative">
                 <div className="absolute -inset-1 from-[#3f72af] via-[#3f72af]/80 to-[#c6d4e8] rounded-lg group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
                 <button
-                  onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
+                  onClick={() => copyToClipboard(t('navigation.brewCommand'))}
                   className="relative bg-white hover:bg-[#ececec]/50 text-[#2d3748] border backdrop-blur-sm px-3 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 font-medium text-sm shadow-lg border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-[#3f72af]/20"
                 >
                   <div className="flex items-center space-x-2">
                     <Copy className="w-4 h-4 text-[#3f72af]" />
-                    <span>brew 복사</span>
+                    <span>{t('navigation.brewCopy')}</span>
                   </div>
                 </button>
               </div>
@@ -184,7 +190,7 @@ export default function Navigation() {
                     <svg className="w-4 h-4 text-[#3f72af]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span>DMG 다운로드</span>
+                    <span>{t('navigation.dmgDownload')}</span>
                   </div>
                 </Button>
             </div>
@@ -196,7 +202,7 @@ export default function Navigation() {
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#3f72af] via-[#3f72af]/80 to-[#c6d4e8] rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
               <button
-                onClick={() => copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')}
+                onClick={() => copyToClipboard(t('navigation.brewCommand'))}
                 className="relative bg-white hover:bg-[#ececec]/50 text-[#2d3748] border backdrop-blur-sm px-2 py-1 rounded-lg transition-all duration-300 hover:scale-105 font-medium text-xs shadow-lg border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-[#3f72af]/20"
               >
                 <Copy className="w-3 h-3 text-[#3f72af]" />

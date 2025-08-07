@@ -10,7 +10,11 @@
       "Bash(rg:*)",
       "Bash(grep:*)",
       "WebFetch(domain:screen.studio)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(git restore:*)"
     ],
     "deny": []
   },

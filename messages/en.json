@@ -1,0 +1,78 @@
+{
+  "common": {
+    "appName": "Pomocore",
+    "downloadApp": "Download",
+    "backToHome": "Back to Home",
+    "copySuccess": "Command copied to clipboard!",
+    "copyError": "Failed to copy. Please copy manually."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "brewCopy": "Copy brew",
+    "dmgDownload": "Download DMG",
+    "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
+  },
+  "hero": {
+    "title": "Pomocore",
+    "subtitle": "Smart Productivity Management for Developers",
+    "description": "Revolutionize your personal and team productivity with AI-powered smart time tracking and gamified competition system.",
+    "downloadTitle": "Download Pomocore",
+    "downloadDescription": "Install Pomocore using your preferred method",
+    "downloadNote": "Auto-updates with Homebrew or direct install with DMG"
+  },
+  "features": {
+    "focusScore": {
+      "title": "Measure focus, not just time",
+      "description": "Instead of just tracking sitting time, accurately score how much you actually focused."
+    },
+    "categoryAnalysis": {
+      "title": "Category Analysis",
+      "description": "Automatically categorize your work by time spent on different activities.",
+      "descriptionSub": "View time distribution across categories with intuitive pie charts.",
+      "features": {
+        "autoCategory": "Automatic categorization",
+        "realTimeUpdate": "Real-time data updates",
+        "personalizedReport": "Personalized analysis reports"
+      }
+    },
+    "dashboard": {
+      "title": "Unified Dashboard",
+      "description": "View all your productivity data intuitively on a single screen"
+    }
+  },
+  "download": {
+    "homebrew": {
+      "title": "Homebrew",
+      "description": "Copy Homebrew command"
+    },
+    "dmg": {
+      "title": "DMG File",
+      "description": "Download DMG file"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "We cherish and protect your personal information",
+    "effectiveDate": "Effective Date: July 4, 2025"
+  },
+  "about": {
+    "title": "About Pomocore",
+    "subtitle": "The smart choice for better productivity"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions about Pomocore"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Pomocore Terms of Service"
+  },
+  "cta": {
+    "title": "Start Now",
+    "description": "Start your productivity journey with a simple installation"
+  }
+}

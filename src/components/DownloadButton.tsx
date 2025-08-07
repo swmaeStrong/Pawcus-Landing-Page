@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Copy } from 'lucide-react';
 import { createButtonStyle, getTextStyle } from '@/lib/styles';
+import { useTranslations } from "next-intl";
 
 interface DownloadButtonProps {
   type: 'homebrew' | 'dmg';
@@ -10,7 +11,7 @@ interface DownloadButtonProps {
 
 export default function DownloadButton({ type, onDownload, className = "" }: DownloadButtonProps) {
   const isHomebrew = type === 'homebrew';
-  
+  const t = useTranslations('download');
   const gradientClass = isHomebrew 
     ? "from-[#3f72af] via-[#3f72af]/80 to-[#c6d4e8]" 
     : "from-[#3f72af] via-[#c6d4e8] to-[#3f72af]/70";
@@ -44,10 +45,10 @@ export default function DownloadButton({ type, onDownload, className = "" }: Dow
           )}
           <div className="text-center">
             <div className={`font-bold ${getTextStyle('secondary')}`}>
-              {isHomebrew ? 'brew 명령어 복사' : 'DMG 다운로드'}
+              {isHomebrew ? t('homebrew.title') : t('dmg.title')}
             </div>
             <div className={`${getTextStyle('secondary')} text-sm font-normal`}>
-              {isHomebrew ? '터미널에서 간편 설치' : '직접 설치 파일'}
+              {isHomebrew ? t('homebrew.description') : t('dmg.description')}
             </div>
           </div>
         </div>

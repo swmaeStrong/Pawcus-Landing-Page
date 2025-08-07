@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import DownloadButton from "@/components/DownloadButton";
+import { useTranslations } from 'next-intl';
 
 interface CTASectionProps {
   onCopyHomebrew: () => void;
@@ -7,6 +8,7 @@ interface CTASectionProps {
 }
 
 export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASectionProps) {
+  const t = useTranslations('cta');
   return (
     <section className="py-24 text-center relative" aria-labelledby="cta-heading">
       <div className="relative group">
@@ -28,10 +30,10 @@ export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASection
             </div>
             
             <h2 id="cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-              <span className="bg-[#3f72af] bg-clip-text text-transparent font-semibold">지금 바로</span> 시작해보세요
+              {t('title')}
             </h2>
             <p className="text-lg sm:text-xl mb-10 text-gray-600 max-w-2xl mx-auto px-4">
-              간단한 설치로 생산성 게임화의 새로운 경험을 시작할 수 있습니다
+              {t('description')}
             </p>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full px-4">
@@ -46,10 +48,6 @@ export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASection
                 className="opacity-90 hover:opacity-100"
               />
             </div>
-            
-            <p className="text-sm text-gray-500 mt-6">
-              Homebrew로 자동 업데이트 또는 DMG로 직접 설치
-            </p>
           </div>
         </div>
       </div>
