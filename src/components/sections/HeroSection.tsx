@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import DownloadButton from "@/components/DownloadButton";
 import { styles, getHeadingStyle, getTextStyle } from '@/lib/styles';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface HeroSectionProps {
   onCopyHomebrew: () => void;
@@ -10,6 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSectionProps) {
   const t = useTranslations('hero');
+  const locale = useLocale();
   return (
     <section className={styles.section} aria-labelledby="hero-heading">
       <div className={styles.scrollAnimate}>
@@ -42,8 +43,8 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
             className="rounded-2xl shadow-2xl w-full max-w-4xl"
             style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}
           >
-            <source src="/screenshots/statistics-adv.mov" type="video/quicktime" />
-            <source src="/screenshots/statistics-adv.mov" type="video/mp4" />
+            <source src={`/videos/pomocore-${locale}.mov`} type="video/quicktime" />
+            <source src={`/videos/pomocore-${locale}.mov`} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
