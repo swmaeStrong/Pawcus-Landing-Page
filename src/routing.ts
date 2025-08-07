@@ -6,7 +6,10 @@ export const routing = defineRouting({
   locales: ['ko', 'en'],
  
   // Used when no locale matches
-  defaultLocale: 'ko'
+  defaultLocale: 'ko',
+  
+  // Prefix for all routes except the default locale
+  localePrefix: 'as-needed'
 });
 
 // Create navigation utilities
