@@ -56,7 +56,7 @@ export default function FeaturesSection() {
         <div>
           <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 hover:shadow-3xl transition-all duration-700 hover:scale-105">
             <img 
-              src="/screenshots/CategoryAnalysis.png" 
+              src="/screenshots/CA.png" 
               alt="카테고리 분석"
               className="w-full h-auto"
             />
