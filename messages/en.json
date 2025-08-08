@@ -562,7 +562,7 @@
         },
         {
           "question": "Am I tracked even when I'm not doing any activity?",
-          "answer": "No. Pomocore detects AFK (Away From Keyboard) status based on 15 minutes. If there's no activity for 15 minutes, it determines that the user is away and stops log tracking. When activity resumes, tracking automatically restarts."
+          "answer": "No. Pomocore detects AFK (Away From Keyboard) status based on 3 minutes. If there's no activity for 3 minutes, it determines that the user is away and stops log tracking. When activity resumes, tracking automatically restarts."
         }
       ],
       "installation": [
