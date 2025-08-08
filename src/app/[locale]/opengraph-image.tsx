@@ -3,14 +3,26 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 export const revalidate = 0 // 캐시 무효화
 
-export const alt = 'Pomocore - Smart Productivity Management for Developers'
 export const size = {
   width: 1200,
   height: 630,
 }
 export const contentType = 'image/png'
 
-export default async function Image() {
+export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  
+  const isKorean = locale === 'ko'
+  
+  const alt = isKorean 
+    ? 'Pomocore - 시간을 절약하는 스마트 시간 추적'
+    : 'Pomocore - Smart Time Tracking to Save Time'
+  
+  const texts = {
+    badge: isKorean ? '시간 낭비를 멈추세요' : 'STOP WASTING TIME',
+    tagline: isKorean ? '효율성을 극대화하세요' : 'Maximize Your Efficiency',
+    subtitle: isKorean ? '시간을 절약하는 스마트 시간 추적' : 'Smart Time Tracking to Save Time'
+  }
   return new ImageResponse(
     (
       <div
@@ -52,7 +64,7 @@ export default async function Image() {
               letterSpacing: '1px',
             }}
           >
-            DON'T WASTE YOUR TIME
+{texts.badge}
           </div>
 
           {/* Title with gradient */}
@@ -81,7 +93,7 @@ export default async function Image() {
               lineHeight: 1.1,
             }}
           >
-            Maximize Your Efficiency
+{texts.tagline}
           </p>
           
           {/* Subtitle */}
@@ -93,7 +105,7 @@ export default async function Image() {
               fontWeight: '500',
             }}
           >
-            Smart Productivity Management for Developers
+{texts.subtitle}
           </p>
         </div>
         
@@ -118,6 +130,7 @@ export default async function Image() {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         'Pragma': 'no-cache',
         'Expires': '0',
+        'Last-Modified': new Date().toISOString(),
       },
     }
   )

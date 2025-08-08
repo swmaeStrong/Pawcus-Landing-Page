@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
           images: [
         {
-          url: `https://www.pomocore.com/opengraph-image?v=${Date.now()}`,
+          url: `https://www.pomocore.com/opengraph-image`,
           width: 1200,
           height: 630,
           alt: "Pomocore - 시간을 절약하는 스마트 시간 추적",
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-title": "Pomocore",
     "al:web:url": "https://www.pomocore.com",
     "al:web:should_fallback": "true",
-    "og:image:secure_url": `https://www.pomocore.com/opengraph-image?v=${Date.now()}`,
+    "og:image:secure_url": `https://www.pomocore.com/opengraph-image`,
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:alt": "Pomocore - 시간을 절약하는 스마트 시간 추적",
@@ -148,7 +148,7 @@ export default async function LocaleLayout({
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
         <meta property="og:title" content="Pomocore - 시간을 절약하는 스마트 시간 추적" />
         <meta property="og:description" content="시간 낭비를 막고 시간을 절약하세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요." />
-        <meta property="og:image" content={`https://www.pomocore.com/opengraph-image?v=${Date.now()}`} />
+        <meta property="og:image" content={`https://www.pomocore.com/opengraph-image`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Pomocore - 시간을 절약하는 스마트 시간 추적" />
@@ -161,7 +161,7 @@ export default async function LocaleLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Pomocore - 시간을 절약하는 스마트 시간 추적" />
         <meta name="twitter:description" content="시간 낭비를 막고 효율적으로 작업하세요" />
-        <meta name="twitter:image" content={`https://www.pomocore.com/opengraph-image?v=${Date.now()}`} />
+        <meta name="twitter:image" content={`https://www.pomocore.com/opengraph-image`} />
         
         {/* 카카오톡 앱링크 */}
         <meta property="al:web:url" content="https://www.pomocore.com" />
