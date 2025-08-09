@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Pomocore - 시간을 절약하는 스마트 시간 추적",
-    description: "시간 낭비를 막고 시간을 절약하세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
+    description: "더 이상 시간을 낭비하지 마세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
     type: "website",
     url: "https://www.pomocore.com",
     siteName: "Pomocore",
