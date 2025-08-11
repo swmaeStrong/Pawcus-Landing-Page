@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     "theme-color": "#8B5CF6",
     "msapplication-TileColor": "#8B5CF6",
     "msapplication-config": "/browserconfig.xml",
-    "apple-mobile-web-app-capable": "yes",
+    "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "apple-mobile-web-app-title": "Pomocore",
     "al:web:url": "https://www.pomocore.com",
