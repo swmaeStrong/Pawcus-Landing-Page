@@ -4,6 +4,8 @@ import "../globals.css";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {routing} from '@/routing';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import Hotjar from '@/components/Hotjar';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -166,55 +168,10 @@ export default async function LocaleLayout({
         {/* 카카오톡 앱링크 */}
         <meta property="al:web:url" content="https://www.pomocore.com" />
         <meta property="al:web:should_fallback" content="true" />
-        
-        {/* Hotjar Tracking */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:6454623,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-            `,
-          }}
-        />
-        
-        {/* Google Analytics 4 */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-H02Z2DTRG4"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-H02Z2DTRG4', {
-                page_title: document.title,
-                page_location: window.location.href,
-                custom_map: {
-                  custom_parameter_1: 'referrer_source'
-                }
-              });
-              
-              // Track page view with referrer information
-              gtag('event', 'page_view', {
-                page_title: document.title,
-                page_location: window.location.href,
-                referrer_source: document.referrer || 'direct',
-                user_agent: navigator.userAgent,
-                screen_resolution: screen.width + 'x' + screen.height
-              });
-            `,
-          }}
-        />
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <GoogleAnalytics />
+        <Hotjar />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
