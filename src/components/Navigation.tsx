@@ -51,6 +51,19 @@ export default function Navigation() {
       setToastType('success');
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
+      
+      // GA4 client_id 가져와서 이벤트에 포함
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('get', 'G-H02Z2DTRG4', 'client_id', (clientId: string) => {
+          (window as any).gtag('event', 'download_attempt', {
+            client_id: clientId,
+            method: 'homebrew',
+            content_type: 'command_copy',
+            source: 'navigation',
+            timestamp: new Date().toISOString()
+          });
+        });
+      }
     } catch (err) {
       console.error('Failed to copy: ', err);
       setToastMessage(t('common.copyError'));
