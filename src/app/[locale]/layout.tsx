@@ -7,6 +7,7 @@ import {routing} from '@/routing';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Hotjar from '@/components/Hotjar';
 import FirstVisitTracker from '@/components/FirstVisitTracker';
+import SessionTracker from '@/components/SessionTracker';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -173,6 +174,7 @@ export default async function LocaleLayout({
       <body className={`${inter.variable} antialiased`}>
         <GoogleAnalytics />
         <FirstVisitTracker />
+        <SessionTracker />
         <Hotjar />
         <NextIntlClientProvider messages={messages}>
           {children}
