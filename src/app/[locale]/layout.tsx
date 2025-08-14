@@ -6,6 +6,7 @@ import {getMessages} from 'next-intl/server';
 import {routing} from '@/routing';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Hotjar from '@/components/Hotjar';
+import FirstVisitTracker from '@/components/FirstVisitTracker';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -171,6 +172,7 @@ export default async function LocaleLayout({
       </head>
       <body className={`${inter.variable} antialiased`}>
         <GoogleAnalytics />
+        <FirstVisitTracker />
         <Hotjar />
         <NextIntlClientProvider messages={messages}>
           {children}
