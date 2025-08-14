@@ -51,16 +51,6 @@ export default function Navigation() {
       setToastType('success');
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
-      
-      // GA4 Event Tracking
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'download_attempt', {
-          event_category: 'engagement',
-          event_label: 'homebrew_copy_navbar',
-          method: 'homebrew',
-          content_type: 'command_copy'
-        });
-      }
     } catch (err) {
       console.error('Failed to copy: ', err);
       setToastMessage(t('common.copyError'));
@@ -119,17 +109,6 @@ export default function Navigation() {
                     <Link
                       href={item.href}
                       role="menuitem"
-                      onClick={() => {
-                        // GA4 Navigation Click Tracking
-                        if (typeof window !== 'undefined' && (window as any).gtag) {
-                          (window as any).gtag('event', 'click', {
-                            event_category: 'navigation',
-                            event_label: `nav_${item.label.toLowerCase()}`,
-                            content_group1: `${item.label.toLowerCase()}_page`,
-                            custom_parameter_1: `nav_${item.label.toLowerCase()}_click`
-                          });
-                        }
-                      }}
                       className={`${styles.navItem} ${
                         isActive(item.href)
                           ? styles.navItemActive
@@ -166,16 +145,6 @@ export default function Navigation() {
               {/* DMG Download Button */}
                 <Button
                   onClick={() => {
-                    // GA4 Event Tracking
-                    if (typeof window !== 'undefined' && (window as any).gtag) {
-                      (window as any).gtag('event', 'download_attempt', {
-                        event_category: 'engagement',
-                        event_label: 'dmg_download_navbar',
-                        method: 'dmg',
-                        content_type: 'direct_download'
-                      });
-                    }
-                    
                     const link = document.createElement('a');
                     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
                     link.download = 'Pomocore.dmg';
@@ -212,15 +181,6 @@ export default function Navigation() {
             {/* Mobile DMG Button */}
             <Button
               onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'download_attempt', {
-                    event_category: 'engagement',
-                    event_label: 'dmg_download_navbar_mobile',
-                    method: 'dmg',
-                    content_type: 'direct_download'
-                  });
-                }
-                
                 const link = document.createElement('a');
                 link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
                 link.download = 'Pomocore.dmg';

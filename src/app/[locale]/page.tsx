@@ -26,16 +26,6 @@ export default function LandingPage() {
       setToastType('success')
       setShowToast(true)
       setTimeout(() => setShowToast(false), 3000)
-      
-      // GA4 Event Tracking
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'download_attempt', {
-          event_category: 'engagement',
-          event_label: 'homebrew_copy',
-          method: 'homebrew',
-          content_type: 'command_copy'
-        })
-      }
     } catch (err) {
       console.error('Failed to copy: ', err)
       setToastMessage(t('common.copyError'))
@@ -50,15 +40,6 @@ export default function LandingPage() {
   }
 
   const handleDMGDownload = () => {
-    // GA4 Event Tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'download_attempt', {
-        event_category: 'engagement',
-        event_label: 'dmg_download',
-        method: 'dmg',
-        content_type: 'direct_download'
-      })
-    }
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
     link.download = 'Pomocore.dmg';
