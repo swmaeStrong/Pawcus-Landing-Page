@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import DownloadButton from "@/components/DownloadButton";
 import { styles, getHeadingStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations, useLocale } from 'next-intl';
+import { useState, useEffect } from 'react';
+import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 
 interface HeroSectionProps {
   onDownloadDMG: () => void;
@@ -10,6 +12,22 @@ interface HeroSectionProps {
 export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
   const t = useTranslations('hero');
   const locale = useLocale();
+  const [deviceId, setDeviceId] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Amplitude가 초기화된 후 device ID 가져오기
+    const fetchDeviceId = () => {
+      const id = getAmplitudeDeviceId();
+      if (id) {
+        setDeviceId(id);
+      } else {
+        // 초기화가 완료되지 않았을 수 있으므로 잠시 후 재시도
+        setTimeout(fetchDeviceId, 1000);
+      }
+    };
+    
+    fetchDeviceId();
+  }, []);
   return (
     <section className={styles.section} aria-labelledby="hero-heading">
       <div className={styles.scrollAnimate}>
@@ -62,7 +80,10 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           </header>
           
           <div className={styles.downloadButtons}>
-            <DownloadButton onDownload={onDownloadDMG} />
+            <DownloadButton 
+              onDownload={onDownloadDMG} 
+              copyText={deviceId || ''} 
+            />
           </div>
           
           <div className="text-center max-w-2xl">

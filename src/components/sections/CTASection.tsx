@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import DownloadButton from "@/components/DownloadButton";
 import { useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
+import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 
 interface CTASectionProps {
   onDownloadDMG: () => void;
@@ -8,6 +10,22 @@ interface CTASectionProps {
 
 export default function CTASection({ onDownloadDMG }: CTASectionProps) {
   const t = useTranslations('cta');
+  const [deviceId, setDeviceId] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Amplitude가 초기화된 후 device ID 가져오기
+    const fetchDeviceId = () => {
+      const id = getAmplitudeDeviceId();
+      if (id) {
+        setDeviceId(id);
+      } else {
+        // 초기화가 완료되지 않았을 수 있으므로 잠시 후 재시도
+        setTimeout(fetchDeviceId, 1000);
+      }
+    };
+    
+    fetchDeviceId();
+  }, []);
   return (
     <section className="py-24 text-center relative" aria-labelledby="cta-heading">
       <div className="relative group">
@@ -39,6 +57,7 @@ export default function CTASection({ onDownloadDMG }: CTASectionProps) {
               <DownloadButton 
                 onDownload={onDownloadDMG}
                 className="opacity-90 hover:opacity-100"
+                copyText={deviceId || ''}
               />
             </div>
           </div>

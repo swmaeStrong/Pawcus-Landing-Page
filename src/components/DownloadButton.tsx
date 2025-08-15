@@ -1,24 +1,43 @@
 import { Button } from "@/components/ui/button";
 import { createButtonStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 interface DownloadButtonProps {
   onDownload: () => void;
   className?: string;
+  copyText?: string; // 클립보드에 복사할 텍스트
 }
 
-export default function DownloadButton({ onDownload, className = "" }: DownloadButtonProps) {
+export default function DownloadButton({ onDownload, className = "", copyText }: DownloadButtonProps) {
   const t = useTranslations('download');
+  const [copied, setCopied] = useState(false);
   const gradientClass = "from-[#3f72af] via-[#c6d4e8] to-[#3f72af]/70";
   const borderClass = "border-[#3f72af] hover:border-[#3f72af]/80";
   const shadowClass = "hover:shadow-[#3f72af]/20";
   const iconColor = "text-[#3f72af]";
 
+  const handleClick = async () => {
+    // 클립보드에 복사
+    if (copyText) {
+      try {
+        await navigator.clipboard.writeText(copyText);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // 2초 후 상태 리셋
+      } catch (error) {
+        console.warn('Failed to copy to clipboard:', error);
+      }
+    }
+    
+    // 다운로드 실행
+    onDownload();
+  };
+
   return (
     <div className={`group relative w-full md:w-auto max-w-sm ${className}`}>
       <div className={`absolute -inset-1 bg-gradient-to-r ${gradientClass} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200`} />
       <Button
-        onClick={onDownload}
+        onClick={handleClick}
         className={`relative w-full ${createButtonStyle('dmg')} border-2 ${borderClass} px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-semibold text-base sm:text-lg md:text-xl ${shadowClass} min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20`}
       >
         <div className="flex items-center justify-center space-x-4">
@@ -30,7 +49,7 @@ export default function DownloadButton({ onDownload, className = "" }: DownloadB
               {t('dmg.title')}
             </div>
             <div className={`${getTextStyle('secondary')} text-sm font-normal`}>
-              {t('dmg.description')}
+              {copied ? '✓ Copied!' : t('dmg.description')}
             </div>
           </div>
         </div>
