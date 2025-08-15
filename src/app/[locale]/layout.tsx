@@ -6,7 +6,6 @@ import {getMessages} from 'next-intl/server';
 import {routing} from '@/routing';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Hotjar from '@/components/Hotjar';
-import FirstVisitTracker from '@/components/FirstVisitTracker';
 import SessionTracker from '@/components/SessionTracker';
 import AmpliAnalytics from '@/components/AmpliAnalytics';
 
@@ -175,7 +174,6 @@ export default async function LocaleLayout({
       <body className={`${inter.variable} antialiased`}>
         <GoogleAnalytics />
         <AmpliAnalytics />
-        <FirstVisitTracker />
         <SessionTracker />
         <Hotjar />
         <NextIntlClientProvider messages={messages}>
