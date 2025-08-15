@@ -15,7 +15,9 @@
       "Bash(mkdir:*)",
       "Bash(mv:*)",
       "Bash(git restore:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)"
     ],
     "deny": []
   },

@@ -34,7 +34,7 @@
     "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
   },
   "hero": {
-    "title": "Pomocore - 당신의 집중력을 극대화하세요",
+    "title": "Pomocore",
     "subtitle": "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요",
     "description": "PC 작업 도중 집중하지 못하고 낭비되는 시간은 얼마나 될까요?",
     "descriptionSub": "작업 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
