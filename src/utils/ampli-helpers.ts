@@ -84,3 +84,15 @@ export function setAmpliUserProperties(properties: Record<string, any>) {
     console.warn('Ampli user properties setting failed:', error);
   }
 }
+
+// Amplitude Device ID 가져오기
+export function getAmplitudeDeviceId(): string | null {
+  try {
+    // Amplitude 클라이언트에서 device ID 가져오기
+    const deviceId = ampli.client?.getDeviceId();
+    return deviceId || null;
+  } catch (error) {
+    console.warn('Failed to get Amplitude device ID:', error);
+    return null;
+  }
+}
