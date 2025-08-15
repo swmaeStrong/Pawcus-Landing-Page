@@ -82,7 +82,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           <div className={styles.downloadButtons}>
             <DownloadButton 
               onDownload={onDownloadDMG} 
-              copyText={deviceId || ''} 
+              copyText={deviceId ? `pomocore-${deviceId}` : ''} 
             />
           </div>
           

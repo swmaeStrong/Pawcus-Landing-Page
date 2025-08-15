@@ -57,7 +57,7 @@ export default function CTASection({ onDownloadDMG }: CTASectionProps) {
               <DownloadButton 
                 onDownload={onDownloadDMG}
                 className="opacity-90 hover:opacity-100"
-                copyText={deviceId || ''}
+                copyText={deviceId ? `pomocore-${deviceId}` : ''}
               />
             </div>
           </div>

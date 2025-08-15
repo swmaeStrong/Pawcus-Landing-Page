@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -9,12 +9,51 @@ import { Button } from '@/components/ui/button';
 import { styles, createButtonStyle } from '@/lib/styles';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLocale, useTranslations } from 'next-intl';
+import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 
 export default function Navigation() {
   const locale = useLocale();
   const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
+  const [deviceId, setDeviceId] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    // Amplitude가 초기화된 후 device ID 가져오기
+    const fetchDeviceId = () => {
+      const id = getAmplitudeDeviceId();
+      if (id) {
+        setDeviceId(id);
+      } else {
+        // 초기화가 완료되지 않았을 수 있으므로 잠시 후 재시도
+        setTimeout(fetchDeviceId, 1000);
+      }
+    };
+    
+    fetchDeviceId();
+  }, []);
+
+  const handleDownload = async () => {
+    // Device ID를 pomocore-{deviceId} 형식으로 클립보드에 복사
+    if (deviceId) {
+      try {
+        await navigator.clipboard.writeText(`pomocore-${deviceId}`);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (error) {
+        console.warn('Failed to copy to clipboard:', error);
+      }
+    }
+    
+    // 다운로드 실행
+    const link = document.createElement('a');
+    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
+    link.download = 'Pomocore.dmg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const navItems = [
     {
@@ -94,14 +133,7 @@ export default function Navigation() {
               
               {/* DMG Download Button */}
                 <Button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
-                    link.download = 'Pomocore.dmg';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                  onClick={handleDownload}
                   className={createButtonStyle('dmg')}
                   size="sm"
                 >
@@ -109,7 +141,7 @@ export default function Navigation() {
                     <svg className="w-4 h-4 text-[#3f72af]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span>{t('navigation.dmgDownload')}</span>
+                    <span>{copied ? '✓ Copied!' : t('navigation.dmgDownload')}</span>
                   </div>
                 </Button>
             </div>
@@ -119,14 +151,7 @@ export default function Navigation() {
           <div className="flex md:hidden items-center space-x-2">
             {/* Mobile DMG Button */}
             <Button
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
-                link.download = 'Pomocore.dmg';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              onClick={handleDownload}
               className={`${createButtonStyle('dmg')} px-2 py-1 text-xs`}
               size="sm"
             >
