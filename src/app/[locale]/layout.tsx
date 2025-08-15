@@ -18,10 +18,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pomocore - 시간을 절약하는 스마트 시간 추적",
+    default: "Pomocore - Maximize Your Focus",
     template: "%s | Pomocore"
   },
-  description: "시간 낭비를 막고 시간을 절약하세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
+  description: "Track your activity, pinpoint your distractions, and achieve goals with your groups",
   keywords: ["시간 절약", "시간 추적", "시간 낭비 방지", "효율적 작업", "집중도 측정", "time saving", "time tracking", "efficiency"],
   authors: [{ name: "Pomocore Team" }],
   creator: "Pomocore Team",
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Pomocore - 시간을 절약하는 스마트 시간 추적",
-    description: "더 이상 시간을 낭비하지 마세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
+    title: "Pomocore - 당신의 집중력을 극대화하세요",
+    description: "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요.",
     type: "website",
     url: "https://www.pomocore.com",
     siteName: "Pomocore",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
           url: `https://www.pomocore.com/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: "Pomocore - 시간을 절약하는 스마트 시간 추적",
+          alt: "Pomocore - 당신의 집중력을 극대화하세요",
           type: "image/png",
         },
       {
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@pomocore",
     creator: "@pomocore",
-    title: "Pomocore - 시간을 절약하는 스마트 시간 추적",
-    description: "시간 낭비를 막고 효율적으로 작업하세요",
+    title: "Pomocore - 당신의 집중력을 극대화하세요",
+    description: "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요",
     images: [
       {
         url: "https://www.pomocore.com/icons/512-mac.png",
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     "og:image:secure_url": `https://www.pomocore.com/opengraph-image`,
     "og:image:width": "1200",
     "og:image:height": "630",
-    "og:image:alt": "Pomocore - 시간을 절약하는 스마트 시간 추적",
+    "og:image:alt": "Pomocore - 당신의 집중력을 극대화하세요",
     "og:locale": "ko_KR",
     "og:locale:alternate": "en_US",
   },
@@ -150,12 +150,12 @@ export default async function LocaleLayout({
         <link rel="canonical" href="https://www.pomocore.com" />
         
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
-        <meta property="og:title" content="Pomocore - 시간을 절약하는 스마트 시간 추적" />
-        <meta property="og:description" content="시간 낭비를 막고 시간을 절약하세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요." />
+        <meta property="og:title" content="Pomocore - 당신의 집중력을 극대화하세요" />
+        <meta property="og:description" content="활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요." />
         <meta property="og:image" content={`https://www.pomocore.com/opengraph-image`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Pomocore - 시간을 절약하는 스마트 시간 추적" />
+        <meta property="og:image:alt" content="Pomocore - 당신의 집중력을 극대화하세요" />
         <meta property="og:url" content="https://www.pomocore.com" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Pomocore" />
@@ -163,8 +163,8 @@ export default async function LocaleLayout({
         
         {/* 트위터 카드 (추가 호환성) */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pomocore - 시간을 절약하는 스마트 시간 추적" />
-        <meta name="twitter:description" content="시간 낭비를 막고 효율적으로 작업하세요" />
+        <meta name="twitter:title" content="Pomocore - 당신의 집중력을 극대화하세요" />
+        <meta name="twitter:description" content="활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요" />
         <meta name="twitter:image" content={`https://www.pomocore.com/opengraph-image`} />
         
         {/* 카카오톡 앱링크 */}
