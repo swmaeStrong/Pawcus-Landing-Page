@@ -12,6 +12,7 @@ import {Link as IntlLink} from '@/routing';
 import Image from 'next/image';
 import { styles } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
+import { ampli } from '@/ampli';
 
 
 export default function LandingPage() {
@@ -21,6 +22,20 @@ export default function LandingPage() {
   const t = useTranslations('common');
 
   const handleDMGDownload = () => {
+    // Ampli 다운로드 이벤트 추적
+    try {
+      ampli.track({
+        event_type: 'Download Attempted',
+        event_properties: {
+          download_method: 'dmg',
+          page_location: window.location.pathname,
+          timestamp: new Date().toISOString()
+        }
+      } as any);
+    } catch (error) {
+      console.warn('Ampli download tracking failed:', error);
+    }
+    
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
     link.download = 'Pomocore.dmg';

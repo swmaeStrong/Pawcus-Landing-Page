@@ -51,6 +51,25 @@ export type LoadOptionsWithClientInstance = LoadOptionsBase & { client: { instan
 
 export type LoadOptions = LoadOptionsWithEnvironment | LoadOptionsWithApiKey | LoadOptionsWithClientInstance;
 
+export interface UserVisitProperties {
+  platform: string;
+  referrer_domain: string;
+  user_id: string;
+  utm_campaign: string;
+  utm_medium: string;
+  utm_source: string;
+}
+
+export class UserVisit implements BaseEvent {
+  event_type = 'user_visit';
+
+  constructor(
+    public event_properties: UserVisitProperties,
+  ) {
+    this.event_properties = event_properties;
+  }
+}
+
 export type PromiseResult<T> = { promise: Promise<T | void> };
 
 const getVoidPromiseResult = () => ({ promise: Promise.resolve() });
@@ -160,6 +179,24 @@ export class Ampli {
     return this.amplitude!.track(event, undefined, options);
   }
 
+  /**
+   * user_visit
+   *
+   * [View in Tracking Plan](https://data.amplitude.com/cool-term-327711/default/events/main/latest/user_visit)
+   *
+   * 랜딩 페이지에 접근한 경우 기록입니다.
+   *
+   * Owner: strong SWM
+   *
+   * @param properties The event's properties (e.g. platform)
+   * @param options Amplitude event options.
+   */
+  userVisit(
+    properties: UserVisitProperties,
+    options?: EventOptions,
+  ) {
+    return this.track(new UserVisit(properties), options);
+  }
 }
 
 export const ampli = new Ampli();
