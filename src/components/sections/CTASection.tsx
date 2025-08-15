@@ -3,11 +3,10 @@ import DownloadButton from "@/components/DownloadButton";
 import { useTranslations } from 'next-intl';
 
 interface CTASectionProps {
-  onCopyHomebrew: () => void;
   onDownloadDMG: () => void;
 }
 
-export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASectionProps) {
+export default function CTASection({ onDownloadDMG }: CTASectionProps) {
   const t = useTranslations('cta');
   return (
     <section className="py-24 text-center relative" aria-labelledby="cta-heading">
@@ -38,12 +37,6 @@ export default function CTASection({ onCopyHomebrew, onDownloadDMG }: CTASection
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full px-4">
               <DownloadButton 
-                type="homebrew" 
-                onDownload={onCopyHomebrew}
-                className="opacity-90 hover:opacity-100"
-              />
-              <DownloadButton 
-                type="dmg" 
                 onDownload={onDownloadDMG}
                 className="opacity-90 hover:opacity-100"
               />

@@ -19,37 +19,6 @@ export default function LandingPage() {
   const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!')
   const [toastType, setToastType] = useState<'success' | 'error'>('success')
   const t = useTranslations('common');
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setToastMessage(t('common.copySuccess'))
-      setToastType('success')
-      setShowToast(true)
-      setTimeout(() => setShowToast(false), 3000)
-      
-      // GA4 client_id 가져와서 이벤트에 포함
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('get', 'G-H02Z2DTRG4', 'client_id', (clientId: string) => {
-          (window as any).gtag('event', 'download_attempt', {
-            client_id: clientId,
-            method: 'homebrew',
-            content_type: 'command_copy',
-            timestamp: new Date().toISOString()
-          });
-        });
-      }
-    } catch (err) {
-      console.error('Failed to copy: ', err)
-      setToastMessage(t('common.copyError'))
-      setToastType('error')
-      setShowToast(true)
-      setTimeout(() => setShowToast(false), 3000)
-    }
-  }
-
-  const handleHomebrewCopy = () => {
-    copyToClipboard('brew tap swmaeStrong/pomocore && brew install --cask pomocore')
-  }
 
   const handleDMGDownload = () => {
     const link = document.createElement('a');
@@ -104,7 +73,6 @@ export default function LandingPage() {
       <main className={`${styles.container} relative z-10 pt-16`}>
         {/* Hero Section */}
         <HeroSection 
-          onCopyHomebrew={handleHomebrewCopy} 
           onDownloadDMG={handleDMGDownload} 
         />
 
@@ -115,7 +83,6 @@ export default function LandingPage() {
 
         {/* CTA Section */}
         <CTASection 
-          onCopyHomebrew={handleHomebrewCopy} 
           onDownloadDMG={handleDMGDownload} 
         />
       </main>

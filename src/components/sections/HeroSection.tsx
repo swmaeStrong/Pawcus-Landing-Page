@@ -4,11 +4,10 @@ import { styles, getHeadingStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface HeroSectionProps {
-  onCopyHomebrew: () => void;
   onDownloadDMG: () => void;
 }
 
-export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSectionProps) {
+export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
   const t = useTranslations('hero');
   const locale = useLocale();
   return (
@@ -63,8 +62,7 @@ export default function HeroSection({ onCopyHomebrew, onDownloadDMG }: HeroSecti
           </header>
           
           <div className={styles.downloadButtons}>
-            <DownloadButton type="homebrew" onDownload={onCopyHomebrew} />
-            <DownloadButton type="dmg" onDownload={onDownloadDMG} />
+            <DownloadButton onDownload={onDownloadDMG} />
           </div>
           
           <div className="text-center max-w-2xl">
