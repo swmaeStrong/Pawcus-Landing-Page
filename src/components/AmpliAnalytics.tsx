@@ -6,16 +6,9 @@ import { trackUserVisit } from '../utils/ampli-helpers';
 
 export default function AmpliAnalytics() {
   useEffect(() => {
-    // Ampli 초기화 - 기본 세션 추적 비활성화
+    // Ampli 초기화
     ampli.load({ 
-      environment: 'default' as any,
-      client: {
-        configuration: {
-          defaultTracking: {
-            sessions: false
-          }
-        }
-      }
+      environment: 'default' as any
     });
 
     // 사용자 식별 (익명 사용자)
