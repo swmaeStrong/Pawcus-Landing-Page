@@ -29,18 +29,32 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
     fetchDeviceId();
   }, []);
   return (
-    <section className={styles.section} aria-labelledby="hero-heading">
+    <section 
+      className={styles.section} 
+      aria-labelledby="hero-heading"
+      itemScope 
+      itemType="https://schema.org/SoftwareApplication"
+    >
       <div className={styles.scrollAnimate}>
         <div className="mb-12 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
-          <h1 id="hero-heading" className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}>
+          <h1 
+            id="hero-heading" 
+            className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}
+            itemProp="name"
+          >
             {t('title')}
           </h1>
           <div className={`${styles.gradientDivider} mb-8`} />
         </div>
         
         <div className="relative">
-          <h2 className={`${getHeadingStyle(2)} ${styles.text.primary} mb-8 leading-tight`}>
+          <h2 
+            className={`${getHeadingStyle(2)} ${styles.text.primary} mb-8 leading-tight text-center`}
+            itemProp="description"
+            role="doc-subtitle"
+            aria-describedby="hero-heading"
+          >
             {t('subtitle')}
           </h2>
         </div>

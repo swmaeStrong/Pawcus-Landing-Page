@@ -170,6 +170,27 @@ export default async function LocaleLayout({
         {/* 카카오톡 앱링크 */}
         <meta property="al:web:url" content="https://www.pomocore.com" />
         <meta property="al:web:should_fallback" content="true" />
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Pomocore",
+              "description": "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요",
+              "applicationCategory": "ProductivityApplication",
+              "operatingSystem": "macOS",
+              "url": "https://www.pomocore.com",
+              "downloadUrl": "https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <GoogleAnalytics />
