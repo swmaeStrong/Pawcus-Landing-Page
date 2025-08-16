@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { createButtonStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 interface DownloadButtonProps {
   onDownload: () => void;
@@ -11,7 +10,6 @@ interface DownloadButtonProps {
 
 export default function DownloadButton({ onDownload, className = "", copyText }: DownloadButtonProps) {
   const t = useTranslations('download');
-  const [copied, setCopied] = useState(false);
   const gradientClass = "from-[#3f72af] via-[#c6d4e8] to-[#3f72af]/70";
   const borderClass = "border-[#3f72af] hover:border-[#3f72af]/80";
   const shadowClass = "hover:shadow-[#3f72af]/20";
@@ -22,8 +20,6 @@ export default function DownloadButton({ onDownload, className = "", copyText }:
     if (copyText) {
       try {
         await navigator.clipboard.writeText(copyText);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000); // 2초 후 상태 리셋
       } catch (error) {
         console.warn('Failed to copy to clipboard:', error);
       }
@@ -49,7 +45,7 @@ export default function DownloadButton({ onDownload, className = "", copyText }:
               {t('dmg.title')}
             </div>
             <div className={`${getTextStyle('secondary')} text-sm font-normal`}>
-              {copied ? '✓ Copied!' : t('dmg.description')}
+              {t('dmg.description')}
             </div>
           </div>
         </div>
