@@ -4,16 +4,16 @@
     "details": [
       {
         "appID": "U6NUHA5DNR.pawcus.dev",
-        "paths": [ "/invitecode/?" ]
+        "paths": [ "/invite" ]
       },
       {
         "appID": "U6NUHA5DNR.pawcus.dev.staging",
-        "paths": [ "/invitecode/?" ]
+        "paths": [ "/invite" ]
       },
       {
         "appID": "U6NUHA5DNR.pawcus.dev.debug",
-        "paths": [ "/invitecode/?" ]
+        "paths": [ "/invite" ]
       }
     ]
   }
-}
+} 
