@@ -1,19 +1,26 @@
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "U6NUHA5DNR.pawcus.dev",
-        "paths": [ "/invite" ]
-      },
-      {
-        "appID": "U6NUHA5DNR.pawcus.dev.staging",
-        "paths": [ "/invite" ]
-      },
-      {
-        "appID": "U6NUHA5DNR.pawcus.dev.debug",
-        "paths": [ "/invite" ]
+        "appIDs": [
+          "U6NUHA5DNR.pawcus.dev",
+          "U6NUHA5DNR.pawcus.dev.staging", 
+          "U6NUHA5DNR.pawcus.dev.debug"
+        ],
+        "components": [
+          {
+            "/": "/invite",
+            "comment": "Matches /invite path for iOS and macOS"
+          }
+        ]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": [
+      "U6NUHA5DNR.pawcus.dev",
+      "U6NUHA5DNR.pawcus.dev.staging",
+      "U6NUHA5DNR.pawcus.dev.debug"
+    ]
   }
-} 
+}
