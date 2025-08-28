@@ -1,17 +1,18 @@
 'use client';
 
 import { redirect } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, use } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { STORAGE_KEYS } from '@/constants/storage';
 
 interface InviteCodePageProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 }
 
 export default function InviteCodePage({ params }: InviteCodePageProps) {
-  const { locale } = params;
+  const { locale } = use(params);
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -21,8 +22,8 @@ export default function InviteCodePage({ params }: InviteCodePageProps) {
       queryParams[key] = value;
     });
 
-    if (Object.keys(queryParams).length > 0) {
-      localStorage.setItem('inviteQueryParams', JSON.stringify(queryParams));
+    if (queryParams.code) {
+      localStorage.setItem(STORAGE_KEYS.INVITE_CODE, JSON.stringify(queryParams));
     }
     console.log(queryParams);
   }, [searchParams]);
