@@ -1,4 +1,8 @@
+'use client';
+
 import { redirect } from 'next/navigation';
+import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface InviteCodePageProps {
   params: {
@@ -8,8 +12,21 @@ interface InviteCodePageProps {
 
 export default function InviteCodePage({ params }: InviteCodePageProps) {
   const { locale } = params;
+  const searchParams = useSearchParams();
 
+  useEffect(() => {
+    const queryParams: Record<string, string> = {};
+    
+    searchParams.forEach((value, key) => {
+      queryParams[key] = value;
+    });
 
+    if (Object.keys(queryParams).length > 0) {
+      localStorage.setItem('inviteQueryParams', JSON.stringify(queryParams));
+    }
+    console.log(queryParams);
+  }, [searchParams]);
+  
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
