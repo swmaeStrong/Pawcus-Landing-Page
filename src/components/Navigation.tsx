@@ -10,6 +10,8 @@ import { styles, createButtonStyle } from '@/lib/styles';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLocale, useTranslations } from 'next-intl';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
+import { encryptAES256 } from '@/utils/encryption';
+import { STORAGE_KEYS } from '@/constants/storage';
 
 export default function Navigation() {
   const locale = useLocale();
@@ -34,12 +36,32 @@ export default function Navigation() {
   }, []);
 
   const handleDownload = async () => {
-    // Device ID를 pomocore-{deviceId} 형식으로 클립보드에 복사
+    // 클립보드에 암호화된 데이터 복사
     if (deviceId) {
       try {
-        await navigator.clipboard.writeText(`pomocore-${deviceId}`);
+        // localStorage에서 inviteCode 가져오기
+        let inviteCode = '';
+        const storedData = localStorage.getItem(STORAGE_KEYS.INVITE_CODE);
+        if (storedData) {
+          const parsed = JSON.parse(storedData);
+          // 이미 객체 형태라면 code 값만 추출, 아니면 그대로 사용
+          inviteCode = parsed?.code || parsed;
+        }
+        // DownloadButton과 동일한 조건 확인
+        if (deviceId && inviteCode) {
+          const jsonData = JSON.stringify({
+            deviceId: deviceId,
+            inviteCode: inviteCode
+          });
+          
+          const encrypted = encryptAES256(jsonData);
+          const formattedData = `pomocore-${encrypted}`;
+          
+          await navigator.clipboard.writeText(formattedData);
+          console.log('Copied encrypted data to clipboard:', formattedData);
+        }
       } catch (error) {
-        console.warn('Failed to copy to clipboard:', error);
+        console.warn('Failed to copy encrypted data to clipboard:', error);
       }
     }
     

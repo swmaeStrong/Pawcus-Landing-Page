@@ -3,6 +3,7 @@ import DownloadButton from "@/components/DownloadButton";
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
+import { STORAGE_KEYS } from '@/constants/storage';
 
 interface CTASectionProps {
   onDownloadDMG: () => void;
@@ -11,6 +12,7 @@ interface CTASectionProps {
 export default function CTASection({ onDownloadDMG }: CTASectionProps) {
   const t = useTranslations('cta');
   const [deviceId, setDeviceId] = useState<string | null>(null);
+  const [inviteCode, setInviteCode] = useState<string>('');
 
   useEffect(() => {
     // Amplitude가 초기화된 후 device ID 가져오기
@@ -24,7 +26,21 @@ export default function CTASection({ onDownloadDMG }: CTASectionProps) {
       }
     };
     
+    // localStorage에서 inviteCode 가져오기
+    const fetchInviteCode = () => {
+      try {
+        const storedData = localStorage.getItem(STORAGE_KEYS.INVITE_CODE);
+        if (storedData) {
+          const parsed = JSON.parse(storedData);
+          setInviteCode(parsed.code || '');
+        }
+      } catch (error) {
+        console.error('Failed to get invite code from localStorage:', error);
+      }
+    };
+    
     fetchDeviceId();
+    fetchInviteCode();
   }, []);
   return (
     <section className="py-24 text-center relative" aria-labelledby="cta-heading">
@@ -57,7 +73,8 @@ export default function CTASection({ onDownloadDMG }: CTASectionProps) {
               <DownloadButton 
                 onDownload={onDownloadDMG}
                 className="opacity-90 hover:opacity-100"
-                copyText={deviceId ? `pomocore-${deviceId}` : ''}
+                deviceId={deviceId || ''} 
+                inviteCode={inviteCode}
               />
             </div>
           </div>
