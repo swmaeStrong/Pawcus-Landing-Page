@@ -4,6 +4,7 @@ import { styles, getHeadingStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
+import { STORAGE_KEYS } from '@/constants/storage';
 
 interface HeroSectionProps {
   onDownloadDMG: () => void;
@@ -13,6 +14,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
   const t = useTranslations('hero');
   const locale = useLocale();
   const [deviceId, setDeviceId] = useState<string | null>(null);
+  const [inviteCode, setInviteCode] = useState<string>('');
 
   useEffect(() => {
     // Amplitude가 초기화된 후 device ID 가져오기
@@ -26,7 +28,21 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
       }
     };
     
+    // localStorage에서 inviteCode 가져오기
+    const fetchInviteCode = () => {
+      try {
+        const storedData = localStorage.getItem(STORAGE_KEYS.INVITE_CODE);
+        if (storedData) {
+          const parsed = JSON.parse(storedData);
+          setInviteCode(parsed.code || '');
+        }
+      } catch (error) {
+        console.error('Failed to get invite code from localStorage:', error);
+      }
+    };
+    
     fetchDeviceId();
+    fetchInviteCode();
   }, []);
   return (
     <section 
@@ -96,7 +112,8 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           <div className={styles.downloadButtons}>
             <DownloadButton 
               onDownload={onDownloadDMG} 
-              copyText={deviceId ? `pomocore-${deviceId}` : ''} 
+              deviceId={deviceId || ''} 
+              inviteCode={inviteCode} 
             />
           </div>
           

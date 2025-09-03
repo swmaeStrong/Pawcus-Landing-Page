@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { createButtonStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations } from "next-intl";
+import { encryptAES256 } from '@/utils/encryption';
 
 interface DownloadButtonProps {
   onDownload: () => void;
   className?: string;
-  copyText?: string; // 클립보드에 복사할 텍스트
+  deviceId?: string;
+  inviteCode?: string;
 }
 
-export default function DownloadButton({ onDownload, className = "", copyText }: DownloadButtonProps) {
+export default function DownloadButton({ onDownload, className = "", deviceId, inviteCode }: DownloadButtonProps) {
   const t = useTranslations('download');
   const gradientClass = "from-[#3f72af] via-[#c6d4e8] to-[#3f72af]/70";
   const borderClass = "border-[#3f72af] hover:border-[#3f72af]/80";
@@ -17,11 +19,20 @@ export default function DownloadButton({ onDownload, className = "", copyText }:
 
   const handleClick = async () => {
     // 클립보드에 복사
-    if (copyText) {
+    if (deviceId && inviteCode) {
       try {
-        await navigator.clipboard.writeText(copyText);
+        const jsonData = JSON.stringify({
+          deviceId: deviceId,
+          inviteCode: inviteCode
+        });
+        
+        const encrypted = encryptAES256(jsonData);
+        const formattedData = `pomocore-${encrypted}`;
+        
+        await navigator.clipboard.writeText(formattedData);
+        console.log('Copied encrypted data to clipboard:', formattedData);
       } catch (error) {
-        console.warn('Failed to copy to clipboard:', error);
+        console.warn('Failed to copy encrypted data to clipboard:', error);
       }
     }
     
