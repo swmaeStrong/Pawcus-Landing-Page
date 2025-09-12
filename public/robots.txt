@@ -7,17 +7,25 @@ User-agent: *
 # Crawl delay to prevent excessive requests (in seconds)
 Crawl-delay: 1
 
-# Allow access to all paths
+# Allow access to main content paths
 Allow: /
+Allow: /ko
+Allow: /en
+
+# Disallow static assets and generated files from indexing
+Disallow: /_next/
+Disallow: /*.css
+Disallow: /*.css?*
+Disallow: /api/
+Disallow: /opengraph-image*
+Disallow: /manifest.json
+Disallow: /browserconfig.xml
 
 # Disallow duplicate content paths
 Disallow: /index.html
 Disallow: /index.php
 Disallow: /home
 
-# Disallow specific paths if needed in the future
-# Disallow: /admin/
-# Disallow: /api/
-
 # Sitemap location
+Sitemap: https://www.pomocore.com/sitemap.xml
 Sitemap: https://www.pawcus.dev/sitemap.xml

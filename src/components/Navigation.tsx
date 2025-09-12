@@ -12,6 +12,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 import { encryptAES256 } from '@/utils/encryption';
 import { STORAGE_KEYS } from '@/constants/storage';
+import { ampli } from '@/ampli';
 
 export default function Navigation() {
   const locale = useLocale();
@@ -36,6 +37,20 @@ export default function Navigation() {
   }, []);
 
   const handleDownload = async () => {
+    // Ampli 다운로드 이벤트 추적
+    try {
+      ampli.track({
+        event_type: 'Download Attempted',
+        event_properties: {
+          download_method: 'navigation',
+          page_location: window.location.pathname,
+          timestamp: new Date().toISOString()
+        }
+      } as any);
+    } catch (error) {
+      console.warn('Ampli download tracking failed:', error);
+    }
+
     // 클립보드에 암호화된 데이터 복사
     if (deviceId) {
       try {
