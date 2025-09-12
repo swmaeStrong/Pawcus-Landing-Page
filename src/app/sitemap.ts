@@ -4,6 +4,7 @@ import { join } from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.pomocore.com'
+  const blogUrl = 'https://blog.pomocore.com'
   const locales = ['en', 'ko']
   
   const appDir = join(process.cwd(), 'src', 'app', '[locale]')
@@ -37,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const sitemapEntries: MetadataRoute.Sitemap = []
   
+  // Main site entries
   for (const locale of locales) {
     sitemapEntries.push({
       url: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
@@ -62,6 +64,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })
     }
   }
+  
+  // Blog site entry (블로그는 별도 관리)
+  sitemapEntries.push({
+    url: blogUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  })
   
   return sitemapEntries
 }
