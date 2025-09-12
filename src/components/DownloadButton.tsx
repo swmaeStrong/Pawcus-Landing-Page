@@ -19,21 +19,19 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
 
   const handleClick = async () => {
     // 클립보드에 복사
-    if (deviceId && inviteCode) {
-      try {
-        const jsonData = JSON.stringify({
-          deviceId: deviceId,
-          inviteCode: inviteCode
-        });
-        
-        const encrypted = encryptAES256(jsonData);
-        const formattedData = `pomocore-${encrypted}`;
-        
-        await navigator.clipboard.writeText(formattedData);
-        console.log('Copied encrypted data to clipboard:', formattedData);
-      } catch (error) {
-        console.warn('Failed to copy encrypted data to clipboard:', error);
-      }
+    try {
+      const jsonData = JSON.stringify({
+        deviceId: deviceId,
+        inviteCode: inviteCode
+      });
+      
+      const encrypted = encryptAES256(jsonData);
+      const formattedData = `pomocore-${encrypted}`;
+      
+      await navigator.clipboard.writeText(formattedData);
+      console.log('Copied encrypted data to clipboard:', formattedData);
+    } catch (error) {
+      console.warn('Failed to copy encrypted data to clipboard:', error);
     }
     
     // 다운로드 실행
