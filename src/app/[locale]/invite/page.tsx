@@ -55,7 +55,7 @@ export default function InviteCodePage({ params }: InviteCodePageProps) {
     // 클립보드에 암호화된 데이터 복사
     try {
       const jsonData = JSON.stringify({
-        deviceId: deviceId,
+        deviceId: getAmplitudeDeviceId(),
         inviteCode: inviteCode
       });
       

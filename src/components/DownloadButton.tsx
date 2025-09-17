@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { createButtonStyle, getTextStyle } from '@/lib/styles';
 import { useTranslations } from "next-intl";
 import { encryptAES256 } from '@/utils/encryption';
+import { getAmplitudeDeviceId } from "@/utils/ampli-helpers";
 
 interface DownloadButtonProps {
   onDownload: () => void;
@@ -21,7 +22,7 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
     // 클립보드에 복사
     try {
       const jsonData = JSON.stringify({
-        deviceId: deviceId,
+        deviceId: getAmplitudeDeviceId(),
         inviteCode: inviteCode
       });
       

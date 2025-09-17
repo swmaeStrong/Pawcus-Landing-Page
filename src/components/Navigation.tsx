@@ -63,7 +63,7 @@ export default function Navigation() {
       }
       // DownloadButton과 동일한 조건 확인
         const jsonData = JSON.stringify({
-          deviceId: deviceId,
+          deviceId: getAmplitudeDeviceId(),
           inviteCode: inviteCode
         });
         
