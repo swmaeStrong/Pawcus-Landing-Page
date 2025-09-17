@@ -90,25 +90,43 @@ export default function Navigation() {
     {
       href: `/${locale}`,
       label: t('navigation.home'),
-      icon: Home
+      icon: Home,
+      path: '/'
     },
     {
       href: `/${locale}/about`,
       label: t('navigation.about'),
-      icon: Info
+      icon: Info,
+      path: '/about'
     },
     {
       href: `/${locale}/faq`,
       label: t('navigation.faq'),
-      icon: HelpCircle
+      icon: HelpCircle,
+      path: '/faq'
     }
   ];
 
-  const isActive = (href: string) => {
-    if (href === `/${locale}`) {
-      return pathname === `/${locale}` || pathname === '/';
+  const isActive = (item: typeof navItems[0]) => {
+    // For home page
+    if (item.path === '/') {
+      if (locale === 'ko') {
+        // Korean default locale: check both "/" and "/ko"
+        return pathname === '/' || pathname === '/ko';
+      } else {
+        // Non-default locale: check exact locale path
+        return pathname === `/${locale}`;
+      }
     }
-    return pathname.startsWith(href);
+
+    // For other pages
+    if (locale === 'ko') {
+      // Korean default locale: check both with and without locale prefix
+      return pathname === item.path || pathname === `/ko${item.path}`;
+    } else {
+      // Non-default locale: check with locale prefix
+      return pathname === `/${locale}${item.path}`;
+    }
   };
 
 
@@ -144,11 +162,11 @@ export default function Navigation() {
                       href={item.href}
                       role="menuitem"
                       className={`${styles.navItem} ${
-                        isActive(item.href)
+                        isActive(item)
                           ? styles.navItemActive
                           : styles.navItemInactive
                       }`}
-                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      aria-current={isActive(item) ? 'page' : undefined}
                     >
                       <Icon className="w-4 h-4 mr-2" aria-hidden="true" />
                       {item.label}
