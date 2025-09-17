@@ -1,38 +1,23 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname, useRouter } from '@/routing';
 import { routing } from '@/routing';
+import { useTransition } from 'react';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
 
   const handleLanguageChange = (newLocale: string) => {
     if (newLocale === locale) return;
 
-    // Get current path segments
-    const segments = pathname.split('/').filter(Boolean);
-
-    // Remove current locale if present
-    const isCurrentLocaleInPath = routing.locales.includes(segments[0] as any);
-    if (isCurrentLocaleInPath) {
-      segments.shift();
-    }
-
-    // Construct new path
-    let newPath;
-    if (segments.length === 0) {
-      // Home page
-      newPath = newLocale === 'ko' ? '/' : `/${newLocale}`;
-    } else {
-      // Other pages
-      newPath = newLocale === 'ko' ? `/${segments.join('/')}` : `/${newLocale}/${segments.join('/')}`;
-    }
-
-    console.log('Switching from', locale, 'to', newLocale, 'path:', newPath);
-    router.push(newPath);
+    startTransition(() => {
+      // Use next-intl's router to change locale while preserving the current path
+      router.replace(pathname, { locale: newLocale });
+    });
   };
 
   return (
@@ -41,11 +26,12 @@ export default function LanguageSwitcher() {
         <button
           key={lng}
           onClick={() => handleLanguageChange(lng)}
+          disabled={lng === locale || isPending}
           className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
-            locale === lng
-              ? 'bg-[#3f72af] text-white shadow-md'
-              : 'text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30'
-          }`}
+            lng === locale
+              ? 'bg-[#3f72af] text-white shadow-md cursor-default'
+              : 'text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30 cursor-pointer'
+          } ${isPending ? 'opacity-50' : ''}`}
         >
           {lng.toUpperCase()}
         </button>

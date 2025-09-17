@@ -86,21 +86,22 @@ export default function Navigation() {
     document.body.removeChild(link);
   };
 
+  // Construct navigation items with proper hrefs
   const navItems = [
     {
-      href: `/${locale}`,
+      href: locale === 'ko' ? '/' : `/${locale}`,
       label: t('navigation.home'),
       icon: Home,
       path: '/'
     },
     {
-      href: `/${locale}/about`,
+      href: locale === 'ko' ? '/about' : `/${locale}/about`,
       label: t('navigation.about'),
       icon: Info,
       path: '/about'
     },
     {
-      href: `/${locale}/faq`,
+      href: locale === 'ko' ? '/faq' : `/${locale}/faq`,
       label: t('navigation.faq'),
       icon: HelpCircle,
       path: '/faq'
@@ -108,24 +109,13 @@ export default function Navigation() {
   ];
 
   const isActive = (item: typeof navItems[0]) => {
-    // For home page
+    // Simply check if the current pathname matches the item's href
     if (item.path === '/') {
-      if (locale === 'ko') {
-        // Korean default locale: check both "/" and "/ko"
-        return pathname === '/' || pathname === '/ko';
-      } else {
-        // Non-default locale: check exact locale path
-        return pathname === `/${locale}`;
-      }
-    }
-
-    // For other pages
-    if (locale === 'ko') {
-      // Korean default locale: check both with and without locale prefix
-      return pathname === item.path || pathname === `/ko${item.path}`;
+      // For home page, exact match
+      return pathname === item.href || (pathname === '/' && item.href === '/') || (pathname === '/ko' && item.href === '/');
     } else {
-      // Non-default locale: check with locale prefix
-      return pathname === `/${locale}${item.path}`;
+      // For other pages, check if pathname equals the href
+      return pathname === item.href;
     }
   };
 
