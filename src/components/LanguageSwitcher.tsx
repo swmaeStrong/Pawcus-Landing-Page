@@ -1,46 +1,58 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { routing } from '@/routing';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
 
-  const handleLanguageChange = (newLocale: string) => {
+  // Function to get the path for a different locale
+  const getLocalizedPath = (newLocale: string) => {
     // Get the current path without locale
-    let pathWithoutLocale = pathname;
-    
-    // Remove locale prefix if it exists
-    for (const loc of routing.locales) {
-      if (pathname.startsWith(`/${loc}`)) {
-        pathWithoutLocale = pathname.replace(`/${loc}`, '') || '/';
-        break;
-      }
+    const segments = pathname.split('/').filter(Boolean);
+
+    // Check if the first segment is a locale
+    const currentLocaleInPath = routing.locales.includes(segments[0] as any) ? segments[0] : null;
+
+    // Remove locale from segments if present
+    if (currentLocaleInPath) {
+      segments.shift();
     }
-    
-    // Navigate to the new locale
-    const newPath = pathWithoutLocale === '/' ? `/${newLocale}` : `/${newLocale}${pathWithoutLocale}`;
-    router.push(newPath);
+
+    // Build the new path
+    if (segments.length === 0) {
+      // Home page
+      return newLocale === routing.defaultLocale ? '/' : `/${newLocale}`;
+    } else {
+      // Other pages
+      return newLocale === routing.defaultLocale
+        ? `/${segments.join('/')}`
+        : `/${newLocale}/${segments.join('/')}`;
+    }
   };
 
   return (
     <div className="flex items-center space-x-2">
-      {routing.locales.map((lng) => (
-        <button
-          key={lng}
-          onClick={() => handleLanguageChange(lng)}
-          className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
-            locale === lng
-              ? 'bg-[#3f72af] text-white shadow-md'
-              : 'text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30'
-          }`}
-        >
-          {lng.toUpperCase()}
-        </button>
-      ))}
+      {routing.locales.map((lng) => {
+        const path = getLocalizedPath(lng);
+
+        return (
+          <Link
+            key={lng}
+            href={path}
+            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
+              locale === lng
+                ? 'bg-[#3f72af] text-white shadow-md pointer-events-none'
+                : 'text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30'
+            }`}
+          >
+            {lng.toUpperCase()}
+          </Link>
+        );
+      })}
     </div>
   );
 }
