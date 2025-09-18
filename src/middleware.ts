@@ -5,8 +5,8 @@ export default createMiddleware({
   ...routing,
   // Enable automatic locale detection based on browser language
   localeDetection: true,
-  // Prefix for all routes except the default locale
-  localePrefix: 'as-needed'
+  // Always show locale prefix for consistency
+  localePrefix: 'always'
 });
  
 export const config = {

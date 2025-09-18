@@ -125,22 +125,22 @@ export default function Navigation() {
     }
   };
 
-  // Construct navigation items with proper hrefs
+  // Construct navigation items with consistent hrefs (always include locale)
   const navItems = [
     {
-      href: locale === 'ko' ? '/' : `/${locale}`,
+      href: `/${locale}`,
       label: t('navigation.home'),
       icon: Home,
       path: '/'
     },
     {
-      href: locale === 'ko' ? '/about' : `/${locale}/about`,
+      href: `/${locale}/about`,
       label: t('navigation.about'),
       icon: Info,
       path: '/about'
     },
     {
-      href: locale === 'ko' ? '/faq' : `/${locale}/faq`,
+      href: `/${locale}/faq`,
       label: t('navigation.faq'),
       icon: HelpCircle,
       path: '/faq'
@@ -148,13 +148,15 @@ export default function Navigation() {
   ];
 
   const isActive = (item: typeof navItems[0]) => {
-    // Simply check if the current pathname matches the item's href
+    // Check if the current pathname matches the item's href
     if (item.path === '/') {
-      // For home page, exact match
-      return pathname === item.href || (pathname === '/' && item.href === '/') || (pathname === '/ko' && item.href === '/');
+      // For home page - check both with and without locale
+      return pathname === item.href || pathname === '/' || pathname === '/ko';
     } else {
-      // For other pages, check if pathname equals the href
-      return pathname === item.href;
+      // For other pages - check both paths
+      const pathWithoutLocale = item.path;
+      const pathWithLocale = item.href;
+      return pathname === pathWithoutLocale || pathname === pathWithLocale;
     }
   };
 
