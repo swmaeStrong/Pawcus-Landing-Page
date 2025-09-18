@@ -7,7 +7,17 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, CheckCircle, Sparkles, Home, Info, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { styles, createButtonStyle } from '@/lib/styles';
-import LanguageSwitcher from './LanguageSwitcher';
+import dynamic from 'next/dynamic';
+
+const LanguageSwitcher = dynamic(() => import('./LanguageSwitcher'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center space-x-2">
+      <div className="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-200 text-gray-500">KO</div>
+      <div className="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-200 text-gray-500">EN</div>
+    </div>
+  )
+});
 import { useLocale, useTranslations } from 'next-intl';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 import { encryptAES256 } from '@/utils/encryption';

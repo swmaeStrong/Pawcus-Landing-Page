@@ -1,65 +1,40 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/routing';
-import { routing } from '@/routing';
-import { useTransition, useState, useEffect } from 'react';
+import { routing, usePathname } from '@/routing';
+import { Link } from '@/routing';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
-  const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const handleLanguageChange = (newLocale: string) => {
-    if (newLocale === locale) return;
-
-    startTransition(() => {
-      // Use next-intl's router to change locale while preserving the current path
-      router.replace(pathname, { locale: newLocale });
-    });
+  const getLocalizedPath = (newLocale: string) => {
+    // Since we're using next-intl's usePathname, it returns the path without locale prefix
+    // We just need to construct the path with the new locale
+    return pathname === '/' ? `/${newLocale}` : `/${newLocale}${pathname}`;
   };
-
-  // Return placeholder during SSR to prevent hydration mismatch
-  if (!mounted) {
-    return (
-      <div className="flex items-center space-x-2">
-        {routing.locales.map((lng) => (
-          <div
-            key={lng}
-            className="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-200 text-gray-500"
-          >
-            {lng.toUpperCase()}
-          </div>
-        ))}
-      </div>
-    );
-  }
 
   return (
     <div className="flex items-center space-x-2">
       {routing.locales.map((lng) => {
         const isActive = lng === locale;
+        const href = getLocalizedPath(lng);
 
-        return (
-          <button
+        return isActive ? (
+          <span
             key={lng}
-            onClick={() => handleLanguageChange(lng)}
-            disabled={isActive || isPending}
-            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
-              isActive
-                ? 'bg-[#3f72af] text-white shadow-md cursor-default'
-                : 'text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30 cursor-pointer'
-            } ${isPending ? 'opacity-50' : ''}`}
+            className="px-3 py-1.5 text-sm font-medium rounded-lg bg-[#3f72af] text-white shadow-md cursor-default"
           >
             {lng.toUpperCase()}
-          </button>
+          </span>
+        ) : (
+          <Link
+            key={lng}
+            href={href}
+            className="px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30"
+          >
+            {lng.toUpperCase()}
+          </Link>
         );
       })}
     </div>
