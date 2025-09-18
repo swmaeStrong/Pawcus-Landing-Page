@@ -13,12 +13,15 @@ import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 import { encryptAES256 } from '@/utils/encryption';
 import { STORAGE_KEYS } from '@/constants/storage';
 import { ampli } from '@/ampli';
+import { isWindows } from '@/utils/detectOS';
+import WindowsEmailModal from '@/components/WindowsEmailModal';
 
 export default function Navigation() {
   const locale = useLocale();
   const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
   const [deviceId, setDeviceId] = useState<string | null>(null);
+  const [showWindowsModal, setShowWindowsModal] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -37,7 +40,27 @@ export default function Navigation() {
   }, []);
 
   const handleDownload = async () => {
-    // Ampli 다운로드 이벤트 추적
+    // Windows 사용자인 경우 모달 표시
+    if (isWindows()) {
+      setShowWindowsModal(true);
+
+      // Ampli 이벤트 추적 - Windows 사용자가 DMG 다운로드 시도
+      try {
+        ampli.track({
+          event_type: 'Windows User DMG Attempt',
+          event_properties: {
+            download_method: 'navigation',
+            page_location: window.location.pathname,
+            timestamp: new Date().toISOString()
+          }
+        } as any);
+      } catch (error) {
+        console.warn('Ampli tracking failed:', error);
+      }
+      return;
+    }
+
+    // Mac/기타 사용자는 정상적으로 다운로드
     try {
       ampli.track({
         event_type: 'Download Attempted',
@@ -51,32 +74,29 @@ export default function Navigation() {
       console.warn('Ampli download tracking failed:', error);
     }
 
-  // 클립보드에 암호화된 데이터 복사
+    // 클립보드에 암호화된 데이터 복사
     try {
-      // localStorage에서 inviteCode 가져오기
       let inviteCode = '';
       const storedData = localStorage.getItem(STORAGE_KEYS.INVITE_CODE);
       if (storedData) {
         const parsed = JSON.parse(storedData);
-        // 이미 객체 형태라면 code 값만 추출, 아니면 그대로 사용
         inviteCode = parsed?.code || parsed;
       }
-      // DownloadButton과 동일한 조건 확인
-        const jsonData = JSON.stringify({
-          deviceId: getAmplitudeDeviceId(),
-          inviteCode: inviteCode
-        });
-        
-        const encrypted = encryptAES256(jsonData);
-        const formattedData = `pomocore-${encrypted}`;
-        
-        await navigator.clipboard.writeText(formattedData);
-        console.log('Copied encrypted data to clipboard:', formattedData);
 
-      } catch (error) {
+      const jsonData = JSON.stringify({
+        deviceId: getAmplitudeDeviceId(),
+        inviteCode: inviteCode
+      });
+
+      const encrypted = encryptAES256(jsonData);
+      const formattedData = `pomocore-${encrypted}`;
+
+      await navigator.clipboard.writeText(formattedData);
+      console.log('Copied encrypted data to clipboard:', formattedData);
+    } catch (error) {
       console.warn('Failed to copy encrypted data to clipboard:', error);
     }
-    
+
     // 다운로드 실행
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
@@ -84,6 +104,25 @@ export default function Navigation() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleWindowsEmailSubmit = async (email: string) => {
+    // 이메일 제출 처리
+    try {
+      ampli.track({
+        event_type: 'Windows Email Submitted',
+        event_properties: {
+          email: email,
+          source: 'navigation',
+          timestamp: new Date().toISOString()
+        }
+      } as any);
+
+      // TODO: 실제 이메일 저장 API 호출
+      console.log('Windows user email submitted:', email);
+    } catch (error) {
+      console.error('Email submission failed:', error);
+    }
   };
 
   // Construct navigation items with proper hrefs
@@ -202,6 +241,13 @@ export default function Navigation() {
         </div>
 
       </div>
+
+      {/* Windows Email Modal */}
+      <WindowsEmailModal
+        isOpen={showWindowsModal}
+        onClose={() => setShowWindowsModal(false)}
+        onSubmit={handleWindowsEmailSubmit}
+      />
     </nav>
   );
 }

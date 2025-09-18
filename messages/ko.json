@@ -42,6 +42,15 @@
     "downloadDescription": "선호하는 방법으로 Pomocore를 설치하세요",
     "downloadNote": "Homebrew로 자동 업데이트 또는 DMG로 직접 설치"
   },
+  "modal": {
+    "windowsTitle": "Windows 버전 출시 알림",
+    "windowsDescription": "현재 Mac 버전만 지원됩니다. Windows 버전 출시 시 알려드리겠습니다.",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "your@email.com",
+    "submitting": "전송 중...",
+    "submit": "알림 신청하기",
+    "privacyNote": "이메일은 Windows 버전 출시 알림 용도로만 사용됩니다."
+  },
   "features": {
     "focusScore": {
       "title": "이제 시간이 아닌 집중도를 측정하세요",
