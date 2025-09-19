@@ -68,7 +68,6 @@ export default function LandingPage() {
   return (
     <div className={`${styles.pageBackground} ${styles.pageBackgroundPrimary}`}>
       {/* Navigation */}
-      <Navigation />
       
       {/* Animated Background */}
       <div className={styles.gradientBackground} />

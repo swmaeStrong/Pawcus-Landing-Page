@@ -17,7 +17,6 @@ export default function TermsPage() {
   return (
     <div className={styles.pageBackground}>
       {/* Navigation */}
-      <Navigation />
       
       {/* Background */}
       <div className={styles.gradientBackground} />
