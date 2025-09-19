@@ -51,7 +51,7 @@ export default function Navigation() {
 
   const handleDownload = async () => {
     // Windows 사용자인 경우 모달 표시
-    if (isWindows()) {
+    if (1) {
       windowsModal.openModal();
 
       // Ampli 이벤트 추적 - Windows 사용자가 DMG 다운로드 시도

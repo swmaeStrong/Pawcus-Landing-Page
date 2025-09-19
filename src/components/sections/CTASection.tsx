@@ -7,10 +7,9 @@ import { STORAGE_KEYS } from '@/constants/storage';
 
 interface CTASectionProps {
   onDownloadDMG: () => void;
-  onClipboardCopy?: () => void;
 }
 
-export default function CTASection({ onDownloadDMG, onClipboardCopy }: CTASectionProps) {
+export default function CTASection({ onDownloadDMG }: CTASectionProps) {
   const t = useTranslations('cta');
   const [deviceId, setDeviceId] = useState<string | null>(null);
   const [inviteCode, setInviteCode] = useState<string>('');
@@ -76,7 +75,6 @@ export default function CTASection({ onDownloadDMG, onClipboardCopy }: CTASectio
                 className="opacity-90 hover:opacity-100"
                 deviceId={deviceId || ''}
                 inviteCode={inviteCode}
-                onClipboardCopy={onClipboardCopy}
               />
             </div>
           </div>

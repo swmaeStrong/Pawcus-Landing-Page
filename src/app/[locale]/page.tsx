@@ -87,7 +87,6 @@ export default function LandingPage() {
         {/* Hero Section */}
         <HeroSection
           onDownloadDMG={handleDMGDownload}
-          onClipboardCopy={() => toast.showToast(t('clipboardCopied'), { type: 'success' })}
         />
 
         {/* Features Section */}
@@ -98,7 +97,6 @@ export default function LandingPage() {
         {/* CTA Section */}
         <CTASection
           onDownloadDMG={handleDMGDownload}
-          onClipboardCopy={() => toast.showToast(t('clipboardCopied'), { type: 'success' })}
         />
         </div>
 
@@ -121,7 +119,6 @@ export default function LandingPage() {
                 />
               </div>
             </div>
-            
             {/* Business Information */}
             <div className={`${styles.text.small} space-y-2`}>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
@@ -158,6 +155,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
     </div>
   )
 }
