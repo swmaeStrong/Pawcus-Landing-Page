@@ -65,10 +65,13 @@ export default function Modal({
     </div>
   );
 
-  // Portal을 사용해서 document.body에 직접 렌더링
-  if (typeof window !== 'undefined') {
-    return createPortal(modalContent, document.body);
-  }
+  // 임시로 Portal 비활성화 - intl 컨텍스트 문제 해결을 위해
+  return modalContent;
 
-  return null;
+  // Portal을 사용해서 document.body에 직접 렌더링
+  // if (typeof window !== 'undefined') {
+  //   return createPortal(modalContent, document.body);
+  // }
+
+  // return null;
 }

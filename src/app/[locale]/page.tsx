@@ -16,6 +16,7 @@ import { ampli } from '@/ampli';
 import { useToast } from '@/hooks/useToast';
 import { useModal } from '@/hooks/useModal';
 import WindowsEmailModal from '@/components/WindowsEmailModal';
+import { EmailService } from '@/services/email';
 
 
 export default function LandingPage() {
@@ -51,20 +52,23 @@ export default function LandingPage() {
   }
 
   const handleWindowsEmailSubmit = async (email: string) => {
-    // 이메일 제출 처리
     try {
-      ampli.track({
-        event_type: 'Windows Email Submitted',
-        event_properties: {
-          email: email,
-          source: 'page',
-          timestamp: new Date().toISOString()
-        }
-      } as any);
+      const result = await EmailService.submitWindowsEmail({
+        email: email,
+        source: 'page',
+        submittedAt: new Date()
+      });
 
-      console.log('Windows user email submitted:', email);
+      if (result.success) {
+        console.log('이메일이 성공적으로 제출되었습니다:', result.data);
+        toast.showToast('이메일이 성공적으로 등록되었습니다!', { type: 'success' });
+      } else {
+        console.error('이메일 제출 실패:', result.error?.message);
+        toast.showToast(result.error?.message || '이메일 제출 중 오류가 발생했습니다.', { type: 'error' });
+      }
     } catch (error) {
       console.error('Email submission failed:', error);
+      toast.showToast('예상치 못한 오류가 발생했습니다.', { type: 'error' });
     }
   };
 

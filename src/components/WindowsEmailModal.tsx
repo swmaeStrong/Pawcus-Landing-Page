@@ -17,13 +17,26 @@ export default function WindowsEmailModal({ isOpen, onClose, onSubmit }: Windows
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes('@')) return;
+    console.log('Form submitted with email:', email);
+
+    if (!email || !email.includes('@')) {
+      console.log('Invalid email:', email);
+      return;
+    }
 
     setIsSubmitting(true);
-    await onSubmit(email);
-    setIsSubmitting(false);
-    setEmail('');
-    onClose();
+    console.log('Submitting email to parent handler...');
+
+    try {
+      await onSubmit(email);
+      console.log('Email submitted successfully');
+      setEmail('');
+      onClose();
+    } catch (error) {
+      console.error('Email submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

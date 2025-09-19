@@ -25,6 +25,7 @@ import { STORAGE_KEYS } from '@/constants/storage';
 import { ampli } from '@/ampli';
 import { isWindows } from '@/utils/detectOS';
 import WindowsEmailModal from '@/components/WindowsEmailModal';
+import { EmailService } from '@/services/email';
 
 export default function Navigation() {
   const locale = useLocale();
@@ -118,21 +119,29 @@ export default function Navigation() {
   };
 
   const handleWindowsEmailSubmit = async (email: string) => {
-    // 이메일 제출 처리
-    try {
-      ampli.track({
-        event_type: 'Windows Email Submitted',
-        event_properties: {
-          email: email,
-          source: 'navigation',
-          timestamp: new Date().toISOString()
-        }
-      } as any);
+    console.log('[Navigation] Starting email submission for:', email);
 
-      // TODO: 실제 이메일 저장 API 호출
-      console.log('Windows user email submitted:', email);
+    try {
+      console.log('[Navigation] Calling EmailService.submitWindowsEmail...');
+      const result = await EmailService.submitWindowsEmail({
+        email: email,
+        source: 'navigation',
+        submittedAt: new Date()
+      });
+
+      console.log('[Navigation] Service result:', result);
+
+      if (result.success) {
+        console.log('이메일이 성공적으로 제출되었습니다:', result.data);
+        alert('이메일이 성공적으로 등록되었습니다!');
+        windowsModal.closeModal();
+      } else {
+        console.error('이메일 제출 실패:', result.error?.message);
+        alert(result.error?.message || '이메일 제출 중 오류가 발생했습니다.');
+      }
     } catch (error) {
-      console.error('Email submission failed:', error);
+      console.error('[Navigation] Email submission error:', error);
+      alert('예상치 못한 오류가 발생했습니다.');
     }
   };
 
