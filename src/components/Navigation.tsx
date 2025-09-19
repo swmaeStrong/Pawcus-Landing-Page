@@ -52,25 +52,9 @@ export default function Navigation() {
 
   const handleDownload = async () => {
     console.log('handleDownload clicked!');
-    // Windows 사용자인 경우 모달 표시
-    if (1) {
-      windowsModal.openModal();
-      console.log('Navigation modal should open, isOpen:', windowsModal.isOpen);
-      // Ampli 이벤트 추적 - Windows 사용자가 DMG 다운로드 시도
-      try {
-        ampli.track({
-          event_type: 'Windows User DMG Attempt',
-          event_properties: {
-            download_method: 'navigation',
-            page_location: window.location.pathname,
-            timestamp: new Date().toISOString()
-          }
-        } as any);
-      } catch (error) {
-        console.warn('Ampli tracking failed:', error);
-      }
-      return;
-    }
+
+
+
 
     // Mac/기타 사용자는 정상적으로 다운로드
     try {
@@ -85,6 +69,12 @@ export default function Navigation() {
     } catch (error) {
       console.warn('Ampli download tracking failed:', error);
     }
+        // Windows 사용자인 경우 모달 표시
+        if (isWindows()) {
+          windowsModal.openModal();
+          console.log('Modal opened');
+          return;
+        }
 
     // 클립보드에 암호화된 데이터 복사
     try {

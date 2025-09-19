@@ -17,6 +17,7 @@ import { useToast } from '@/hooks/useToast';
 import { useModal } from '@/hooks/useModal';
 import WindowsEmailModal from '@/components/WindowsEmailModal';
 import { EmailService } from '@/services/email';
+import { isWindows } from '@/utils/detectOS';
 
 
 export default function LandingPage() {
@@ -26,8 +27,7 @@ export default function LandingPage() {
 
   const handleDMGDownload = () => {
     // 임시: 모든 OS에서 모달 표시
-    windowsModal.openModal();
-    return;
+
 
     // Ampli 다운로드 이벤트 추적
     try {
@@ -42,6 +42,12 @@ export default function LandingPage() {
     } catch (error) {
       console.warn('Ampli download tracking failed:', error);
     }
+
+    if (isWindows()) {
+      windowsModal.openModal();
+      return;
+    }
+
 
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
