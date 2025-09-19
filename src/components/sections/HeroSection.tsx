@@ -8,9 +8,10 @@ import { STORAGE_KEYS } from '@/constants/storage';
 
 interface HeroSectionProps {
   onDownloadDMG: () => void;
+  onClipboardCopy?: () => void;
 }
 
-export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
+export default function HeroSection({ onDownloadDMG, onClipboardCopy }: HeroSectionProps) {
   const t = useTranslations('hero');
   const locale = useLocale();
   const [deviceId, setDeviceId] = useState<string | null>(null);
@@ -110,10 +111,11 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           </header>
           
           <div className={styles.downloadButtons}>
-            <DownloadButton 
-              onDownload={onDownloadDMG} 
-              deviceId={deviceId || ''} 
-              inviteCode={inviteCode} 
+            <DownloadButton
+              onDownload={onDownloadDMG}
+              deviceId={deviceId || ''}
+              inviteCode={inviteCode}
+              onClipboardCopy={onClipboardCopy}
             />
           </div>
           

@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { Menu, X, CheckCircle, Sparkles, Home, Info, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { styles, createButtonStyle } from '@/lib/styles';
 import dynamic from 'next/dynamic';
+import { useModal } from '@/hooks/useModal';
+import { Link, usePathname } from '@/routing';
 
 const LanguageSwitcher = dynamic(() => import('./LanguageSwitcher'), {
   ssr: false,
@@ -31,7 +31,7 @@ export default function Navigation() {
   const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
   const [deviceId, setDeviceId] = useState<string | null>(null);
-  const [showWindowsModal, setShowWindowsModal] = useState(false);
+  const windowsModal = useModal();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Navigation() {
   const handleDownload = async () => {
     // Windows 사용자인 경우 모달 표시
     if (isWindows()) {
-      setShowWindowsModal(true);
+      windowsModal.openModal();
 
       // Ampli 이벤트 추적 - Windows 사용자가 DMG 다운로드 시도
       try {
@@ -135,22 +135,22 @@ export default function Navigation() {
     }
   };
 
-  // Construct navigation items with consistent hrefs (always include locale)
+  // Navigation items with paths (locale will be handled by next-intl Link)
   const navItems = [
     {
-      href: `/${locale}`,
+      href: '/',
       label: t('navigation.home'),
       icon: Home,
       path: '/'
     },
     {
-      href: `/${locale}/about`,
+      href: '/about',
       label: t('navigation.about'),
       icon: Info,
       path: '/about'
     },
     {
-      href: `/${locale}/faq`,
+      href: '/faq',
       label: t('navigation.faq'),
       icon: HelpCircle,
       path: '/faq'
@@ -158,16 +158,8 @@ export default function Navigation() {
   ];
 
   const isActive = (item: typeof navItems[0]) => {
-    // Check if the current pathname matches the item's href
-    if (item.path === '/') {
-      // For home page - check both with and without locale
-      return pathname === item.href || pathname === '/' || pathname === '/ko';
-    } else {
-      // For other pages - check both paths
-      const pathWithoutLocale = item.path;
-      const pathWithLocale = item.href;
-      return pathname === pathWithoutLocale || pathname === pathWithLocale;
-    }
+    // next-intl's usePathname returns path without locale prefix
+    return pathname === item.path;
   };
 
 
@@ -176,7 +168,7 @@ export default function Navigation() {
         <div className={styles.container}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
@@ -256,8 +248,8 @@ export default function Navigation() {
 
       {/* Windows Email Modal */}
       <WindowsEmailModal
-        isOpen={showWindowsModal}
-        onClose={() => setShowWindowsModal(false)}
+        isOpen={windowsModal.isOpen}
+        onClose={windowsModal.closeModal}
         onSubmit={handleWindowsEmailSubmit}
       />
     </nav>

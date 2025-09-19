@@ -13,12 +13,11 @@ import Image from 'next/image';
 import { styles } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 import { ampli } from '@/ampli';
+import { useToast } from '@/hooks/useToast';
 
 
 export default function LandingPage() {
-  const [showToast, setShowToast] = useState(false)
-  const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!')
-  const [toastType, setToastType] = useState<'success' | 'error'>('success')
+  const toast = useToast();
   const t = useTranslations('common');
 
   const handleDMGDownload = () => {
@@ -35,7 +34,7 @@ export default function LandingPage() {
     } catch (error) {
       console.warn('Ampli download tracking failed:', error);
     }
-    
+
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
     link.download = 'Pomocore.dmg';
@@ -78,16 +77,17 @@ export default function LandingPage() {
       </div>
       
       {/* Toast Notification */}
-      <ToastNotification 
-        show={showToast} 
-        message={toastMessage} 
-        type={toastType} 
+      <ToastNotification
+        show={toast.isVisible}
+        message={toast.message}
+        type={toast.type}
       />
 
-      <main className={`${styles.container} relative z-10 pt-16`}>
+      <div className={`${styles.container} relative z-10 pt-16`}>
         {/* Hero Section */}
-        <HeroSection 
-          onDownloadDMG={handleDMGDownload} 
+        <HeroSection
+          onDownloadDMG={handleDMGDownload}
+          onClipboardCopy={() => toast.showToast(t('clipboardCopied'), { type: 'success' })}
         />
 
         {/* Features Section */}
@@ -96,10 +96,11 @@ export default function LandingPage() {
 
 
         {/* CTA Section */}
-        <CTASection 
-          onDownloadDMG={handleDMGDownload} 
+        <CTASection
+          onDownloadDMG={handleDMGDownload}
+          onClipboardCopy={() => toast.showToast(t('clipboardCopied'), { type: 'success' })}
         />
-      </main>
+        </div>
 
       {/* Footer - Business Information */}
       <footer className={styles.footer}>

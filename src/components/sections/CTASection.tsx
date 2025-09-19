@@ -7,9 +7,10 @@ import { STORAGE_KEYS } from '@/constants/storage';
 
 interface CTASectionProps {
   onDownloadDMG: () => void;
+  onClipboardCopy?: () => void;
 }
 
-export default function CTASection({ onDownloadDMG }: CTASectionProps) {
+export default function CTASection({ onDownloadDMG, onClipboardCopy }: CTASectionProps) {
   const t = useTranslations('cta');
   const [deviceId, setDeviceId] = useState<string | null>(null);
   const [inviteCode, setInviteCode] = useState<string>('');
@@ -70,11 +71,12 @@ export default function CTASection({ onDownloadDMG }: CTASectionProps) {
             </p>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full px-4">
-              <DownloadButton 
+              <DownloadButton
                 onDownload={onDownloadDMG}
                 className="opacity-90 hover:opacity-100"
-                deviceId={deviceId || ''} 
+                deviceId={deviceId || ''}
                 inviteCode={inviteCode}
+                onClipboardCopy={onClipboardCopy}
               />
             </div>
           </div>

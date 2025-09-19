@@ -8,17 +8,10 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
 
-  const getLocalizedPath = (newLocale: string) => {
-    // Since we're using next-intl's usePathname, it returns the path without locale prefix
-    // We just need to construct the path with the new locale
-    return pathname === '/' ? `/${newLocale}` : `/${newLocale}${pathname}`;
-  };
-
   return (
     <div className="flex items-center space-x-2">
       {routing.locales.map((lng) => {
         const isActive = lng === locale;
-        const href = getLocalizedPath(lng);
 
         return isActive ? (
           <span
@@ -30,7 +23,8 @@ export default function LanguageSwitcher() {
         ) : (
           <Link
             key={lng}
-            href={href}
+            href={pathname}
+            locale={lng}
             className="px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 text-gray-600 hover:text-[#3f72af] hover:bg-[#c6d4e8]/30"
           >
             {lng.toUpperCase()}

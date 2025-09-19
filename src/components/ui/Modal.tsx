@@ -1,0 +1,66 @@
+"use client";
+
+import { ReactNode } from 'react';
+import { X } from 'lucide-react';
+
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  title?: string;
+  className?: string;
+  showCloseButton?: boolean;
+  onBackdropClick?: () => void;
+}
+
+export default function Modal({
+  isOpen,
+  onClose,
+  children,
+  title,
+  className = "",
+  showCloseButton = true,
+  onBackdropClick
+}: ModalProps) {
+  if (!isOpen) return null;
+
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      if (onBackdropClick) {
+        onBackdropClick();
+      } else {
+        onClose();
+      }
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={handleBackdropClick}
+      />
+
+      <div className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl ${className}`}>
+        {showCloseButton && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+          >
+            <X size={24} />
+          </button>
+        )}
+
+        {title && (
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              {title}
+            </h2>
+          </div>
+        )}
+
+        {children}
+      </div>
+    </div>
+  );
+}

@@ -9,9 +9,10 @@ interface DownloadButtonProps {
   className?: string;
   deviceId?: string;
   inviteCode?: string;
+  onClipboardCopy?: () => void;
 }
 
-export default function DownloadButton({ onDownload, className = "", deviceId, inviteCode }: DownloadButtonProps) {
+export default function DownloadButton({ onDownload, className = "", deviceId, inviteCode, onClipboardCopy }: DownloadButtonProps) {
   const t = useTranslations('download');
   const gradientClass = "from-[#3f72af] via-[#c6d4e8] to-[#3f72af]/70";
   const borderClass = "border-[#3f72af] hover:border-[#3f72af]/80";
@@ -25,16 +26,21 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
         deviceId: getAmplitudeDeviceId(),
         inviteCode: inviteCode
       });
-      
+
       const encrypted = encryptAES256(jsonData);
       const formattedData = `pomocore-${encrypted}`;
-      
+
       await navigator.clipboard.writeText(formattedData);
       console.log('Copied encrypted data to clipboard:', formattedData);
+
+      // 클립보드 복사 성공 콜백 호출
+      if (onClipboardCopy) {
+        onClipboardCopy();
+      }
     } catch (error) {
       console.warn('Failed to copy encrypted data to clipboard:', error);
     }
-    
+
     // 다운로드 실행
     onDownload();
   };

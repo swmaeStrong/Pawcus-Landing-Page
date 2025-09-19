@@ -1,6 +1,6 @@
 "use client";
 
-import Link from 'next/link'
+import { Link } from '@/routing'
 import { Button } from "@/components/ui/button"
 import { Home, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'

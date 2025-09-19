@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 import { useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { RefreshCw, Home, AlertTriangle } from 'lucide-react'
-import Link from 'next/link'
+import { Link } from '@/routing'
 import Image from 'next/image'
 
 export default function Error({
