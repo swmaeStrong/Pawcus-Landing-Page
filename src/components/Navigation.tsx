@@ -50,10 +50,11 @@ export default function Navigation() {
   }, []);
 
   const handleDownload = async () => {
+    console.log('handleDownload clicked!');
     // Windows 사용자인 경우 모달 표시
     if (1) {
       windowsModal.openModal();
-
+      console.log('Navigation modal should open, isOpen:', windowsModal.isOpen);
       // Ampli 이벤트 추적 - Windows 사용자가 DMG 다운로드 시도
       try {
         ampli.track({

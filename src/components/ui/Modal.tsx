@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 interface ModalProps {
@@ -34,7 +35,7 @@ export default function Modal({
     }
   };
 
-  return (
+  const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center">
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -63,4 +64,11 @@ export default function Modal({
       </div>
     </div>
   );
+
+  // Portal을 사용해서 document.body에 직접 렌더링
+  if (typeof window !== 'undefined') {
+    return createPortal(modalContent, document.body);
+  }
+
+  return null;
 }

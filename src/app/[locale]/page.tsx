@@ -14,13 +14,20 @@ import { styles } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 import { ampli } from '@/ampli';
 import { useToast } from '@/hooks/useToast';
+import { useModal } from '@/hooks/useModal';
+import WindowsEmailModal from '@/components/WindowsEmailModal';
 
 
 export default function LandingPage() {
   const toast = useToast();
   const t = useTranslations('common');
+  const windowsModal = useModal();
 
   const handleDMGDownload = () => {
+    // 임시: 모든 OS에서 모달 표시
+    windowsModal.openModal();
+    return;
+
     // Ampli 다운로드 이벤트 추적
     try {
       ampli.track({
@@ -42,6 +49,24 @@ export default function LandingPage() {
     link.click();
     document.body.removeChild(link);
   }
+
+  const handleWindowsEmailSubmit = async (email: string) => {
+    // 이메일 제출 처리
+    try {
+      ampli.track({
+        event_type: 'Windows Email Submitted',
+        event_properties: {
+          email: email,
+          source: 'page',
+          timestamp: new Date().toISOString()
+        }
+      } as any);
+
+      console.log('Windows user email submitted:', email);
+    } catch (error) {
+      console.error('Email submission failed:', error);
+    }
+  };
 
   // 인터섹션 옵저버를 위한 Hook
   useEffect(() => {
@@ -156,6 +181,12 @@ export default function LandingPage() {
         </div>
       </footer>
 
+      {/* Windows Email Modal */}
+      <WindowsEmailModal
+        isOpen={windowsModal.isOpen}
+        onClose={windowsModal.closeModal}
+        onSubmit={handleWindowsEmailSubmit}
+      />
     </div>
   )
 }
