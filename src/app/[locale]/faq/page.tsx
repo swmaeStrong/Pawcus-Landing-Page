@@ -50,7 +50,6 @@ export default function FAQPage() {
         <meta property="og:type" content="website" />
       </Head>
       <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
-        <Navigation />
       
       {/* Animated Background */}
       <div className={styles.gradientBackground} />

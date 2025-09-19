@@ -25,16 +25,17 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
         deviceId: getAmplitudeDeviceId(),
         inviteCode: inviteCode
       });
-      
+
       const encrypted = encryptAES256(jsonData);
       const formattedData = `pomocore-${encrypted}`;
-      
+
       await navigator.clipboard.writeText(formattedData);
       console.log('Copied encrypted data to clipboard:', formattedData);
+
     } catch (error) {
       console.warn('Failed to copy encrypted data to clipboard:', error);
     }
-    
+
     // 다운로드 실행
     onDownload();
   };

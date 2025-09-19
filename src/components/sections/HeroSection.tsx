@@ -110,10 +110,10 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           </header>
           
           <div className={styles.downloadButtons}>
-            <DownloadButton 
-              onDownload={onDownloadDMG} 
-              deviceId={deviceId || ''} 
-              inviteCode={inviteCode} 
+            <DownloadButton
+              onDownload={onDownloadDMG}
+              deviceId={deviceId || ''}
+              inviteCode={inviteCode}
             />
           </div>
           

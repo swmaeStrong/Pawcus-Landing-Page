@@ -41,6 +41,15 @@
     "downloadDescription": "Install Pomocore using your preferred method",
     "downloadNote": "Auto-updates with Homebrew or direct install with DMG"
   },
+  "modal": {
+    "windowsTitle": "Windows Version Release Notification",
+    "windowsDescription": "Currently only Mac version is supported. We'll notify you when Windows version is released.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "your@email.com",
+    "submitting": "Submitting...",
+    "submit": "Get Notified",
+    "privacyNote": "Your email will only be used for Windows version release notification."
+  },
   "features": {
     "focusScore": {
       "title": "Measure focus, not just time",

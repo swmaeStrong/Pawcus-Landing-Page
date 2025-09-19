@@ -8,6 +8,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Hotjar from '@/components/Hotjar';
 import SessionTracker from '@/components/SessionTracker';
 import AmpliAnalytics from '@/components/AmpliAnalytics';
+import Navigation from '@/components/Navigation';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -198,6 +199,7 @@ export default async function LocaleLayout({
         <SessionTracker />
         <Hotjar />
         <NextIntlClientProvider messages={messages}>
+          <Navigation />
           {children}
         </NextIntlClientProvider>
       </body>

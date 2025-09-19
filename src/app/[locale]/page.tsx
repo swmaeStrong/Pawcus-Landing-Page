@@ -13,15 +13,22 @@ import Image from 'next/image';
 import { styles } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 import { ampli } from '@/ampli';
+import { useToast } from '@/hooks/useToast';
+import { useModal } from '@/hooks/useModal';
+import WindowsEmailModal from '@/components/WindowsEmailModal';
+import { EmailService } from '@/services/email';
+import { isWindows } from '@/utils/detectOS';
 
 
 export default function LandingPage() {
-  const [showToast, setShowToast] = useState(false)
-  const [toastMessage, setToastMessage] = useState('명령어가 클립보드에 복사되었습니다!')
-  const [toastType, setToastType] = useState<'success' | 'error'>('success')
+  const toast = useToast();
   const t = useTranslations('common');
+  const windowsModal = useModal();
 
   const handleDMGDownload = () => {
+    // 임시: 모든 OS에서 모달 표시
+
+
     // Ampli 다운로드 이벤트 추적
     try {
       ampli.track({
@@ -35,7 +42,13 @@ export default function LandingPage() {
     } catch (error) {
       console.warn('Ampli download tracking failed:', error);
     }
-    
+
+    if (isWindows()) {
+      windowsModal.openModal();
+      return;
+    }
+
+
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
     link.download = 'Pomocore.dmg';
@@ -43,6 +56,27 @@ export default function LandingPage() {
     link.click();
     document.body.removeChild(link);
   }
+
+  const handleWindowsEmailSubmit = async (email: string) => {
+    try {
+      const result = await EmailService.submitWindowsEmail({
+        email: email,
+        source: 'page',
+        submittedAt: new Date()
+      });
+
+      if (result.success) {
+        console.log('이메일이 성공적으로 제출되었습니다:', result.data);
+        toast.showToast('이메일이 성공적으로 등록되었습니다!', { type: 'success' });
+      } else {
+        console.error('이메일 제출 실패:', result.error?.message);
+        toast.showToast(result.error?.message || '이메일 제출 중 오류가 발생했습니다.', { type: 'error' });
+      }
+    } catch (error) {
+      console.error('Email submission failed:', error);
+      toast.showToast('예상치 못한 오류가 발생했습니다.', { type: 'error' });
+    }
+  };
 
   // 인터섹션 옵저버를 위한 Hook
   useEffect(() => {
@@ -68,7 +102,6 @@ export default function LandingPage() {
   return (
     <div className={`${styles.pageBackground} ${styles.pageBackgroundPrimary}`}>
       {/* Navigation */}
-      <Navigation />
       
       {/* Animated Background */}
       <div className={styles.gradientBackground} />
@@ -79,16 +112,16 @@ export default function LandingPage() {
       </div>
       
       {/* Toast Notification */}
-      <ToastNotification 
-        show={showToast} 
-        message={toastMessage} 
-        type={toastType} 
+      <ToastNotification
+        show={toast.isVisible}
+        message={toast.message}
+        type={toast.type}
       />
 
-      <main className={`${styles.container} relative z-10 pt-16`}>
+      <div className={`${styles.container} relative z-10 pt-16`}>
         {/* Hero Section */}
-        <HeroSection 
-          onDownloadDMG={handleDMGDownload} 
+        <HeroSection
+          onDownloadDMG={handleDMGDownload}
         />
 
         {/* Features Section */}
@@ -97,10 +130,10 @@ export default function LandingPage() {
 
 
         {/* CTA Section */}
-        <CTASection 
-          onDownloadDMG={handleDMGDownload} 
+        <CTASection
+          onDownloadDMG={handleDMGDownload}
         />
-      </main>
+        </div>
 
       {/* Footer - Business Information */}
       <footer className={styles.footer}>
@@ -121,7 +154,6 @@ export default function LandingPage() {
                 />
               </div>
             </div>
-            
             {/* Business Information */}
             <div className={`${styles.text.small} space-y-2`}>
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
@@ -158,6 +190,13 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Windows Email Modal */}
+      <WindowsEmailModal
+        isOpen={windowsModal.isOpen}
+        onClose={windowsModal.closeModal}
+        onSubmit={handleWindowsEmailSubmit}
+      />
     </div>
   )
 }

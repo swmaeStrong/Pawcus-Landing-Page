@@ -1,24 +1,38 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { Menu, X, CheckCircle, Sparkles, Home, Info, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { styles, createButtonStyle } from '@/lib/styles';
-import LanguageSwitcher from './LanguageSwitcher';
+import dynamic from 'next/dynamic';
+import { useModal } from '@/hooks/useModal';
+import { Link, usePathname } from '@/routing';
+
+const LanguageSwitcher = dynamic(() => import('./LanguageSwitcher'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center space-x-2">
+      <div className="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-200 text-gray-500">KO</div>
+      <div className="px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-200 text-gray-500">EN</div>
+    </div>
+  )
+});
 import { useLocale, useTranslations } from 'next-intl';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 import { encryptAES256 } from '@/utils/encryption';
 import { STORAGE_KEYS } from '@/constants/storage';
 import { ampli } from '@/ampli';
+import { isWindows } from '@/utils/detectOS';
+import WindowsEmailModal from '@/components/WindowsEmailModal';
+import { EmailService } from '@/services/email';
 
 export default function Navigation() {
   const locale = useLocale();
   const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
   const [deviceId, setDeviceId] = useState<string | null>(null);
+  const windowsModal = useModal();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -37,7 +51,12 @@ export default function Navigation() {
   }, []);
 
   const handleDownload = async () => {
-    // Ampli 다운로드 이벤트 추적
+    console.log('handleDownload clicked!');
+
+
+
+
+    // Mac/기타 사용자는 정상적으로 다운로드
     try {
       ampli.track({
         event_type: 'Download Attempted',
@@ -50,33 +69,36 @@ export default function Navigation() {
     } catch (error) {
       console.warn('Ampli download tracking failed:', error);
     }
+        // Windows 사용자인 경우 모달 표시
+        if (isWindows()) {
+          windowsModal.openModal();
+          console.log('Modal opened');
+          return;
+        }
 
-  // 클립보드에 암호화된 데이터 복사
+    // 클립보드에 암호화된 데이터 복사
     try {
-      // localStorage에서 inviteCode 가져오기
       let inviteCode = '';
       const storedData = localStorage.getItem(STORAGE_KEYS.INVITE_CODE);
       if (storedData) {
         const parsed = JSON.parse(storedData);
-        // 이미 객체 형태라면 code 값만 추출, 아니면 그대로 사용
         inviteCode = parsed?.code || parsed;
       }
-      // DownloadButton과 동일한 조건 확인
-        const jsonData = JSON.stringify({
-          deviceId: getAmplitudeDeviceId(),
-          inviteCode: inviteCode
-        });
-        
-        const encrypted = encryptAES256(jsonData);
-        const formattedData = `pomocore-${encrypted}`;
-        
-        await navigator.clipboard.writeText(formattedData);
-        console.log('Copied encrypted data to clipboard:', formattedData);
 
-      } catch (error) {
+      const jsonData = JSON.stringify({
+        deviceId: getAmplitudeDeviceId(),
+        inviteCode: inviteCode
+      });
+
+      const encrypted = encryptAES256(jsonData);
+      const formattedData = `pomocore-${encrypted}`;
+
+      await navigator.clipboard.writeText(formattedData);
+      console.log('Copied encrypted data to clipboard:', formattedData);
+    } catch (error) {
       console.warn('Failed to copy encrypted data to clipboard:', error);
     }
-    
+
     // 다운로드 실행
     const link = document.createElement('a');
     link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
@@ -86,22 +108,49 @@ export default function Navigation() {
     document.body.removeChild(link);
   };
 
-  // Construct navigation items with proper hrefs
+  const handleWindowsEmailSubmit = async (email: string) => {
+    console.log('[Navigation] Starting email submission for:', email);
+
+    try {
+      console.log('[Navigation] Calling EmailService.submitWindowsEmail...');
+      const result = await EmailService.submitWindowsEmail({
+        email: email,
+        source: 'navigation',
+        submittedAt: new Date()
+      });
+
+      console.log('[Navigation] Service result:', result);
+
+      if (result.success) {
+        console.log('이메일이 성공적으로 제출되었습니다:', result.data);
+        alert('이메일이 성공적으로 등록되었습니다!');
+        windowsModal.closeModal();
+      } else {
+        console.error('이메일 제출 실패:', result.error?.message);
+        alert(result.error?.message || '이메일 제출 중 오류가 발생했습니다.');
+      }
+    } catch (error) {
+      console.error('[Navigation] Email submission error:', error);
+      alert('예상치 못한 오류가 발생했습니다.');
+    }
+  };
+
+  // Navigation items with paths (locale will be handled by next-intl Link)
   const navItems = [
     {
-      href: locale === 'ko' ? '/' : `/${locale}`,
+      href: '/',
       label: t('navigation.home'),
       icon: Home,
       path: '/'
     },
     {
-      href: locale === 'ko' ? '/about' : `/${locale}/about`,
+      href: '/about',
       label: t('navigation.about'),
       icon: Info,
       path: '/about'
     },
     {
-      href: locale === 'ko' ? '/faq' : `/${locale}/faq`,
+      href: '/faq',
       label: t('navigation.faq'),
       icon: HelpCircle,
       path: '/faq'
@@ -109,14 +158,8 @@ export default function Navigation() {
   ];
 
   const isActive = (item: typeof navItems[0]) => {
-    // Simply check if the current pathname matches the item's href
-    if (item.path === '/') {
-      // For home page, exact match
-      return pathname === item.href || (pathname === '/' && item.href === '/') || (pathname === '/ko' && item.href === '/');
-    } else {
-      // For other pages, check if pathname equals the href
-      return pathname === item.href;
-    }
+    // next-intl's usePathname returns path without locale prefix
+    return pathname === item.path;
   };
 
 
@@ -125,7 +168,7 @@ export default function Navigation() {
         <div className={styles.container}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
@@ -202,6 +245,13 @@ export default function Navigation() {
         </div>
 
       </div>
+
+      {/* Windows Email Modal */}
+      <WindowsEmailModal
+        isOpen={windowsModal.isOpen}
+        onClose={windowsModal.closeModal}
+        onSubmit={handleWindowsEmailSubmit}
+      />
     </nav>
   );
 }

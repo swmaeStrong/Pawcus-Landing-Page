@@ -4,10 +4,11 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Home, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
-
-export const dynamic = 'force-dynamic';
+import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-[#ECECEC] relative overflow-hidden flex items-center justify-center">
       {/* Background */}
@@ -49,8 +50,8 @@ export default function NotFound() {
             <Home className="w-4 h-4 mr-2" />
             홈으로 돌아가기
           </Link>
-          <button 
-            onClick={() => window.history.back()}
+          <button
+            onClick={() => router.back()}
             className="w-full sm:w-auto border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-lg inline-flex items-center justify-center transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

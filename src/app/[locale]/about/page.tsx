@@ -115,7 +115,6 @@ export default async function AboutPage() {
   ];
   return (
     <div className={`${styles.pageBackground} ${styles.pageBackgroundSecondary}`}>
-      <Navigation />
       
       {/* Animated Background */}
       <div className={styles.gradientBackground} />
