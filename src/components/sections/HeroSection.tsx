@@ -117,11 +117,6 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
             />
           </div>
           
-          <div className="text-center max-w-2xl">
-            <p className={getTextStyle('muted')}>
-              {t('downloadNote')}
-            </p>
-          </div>
         </section>
       </div>
     </section>
