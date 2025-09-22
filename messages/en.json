@@ -55,14 +55,14 @@
       "title": "Measure focus, not just time",
       "description": "Instead of just tracking sitting time, accurately score how much you actually focused."
     },
-    "categoryAnalysis": {
-      "title": "Category Analysis",
-      "description": "Automatically categorize your work by time spent on different activities.",
-      "descriptionSub": "View time distribution across categories with intuitive pie charts.",
+    "timelineOverview": {
+      "title": "Timeline Work Summary",
+      "description": "Visualizes your daily workflow in a timeline format.",
+      "descriptionSub": "Easily identify what you worked on during each time period and analyze your patterns.",
       "features": {
-        "autoCategory": "Automatic categorization",
-        "realTimeUpdate": "Real-time data updates",
-        "personalizedReport": "Personalized analysis reports"
+        "timelineSummary": "Hourly work content summary",
+        "workPattern": "Work pattern visualization",
+        "detailedAnalysis": "Detailed time analysis"
       }
     },
     "dailyGoal": {
@@ -74,10 +74,6 @@
         "realTimeProgress": "Inter-team progress comparison",
         "visualFeedback": "Mutual achievement cross-check"
       }
-    },
-    "dashboard": {
-      "title": "Unified Dashboard",
-      "description": "View all your productivity data intuitively on a single screen"
     },
     "groupOverview": {
       "title": "Compete Between Teams and Stay Motivated",
