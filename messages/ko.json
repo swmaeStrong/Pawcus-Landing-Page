@@ -30,7 +30,7 @@
     "privacy": "개인정보처리방침",
     "terms": "이용약관",
     "brewCopy": "brew 복사",
-    "dmgDownload": "DMG 다운로드",
+    "appDownload": "앱 다운로드",
     "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
   },
   "hero": {
@@ -39,7 +39,7 @@
     "description": "PC 작업 도중 집중하지 못하고 낭비되는 시간은 얼마나 될까요?",
     "descriptionSub": "작업 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
     "downloadTitle": "Pomocore 다운로드",
-    "downloadDescription": "선호하는 방법으로 Pomocore를 설치하세요",
+    "downloadDescription": "지금 Pomocore를 다운로드해서 생산성을 끌어올려보세요",
     "downloadNote": "Homebrew로 자동 업데이트 또는 DMG로 직접 설치"
   },
   "modal": {
@@ -92,9 +92,9 @@
       "title": "Homebrew",
       "description": "Homebrew 명령어 복사하기"
     },
-    "dmg": {
-      "title": "DMG 파일",
-      "description": "DMG 파일 다운로드"
+    "app": {
+      "title": "앱 다운로드",
+      "description": "macOS 앱 다운로드"
     }
   },
   "privacy": {

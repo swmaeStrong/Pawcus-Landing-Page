@@ -53,10 +53,10 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
           </svg>
           <div className="text-center">
             <div className={`font-bold ${getTextStyle('secondary')}`}>
-              {t('dmg.title')}
+              {t('app.title')}
             </div>
             <div className={`${getTextStyle('secondary')} text-sm font-normal`}>
-              {t('dmg.description')}
+              {t('app.description')}
             </div>
           </div>
         </div>

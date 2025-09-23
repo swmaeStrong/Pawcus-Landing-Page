@@ -29,7 +29,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "brewCopy": "Copy brew",
-    "dmgDownload": "Download DMG",
+    "appDownload": "Download App",
     "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
   },
   "hero": {
@@ -38,7 +38,7 @@
     "description": "How much time do you think you waste during PC work?",
     "descriptionSub": "Create a more efficient work environment with smart time tracking and analysis.",
     "downloadTitle": "Download Pomocore",
-    "downloadDescription": "Install Pomocore using your preferred method",
+    "downloadDescription": "Install Pomocore and Raise Your Productivity",
     "downloadNote": "Auto-updates with Homebrew or direct install with DMG"
   },
   "modal": {
@@ -91,9 +91,9 @@
       "title": "Homebrew",
       "description": "Copy Homebrew command"
     },
-    "dmg": {
-      "title": "DMG File",
-      "description": "Download DMG file"
+    "app": {
+      "title": "Download App",
+      "description": "Download macOS app"
     }
   },
   "terms": {
