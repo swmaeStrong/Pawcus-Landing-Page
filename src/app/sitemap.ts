@@ -41,23 +41,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Main site entries
   for (const locale of locales) {
     sitemapEntries.push({
-      url: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
+      url: `${baseUrl}/${locale}`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     })
     
     for (const route of routes) {
-      const priority = route === '' ? 1 : 
+      const priority = route === '' ? 1 :
                       route === 'about' ? 0.8 :
                       route === 'faq' ? 0.7 :
+                      route === 'invite' ? 0.8 :
+                      route === 'block' ? 0.6 :
                       ['privacy', 'terms'].includes(route) ? 0.5 : 0.6
-      
-      const changeFrequency = ['privacy', 'terms'].includes(route) ? 'yearly' : 
-                             route === '' ? 'daily' : 'monthly'
+
+      const changeFrequency = ['privacy', 'terms'].includes(route) ? 'yearly' :
+                             route === '' ? 'daily' :
+                             route === 'invite' ? 'weekly' :
+                             'monthly'
       
       sitemapEntries.push({
-        url: locale === 'en' ? `${baseUrl}/${route}` : `${baseUrl}/${locale}/${route}`,
+        url: `${baseUrl}/${locale}/${route}`,
         lastModified: new Date(),
         changeFrequency: changeFrequency as any,
         priority,
