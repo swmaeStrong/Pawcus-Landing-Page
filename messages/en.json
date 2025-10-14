@@ -625,5 +625,41 @@
   "cta": {
     "title": "Stop wasting time",
     "description": "Maximize your focus and productivity with Pomocore!"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Real users love it",
+    "reviews": [
+      {
+        "quote": "As a freelancer, Pomocore is my goto software to track all my work, automatically without timer. I know exactly how much time I spend on each project, which gives me clear evidence when billing clients.",
+        "name": "Junho Kim",
+        "handle": "@freelancer_jun"
+      },
+      {
+        "quote": "Pomocore is amazing! It's a great way to see how I am using my time with very little effort on my part. The team leaderboard also keeps me productive all day.",
+        "name": "Seoyun Lee",
+        "handle": "@seoyun_dev"
+      },
+      {
+        "quote": "I always struggled with managing study sessions. Pomocore didn't just track time — it gave me AI-powered reports that helped me structure my day more effectively, reducing burnout and increasing consistency.",
+        "name": "Minsu Park",
+        "handle": "@minsu_studies"
+      },
+      {
+        "quote": "It is very useful application that shows you how much time you spend on certain applications during the day. It keeps the track of time spent on websites, applications, work on your computer. Very useful if you need that kind of information.",
+        "name": "Yujin Choi",
+        "handle": "@yujin_pm"
+      },
+      {
+        "quote": "Pomocore does exactly what I need: keeps track of every front-most window without any input from me and then adds up all windows I select to give me exactly the total I spent on a project for a client. No subscription, no remote data collection, not interaction at all until I'm ready. Just what I want.",
+        "name": "Hyunwoo Jung",
+        "handle": "@hyunwoo_creator"
+      },
+      {
+        "quote": "Focus score feature lets me measure actual concentration, not just time!",
+        "name": "Minseo Kang",
+        "handle": "@minseo_focus"
+      }
+    ]
   }
 }
