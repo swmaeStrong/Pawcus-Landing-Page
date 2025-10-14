@@ -236,11 +236,6 @@ export default function FeaturesSection() {
                         >
                           {/* Title Card */}
                           <div className="space-y-4">
-                            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full">
-                              <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                Feature {index + 1}
-                              </span>
-                            </div>
                             <h3 className="text-3xl sm:text-4xl font-bold text-gray-800 leading-tight">
                               {image.title}
                             </h3>
@@ -300,86 +295,7 @@ export default function FeaturesSection() {
           ))}
         </div>
 
-        {/* Scroll Hint - 개선된 디자인 */}
-        <motion.div
-          className="fixed bottom-12 left-1/2 transform -translate-x-1/2 z-30 pointer-events-none"
-          animate={{
-            opacity: activeIndex === 0 ? 1 : 0,
-            y: activeIndex === 0 ? 0 : 20
-          }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex flex-col items-center gap-3">
-            <div className="px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-gray-700">스크롤하여 탐색</span>
-                <motion.svg
-                  className="w-5 h-5 text-blue-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  animate={{ x: [0, 8, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </motion.svg>
-              </div>
-            </div>
-            <motion.div
-              className="w-1 h-8 bg-gradient-to-b from-blue-500 to-transparent rounded-full"
-              animate={{ scaleY: [1, 0.5, 1] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            />
-          </div>
-        </motion.div>
 
-        {/* Section Counter - 하단 중앙 */}
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-          <div className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200">
-            <span className="text-sm font-semibold text-gray-800">
-              {activeIndex + 1} <span className="text-gray-400">/</span> {images.length}
-            </span>
-          </div>
-        </div>
-
-        {/* Navigation Arrows - 개선된 디자인 */}
-        <div className="fixed top-1/2 transform -translate-y-1/2 left-4 lg:left-8 right-4 lg:right-8 flex justify-between pointer-events-none z-30">
-          <motion.button
-            onClick={() => activeIndex > 0 && handleNavigation(activeIndex - 1)}
-            className={`pointer-events-auto group relative w-14 h-14 rounded-full bg-white/90 backdrop-blur-md shadow-xl border border-gray-200 transition-all duration-300 flex items-center justify-center ${
-              activeIndex === 0 ? 'opacity-0 cursor-not-allowed scale-90' : 'opacity-100 hover:shadow-2xl hover:scale-110'
-            }`}
-            disabled={activeIndex === 0}
-            aria-label="Previous feature"
-            whileHover={{ scale: activeIndex === 0 ? 0.9 : 1.1 }}
-            whileTap={{ scale: activeIndex === 0 ? 0.9 : 0.95 }}
-          >
-            <svg className="w-6 h-6 text-gray-700 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            <div className="absolute left-full ml-3 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              이전
-            </div>
-          </motion.button>
-
-          <motion.button
-            onClick={() => activeIndex < images.length - 1 && handleNavigation(activeIndex + 1)}
-            className={`pointer-events-auto group relative w-14 h-14 rounded-full bg-white/90 backdrop-blur-md shadow-xl border border-gray-200 transition-all duration-300 flex items-center justify-center ${
-              activeIndex === images.length - 1 ? 'opacity-0 cursor-not-allowed scale-90' : 'opacity-100 hover:shadow-2xl hover:scale-110'
-            }`}
-            disabled={activeIndex === images.length - 1}
-            aria-label="Next feature"
-            whileHover={{ scale: activeIndex === images.length - 1 ? 0.9 : 1.1 }}
-            whileTap={{ scale: activeIndex === images.length - 1 ? 0.9 : 0.95 }}
-          >
-            <svg className="w-6 h-6 text-gray-700 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-            </svg>
-            <div className="absolute right-full mr-3 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              다음
-            </div>
-          </motion.button>
-        </div>
       </div>
     </section>
   );
