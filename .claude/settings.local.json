@@ -20,7 +20,8 @@
       "Bash(kill:*)",
       "Bash(touch:*)",
       "WebFetch(domain:foxscribbler.com)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "WebFetch(domain:chronoid.app)"
     ],
     "deny": []
   },

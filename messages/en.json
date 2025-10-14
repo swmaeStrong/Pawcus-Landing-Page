@@ -89,6 +89,16 @@
     }
   },
   "features": {
+    "sessionAnalysis": {
+      "title": "Detailed Session Analysis",
+      "description": "Analyze focus and patterns of each work session in detail.",
+      "descriptionSub": "See at a glance when you're most focused and which tasks reduce your efficiency.",
+      "features": {
+        "detailedMetrics": "Detailed session metrics",
+        "focusPattern": "Focus pattern analysis",
+        "productivityInsights": "Productivity insights"
+      }
+    },
     "focusScore": {
       "title": "Measure focus, not just time",
       "description": "Instead of just tracking sitting time, accurately score how much you actually focused."

@@ -28,14 +28,19 @@ export default function FeaturesSection() {
   const images: GalleryImage[] = [
     {
       id: 1,
-      src: "/screenshots/ScoringSystem.png",
-      alt: "집중점수 시스템",
-      title: t('focusScore.title'),
-      description: t('focusScore.description'),
-      features: []
+      src: "/screenshots/SessionAnalysis.png",
+      alt: "세션 분석",
+      title: t('sessionAnalysis.title'),
+      description: t('sessionAnalysis.description'),
+      descriptionSub: t('sessionAnalysis.descriptionSub'),
+      features: [
+        { color: "bg-blue-500", text: t('sessionAnalysis.features.detailedMetrics') },
+        { color: "bg-purple-500", text: t('sessionAnalysis.features.focusPattern') },
+        { color: "bg-pink-500", text: t('sessionAnalysis.features.productivityInsights') }
+      ]
     },
     {
-      id: 2,
+      id: 3,
       src: "/screenshots/Timeline.png",
       alt: "타임라인 개요",
       title: t('timelineOverview.title'),
@@ -48,7 +53,7 @@ export default function FeaturesSection() {
       ]
     },
     {
-      id: 3,
+      id: 4,
       src: "/screenshots/DailyGoal.png",
       alt: "매일 목표 설정",
       title: t('dailyGoal.title'),
@@ -61,7 +66,7 @@ export default function FeaturesSection() {
       ]
     },
     {
-      id: 4,
+      id: 5,
       src: "/screenshots/GroupOverview.png",
       alt: "팀 간 경쟁",
       title: t('groupOverview.title'),
@@ -95,10 +100,15 @@ export default function FeaturesSection() {
         invalidateOnRefresh: true,
         anticipatePin: 1,
         onUpdate: (self) => {
-          const newIndex = Math.round(self.progress * (panels.length - 1));
-          if (newIndex !== activeIndex) {
-            setActiveIndex(newIndex);
-          }
+          // progress를 패널 수에 맞게 변환 (0부터 panels.length-1까지)
+          const rawIndex = self.progress * (panels.length - 1);
+          // 가장 가까운 정수로 반올림
+          const newIndex = Math.max(0, Math.min(panels.length - 1, Math.round(rawIndex)));
+
+          console.log('Progress:', self.progress, 'New Index:', newIndex, 'Current activeIndex:', activeIndex);
+
+          // 항상 업데이트하도록 변경
+          setActiveIndex(newIndex);
           setScrollProgress(self.progress);
         }
       }

@@ -90,6 +90,16 @@
     }
   },
   "features": {
+    "sessionAnalysis": {
+      "title": "세션별 상세 분석",
+      "description": "각 작업 세션의 집중도와 패턴을 상세하게 분석합니다.",
+      "descriptionSub": "어떤 시간대에 가장 집중력이 높은지, 어떤 작업에서 효율이 떨어지는지 한눈에 파악하세요.",
+      "features": {
+        "detailedMetrics": "세션별 상세 지표",
+        "focusPattern": "집중 패턴 분석",
+        "productivityInsights": "생산성 인사이트"
+      }
+    },
     "focusScore": {
       "title": "이제 시간이 아닌 집중도를 측정하세요",
       "description": "단순히 앉아있던 시간이 아닌, 실제로 얼마나 집중했는지를 정확하게 점수화합니다."
