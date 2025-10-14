@@ -14,9 +14,9 @@ export const colors = {
 // 공통 스타일 상수 정의
 export const styles = {
   // Layout & Container
-  container: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+  container: "max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12",
   section: "py-32 text-center relative",
-  cardContainer: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8",
+  cardContainer: "max-w-6xl mx-auto px-6 sm:px-8 lg:px-12",
   
   // Background & Page
   pageBackground: "min-h-screen relative overflow-hidden",

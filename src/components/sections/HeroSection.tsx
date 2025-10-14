@@ -75,21 +75,21 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           </h2>
         </div>
         
-        <p className={`${getTextStyle('body')} mb-4 max-w-4xl mx-auto leading-relaxed px-4`}>
+        <p className={`${getTextStyle('body')} mb-4 max-w-6xl mx-auto leading-relaxed px-6`}>
           {t('description')}
         </p>
-        <p className={`${getTextStyle('body')} mb-16 max-w-4xl mx-auto leading-relaxed px-4`}>
+        <p className={`${getTextStyle('body')} mb-16 max-w-6xl mx-auto leading-relaxed px-6`}>
           {t('descriptionSub')}
         </p>
         {/* Demo Video */}
-        <div className="flex justify-center mb-16 px-4">
-          <video 
+        <div className="flex justify-center mb-16 px-6">
+          <video
             autoPlay
             muted
             loop
             playsInline
-            controls 
-            className="rounded-2xl shadow-2xl w-full max-w-4xl"
+            controls
+            className="rounded-2xl shadow-2xl w-full max-w-6xl"
             style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}
           >
             <source src={`/videos/pomocore-${locale}.mov`} type="video/quicktime" />
