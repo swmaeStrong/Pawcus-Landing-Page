@@ -18,7 +18,9 @@
       "Bash(cp:*)",
       "Bash(lsof:*)",
       "Bash(kill:*)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "WebFetch(domain:foxscribbler.com)",
+      "Bash(xargs kill:*)"
     ],
     "deny": []
   },

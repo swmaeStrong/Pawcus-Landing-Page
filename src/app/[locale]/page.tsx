@@ -126,8 +126,6 @@ export default function LandingPage() {
 
         {/* Features Section */}
         <FeaturesSection />
-        
-
 
         {/* CTA Section */}
         <CTASection

@@ -51,6 +51,44 @@
     "submit": "알림 신청하기",
     "privacyNote": "이메일은 Windows 버전 출시 알림 용도로만 사용됩니다."
   },
+  "gallery": {
+    "scrollHint": "스크롤하여 기능을 탐색하세요",
+    "image1": {
+      "title": "스마트 집중 모드",
+      "description": "지능형 감지로 딥워크 세션을 추적하세요",
+      "feature1": "AI 기반 방해 요소 감지",
+      "feature2": "자동 휴식 제안",
+      "feature3": "집중 점수 분석"
+    },
+    "image2": {
+      "title": "작업 관리",
+      "description": "일일 작업을 효율적으로 구성하고 우선순위를 지정하세요",
+      "feature1": "드래그 앤 드롭 작업 정리",
+      "feature2": "우선순위 기반 스케줄링",
+      "feature3": "시간 추정 추적"
+    },
+    "image3": {
+      "title": "성과 분석",
+      "description": "생산성 패턴과 트렌드를 시각화하세요",
+      "feature1": "일/주/월간 리포트",
+      "feature2": "집중 시간 히트맵",
+      "feature3": "생산성 트렌드 분석"
+    },
+    "image4": {
+      "title": "팀 협업",
+      "description": "팀으로 함께 일하고 동기부여를 유지하세요",
+      "feature1": "실시간 팀 진행 상황 추적",
+      "feature2": "공유 목표 및 마일스톤",
+      "feature3": "팀 리더보드"
+    },
+    "image5": {
+      "title": "커스터마이징",
+      "description": "워크플로우에 맞게 경험을 개인화하세요",
+      "feature1": "커스텀 테마 및 레이아웃",
+      "feature2": "유연한 알림 설정",
+      "feature3": "개인화된 작업 패턴"
+    }
+  },
   "features": {
     "focusScore": {
       "title": "이제 시간이 아닌 집중도를 측정하세요",

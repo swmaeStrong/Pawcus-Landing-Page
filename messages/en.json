@@ -50,6 +50,44 @@
     "submit": "Get Notified",
     "privacyNote": "Your email will only be used for Windows version release notification."
   },
+  "gallery": {
+    "scrollHint": "Scroll to explore features",
+    "image1": {
+      "title": "Smart Focus Mode",
+      "description": "Track your deep work sessions with intelligent detection",
+      "feature1": "AI-powered distraction detection",
+      "feature2": "Automatic break suggestions",
+      "feature3": "Focus score analytics"
+    },
+    "image2": {
+      "title": "Task Management",
+      "description": "Organize and prioritize your daily tasks efficiently",
+      "feature1": "Drag and drop task organization",
+      "feature2": "Priority-based scheduling",
+      "feature3": "Time estimation tracking"
+    },
+    "image3": {
+      "title": "Performance Analytics",
+      "description": "Visualize your productivity patterns and trends",
+      "feature1": "Daily/weekly/monthly reports",
+      "feature2": "Focus time heatmaps",
+      "feature3": "Productivity trend analysis"
+    },
+    "image4": {
+      "title": "Team Collaboration",
+      "description": "Work together and stay motivated as a team",
+      "feature1": "Real-time team progress tracking",
+      "feature2": "Shared goals and milestones",
+      "feature3": "Team leaderboards"
+    },
+    "image5": {
+      "title": "Customization",
+      "description": "Personalize your experience to match your workflow",
+      "feature1": "Custom themes and layouts",
+      "feature2": "Flexible notification settings",
+      "feature3": "Personalized work patterns"
+    }
+  },
   "features": {
     "focusScore": {
       "title": "Measure focus, not just time",
