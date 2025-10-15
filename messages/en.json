@@ -113,6 +113,16 @@
         "detailedAnalysis": "Detailed time analysis"
       }
     },
+    "blockAppFeature": {
+      "title": "Focus Mode - App Blocking",
+      "description": "Block distracting apps and websites by selecting them directly to stay focused.",
+      "descriptionSub": "Completely block work distractions like SNS, games, and videos to maintain full concentration.",
+      "features": {
+        "appBlocking": "Force block apps",
+        "websiteBlocking": "Block websites",
+        "focusMode": "Activate focus mode"
+      }
+    },
     "dailyGoal": {
       "title": "Team Goal Setting & Cross-Comparison",
       "description": "Set goals together with your team members and compare each other's achievement rates.",

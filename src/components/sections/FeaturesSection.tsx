@@ -54,6 +54,19 @@ export default function FeaturesSection() {
       ]
     },
     {
+      id: 2,
+      src: "/screenshots/BlockAppFeature.png",
+      alt: "앱 차단 기능",
+      title: t('blockAppFeature.title'),
+      description: t('blockAppFeature.description'),
+      descriptionSub: t('blockAppFeature.descriptionSub'),
+      features: [
+        { color: "bg-red-500", text: t('blockAppFeature.features.appBlocking') },
+        { color: "bg-orange-500", text: t('blockAppFeature.features.websiteBlocking') },
+        { color: "bg-yellow-500", text: t('blockAppFeature.features.focusMode') }
+      ]
+    },
+    {
       id: 4,
       src: "/screenshots/DailyGoal.png",
       alt: "매일 목표 설정",
