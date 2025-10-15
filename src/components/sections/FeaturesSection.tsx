@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -20,6 +20,7 @@ interface GalleryImage {
 
 export default function FeaturesSection() {
   const t = useTranslations('features');
+  const locale = useLocale();
   const containerRef = useRef<HTMLDivElement>(null);
   const panelsRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -108,6 +109,15 @@ export default function FeaturesSection() {
     };
   }, []);
 
+  // locale 변경 시 ScrollTrigger 새로고침
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [locale]);
+
   useEffect(() => {
     if (!containerRef.current || !panelsRef.current) return;
 
@@ -160,7 +170,7 @@ export default function FeaturesSection() {
     return () => {
       mm.revert();
     };
-  }, [images.length]);
+  }, [images.length, locale]);
 
   const handleNavigation = (targetIndex: number) => {
     if (!containerRef.current) return;
