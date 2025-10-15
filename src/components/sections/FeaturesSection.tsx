@@ -24,6 +24,7 @@ export default function FeaturesSection() {
   const panelsRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   const images: GalleryImage[] = [
     {
@@ -80,43 +81,71 @@ export default function FeaturesSection() {
     }
   ];
 
+  // 화면 크기 감지
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
   useEffect(() => {
     if (!containerRef.current || !panelsRef.current) return;
 
-    const panels = gsap.utils.toArray('.panel');
+    // 반응형: 큰 화면(lg 이상)에서만 가로 스크롤 활성화
+    const mm = gsap.matchMedia();
 
-    // 초기 위치 설정
-    gsap.set(panelsRef.current, { x: 0 });
+    mm.add("(min-width: 1024px)", () => {
+      // 큰 화면: 가로 스크롤 애니메이션
+      const panels = gsap.utils.toArray('.panel');
 
-    // GSAP ScrollTrigger 설정 - Scroll Magic 스타일
-    const scrollTween = gsap.to(panelsRef.current, {
-      x: () => -(panelsRef.current!.scrollWidth - window.innerWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        pin: true,
-        scrub: 0.5,
-        end: () => "+=" + (panelsRef.current!.scrollWidth - window.innerWidth),
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-        onUpdate: (self) => {
-          // progress를 패널 수에 맞게 변환 (0부터 panels.length-1까지)
-          const rawIndex = self.progress * (panels.length - 1);
-          // 가장 가까운 정수로 반올림
-          const newIndex = Math.max(0, Math.min(panels.length - 1, Math.round(rawIndex)));
+      // 초기 위치 및 너비 설정
+      gsap.set(panelsRef.current, { x: 0, width: `${images.length * 100}vw` });
 
-          console.log('Progress:', self.progress, 'New Index:', newIndex, 'Current activeIndex:', activeIndex);
+      // GSAP ScrollTrigger 설정 - Scroll Magic 스타일
+      const scrollTween = gsap.to(panelsRef.current, {
+        x: () => -(panelsRef.current!.scrollWidth - window.innerWidth),
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          pin: true,
+          scrub: 0.5,
+          end: () => "+=" + (panelsRef.current!.scrollWidth - window.innerWidth),
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            // progress를 패널 수에 맞게 변환 (0부터 panels.length-1까지)
+            const rawIndex = self.progress * (panels.length - 1);
+            // 가장 가까운 정수로 반올림
+            const newIndex = Math.max(0, Math.min(panels.length - 1, Math.round(rawIndex)));
 
-          // 항상 업데이트하도록 변경
-          setActiveIndex(newIndex);
-          setScrollProgress(self.progress);
+            // 항상 업데이트하도록 변경
+            setActiveIndex(newIndex);
+            setScrollProgress(self.progress);
+          }
         }
-      }
+      });
+
+      return () => {
+        scrollTween.kill();
+      };
+    });
+
+    mm.add("(max-width: 1023px)", () => {
+      // 작은 화면: 가로 스크롤 비활성화, 초기 위치로 리셋
+      gsap.set(panelsRef.current, { x: 0, width: '100%' });
+      setActiveIndex(0);
+      setScrollProgress(0);
     });
 
     return () => {
-      scrollTween.kill();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      mm.revert();
     };
   }, [images.length]);
 
@@ -135,10 +164,10 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section ref={containerRef} className="relative h-screen overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100" aria-labelledby="features-heading">
+    <section ref={containerRef} className="relative lg:h-screen lg:overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-12 lg:py-0" aria-labelledby="features-heading">
 
-      {/* Vertical Progress Indicator - 우측 */}
-      <div className="fixed right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-40 hidden md:flex flex-col gap-3">
+      {/* Vertical Progress Indicator - 우측 (큰 화면에서만 표시) */}
+      <div className="fixed right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3">
         {images.map((_, index) => (
           <button
             key={index}
@@ -160,53 +189,52 @@ export default function FeaturesSection() {
         ))}
       </div>
 
-      <div className="h-screen flex items-center">
-        <div ref={panelsRef} className="flex flex-nowrap" style={{ width: `${images.length * 100}vw` }}>
+      <div className="lg:h-screen flex items-center">
+        <div ref={panelsRef} className="flex flex-col lg:flex-row lg:flex-nowrap" style={{ width: '100%' }}>
           {images.map((image, index) => (
             <div
               key={image.id}
-              className="panel relative flex-shrink-0 flex items-center justify-center"
-              style={{ minWidth: '100vw', width: '100vw' }}
+              className="panel relative flex items-center justify-center py-6 lg:py-0 w-full lg:flex-shrink-0 lg:min-w-screen lg:w-screen"
             >
               <motion.div
-                className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
+                className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
-                  opacity: index === activeIndex ? 1 : 0.5,
-                  scale: index === activeIndex ? 1 : 0.92
+                  opacity: isLargeScreen ? (index === activeIndex ? 1 : 0.5) : 1,
+                  scale: isLargeScreen ? (index === activeIndex ? 1 : 0.92) : 1
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 {/* Card Background Glow */}
-                <div className={`absolute -inset-6 bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-[2.5rem] blur-3xl transition-all duration-700 ${
-                  index === activeIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-95'
+                <div className={`absolute -inset-3 sm:-inset-4 lg:-inset-6 bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-[2.5rem] blur-2xl lg:blur-3xl transition-all duration-700 ${
+                  isLargeScreen ? (index === activeIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-95') : 'opacity-60 scale-105'
                 }`} />
 
                 {/* Main Card */}
-                <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 overflow-hidden">
+                <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl border border-gray-200/50 overflow-hidden">
                   {/* Card Header with gradient */}
                   <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
 
-                  <div className="p-6 sm:p-8 lg:p-10">
-                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                  <div className="p-4 sm:p-6 lg:p-10">
+                    <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center">
                       {/* Image Section - Card within Card */}
                       <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                         <motion.div
                           className="relative group"
                           animate={{
-                            y: index === activeIndex ? 0 : 20
+                            y: isLargeScreen ? (index === activeIndex ? 0 : 20) : 0
                           }}
                           transition={{ duration: 0.6, delay: 0.1 }}
                         >
                           {/* Image Card */}
-                          <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-4 shadow-inner border border-gray-200">
-                            <div className="relative rounded-xl overflow-hidden shadow-lg">
+                          <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-inner border border-gray-200">
+                            <div className="relative rounded-lg lg:rounded-xl overflow-hidden shadow-lg">
                               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none z-10" />
                               <img
                                 src={image.src}
                                 alt={image.alt}
                                 className={`w-full h-auto transition-all duration-700 ${
-                                  index === activeIndex ? 'scale-100 blur-0' : 'scale-105 blur-sm'
+                                  isLargeScreen ? (index === activeIndex ? 'scale-100 blur-0' : 'scale-105 blur-sm') : 'scale-100 blur-0'
                                 }`}
                               />
                             </div>
@@ -218,24 +246,24 @@ export default function FeaturesSection() {
                       {/* Content Section - Card within Card */}
                       <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                         <motion.div
-                          className="space-y-6"
+                          className="space-y-3 sm:space-y-4 lg:space-y-6"
                           initial={{ y: 50, opacity: 0 }}
                           animate={{
-                            y: index === activeIndex ? 0 : 50,
-                            opacity: index === activeIndex ? 1 : 0
+                            y: isLargeScreen ? (index === activeIndex ? 0 : 50) : 0,
+                            opacity: isLargeScreen ? (index === activeIndex ? 1 : 0) : 1
                           }}
                           transition={{ duration: 0.6, delay: 0.2 }}
                         >
                           {/* Title Card */}
-                          <div className="space-y-4">
-                            <h3 className="text-3xl sm:text-4xl font-bold text-gray-800 leading-tight">
+                          <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+                            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 leading-tight">
                               {image.title}
                             </h3>
                           </div>
 
                           {/* Description Card */}
-                          <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                            <p className="text-base text-gray-700 leading-relaxed">
+                          <div className="bg-gray-50 border border-gray-200 rounded-lg lg:rounded-xl p-4 sm:p-5 lg:p-6">
+                            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                               {image.description}
                               {image.descriptionSub && (
                                 <>
@@ -249,30 +277,30 @@ export default function FeaturesSection() {
                           {/* Features Cards */}
                           {image.features.length > 0 && (
                             <motion.div
-                              className="space-y-3"
+                              className="space-y-2 sm:space-y-2.5 lg:space-y-3"
                               initial={{ y: 30, opacity: 0 }}
                               animate={{
-                                y: index === activeIndex ? 0 : 30,
-                                opacity: index === activeIndex ? 1 : 0
+                                y: isLargeScreen ? (index === activeIndex ? 0 : 30) : 0,
+                                opacity: isLargeScreen ? (index === activeIndex ? 1 : 0) : 1
                               }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
                               {image.features.map((feature, featureIndex) => (
                                 <motion.div
                                   key={featureIndex}
-                                  className="flex items-center gap-3 bg-white border border-gray-200 rounded-lg p-3 shadow-sm hover:shadow-md transition-shadow"
+                                  className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 bg-white border border-gray-200 rounded-md lg:rounded-lg p-2 sm:p-2.5 lg:p-3 shadow-sm hover:shadow-md transition-shadow"
                                   initial={{ x: -30, opacity: 0 }}
                                   animate={{
-                                    x: index === activeIndex ? 0 : -30,
-                                    opacity: index === activeIndex ? 1 : 0
+                                    x: isLargeScreen ? (index === activeIndex ? 0 : -30) : 0,
+                                    opacity: isLargeScreen ? (index === activeIndex ? 1 : 0) : 1
                                   }}
                                   transition={{
                                     duration: 0.4,
                                     delay: 0.4 + (featureIndex * 0.1)
                                   }}
                                 >
-                                  <div className={`w-2.5 h-2.5 ${feature.color} rounded-full flex-shrink-0`}></div>
-                                  <span className="text-sm font-medium text-gray-700">{feature.text}</span>
+                                  <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 ${feature.color} rounded-full flex-shrink-0`}></div>
+                                  <span className="text-xs sm:text-sm font-medium text-gray-700">{feature.text}</span>
                                 </motion.div>
                               ))}
                             </motion.div>

@@ -56,7 +56,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
           <h1 
             id="hero-heading" 
-            className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}
+            className={`${getHeadingStyle(1)} text-xl ${styles.text.primary} mb-6 relative z-10 break-words`}
             itemProp="name"
           >
             {t('title')}
