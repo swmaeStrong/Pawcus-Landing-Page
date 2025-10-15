@@ -56,7 +56,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-3xl pointer-events-none -z-10" />
           <h1 
             id="hero-heading" 
-            className={`${getHeadingStyle(1)} text-xl ${styles.text.primary} mb-6 relative z-10 break-words`}
+            className={`${getHeadingStyle(1)} ${styles.text.primary} mb-6 relative z-10 break-words`}
             itemProp="name"
           >
             {t('title')}
@@ -66,7 +66,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
         
         <div className="relative">
           <h2 
-            className={`${getHeadingStyle(2)} ${styles.text.primary} mb-8 leading-tight text-center`}
+            className={`${getHeadingStyle(3)} ${styles.text.primary} mb-8 leading-tight text-center`}
             itemProp="description"
             role="doc-subtitle"
             aria-describedby="hero-heading"
@@ -75,9 +75,6 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           </h2>
         </div>
         
-        <p className={`${getTextStyle('body')} mb-4 max-w-6xl mx-auto leading-relaxed px-6`}>
-          {t('description')}
-        </p>
         <p className={`${getTextStyle('body')} mb-16 max-w-6xl mx-auto leading-relaxed px-6`}>
           {t('descriptionSub')}
         </p>
