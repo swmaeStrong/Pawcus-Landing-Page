@@ -6,12 +6,21 @@ import { motion } from 'framer-motion';
 export default function TestimonialsSection() {
   const t = useTranslations('testimonials');
 
-  // 리뷰 데이터 가져오기
-  const reviews = Array.from({ length: 6 }, (_, i) => ({
+  // 리뷰 데이터 가져오기 - 총 5개만 표시, 가장 긴 리뷰를 마지막에 배치
+  const allReviews = Array.from({ length: 6 }, (_, i) => ({
     quote: t(`reviews.${i}.quote`),
     name: t(`reviews.${i}.name`),
     handle: t(`reviews.${i}.handle`)
   }));
+
+  // 순서 재배치: 5개만 선택, 인덱스 4(Hyunwoo Jung - 가장 긴 리뷰)를 마지막으로
+  const reviews = [
+    allReviews[0], // Junho Kim
+    allReviews[1], // Seoyun Lee
+    allReviews[2], // Minsu Park
+    allReviews[3], // Yujin Choi
+    allReviews[4]  // Hyunwoo Jung (가장 긴 리뷰 - 오른쪽에 표시)
+  ];
 
   // 아바타 색상 배열
   const avatarColors = [
@@ -49,23 +58,17 @@ export default function TestimonialsSection() {
           </motion.p>
         </div>
 
-        {/* Reviews Grid - 불규칙한 레이아웃 */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
+        {/* Reviews Grid - 3열 구성 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:grid-rows-2">
           {reviews.map((review, index) => {
-            // 각 카드마다 다른 패딩과 스타일 적용
-            const cardStyles = [
-              'p-6',      // 기본
-              'p-7',      // 조금 큰
-              'p-5',      // 조금 작은
-              'p-6 pt-8', // 위쪽 여백 큰
-              'p-8',      // 큰 패딩
-              'p-6 pb-8'  // 아래쪽 여백 큰
-            ];
+            // 마지막 리뷰(인덱스 5)는 3열에서 row-span-2로 길게 표시
+            const isLastItem = index === reviews.length - 1;
+            const gridClass = isLastItem ? "lg:row-span-2" : "";
 
             return (
               <motion.div
                 key={index}
-                className="relative group break-inside-avoid mb-0"
+                className={`relative group ${gridClass}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -75,7 +78,7 @@ export default function TestimonialsSection() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-200/30 via-purple-200/30 to-pink-200/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-500" />
 
                 {/* Card */}
-                <div className={`relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 ${cardStyles[index]}`}>
+                <div className={`relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 ${isLastItem ? 'h-full py-12 px-8' : 'p-8'}`}>
                   {/* Quote */}
                   <div className="mb-6">
                     <svg
