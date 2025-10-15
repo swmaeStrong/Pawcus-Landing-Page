@@ -65,11 +65,11 @@ export default function CTASection({ onDownloadDMG }: CTASectionProps) {
             <h2 id="cta-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-800">
               {t('title')}
             </h2>
-            <p className="text-lg sm:text-xl mb-10 text-gray-600 max-w-2xl mx-auto px-4">
+            <p className="text-lg sm:text-xl mb-10 text-gray-600 max-w-4xl mx-auto px-6">
               {t('description')}
             </p>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full px-4">
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-6xl mx-auto w-full px-6">
               <DownloadButton
                 onDownload={onDownloadDMG}
                 className="opacity-90 hover:opacity-100"

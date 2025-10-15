@@ -34,7 +34,7 @@
   },
   "hero": {
     "title": "Pomocore",
-    "subtitle": "Track your activity, pinpoint your distractions, and achieve goals with your groups",
+    "subtitle": "Track your activity, pinpoint your distractions, and achieve goals.",
     "description": "How much time do you think you waste during PC work?",
     "descriptionSub": "Create a more efficient work environment with smart time tracking and analysis.",
     "downloadTitle": "Download Pomocore",
@@ -50,7 +50,55 @@
     "submit": "Get Notified",
     "privacyNote": "Your email will only be used for Windows version release notification."
   },
+  "gallery": {
+    "scrollHint": "Scroll to explore features",
+    "image1": {
+      "title": "Smart Focus Mode",
+      "description": "Track your deep work sessions with intelligent detection",
+      "feature1": "AI-powered distraction detection",
+      "feature2": "Automatic break suggestions",
+      "feature3": "Focus score analytics"
+    },
+    "image2": {
+      "title": "Task Management",
+      "description": "Organize and prioritize your daily tasks efficiently",
+      "feature1": "Drag and drop task organization",
+      "feature2": "Priority-based scheduling",
+      "feature3": "Time estimation tracking"
+    },
+    "image3": {
+      "title": "Performance Analytics",
+      "description": "Visualize your productivity patterns and trends",
+      "feature1": "Daily/weekly/monthly reports",
+      "feature2": "Focus time heatmaps",
+      "feature3": "Productivity trend analysis"
+    },
+    "image4": {
+      "title": "Team Collaboration",
+      "description": "Work together and stay motivated as a team",
+      "feature1": "Real-time team progress tracking",
+      "feature2": "Shared goals and milestones",
+      "feature3": "Team leaderboards"
+    },
+    "image5": {
+      "title": "Customization",
+      "description": "Personalize your experience to match your workflow",
+      "feature1": "Custom themes and layouts",
+      "feature2": "Flexible notification settings",
+      "feature3": "Personalized work patterns"
+    }
+  },
   "features": {
+    "sessionAnalysis": {
+      "title": "Detailed Session Analysis",
+      "description": "Analyze focus and patterns of each work session in detail.",
+      "descriptionSub": "See at a glance when you're most focused and which tasks reduce your efficiency.",
+      "features": {
+        "detailedMetrics": "Detailed session metrics",
+        "focusPattern": "Focus pattern analysis",
+        "productivityInsights": "Productivity insights"
+      }
+    },
     "focusScore": {
       "title": "Measure focus, not just time",
       "description": "Instead of just tracking sitting time, accurately score how much you actually focused."
@@ -63,6 +111,16 @@
         "timelineSummary": "Hourly work content summary",
         "workPattern": "Work pattern visualization",
         "detailedAnalysis": "Detailed time analysis"
+      }
+    },
+    "blockAppFeature": {
+      "title": "Focus Mode - App Blocking",
+      "description": "Block distracting apps and websites by selecting them directly to stay focused.",
+      "descriptionSub": "Completely block work distractions like SNS, games, and videos to maintain full concentration.",
+      "features": {
+        "appBlocking": "Force block apps",
+        "websiteBlocking": "Block websites",
+        "focusMode": "Activate focus mode"
       }
     },
     "dailyGoal": {
@@ -587,5 +645,41 @@
   "cta": {
     "title": "Stop wasting time",
     "description": "Maximize your focus and productivity with Pomocore!"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Many customers love it",
+    "reviews": [
+      {
+        "quote": "As a freelancer, Pomocore is my goto software to track all my work, automatically without timer. I know exactly how much time I spend on each project, which gives me clear evidence when billing clients.",
+        "name": "Junho Kim",
+        "handle": "@freelancer_jun"
+      },
+      {
+        "quote": "Pomocore is amazing! It's a great way to see how I am using my time with very little effort on my part. The team leaderboard also keeps me productive all day.",
+        "name": "Seoyun Lee",
+        "handle": "@seoyun_dev"
+      },
+      {
+        "quote": "I always struggled with managing study sessions. Pomocore didn't just track time — it gave me AI-powered reports that helped me structure my day more effectively, reducing burnout and increasing consistency.",
+        "name": "Minsu Park",
+        "handle": "@minsu_studies"
+      },
+      {
+        "quote": "It is very useful application that shows you how much time you spend on certain applications during the day. It keeps the track of time spent on websites, applications, work on your computer. Very useful if you need that kind of information.",
+        "name": "Yujin Choi",
+        "handle": "@yujin_pm"
+      },
+      {
+        "quote": "Pomocore does exactly what I need: keeps track of every front-most window without any input from me and then adds up all windows I select to give me exactly the total I spent on a project for a client. No subscription, no remote data collection, not interaction at all until I'm ready. Just what I want.",
+        "name": "Hyunwoo Jung",
+        "handle": "@hyunwoo_creator"
+      },
+      {
+        "quote": "Focus score feature lets me measure actual concentration, not just time!",
+        "name": "Minseo Kang",
+        "handle": "@minseo_focus"
+      }
+    ]
   }
 }

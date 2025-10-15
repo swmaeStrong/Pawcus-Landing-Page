@@ -14,9 +14,9 @@ export const colors = {
 // 공통 스타일 상수 정의
 export const styles = {
   // Layout & Container
-  container: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-  section: "py-32 text-center relative",
-  cardContainer: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8",
+  container: "max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12",
+  section: "text-center relative",
+  cardContainer: "max-w-6xl mx-auto px-6 sm:px-8 lg:px-12",
   
   // Background & Page
   pageBackground: "min-h-screen relative overflow-hidden",
@@ -38,10 +38,10 @@ export const styles = {
   
   // Typography
   heading: {
-    h1: "text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-gray-800",
-    h2: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800",
-    h3: "text-4xl font-bold text-gray-800",
-    h4: "text-2xl font-bold text-gray-800"
+    h1: "text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-black text-gray-800",
+    h2: "text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-800",
+    h3: "text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800",
+    h4: "text-xl sm:text-2xl md:text-2xl font-bold text-gray-800"
   },
   text: {
     body: "text-lg sm:text-xl md:text-2xl text-[#4a5568]",
@@ -86,7 +86,7 @@ export const styles = {
   },
   
   // Download Section
-  downloadSection: "flex flex-col items-center mb-16 space-y-8 px-4 overflow-visible",
+  downloadSection: "relative z-20 flex flex-col items-center mb-16 space-y-8 px-4 overflow-visible",
   downloadButtons: "flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full",
   
   // Toast & Notifications

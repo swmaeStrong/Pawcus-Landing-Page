@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ['images.unsplash.com'],
+  },
   // Skip problematic pages during build
   experimental: {
     workerThreads: false,
@@ -93,7 +96,7 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.hotjar.com https://static.hotjar.com https://script.hotjar.com https://www.googletagmanager.com https://www.google-analytics.com https://*.amplitude.com",
-              "connect-src 'self' https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.google-analytics.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://analytics.google.com https://*.amplitude.com https://api2.amplitude.com https://sr-client-cfg.amplitude.com https://*.supabase.co",
+              "connect-src 'self' ws:localhost:* http://localhost:* https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.google-analytics.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://analytics.google.com https://*.amplitude.com https://api2.amplitude.com https://sr-client-cfg.amplitude.com https://*.supabase.co",
               "img-src 'self' data: https: blob: https://*.hotjar.com",
               "style-src 'self' 'unsafe-inline' https://*.hotjar.com",
               "font-src 'self' data: https://*.hotjar.com",
