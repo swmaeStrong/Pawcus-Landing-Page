@@ -45,10 +45,10 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
     fetchInviteCode();
   }, []);
   return (
-    <section 
-      className={styles.section} 
+    <section
+      className={`${styles.section} relative z-10`}
       aria-labelledby="hero-heading"
-      itemScope 
+      itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
       <div className={styles.scrollAnimate}>
