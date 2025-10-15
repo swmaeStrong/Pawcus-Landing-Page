@@ -136,14 +136,6 @@ export default function FeaturesSection() {
 
   return (
     <section ref={containerRef} className="relative h-screen overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100" aria-labelledby="features-heading">
-      {/* Progress Bar - 상단 */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
-        <motion.div
-          className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
-          style={{ width: `${scrollProgress * 100}%` }}
-          transition={{ duration: 0.1 }}
-        />
-      </div>
 
       {/* Vertical Progress Indicator - 우측 */}
       <div className="fixed right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-40 hidden md:flex flex-col gap-3">

@@ -15,7 +15,7 @@ export const colors = {
 export const styles = {
   // Layout & Container
   container: "max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12",
-  section: "py-32 text-center relative",
+  section: "text-center relative",
   cardContainer: "max-w-6xl mx-auto px-6 sm:px-8 lg:px-12",
   
   // Background & Page
@@ -39,7 +39,7 @@ export const styles = {
   // Typography
   heading: {
     h1: "text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-gray-800",
-    h2: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800",
+    h2: "text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800",
     h3: "text-4xl font-bold text-gray-800",
     h4: "text-2xl font-bold text-gray-800"
   },
