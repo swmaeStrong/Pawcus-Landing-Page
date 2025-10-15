@@ -55,9 +55,6 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
             <div className={`font-bold ${getTextStyle('secondary')}`}>
               {t('app.title')}
             </div>
-            <div className={`${getTextStyle('secondary')} text-sm font-normal`}>
-              {t('app.description')}
-            </div>
           </div>
         </div>
       </Button>
