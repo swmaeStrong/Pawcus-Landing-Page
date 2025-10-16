@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import DownloadButton from "@/components/DownloadButton";
 import { styles, getHeadingStyle, getTextStyle } from '@/lib/styles';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 import { STORAGE_KEYS } from '@/constants/storage';
@@ -12,7 +12,6 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
   const t = useTranslations('hero');
-  const locale = useLocale();
   const [deviceId, setDeviceId] = useState<string | null>(null);
   const [inviteCode, setInviteCode] = useState<string>('');
 
@@ -80,19 +79,23 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
         </p>
         {/* Demo Video */}
         <div className="flex justify-center mb-16 px-6">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            className="rounded-2xl shadow-2xl w-full max-w-6xl"
-            style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}
-          >
-            <source src={`/videos/pomocore-${locale}.mov`} type="video/quicktime" />
-            <source src={`/videos/pomocore-${locale}.mov`} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl shadow-2xl" style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full"
+              style={{
+                marginTop: '-8px',
+                marginBottom: '-8px'
+              }}
+            >
+              <source src="/videos/pomocore.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
         
         {/* Download Section */}

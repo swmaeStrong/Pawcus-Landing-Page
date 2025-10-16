@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import ToastNotification from '@/components/ToastNotification';
 import HeroSection from '@/components/sections/HeroSection';
+import ShowcaseSection from '@/components/sections/ShowcaseSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import LeaderboardSection from '@/components/sections/LeaderboardSection';
@@ -92,11 +93,17 @@ export default function LandingPage() {
       { threshold: 0.1, rootMargin: '50px' }
     )
 
-    const elements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right')
-    elements.forEach((el) => observer.observe(el))
+    // 초기 렌더링 시 요소가 없을 수 있으므로 약간 지연
+    const timeoutId = setTimeout(() => {
+      const elements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right')
+      elements.forEach((el) => observer.observe(el))
+    }, 100)
 
     return () => {
+      clearTimeout(timeoutId)
+      const elements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right')
       elements.forEach((el) => observer.unobserve(el))
+      observer.disconnect()
     }
   }, [])
 
@@ -124,6 +131,9 @@ export default function LandingPage() {
         <HeroSection
           onDownloadDMG={handleDMGDownload}
         />
+
+        {/* Showcase Section */}
+        <ShowcaseSection />
 
         {/* Features Section */}
         <FeaturesSection />

@@ -50,6 +50,22 @@
     "submit": "Get Notified",
     "privacyNote": "Your email will only be used for Windows version release notification."
   },
+  "showcase": {
+    "title": "Feature Preview",
+    "subtitle": "See Pomocore's core features at a glance",
+    "home": {
+      "title": "Intuitive Dashboard",
+      "description": "Clean home screen to view today's focus and activities at a glance"
+    },
+    "analysis": {
+      "title": "Detailed Analysis Reports",
+      "description": "Visualize usage patterns by time and app to improve productivity"
+    },
+    "webBlock": {
+      "title": "Website Blocking",
+      "description": "Selectively block distracting websites in focus mode"
+    }
+  },
   "gallery": {
     "scrollHint": "Scroll to explore features",
     "image1": {

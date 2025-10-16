@@ -51,6 +51,22 @@
     "submit": "알림 신청하기",
     "privacyNote": "이메일은 Windows 버전 출시 알림 용도로만 사용됩니다."
   },
+  "showcase": {
+    "title": "주요 기능 미리보기",
+    "subtitle": "Pomocore의 핵심 기능을 한눈에 확인하세요",
+    "home": {
+      "title": "직관적인 대시보드",
+      "description": "오늘의 집중도와 활동을 한눈에 파악할 수 있는 깔끔한 홈 화면"
+    },
+    "analysis": {
+      "title": "상세한 분석 리포트",
+      "description": "시간대별, 앱별 사용 패턴을 시각화하여 생산성을 개선하세요"
+    },
+    "webBlock": {
+      "title": "웹사이트 차단",
+      "description": "집중 모드에서 방해되는 웹사이트를 선택적으로 차단할 수 있습니다"
+    }
+  },
   "gallery": {
     "scrollHint": "스크롤하여 기능을 탐색하세요",
     "image1": {
