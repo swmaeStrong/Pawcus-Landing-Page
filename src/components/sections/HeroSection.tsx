@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { getAmplitudeDeviceId } from '@/utils/ampli-helpers';
 import { STORAGE_KEYS } from '@/constants/storage';
+import Image from 'next/image';
 
 interface HeroSectionProps {
   onDownloadDMG: () => void;
@@ -74,30 +75,31 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           </h2>
         </div>
         
-        <p className={`${getTextStyle('body')} mb-16 max-w-6xl mx-auto leading-relaxed px-6`}>
+        <p className={`${getTextStyle('body')} mb-12 max-w-6xl mx-auto leading-relaxed px-6`}>
           {t('descriptionSub')}
         </p>
-        {/* Demo Video */}
-        <div className="flex justify-center mb-16 px-6">
-          <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl shadow-2xl" style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              className="w-full"
-              style={{
-                marginTop: '-8px',
-                marginBottom: '-8px'
-              }}
-            >
-              <source src="/videos/pomocore.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+
+        {/* Hero Image */}
+        <div className="flex justify-center mb-16 px-2 md:px-4">
+          <div className="relative w-full max-w-[95%] overflow-hidden rounded-2xl shadow-2xl border-2 border-[#5b9bd5]/30">
+            <Image
+              src="/screenshots/Activities.png"
+              alt="Pomocore 활동 기록"
+              width={1600}
+              height={1000}
+              className="w-full h-auto"
+              priority
+            />
+            {/* Floating badge */}
+            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-4 py-2 border border-gray-200">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm font-semibold text-gray-800">실시간 동작</span>
+              </div>
+            </div>
           </div>
         </div>
-        
+
         {/* Download Section */}
         <section className={styles.downloadSection} aria-labelledby="download-heading">
           <header className="text-center">
