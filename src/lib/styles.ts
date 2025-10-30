@@ -86,7 +86,7 @@ export const styles = {
   },
   
   // Download Section
-  downloadSection: "relative z-20 flex flex-col items-center mb-16 space-y-8 px-4 overflow-visible",
+  downloadSection: "relative z-20 flex flex-col items-center mb-24 space-y-6 px-4 overflow-visible",
   downloadButtons: "flex flex-col md:flex-row items-center justify-center gap-6 max-w-4xl mx-auto w-full",
   
   // Toast & Notifications

@@ -104,6 +104,32 @@
       "feature3": "Personalized work patterns"
     }
   },
+  "screenshots": {
+    "heading": "Key Features",
+    "title": "Essential Tools to Maximize Your Productivity",
+    "subtitle": "From AI analysis to activity tracking, all features on one platform",
+    "timer": {
+      "title": "Pomodoro Timer",
+      "description": "Boost your productivity with a pomodoro timer that maximizes focus",
+      "detail1": "25 minutes focus + 5 minutes break",
+      "detail2": "Automatic session tracking",
+      "detail3": "Customizable notifications and sounds"
+    },
+    "aiReport": {
+      "title": "AI Reports",
+      "description": "AI analyzes your work patterns and suggests improvements",
+      "detail1": "Automatic work pattern analysis",
+      "detail2": "Personalized productivity recommendations",
+      "detail3": "Weekly/Monthly trend reports"
+    },
+    "smartRules": {
+      "title": "Smart Rules",
+      "description": "Handle repetitive tasks with automation rules",
+      "detail1": "Condition-based automation rules",
+      "detail2": "Detailed activity logs",
+      "detail3": "Time-based automatic mode switching"
+    }
+  },
   "features": {
     "sessionAnalysis": {
       "title": "Detailed Session Analysis",

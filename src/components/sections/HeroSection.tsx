@@ -90,13 +90,6 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
               className="w-full h-auto"
               priority
             />
-            {/* Floating badge */}
-            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-4 py-2 border border-gray-200">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-sm font-semibold text-gray-800">실시간 동작</span>
-              </div>
-            </div>
           </div>
         </div>
 

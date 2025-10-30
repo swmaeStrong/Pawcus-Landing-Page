@@ -6,38 +6,38 @@ import { Sparkles, BarChart3, Repeat, CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function ScreenshotSection() {
-  const t = useTranslations('features');
+  const t = useTranslations('screenshots');
 
   const features = [
     {
       image: '/screenshots/Timer.png',
-      title: '포모도로 타이머',
-      description: '집중력을 극대화하는 포모도로 타이머로 생산성을 높이세요',
+      title: t('timer.title'),
+      description: t('timer.description'),
       icon: BarChart3,
       color: 'pink',
       bgColor: 'bg-pink-100',
       borderColor: 'border-pink-200',
-      details: ['25분 집중 + 5분 휴식', '세션 자동 추적', '알림 및 사운드 커스터마이징']
+      details: [t('timer.detail1'), t('timer.detail2'), t('timer.detail3')]
     },
     {
       image: '/screenshots/AIReport.png',
-      title: 'AI 리포트',
-      description: 'AI가 당신의 작업 패턴을 분석하여 개선점을 제안합니다',
+      title: t('aiReport.title'),
+      description: t('aiReport.description'),
       icon: Sparkles,
       color: 'indigo',
       bgColor: 'bg-indigo-100',
       borderColor: 'border-indigo-200',
-      details: ['작업 패턴 자동 분석', '개인화된 생산성 추천', '주간/월간 트렌드 리포트']
+      details: [t('aiReport.detail1'), t('aiReport.detail2'), t('aiReport.detail3')]
     },
     {
       image: '/screenshots/LogAndRules.png',
-      title: '스마트 규칙',
-      description: '반복적인 작업은 자동화 규칙으로 처리하세요',
+      title: t('smartRules.title'),
+      description: t('smartRules.description'),
       icon: Repeat,
       color: 'blue',
       bgColor: 'bg-blue-100',
       borderColor: 'border-blue-200',
-      details: ['조건 기반 자동화 규칙', '상세한 활동 로그', '시간대별 자동 모드 전환']
+      details: [t('smartRules.detail1'), t('smartRules.detail2'), t('smartRules.detail3')]
     }
   ];
 
@@ -51,13 +51,13 @@ export default function ScreenshotSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full mb-4">
-            <span className="text-sm font-semibold text-indigo-700">주요 기능</span>
+            <span className="text-sm font-semibold text-indigo-700">{t('heading')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            생산성을 극대화하는 핵심 도구
+            {t('title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            AI 분석부터 활동 추적까지, 모든 기능을 하나의 플랫폼에서
+            {t('subtitle')}
           </p>
         </motion.div>
 
