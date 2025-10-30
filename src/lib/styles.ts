@@ -26,9 +26,9 @@ export const styles = {
   animatedBackground: "fixed inset-0 pointer-events-none -z-10",
   
   // Navigation
-  navigation: "fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#c6d4e8]/50 shadow-sm",
-  navItem: "flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#c6d4e8]/30",
-  navItemActive: "text-[#3f72af] bg-[#c6d4e8]/40",
+  navigation: "fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm",
+  navItem: "flex items-center px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100/50 relative",
+  navItemActive: "text-[#3f72af] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#3f72af]",
   navItemInactive: "text-gray-600 hover:text-[#3f72af]",
   
   // Cards
@@ -58,12 +58,12 @@ export const styles = {
   
   // Buttons
   button: {
-    primary: "relative bg-white hover:bg-[#ececec]/50 text-[#2d3748] border backdrop-blur-sm px-3 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 font-medium text-sm shadow-lg",
-    primaryAction: "bg-[#3f72af] hover:bg-[#3f72af]/90 text-white border-[#3f72af] hover:border-[#3f72af]/90 hover:shadow-[#3f72af]/20",
+    primary: "relative bg-white hover:bg-gray-50 text-[#2d3748] border backdrop-blur-sm px-3 py-1.5 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md",
+    primaryAction: "bg-[#3f72af] hover:bg-[#3f72af]/90 text-white border-[#3f72af] hover:border-[#3f72af]/90 hover:shadow-md",
     secondary: "bg-[#c6d4e8] hover:bg-[#c6d4e8]/80 text-[#3f72af] border-[#c6d4e8] hover:border-[#c6d4e8]/80",
-    ghost: "bg-white hover:bg-[#ececec]/30 text-[#4a5568] border border-[#c6d4e8] hover:border-[#3f72af]/50",
-    homebrew: "border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-[#3f72af]/20",
-    dmg: "border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-[#3f72af]/20"
+    ghost: "bg-white hover:bg-gray-50 text-[#4a5568] border border-gray-200 hover:border-[#3f72af]/50",
+    homebrew: "border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-md",
+    dmg: "border-[#3f72af] hover:border-[#3f72af]/80 hover:shadow-md"
   },
   
   // Footer

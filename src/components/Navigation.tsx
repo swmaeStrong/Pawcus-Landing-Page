@@ -170,7 +170,6 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
                 src="/icons/128-mac.png"
                 alt="Co-molib Logo"
@@ -179,7 +178,7 @@ export default function Navigation() {
                 className="relative z-10"
               />
             </div>
-            <span className={`text-xl font-bold ${styles.gradientPrimary}`}>
+            <span className="text-xl font-bold text-gray-800">
               Co-molib
             </span>
           </Link>
