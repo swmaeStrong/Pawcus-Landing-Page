@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   creator: "Co-molib Team",
   publisher: "Co-molib",
   applicationName: "Co-molib",
-  metadataBase: new URL('https://www.pomocore.com'),
+  metadataBase: new URL('https://www.co-molib.com'),
   alternates: {
-    canonical: 'https://www.pomocore.com',
+    canonical: 'https://www.co-molib.com',
     languages: {
-      'ko': 'https://www.pomocore.com',
-      'en': 'https://www.pomocore.com/en',
+      'ko': 'https://www.co-molib.com',
+      'en': 'https://www.co-molib.com/en',
     },
   },
   category: 'productivity',

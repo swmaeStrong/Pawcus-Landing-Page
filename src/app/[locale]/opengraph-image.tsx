@@ -14,9 +14,9 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
   
   const isKorean = locale === 'ko'
   
-  const alt = isKorean 
-    ? 'Pomocore - 시간을 절약하는 스마트 시간 추적'
-    : 'Pomocore - Smart Time Tracking to Save Time'
+  const alt = isKorean
+    ? 'Co-molib - 시간을 절약하는 스마트 시간 추적'
+    : 'Co-molib - Smart Time Tracking to Save Time'
   
   const texts = {
     badge: isKorean ? '시간 낭비를 멈추세요' : 'STOP WASTING TIME',
@@ -79,7 +79,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
               letterSpacing: '-4px',
             }}
           >
-            Pomocore
+            Co-molib
           </h1>
           
           {/* Main tagline */}
@@ -120,7 +120,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
             fontWeight: '600',
           }}
         >
-          pomocore.com
+          co-molib.com
         </div>
       </div>
     ),
