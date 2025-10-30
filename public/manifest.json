@@ -1,6 +1,6 @@
 {
-  "name": "Pomocore - 시간을 절약하는 스마트 시간 추적",
-  "short_name": "Pomocore",
+  "name": "Co-molib - 시간을 절약하는 스마트 시간 추적",
+  "short_name": "Co-molib",
   "description": "시간 낭비를 막고 시간을 절약하세요. 스마트한 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
   "start_url": "/",
   "display": "standalone",

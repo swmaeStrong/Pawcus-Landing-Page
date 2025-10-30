@@ -27,7 +27,7 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
       });
 
       const encrypted = encryptAES256(jsonData);
-      const formattedData = `pomocore-${encrypted}`;
+      const formattedData = `co-molib-${encrypted}`;
 
       await navigator.clipboard.writeText(formattedData);
       console.log('Copied encrypted data to clipboard:', formattedData);
@@ -42,10 +42,10 @@ export default function DownloadButton({ onDownload, className = "", deviceId, i
 
   return (
     <div className={`group relative w-full md:w-auto max-w-sm ${className}`}>
-      <div className={`absolute -inset-1 bg-gradient-to-r ${gradientClass} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200`} />
+      <div className={`absolute -inset-0.5 bg-gradient-to-r ${gradientClass} blur-sm opacity-10 group-hover:opacity-20 transition duration-200`} />
       <Button
         onClick={handleClick}
-        className={`relative w-full ${createButtonStyle('dmg')} border-2 ${borderClass} px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-semibold text-base sm:text-lg md:text-xl ${shadowClass} min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20`}
+        className={`relative w-full ${createButtonStyle('dmg')} border-2 ${borderClass} px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 font-semibold text-base sm:text-lg md:text-xl ${shadowClass} min-w-[250px] sm:min-w-[280px] h-16 sm:h-18 md:h-20`}
       >
         <div className="flex items-center justify-center space-x-4">
           <svg className={`w-7 h-7 ${iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

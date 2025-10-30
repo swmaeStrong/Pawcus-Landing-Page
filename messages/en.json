@@ -1,13 +1,13 @@
 {
   "common": {
-    "appName": "Pomocore",
+    "appName": "Co-molib",
     "downloadApp": "Download",
     "backToHome": "Back to Home",
     "copySuccess": "Command copied to clipboard!",
     "copyError": "Failed to copy. Please copy manually.",
-    "copyright": "© 2025 Pomocore. All rights reserved.",
+    "copyright": "© 2025 Co-molib. All rights reserved.",
     "business": {
-      "name": "Company Name: Pomocore",
+      "name": "Company Name: Co-molib",
       "representative": "Representative: Younghyun Kim",
       "businessNumber": "Business Registration Number: 255-18-02409",
       "address": "Business Address: Jeonnam, Naha, Ujeong-ro 77",
@@ -30,15 +30,15 @@
     "terms": "Terms of Service",
     "brewCopy": "Copy brew",
     "appDownload": "Download App",
-    "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
+    "brewCommand": "brew tap swmaeStrong/co-molib && brew install --cask co-molib"
   },
   "hero": {
-    "title": "Pomocore",
+    "title": "Co-molib",
     "subtitle": "Track your activity, pinpoint your distractions, and achieve goals.",
     "description": "How much time do you think you waste during PC work?",
     "descriptionSub": "Create a more efficient work environment with smart time tracking and analysis.",
-    "downloadTitle": "Download Pomocore",
-    "downloadDescription": "Install Pomocore and Raise Your Productivity",
+    "downloadTitle": "Download Co-molib",
+    "downloadDescription": "Install Co-molib and Raise Your Productivity",
     "downloadNote": "Auto-updates with Homebrew or direct install with DMG"
   },
   "modal": {
@@ -102,6 +102,32 @@
       "feature1": "Custom themes and layouts",
       "feature2": "Flexible notification settings",
       "feature3": "Personalized work patterns"
+    }
+  },
+  "screenshots": {
+    "heading": "Key Features",
+    "title": "Essential Tools to Maximize Your Productivity",
+    "subtitle": "From AI analysis to activity tracking, all features on one platform",
+    "timer": {
+      "title": "Pomodoro Timer",
+      "description": "Boost your productivity with a pomodoro timer that maximizes focus",
+      "detail1": "25 minutes focus + 5 minutes break",
+      "detail2": "Automatic session tracking",
+      "detail3": "Customizable notifications and sounds"
+    },
+    "aiReport": {
+      "title": "AI Reports",
+      "description": "AI analyzes your work patterns and suggests improvements",
+      "detail1": "Automatic work pattern analysis",
+      "detail2": "Personalized productivity recommendations",
+      "detail3": "Weekly/Monthly trend reports"
+    },
+    "smartRules": {
+      "title": "Smart Rules",
+      "description": "Handle repetitive tasks with automation rules",
+      "detail1": "Condition-based automation rules",
+      "detail2": "Detailed activity logs",
+      "detail3": "Time-based automatic mode switching"
     }
   },
   "features": {

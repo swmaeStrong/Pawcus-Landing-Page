@@ -91,7 +91,7 @@ export default function Navigation() {
       });
 
       const encrypted = encryptAES256(jsonData);
-      const formattedData = `pomocore-${encrypted}`;
+      const formattedData = `co-molib-${encrypted}`;
 
       await navigator.clipboard.writeText(formattedData);
       console.log('Copied encrypted data to clipboard:', formattedData);
@@ -101,8 +101,8 @@ export default function Navigation() {
 
     // 다운로드 실행
     const link = document.createElement('a');
-    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
-    link.download = 'Pomocore.dmg';
+    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Co-molib.dmg';
+    link.download = 'Co-molib.dmg';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -170,17 +170,16 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg blur-sm" />
               <Image
                 src="/icons/128-mac.png"
-                alt="Pomocore Logo"
+                alt="Co-molib Logo"
                 width={32}
                 height={32}
                 className="relative z-10"
               />
             </div>
-            <span className={`text-xl font-bold ${styles.gradientPrimary}`}>
-              Pomocore
+            <span className="text-xl font-bold text-gray-800">
+              Co-molib
             </span>
           </Link>
 

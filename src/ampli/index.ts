@@ -22,7 +22,7 @@ import * as amplitude from '@amplitude/analytics-browser';
 export type Environment = 'default';
 
 export const ApiKey: Record<Environment, string> = {
-  default: 'b6a20ff07e60dc1d2294ad1084b7bd0f'
+  default: process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY || ''
 };
 
 /**

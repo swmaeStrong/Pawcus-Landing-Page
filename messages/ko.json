@@ -1,11 +1,11 @@
 {
   "common": {
-    "appName": "Pomocore",
+    "appName": "Co-molib",
     "downloadApp": "다운로드",
     "backToHome": "메인으로 돌아가기",
     "copySuccess": "명령어가 클립보드에 복사되었습니다!",
     "copyError": "복사에 실패했습니다. 수동으로 복사해주세요.",
-    "copyright": "© 2025 Pomocore. All rights reserved.",
+    "copyright": "© 2025 Co-molib. All rights reserved.",
     "business": {
       "name": "상호명: 집중",
       "representative": "대표자:김영현",
@@ -13,7 +13,7 @@
       "address": "사업장주소: 전라남도 나주시 우정로 77",
       "phoneNumber": "전화번호:010-5172-5645",
       "email": "swmaestrong@gmail.com",
-      "copyright": "© 2025 Pomocore. All rights reserved."
+      "copyright": "© 2025 Co-molib. All rights reserved."
     },
     "terms": {
       "title": "이용약관"
@@ -31,15 +31,15 @@
     "terms": "이용약관",
     "brewCopy": "brew 복사",
     "appDownload": "앱 다운로드",
-    "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
+    "brewCommand": "brew tap swmaeStrong/co-molib && brew install --cask co-molib"
   },
   "hero": {
-    "title": "Pomocore",
+    "title": "Co-molib",
     "subtitle": "활동 기록을 통해 방해 요소를 찾고, 목표를 달성해보세요",
     "description": "PC 작업 도중 집중하지 못하고 낭비되는 시간은 얼마나 될까요?",
     "descriptionSub": "작업 시간 추적과 분석으로 더 효율적인 작업 환경을 만들어보세요.",
-    "downloadTitle": "Pomocore 다운로드",
-    "downloadDescription": "지금 Pomocore를 다운로드해서 생산성을 끌어올려보세요",
+    "downloadTitle": "Co-molib 다운로드",
+    "downloadDescription": "지금 Co-molib을 다운로드해서 생산성을 끌어올려보세요",
     "downloadNote": "Homebrew로 자동 업데이트 또는 DMG로 직접 설치"
   },
   "modal": {
@@ -103,6 +103,32 @@
       "feature1": "커스텀 테마 및 레이아웃",
       "feature2": "유연한 알림 설정",
       "feature3": "개인화된 작업 패턴"
+    }
+  },
+  "screenshots": {
+    "heading": "주요 기능",
+    "title": "생산성을 극대화하는 핵심 도구",
+    "subtitle": "AI 분석부터 활동 추적까지, 모든 기능을 하나의 플랫폼에서",
+    "timer": {
+      "title": "포모도로 타이머",
+      "description": "집중력을 극대화하는 포모도로 타이머로 생산성을 높이세요",
+      "detail1": "25분 집중 + 5분 휴식",
+      "detail2": "세션 자동 추적",
+      "detail3": "알림 및 사운드 커스터마이징"
+    },
+    "aiReport": {
+      "title": "AI 리포트",
+      "description": "AI가 당신의 작업 패턴을 분석하여 개선점을 제안합니다",
+      "detail1": "작업 패턴 자동 분석",
+      "detail2": "개인화된 생산성 추천",
+      "detail3": "주간/월간 트렌드 리포트"
+    },
+    "smartRules": {
+      "title": "스마트 규칙",
+      "description": "반복적인 작업은 자동화 규칙으로 처리하세요",
+      "detail1": "조건 기반 자동화 규칙",
+      "detail2": "상세한 활동 로그",
+      "detail3": "시간대별 자동 모드 전환"
     }
   },
   "features": {
