@@ -1,13 +1,13 @@
 {
   "common": {
-    "appName": "Pomocore",
+    "appName": "Co-molib",
     "downloadApp": "Download",
     "backToHome": "Back to Home",
     "copySuccess": "Command copied to clipboard!",
     "copyError": "Failed to copy. Please copy manually.",
-    "copyright": "© 2025 Pomocore. All rights reserved.",
+    "copyright": "© 2025 Co-molib. All rights reserved.",
     "business": {
-      "name": "Company Name: Pomocore",
+      "name": "Company Name: Co-molib",
       "representative": "Representative: Younghyun Kim",
       "businessNumber": "Business Registration Number: 255-18-02409",
       "address": "Business Address: Jeonnam, Naha, Ujeong-ro 77",
@@ -30,15 +30,15 @@
     "terms": "Terms of Service",
     "brewCopy": "Copy brew",
     "appDownload": "Download App",
-    "brewCommand": "brew tap swmaeStrong/pomocore && brew install --cask pomocore"
+    "brewCommand": "brew tap swmaeStrong/co-molib && brew install --cask co-molib"
   },
   "hero": {
-    "title": "Pomocore",
+    "title": "Co-molib",
     "subtitle": "Track your activity, pinpoint your distractions, and achieve goals.",
     "description": "How much time do you think you waste during PC work?",
     "descriptionSub": "Create a more efficient work environment with smart time tracking and analysis.",
-    "downloadTitle": "Download Pomocore",
-    "downloadDescription": "Install Pomocore and Raise Your Productivity",
+    "downloadTitle": "Download Co-molib",
+    "downloadDescription": "Install Co-molib and Raise Your Productivity",
     "downloadNote": "Auto-updates with Homebrew or direct install with DMG"
   },
   "modal": {

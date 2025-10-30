@@ -50,8 +50,8 @@ export default function LandingPage() {
 
 
     const link = document.createElement('a');
-    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg';
-    link.download = 'Pomocore.dmg';
+    link.href = 'https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Co-molib.dmg';
+    link.download = 'Co-molib.dmg';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -154,7 +154,7 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-gray-500/20 rounded-full blur-lg" />
                 <Image
                   src="/icons/128-mac.png"
-                  alt="Pomocore Logo"
+                  alt="Co-molib Logo"
                   width={40}
                   height={40}
                   className="relative z-10"

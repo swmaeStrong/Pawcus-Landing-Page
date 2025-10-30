@@ -19,15 +19,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pomocore - Maximize Your Focus",
-    template: "%s | Pomocore"
+    default: "Co-molib - Maximize Your Focus",
+    template: "%s | Co-molib"
   },
   description: "Track your activity, pinpoint your distractions, and achieve goals with your groups",
   keywords: ["시간 절약", "시간 추적", "시간 낭비 방지", "효율적 작업", "집중도 측정", "time saving", "time tracking", "efficiency"],
-  authors: [{ name: "Pomocore Team" }],
-  creator: "Pomocore Team",
-  publisher: "Pomocore",
-  applicationName: "Pomocore",
+  authors: [{ name: "Co-molib Team" }],
+  creator: "Co-molib Team",
+  publisher: "Co-molib",
+  applicationName: "Co-molib",
   metadataBase: new URL('https://www.pomocore.com'),
   alternates: {
     canonical: 'https://www.pomocore.com',
