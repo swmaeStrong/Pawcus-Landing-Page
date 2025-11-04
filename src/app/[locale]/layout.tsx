@@ -55,36 +55,36 @@ export const metadata: Metadata = {
     title: "Pomocore - 당신의 집중력을 극대화하세요",
     description: "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요.",
     type: "website",
-    url: "https://www.pomocore.com",
-    siteName: "Pomocore",
+    url: "https://www.co-molib.com",
+    siteName: "Co-molib",
     locale: "ko_KR",
           images: [
         {
-          url: `https://www.pomocore.com/opengraph-image`,
+          url: `https://www.co-molib.com/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: "Pomocore - 당신의 집중력을 극대화하세요",
+          alt: "Co-molib - 당신의 집중력을 극대화하세요",
           type: "image/png",
         },
       {
-        url: "https://www.pomocore.com/icons/512-mac.png",
+        url: "https://www.co-molib.com/icons/512-mac.png",
         width: 512,
         height: 512,
-        alt: "Pomocore Logo",
+        alt: "Co-molib Logo",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@pomocore",
-    creator: "@pomocore",
-    title: "Pomocore - 당신의 집중력을 극대화하세요",
+    site: "@co-molib",
+    creator: "@co-molib",
+    title: "Co-molib - 당신의 집중력을 극대화하세요",
     description: "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요",
     images: [
       {
-        url: "https://www.pomocore.com/icons/512-mac.png",
-        alt: "Pomocore Logo"
+        url: "https://www.co-molib.com/icons/512-mac.png",
+        alt: "Co-molib Logo"
       }
     ],
   },
@@ -108,13 +108,13 @@ export const metadata: Metadata = {
     "msapplication-config": "/browserconfig.xml",
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "Pomocore",
-    "al:web:url": "https://www.pomocore.com",
+    "apple-mobile-web-app-title": "Co-molib",
+    "al:web:url": "https://www.co-molib.com",
     "al:web:should_fallback": "true",
-    "og:image:secure_url": `https://www.pomocore.com/opengraph-image`,
+    "og:image:secure_url": `https://www.co-molib.com/opengraph-image`,
     "og:image:width": "1200",
     "og:image:height": "630",
-    "og:image:alt": "Pomocore - 당신의 집중력을 극대화하세요",
+    "og:image:alt": "Co-molib - 당신의 집중력을 극대화하세요",
     "og:locale": "ko_KR",
     "og:locale:alternate": "en_US",
   },
@@ -148,28 +148,28 @@ export default async function LocaleLayout({
     <html lang={locale} className="dark">
       <head>
         {/* Canonical URL 명시적 선언 */}
-        <link rel="canonical" href="https://www.pomocore.com" />
+        <link rel="canonical" href="https://www.co-molib.com" />
         
         {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
-        <meta property="og:title" content="Pomocore - 당신의 집중력을 극대화하세요" />
+        <meta property="og:title" content="Co-molib - 당신의 집중력을 극대화하세요" />
         <meta property="og:description" content="활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요." />
-        <meta property="og:image" content={`https://www.pomocore.com/opengraph-image`} />
+        <meta property="og:image" content={`https://www.co-molib.com/opengraph-image`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Pomocore - 당신의 집중력을 극대화하세요" />
-        <meta property="og:url" content="https://www.pomocore.com" />
+        <meta property="og:image:alt" content="Co-molib - 당신의 집중력을 극대화하세요" />
+        <meta property="og:url" content="https://www.co-molib.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Pomocore" />
+        <meta property="og:site_name" content="Co-molib" />
         <meta property="og:locale" content="ko_KR" />
         
         {/* 트위터 카드 (추가 호환성) */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pomocore - 당신의 집중력을 극대화하세요" />
+        <meta name="twitter:title" content="Co-molib - 당신의 집중력을 극대화하세요" />
         <meta name="twitter:description" content="활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요" />
-        <meta name="twitter:image" content={`https://www.pomocore.com/opengraph-image`} />
+        <meta name="twitter:image" content={`https://www.co-molib.com/opengraph-image`} />
         
         {/* 카카오톡 앱링크 */}
-        <meta property="al:web:url" content="https://www.pomocore.com" />
+        <meta property="al:web:url" content="https://www.co-molib.com" />
         <meta property="al:web:should_fallback" content="true" />
         {/* Structured Data */}
         <script
@@ -178,11 +178,11 @@ export default async function LocaleLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "Pomocore",
+              "name": "Co-molib",
               "description": "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요",
               "applicationCategory": "ProductivityApplication",
               "operatingSystem": "macOS",
-              "url": "https://www.pomocore.com",
+              "url": "https://www.co-molib.com",
               "downloadUrl": "https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg",
               "offers": {
                 "@type": "Offer",
