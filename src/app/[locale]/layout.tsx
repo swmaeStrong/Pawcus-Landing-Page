@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Pomocore - 당신의 집중력을 극대화하세요",
+    title: "Co-molib - 당신의 집중력을 극대화하세요",
     description: "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요.",
     type: "website",
     url: "https://www.co-molib.com",
@@ -139,38 +139,22 @@ export default async function LocaleLayout({
 }) {
   // Await the params as required by Next.js 15
   const {locale} = await params;
-  
+  const isKorean = locale === 'ko';
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
 
+  const baseUrl = 'https://www.co-molib.com';
+  const localePath = locale === 'ko' ? '' : `/${locale}`;
+
+  const description = isKorean
+    ? "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요"
+    : "Track your activity, pinpoint your distractions, and achieve goals with your groups";
+
   return (
     <html lang={locale} className="dark">
       <head>
-        {/* Canonical URL 명시적 선언 */}
-        <link rel="canonical" href="https://www.co-molib.com" />
-        
-        {/* 카카오톡 링크 미리보기를 위한 추가 메타태그 */}
-        <meta property="og:title" content="Co-molib - 당신의 집중력을 극대화하세요" />
-        <meta property="og:description" content="활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요." />
-        <meta property="og:image" content={`https://www.co-molib.com/opengraph-image`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Co-molib - 당신의 집중력을 극대화하세요" />
-        <meta property="og:url" content="https://www.co-molib.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Co-molib" />
-        <meta property="og:locale" content="ko_KR" />
-        
-        {/* 트위터 카드 (추가 호환성) */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Co-molib - 당신의 집중력을 극대화하세요" />
-        <meta name="twitter:description" content="활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요" />
-        <meta name="twitter:image" content={`https://www.co-molib.com/opengraph-image`} />
-        
-        {/* 카카오톡 앱링크 */}
-        <meta property="al:web:url" content="https://www.co-molib.com" />
-        <meta property="al:web:should_fallback" content="true" />
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -179,10 +163,10 @@ export default async function LocaleLayout({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               "name": "Co-molib",
-              "description": "활동 기록을 통해 방해 요소를 찾고, 팀과 함께 목표를 달성해보세요",
+              "description": description,
               "applicationCategory": "ProductivityApplication",
               "operatingSystem": "macOS",
-              "url": "https://www.co-molib.com",
+              "url": `${baseUrl}${localePath}`,
               "downloadUrl": "https://github.com/swmaeStrong/Pawcus-Public/releases/latest/download/Pomocore.dmg",
               "offers": {
                 "@type": "Offer",
