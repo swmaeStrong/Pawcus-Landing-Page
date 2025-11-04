@@ -641,15 +641,15 @@
       "security": [
         {
           "question": "What data is tracked when the app executes record measurement?",
-          "answer": "Pomocore collects app information, app titles, and URLs for browsers. The collected data is used only for category classification and data visualization purposes, not for any other purposes."
+          "answer": "Co-molib collects app information, app titles, and URLs for browsers. The collected data is used only for category classification and data visualization purposes, not for any other purposes, and is stored only on your local device."
         },
         {
-          "question": "How does Pomocore protect data?",
-          "answer": "Pomocore uses AES-256 encryption to protect all activity logs. This is one of the strongest encryption standards currently available. Data is stored on servers but is used only for providing services to users and is never used for any other purposes."
+          "question": "How does Co-molib protect data?",
+          "answer": "All activity logs in Co-molib are stored only on your local device. Since data is not transmitted to servers or stored externally, no encryption is needed, and your data exists only on your device. You can use it with complete peace of mind."
         },
         {
           "question": "Is there any possibility of my personal information being leaked externally?",
-          "answer": "Absolutely not. Pomocore uses user data only for service provision purposes and never for any other purposes. We do not provide or sell to third parties, and it is not used in any way without user consent."
+          "answer": "Absolutely not. All data in Co-molib is stored only on your local device and is not transmitted externally. Since it's not stored on servers, there's no possibility of leakage, and we never provide or sell to third parties."
         }
       ],
       "features": [
