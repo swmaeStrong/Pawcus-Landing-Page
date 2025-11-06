@@ -58,7 +58,7 @@ export default function LanguageSwitcher() {
         return isActive ? (
           <span
             key={lng}
-            className="px-3 py-1.5 text-sm font-medium bg-[#3f72af] text-white shadow-sm cursor-default relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-white"
+            className="px-3 py-1.5 text-sm font-medium text-[#3f72af] cursor-default relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#3f72af]"
           >
             {lng.toUpperCase()}
           </span>
@@ -70,7 +70,7 @@ export default function LanguageSwitcher() {
             className={`px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
               isNavigating
                 ? 'opacity-50 cursor-not-allowed'
-                : 'text-gray-600 hover:text-[#3f72af] hover:bg-gray-100/50'
+                : 'text-gray-600 hover:text-[#3f72af]'
             }`}
           >
             {lng.toUpperCase()}

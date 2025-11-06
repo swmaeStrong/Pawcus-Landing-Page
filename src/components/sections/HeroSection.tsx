@@ -79,19 +79,23 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
           {t('descriptionSub')}
         </p>
 
-        {/* Hero Image */}
+
+        {/* Hero Video */}
         <div className="flex justify-center mb-16 px-2 md:px-4">
-          <div className="relative w-full max-w-[95%] overflow-hidden rounded-2xl shadow-2xl border-2 border-[#5b9bd5]/30">
-            <Image
-              src="/screenshots/Activities.png"
-              alt="Co-molib 활동 기록"
-              width={1600}
-              height={1000}
+          <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl shadow-2xl border-2 border-[#5b9bd5]/30">
+            <video
               className="w-full h-auto"
-              priority
-            />
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/videos/co-molib.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
+
 
         {/* Download Section */}
         <section className={styles.downloadSection} aria-labelledby="download-heading">
@@ -111,7 +115,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
               inviteCode={inviteCode}
             />
           </div>
-          
+
         </section>
       </div>
     </section>

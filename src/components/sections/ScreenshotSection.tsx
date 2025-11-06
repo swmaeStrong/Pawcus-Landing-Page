@@ -61,6 +61,22 @@ export default function ScreenshotSection() {
           </p>
         </motion.div>
 
+
+        {/* Hero Image */}
+        <div className="flex justify-center mb-16 px-2 md:px-4">
+          <div className="relative w-full max-w-[95%] overflow-hidden rounded-2xl shadow-2xl border-2 border-[#5b9bd5]/30">
+            <Image
+              src="/screenshots/Activities.png"
+              alt="Co-molib 활동 기록"
+              width={1600}
+              height={1000}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+        </div>
+
+
         {/* Features - Zigzag Layout */}
         <div className="space-y-20">
           {features.map((feature, index) => {
