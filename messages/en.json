@@ -629,8 +629,8 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "We'll help solve your questions about Pomocore",
-    "description": "We've collected common questions about Pomocore. Check detailed answers about security, usage, troubleshooting, and more.",
+    "subtitle": "We'll help solve your questions about Co-molib",
+    "description": "We've collected common questions about Co-molib. Check detailed answers about security, usage, troubleshooting, and more.",
     "categories": {
       "all": "All",
       "security": "Security & Privacy",
@@ -660,14 +660,6 @@
         {
           "question": "How does tracking work when multiple tabs are open simultaneously?",
           "answer": "Time recording proceeds based on the tab that the user most recently activated."
-        },
-        {
-          "question": "How does the leaderboard work?",
-          "answer": "The leaderboard is a feature that allows comparing work time within the same team or group. You can check rankings on Daily, Weekly, and Monthly basis, and category-specific expertise can also be compared. The leaderboard reflects the latest data within 20-30 seconds, allowing real-time ranking changes. All data is processed anonymously."
-        },
-        {
-          "question": "Am I tracked even when I'm not doing any activity?",
-          "answer": "No. Pomocore detects AFK (Away From Keyboard) status based on 3 minutes. If there's no activity for 3 minutes, it determines that the user is away and stops log tracking. When activity resumes, tracking automatically restarts."
         }
       ],
       "installation": [
