@@ -680,24 +680,24 @@
 
   "cta": {
     "title": "더 이상 시간을 낭비하지 마세요",
-    "description": "Pomocore를 통해 시간을 절약하고, 집중력을 극대화해보세요!"
+    "description": "Co-molib을 통해 시간을 절약하고, 집중력을 극대화해보세요!"
   },
   "testimonials": {
     "title": "Testimonials",
     "subtitle": "Many customers love it",
     "reviews": [
       {
-        "quote": "As a freelancer, Pomocore is my goto software to track all my work, automatically without timer. I know exactly how much time I spend on each project, which gives me clear evidence when billing clients.",
+        "quote": "As a freelancer, Co-molib is my goto software to track all my work, automatically without timer. I know exactly how much time I spend on each project, which gives me clear evidence when billing clients.",
         "name": "Junho Kim",
         "handle": "@junn_is_free"
       },
       {
-        "quote": "Pomocore is amazing! It's a great way to see how I am using my time with very little effort on my part. The team leaderboard also keeps me productive all day.",
+        "quote": "Co-molib is amazing! It's a great way to see how I am using my time with very little effort on my part. The team leaderboard also keeps me productive all day.",
         "name": "Seoyun Lee",
         "handle": "@Seoyun_Lee"
       },
       {
-        "quote": "I always struggled with managing study sessions. Pomocore didn't just track time — it gave me AI-powered reports that helped me structure my day more effectively, reducing burnout and increasing consistency.",
+        "quote": "I always struggled with managing study sessions. Co-molib didn't just track time — it gave me AI-powered reports that helped me structure my day more effectively, reducing burnout and increasing consistency.",
         "name": "Minsu Park",
         "handle": "@minsiuuuuu"
       },
@@ -707,7 +707,7 @@
         "handle": "@yujin_dev"
       },
       {
-        "quote": "Pomocore does exactly what I need: keeps track of every front-most window without any input from me and then adds up all windows I select to give me exactly the total I spent on a project for a client. No subscription, no remote data collection, not interaction at all until I'm ready. Just what I want.",
+        "quote": "Co-molib does exactly what I need: keeps track of every front-most window without any input from me and then adds up all windows I select to give me exactly the total I spent on a project for a client. No subscription, no remote data collection, not interaction at all until I'm ready. Just what I want.",
         "name": "Hyunwoo Jung",
         "handle": "@hyunwoo0623"
       },
