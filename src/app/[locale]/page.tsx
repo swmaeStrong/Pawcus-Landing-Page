@@ -161,23 +161,7 @@ export default function LandingPage() {
                 />
               </div>
             </div>
-            {/* Business Information */}
-            <div className={`${styles.text.small} space-y-2`}>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
-                <span className="font-medium">{t('business.name')}</span>
-                <span className="hidden md:inline text-[#718096]">|</span>
-                <span>{t('business.businessNumber')}</span>
-              </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-1 md:space-y-0">
-                <span>{t('business.representative')}</span>
-                <span className="hidden md:inline text-[#718096]">|</span>
-                <span>{t('business.phoneNumber')}</span>
-              </div>
-              <div className="text-center">
-                <span>{t('business.address')}</span>
-              </div>
-            </div>
-            
+
             {/* Quick Links */}
             <nav className="pt-4 border-t border-gray-200/50" aria-label="Footer Navigation">
               <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-2 md:space-y-0 mb-4">
