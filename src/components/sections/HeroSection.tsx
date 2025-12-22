@@ -90,7 +90,7 @@ export default function HeroSection({ onDownloadDMG }: HeroSectionProps) {
               loop
               playsInline
             >
-              <source src="/videos/co-molib.mp4" type="video/mp4" />
+              <source src="/videos/co-molib-compressed.mp4" type="video/mp4" />ß
               Your browser does not support the video tag.
             </video>
           </div>
